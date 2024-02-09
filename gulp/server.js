@@ -38,6 +38,7 @@ export function server() {
       console.log(`---------- Delete:  ${filePathInBuildDir}`);
     });
     calcGraph();
+    recompilePug();
   });
 
   // Blocks: change
@@ -70,6 +71,13 @@ export function server() {
     series(calcGraph, writePugMixinsFile),
   );
 
+  // Service blocks: change
+  watch(
+    [`${config.from.service}/**/*.pug`],
+    { events: ["change"], delay: 100 },
+    series(recompilePug, reload),
+  );
+
   // Templates
   const templatesWatcher = watch(
     [`${config.from.templates}/**/*.pug`, `!${config.from.templates}/mixins.pug`],
@@ -81,7 +89,7 @@ export function server() {
     const rebuildPages = pagesCollector(filepath);
     if (rebuildPages.length) {
       calcGraph();
-      compilePug(rebuildPages.toString());
+      compilePug(rebuildPages);
       parallel(writeSassImportsFile, writeJsRequiresFile);
       parallel(compileSass, compileJs);
       browserSync.reload();
@@ -111,7 +119,12 @@ export function server() {
 
   // Global scripts: all
   watch(
-    [`${config.from.js}/**/*.js`, `!${config.from.js}/entry.js`, `!${config.from.js}/head-script.js`, `${config.from.blocks}/**/*.js`],
+    [
+      `${config.from.js}/**/*.js`,
+      `!${config.from.js}/entry.js`,
+      `!${config.from.js}/head-script.js`,
+      `${config.from.blocks}/**/*.js`,
+    ],
     {
       events: ["all"],
       delay: 100,
@@ -126,7 +139,7 @@ export function server() {
       events: ["all"],
       delay: 100,
     },
-    series(calcGraph, recompilePug, reload)
+    series(calcGraph, recompilePug, reload),
   );
 
   // Copy sources: all
