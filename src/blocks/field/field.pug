@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (field)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin field(type, fieldName, hint, mods)
+
+  //- Принимает:
+  //-   type    {string} - тип поля
+  //-   fieldName    {string} - имя поля
+  //-   hint     {string} - плэйсхолдер
+  //-   options     {string} - список опций select
+  //-   mods     {string} - список модификаторов
+  //- Вызов:
+        +field('select', 'model', 'Модель', ['COOLRAY', 'Новый COOLRAY'], 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (typeof (mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' field--' + modsList[i].trim();
+      }
+    }
+
+  label.field(class=allMods + ' field--' + type)
+    case type
+      when 'text'
+        input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
+      when 'checkbox'
+        input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
+

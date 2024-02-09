@@ -1,0 +1,117 @@
+.field {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: block;
+
+  &--text {
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgb(230, 230, 230);
+      border-radius: 6px;
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:focus {
+      }
+    }
+  }
+
+  &--checkbox {
+    .aside-filter-checkbox {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+
+      // @media (min-width: 1169px) {
+      //   &__input:checked + .aside-filter-checkbox__label {
+      //     position: relative;
+      //     background-color: var(--rose);
+
+      //     .aside-filter-checkbox__label-icon {
+      //       display: block;
+      //     }
+      //   }
+
+      //   &__input:not(:checked) + .aside-filter-checkbox__label {
+      //     &:hover {
+      //       color: var(--rose);
+      //       opacity: 1;
+      //     }
+      //   }
+
+      //   &:not(:last-child) {
+      //     margin-bottom: 8px;
+      //   }
+
+      //   &:last-child {
+      //     margin-bottom: 5px;
+      //   }
+      // }
+
+      &__link {
+        font-weight: 400;
+        font-size: 14px;
+        font-style: normal;
+        line-height: 120%;
+        letter-spacing: -0.56px;
+        opacity: 0.5;
+        leading-trim: both;
+        text-edge: cap;
+      }
+
+      &__input {
+        position: absolute;
+        left: -9999px;
+        margin: 0;
+        appearance: none;
+      }
+
+      &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 17px;
+        height: 17px;
+        border: 1px solid #c4c4c4;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      &__label-mobile {
+        display: none;
+      }
+
+      &__label-icon {
+        width: 11px;
+        height: 11px;
+        fill: none;
+        stroke: var(--white);
+      }
+    }
+  }
+
+  &--radio {
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgb(230, 230, 230);
+      border-radius: 6px;
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:focus {
+      }
+    }
+  }
+}
