@@ -3,6 +3,12 @@
 .footer {
   $block-name: &; // #{$block-name}__element
 
+  height: 400px;
+  background-color: var(--green-gray-scale-800);
+  background:
+    url(../img/left.png) no-repeat left bottom,
+    url(../img/right.png) no-repeat right bottom;
+
   &__inner {
     padding: 8px 0;
   }

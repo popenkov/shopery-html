@@ -1,6 +1,12 @@
 @import "fluid";
 @import "../breakpoints";
 
+@mixin search-field() {
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: 0%;
+}
+
 @mixin display-400() {
   font-size: 72px;
   font-weight: 400;

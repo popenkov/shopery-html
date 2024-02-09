@@ -20,8 +20,14 @@ mixin header(mods)
     }
 
   .header(class=allMods)&attributes(attributes)
-    .container
-      .header__inner
-        svg.logo.header__logo
-          use(href= path.icon + "logo__default")
-        block
+      .header__top
+        .header__top-container.container
+          .header__top-location
+            svg.header__top-location-icon: use(href= path.icon + 'map-pin')
+            span Store Location: Lincoln- 344, Illinois, Chicago, USA
+          .header__top-menu
+      .header__middle.container
+        img.header__logo(src= path.img + "logo.png")
+        .header__search
+          +field('search', 'search', 'search', '', '', true)
+

@@ -27,6 +27,7 @@ mixin field(type, fieldName, hint, mods)
     case type
       when 'text'
         input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
-      when 'checkbox'
+      when 'search'
         input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
+        svg.input__search-icon: use(href= path.icon + 'search')
 
