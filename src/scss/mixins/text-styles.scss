@@ -1,8 +1,273 @@
-@import "fluid";
-@import "../breakpoints";
+@import 'fluid';
+@import '../breakpoints';
 
-@mixin body {
+@mixin display-400() {
+  font-size: 72px;
+  font-family: 'Poppins';
   font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin display-600() {
+  font-size: 72px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-1-600() {
+  font-size: 56px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-1-400() {
+  font-size: 56px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-2-600() {
+  font-size: 48px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-2-400() {
+  font-size: 48px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-3-600() {
+  font-size: 40px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-3-400() {
+  font-size: 40px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-4-400() {
+  font-size: 36px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-4-400() {
+  font-size: 36px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-5-400() {
+  font-size: 32px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-5-600() {
+  font-size: 32px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-xxl-400() {
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-xxl-500() {
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-xxl-600() {
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-xl-400() {
+  font-size: 20px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-xl-500() {
+  font-size: 20px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-xl-600() {
+  font-size: 20px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-large-400() {
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-large-500() {
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-large-600() {
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-medium-400() {
   font-size: 16px;
-  line-height: 1;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-medium-500() {
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-medium-600() {
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-small-400() {
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-small-500() {
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-small-600() {
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-tiny-400() {
+  font-size: 12px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-tiny-500() {
+  font-size: 12px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin body-tiny-600() {
+  font-size: 12px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
 }
