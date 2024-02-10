@@ -1,5 +1,23 @@
-const pathToPrefix = ``;
-const pathPugPrefix = ``;
+// ghPagesUrl — https://[userName].github.io/[projectName]/index.html
+let ghPagesUrl = ``;
+let pathToPrefix = ``;
+
+const htmlPathObj = {
+  js: ``,
+  css: ``,
+  img: ``,
+  fonts: ``,
+}
+
+const cssPathObj = {
+  js: ``,
+  css: ``,
+  img: ``,
+  fonts: `../`,
+}
+
+// deploy/build template condition
+// if (process.env.MODE === "deploy" || process.env.MODE === "production") {}
 
 const fromObj = {
   root: "src",
@@ -36,27 +54,30 @@ const fromObj = {
   get symbols() {
     return `${this.root}/symbols`;
   },
+  get service() {
+    return `${this.root}/service`;
+  },
 };
 
 const toObj = {
   root: "build",
   get pages() {
-    return `${this.root}/${pathToPrefix}/`;
+    return `${this.root}${pathToPrefix}/`;
   },
   get style() {
-    return `${this.root}/${pathToPrefix}/css`;
+    return `${this.root}${pathToPrefix}/css`;
   },
   get js() {
-    return `${this.root}/${pathToPrefix}/js`;
+    return `${this.root}${pathToPrefix}/js`;
   },
   get img() {
-    return `${this.root}/${pathToPrefix}/img`;
+    return `${this.root}${pathToPrefix}/img`;
   },
   get assets() {
-    return `${this.root}/${pathToPrefix}/assets`;
+    return `${this.root}${pathToPrefix}/assets`;
   },
   get fonts() {
-    return `${this.root}/${pathToPrefix}/fonts`;
+    return `${this.root}${pathToPrefix}/fonts`;
   },
 };
 
@@ -80,14 +101,25 @@ export const config = {
   to: toObj,
   // paths for markup
   paths: {
-    js: `${pathPugPrefix}/js/`,
-    css: `${pathPugPrefix}/css/`,
-    img: `${pathPugPrefix}/img/`,
-    fonts: `${pathPugPrefix}/fonts/`,
-    pages: `/`,
-    get icon() {
-      return `${this.img}svgSprite.svg#`;
+    pug: {
+      js: `${htmlPathObj.js}js/`,
+      css: `${htmlPathObj.css}css/`,
+      img: `${htmlPathObj.img}img/`,
+      fonts: `${htmlPathObj.fonts}fonts/`,
+      get icon() {
+        return `${this.img}svgSprite.svg#`;
+      },
     },
+    style: {
+      js: `${cssPathObj.js}js/`,
+      css: `${cssPathObj.css}css/`,
+      img: `${cssPathObj.img}img/`,
+      fonts: `${cssPathObj.fonts}fonts/`,
+      get icon() {
+        return `${this.img}svgSprite.svg#`;
+      },
+    },
+    pages: `/`,
   },
   // sources for copy
   sources: sourcesObj,
@@ -115,13 +147,13 @@ export const config = {
     // "src/scss/vendor.scss",
     "src/scss/fonts.scss",
     // "src/scss/animations.scss"
-    // "somePackage/dist/somePackage.css", // для "node_modules/somePackage/dist/somePackage.css",
+    // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
   // style imports at end
   addStyleAfter: [],
   // js imports at start
   addJsBefore: [
-    // "somePackage/dist/somePackage.js", // для "node_modules/somePackage/dist/somePackage.js",
+    // "somePackage/dist/somePackage.js", // for "node_modules/somePackage/dist/somePackage.js",
   ],
   // js imports at end
   addJsAfter: [
@@ -158,7 +190,11 @@ export const config = {
   // env
   mode: process.env.MODE || "development",
   // img copy mode
-  isSeparatedBlockImg: "collected", // [false, true, "collected"]
+  isSeparatedBlockImg: false, // [false, true, "collected"]
   // log
-  logging: false
+  logging: false,
+  // navigation
+  isProjectNav: true,
+  // repository ghPages url
+  deployUrl: ghPagesUrl
 };

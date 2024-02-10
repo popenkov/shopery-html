@@ -1,0 +1,98 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.round-button {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center;
+  @include box(40px);
+
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  &__icon {
+    @include box(20px);
+  }
+
+  &--green {
+    background-color: var(--primary);
+    #{$block-name}__icon {
+      color: var(--white);
+    }
+
+    &:hover {
+      background-color: var(--hard-primary);
+
+      #{$block-name}__icon {
+        color: var(--white);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--gray-scale--50);
+
+      #{$block-name}__icon {
+        color: var(--gray-scale--900);
+      }
+    }
+  }
+
+  &--white-green {
+    // todo  не могу достать из макета тень
+    box-shadow: 0px 0px 8px 0px var(--gray-scale--200);
+    #{$block-name}__icon {
+      color: var(--gray-scale--900);
+    }
+
+    &:hover {
+      background-color: var(--primary);
+
+      #{$block-name}__icon {
+        color: var(--white);
+      }
+    }
+  }
+
+  &--like {
+    // todo  не могу достать из макета тень
+    box-shadow: 0px 0px 8px 0px var(--gray-scale--200);
+    #{$block-name}__icon {
+      fill: none;
+      stroke: var(--gray-scale--900);
+    }
+
+    &:hover {
+      background-color: var(--primary);
+      box-shadow: none;
+
+      #{$block-name}__icon {
+        stroke: var(--white);
+      }
+    }
+
+    &:active,
+    &.active {
+      #{$block-name}__icon {
+        stroke: var(--primary);
+        fill: var(--primary);
+      }
+    }
+  }
+
+  &--transp {
+    #{$block-name}__icon {
+      color: var(--gray-scale--700);
+    }
+
+    &:hover {
+      background-color: var(--primary);
+
+      #{$block-name}__icon {
+        color: var(--white);
+      }
+    }
+  }
+}

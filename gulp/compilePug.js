@@ -10,7 +10,11 @@ import fs from "fs";
 import { config } from "./config.js";
 
 const { src, dest, lastRun } = gulp;
-const pugPaths = config.paths;
+const {
+  isProjectNav: nav,
+  paths: { pug: pugPaths },
+  deployUrl,
+} = config;
 
 export function compilePug(pagesList) {
   return src(pagesList)
@@ -26,7 +30,7 @@ export function compilePug(pagesList) {
     )
     .pipe(
       pug({
-        data: { pugPaths },
+        data: { pugPaths, nav, deployUrl },
         locals: JSON.parse(fs.readFileSync(`${config.from.json}/data.json`, "utf8")),
       }),
     )
@@ -51,7 +55,7 @@ export function recompilePug() {
     )
     .pipe(
       pug({
-        data: { pugPaths },
+        data: { pugPaths, nav, deployUrl },
         locals: JSON.parse(fs.readFileSync(`${config.from.json}/data.json`, "utf8")),
       }),
     )
@@ -77,7 +81,7 @@ export function compilePugFast() {
     )
     .pipe(
       pug({
-        data: { pugPaths },
+        data: { pugPaths, nav, deployUrl },
         locals: JSON.parse(fs.readFileSync(`${config.from.json}/data.json`, "utf8")),
       }),
     )

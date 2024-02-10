@@ -6,4 +6,15 @@
   &__inner {
     padding: 8px 0;
   }
+
+  &__top {
+    background-color: var(--gray-scale--800);
+    color: var(--gray-scale--300);
+  }
+
+  &__top-container {
+  }
+
+  &__top-location {
+  }
 }

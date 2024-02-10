@@ -1,0 +1,58 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+
+.button {
+  $block-name: &; // #{$block-name}__element
+
+  cursor: pointer;
+  border-radius: 43px;
+  border: none;
+
+  &--fill {
+    background-color: var(--primary);
+    color: var(--white);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--hard-primary);
+      }
+    }
+  }
+
+  &--border {
+    color: var(--primary);
+    box-shadow: inset 0px 0px 0px 1px var(--primary);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hard-primary);
+        box-shadow: inset 0px 0px 0px 1px var(--hard-primary);
+      }
+    }
+  }
+
+  &--grey {
+    background-color: var(--green-gray-scale-100);
+    color: var(--primary);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hard-primary);
+        background-color: var(--green-gray-scale-200);
+      }
+    }
+  }
+
+  &--small {
+    @include body-tiny-600;
+    padding: 10px 24px;
+  }
+
+  &--normal {
+    padding: 14px 32px;
+  }
+
+  &--large {
+    padding: 16px 40px;
+  }
+}

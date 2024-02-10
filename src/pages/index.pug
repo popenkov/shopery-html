@@ -9,3 +9,36 @@ block variables
 block content
   .container
     div!= json.info.data
+    h2 Buttons
+    +button('normal', "fill, small")
+    +button('normal', "fill, normal")
+    +button('normal', "fill, large")
+    +button('normal', "border, small")
+    +button('normal', 'border, normal')
+    +button('normal', "border, large")
+    +button('normal', "grey, small")
+    +button('normal', "grey, normal")
+    +button('normal', "grey, large")
+
+    h2 close button
+    button.close-button
+      svg.close-button__icon: use(href= path.icon + 'cross')
+
+    h2 round buttons
+    button.round-button.round-button--green
+      svg.round-button__icon: use(href= path.icon + 'cart')
+    button.round-button.round-button--like
+      svg.round-button__icon: use(href= path.icon + 'heart')
+    button.round-button.round-button--white-green
+      svg.round-button__icon: use(href= path.icon + 'eye')
+    button.round-button.round-button--transp
+      svg.round-button__icon: use(href= path.icon + 'facebook')
+
+    h2 checkbox
+    +checkbox('checkbox', 'checkbox', '', 'checkbox')
+    span
+      +checkbox('radio', 'radio', '', '1','1')
+      +checkbox('radio', 'radio', '', '2','2')
+
+    h2 Inputs
+    +field('text', 'text', 'text', '', '', true)(id='text')

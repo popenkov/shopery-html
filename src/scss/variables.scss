@@ -1,13 +1,10 @@
 @use "sass:color";
 
 :root {
-  --color-black: #000;
-  --color-white: #fff;
-  --body-color: var(--front-primary);
-  --body-bg: var(--back-primary);
+  --body-color: var(--font-primary);
+  --body-bg: var(--white);
   --font-base: var(--font-sans);
-  --font-sans:
-    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+  --font-sans: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
     "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   --font-serif: Georgia, "Times New Roman", Times, serif;
@@ -16,58 +13,37 @@
   --font-size-base: 1rem;
   --font-weight-base: 400;
   --line-height-base: 1.25;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    // Семантические цвета
-    --brand-primary: #636cff;
-    --brand-primary-light: #9499ff;
-    --brand-primary-dark: #353fe8;
-    --front-primary: rgb(60 60 67 / 92%);
-    --front-secondary: rgb(60 60 67 / 70%);
-    --front-tertiary: rgb(60 60 67 / 40%);
-    --front-invert: #fff;
-    --back-primary: #fff;
-    --back-secondary: #f6f6f7;
-    --back-tertiary: #e0e0e0;
-    --back-transparency: rgb(255 255 255 / 70%);
-    --color-warning: #f43f5e;
+  --green-gray-scale-900: #002603;
+  --green-gray-scale-800: #173b1a;
+  --green-gray-scale-700: #2b572e;
+  --green-gray-scale-600: #406b42;
+  --green-gray-scale-500: #618062;
+  --green-gray-scale-400: #7a997c;
+  --green-gray-scale-300: #96b297;
+  --green-gray-scale-200: #b4ccb4;
+  --green-gray-scale-100: #dae5da;
+  --green-gray-scale-50: #edf2ee;
 
-    // Оформление
-    --border-primary: #e7e7e8;
-    --border-button: rgb(60 60 67 / 30%);
-    --border-button-disabled: rgb(60 60 67 / 15%);
-    --divider: rgb(60 60 67 / 12%);
-    --gradient: linear-gradient(91.75deg, #646cff 0%, #bd34fe 100%);
-    --link-hover-color: #636cff;
-    --shadow-default: 0 0 10px rgb(0 0 0 / 10%);
-  }
-}
+  --gray-scale-1000: #0a1931;
+  --gray-scale--900: #1a1a1a;
+  --gray-scale--800: #333;
+  --gray-scale--700: #4d4d4d;
+  --gray-scale--600: #666;
+  --gray-scale--500: #808080;
+  --gray-scale--400: #999;
+  --gray-scale--300: #b3b3b3;
+  --gray-scale--200: #ccc;
+  --gray-scale--100: #e6e6e6;
+  --gray-scale--50: #f2f2f2;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    // Семантические цвета
-    --brand-primary: #636cff;
-    --brand-primary-light: #23253f;
-    --brand-primary-dark: #353fe8;
-    --front-primary: rgb(255 255 255 / 92%);
-    --front-secondary: rgb(255 255 255 / 70%);
-    --front-tertiary: rgb(255 255 255 / 40%);
-    --front-invert: #cbcbe0;
-    --back-primary: #19191e;
-    --back-secondary: #1f1f25;
-    --back-tertiary: #292932;
-    --back-transparency: rgb(25 25 30 / 70%);
-    --color-warning: #f43f5e;
+  --white: #fff;
+  --soft-primary: #84d187;
+  --primary: #00b207;
+  --hard-primary: #2c742f;
+  --warning: #ff8a00;
+  --danger: #ea4b48;
 
-    // Оформление
-    --border-primary: #27272f;
-    --border-button: rgb(255 255 255 / 30%);
-    --border-button-disabled: rgb(255 255 255 / 15%);
-    --divider: rgb(255 255 255 / 12%);
-    --gradient: linear-gradient(91.75deg, #646cff 0%, #bd34fe 100%);
-    --link-hover-color: #636cff;
-    --shadow-default: 0 0 10px rgb(255 255 255 / 10%);
-  }
+  --font-primary: var(--gray-scale--900);
+  --heading-color: var(--gray-scale-1000);
 }

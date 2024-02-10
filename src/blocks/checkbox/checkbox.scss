@@ -1,0 +1,84 @@
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/hide-text.scss";
+
+.checkbox {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  &--checkbox {
+    input:checked + label {
+      position: relative;
+      background-color: var(--primary);
+    }
+
+    input:not(:checked) + label {
+      &:hover {
+        border-color: var(--primary);
+      }
+    }
+
+    input {
+      @include hide-text;
+    }
+
+    label {
+      @include flex-center;
+      @include box(20px);
+
+      cursor: pointer;
+
+      border: 1px solid var(--gray-scale--200);
+      border-radius: 3px;
+    }
+
+    svg {
+      @include box(16px);
+    }
+  }
+
+  &--radio {
+    input:checked + label {
+      position: relative;
+      border-width: 2px;
+      border-color: var(--primary);
+
+      &::before {
+        @include absolute-center;
+        @include box(12px);
+
+        content: "";
+        background-color: var(--primary);
+        border-radius: 50%;
+      }
+    }
+
+    input:not(:checked) + label {
+      &:hover {
+        border-color: var(--primary);
+      }
+    }
+
+    input {
+      @include hide-text;
+    }
+
+    label {
+      @include flex-center;
+      @include box(20px);
+
+      cursor: pointer;
+      position: relative;
+
+      border: 1px solid var(--gray-scale--200);
+      border-radius: 350%;
+    }
+
+    svg {
+      @include box("16px");
+    }
+  }
+}

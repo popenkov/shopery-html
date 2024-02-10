@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (checkbox)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin checkbox(type, checkboxName, text, id, value, mods)
+
+  //- Принимает:
+  //-   type    {string} - тип поля
+  //-   checkboxName    {string} - имя поля
+  //-   hint     {string} - плэйсхолдер
+  //-   options     {string} - список опций select
+  //-   mods     {string} - список модификаторов
+  //- Вызов:
+        +checkbox('select', 'model', 'Модель', ['COOLRAY', 'Новый COOLRAY'], 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (typeof (mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' checkbox--' + modsList[i].trim();
+      }
+    }
+
+  .checkbox(class=allMods + ' checkbox--' + type)
+    case type
+      when 'radio'
+        input(type=type, name=checkboxName, id=id)&attributes(attributes).checkbox__input
+        label(for=id).checkbox__label
+        span= text
+      when 'checkbox'
+        input(type=type, name=checkboxName, id=id, value= value)&attributes(attributes).checkbox__input
+        label(for=id).checkbox__label
+          svg: use(href= path.icon + 'check')
+        span= text
+

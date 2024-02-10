@@ -1,0 +1,48 @@
+@import ".././../scss/mixins/text-styles.scss";
+
+.field {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: block;
+
+  input {
+    @include search-field;
+    box-sizing: border-box;
+    width: 100%;
+    &::placeholder {
+      color: var(--gray-scale--500);
+    }
+
+    &:focus {
+    }
+  }
+
+  &--text {
+    input {
+      padding: 14px 16px;
+      border: 1px solid rgb(230, 230, 230);
+      border-radius: 6px;
+      outline: none;
+    }
+  }
+
+  &--search {
+    input {
+      position: relative;
+      padding: 14px 16px 14px 44px;
+      border: 1px solid rgb(230, 230, 230);
+      border-radius: 6px;
+      outline: none;
+
+      &:focus {
+      }
+
+      #{$block-name}__search-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
