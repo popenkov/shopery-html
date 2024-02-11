@@ -26,8 +26,89 @@ mixin header(mods)
             svg.header__top-location-icon: use(href= path.icon + 'map-pin')
             span Store Location: Lincoln- 344, Illinois, Chicago, USA
           .header__top-menu
+            .header__dropdown
+              select.dropdown.header__dropdown-menu
+                option(value='USD') USD
+                option(value='EUR') EUR
+            .header__sign-in
+              a(href='#') Sign in
+              span /
+              a(href='#') Sign up
+
       .header__middle.container
         img.header__logo(src= path.img + "logo.png")
         .header__search
           +field('search', 'search', 'search', '', '', true)
 
+      .header__middle-right
+        .header__favorite
+          a.header__favorite-link(href='#')
+            svg: use(href= path.icon + 'cart')
+        .header__cart
+          .header__cart-item-content
+            a.header__cart-link(href='#')
+              svg: use(href= path.icon + 'heart')
+              span.item-number 2
+            .header__cart-info
+              span.header__cart-title Shopping cart:
+              span.header__cart-amount $57.0
+
+      nav.header__navigation
+        .container
+          .header__navigation-content
+            .header__navigation-left
+              .header__all-categories
+                button.header__all-categories-button
+                  span.burger-button
+                  | All Categories
+                  svg: use(href= path.icon + 'chevron')
+                ul.header__category-content-dropdown
+                  li
+                    a(href='#')
+                      span.icon
+                        svg: use(href= path.icon + 'steak')
+                        Meat
+
+              ul.header__navigation-menu
+                li.header__navigation-menu-link.active
+                  a(href='#')
+                    | Home
+                    span.header__navigation-link-icon
+                      svg: use(href= path.icon + 'chevron')
+                  ul.header__navigation-drop-menu
+                    li.header__navigation-drop-menu-link
+                      a(href='#') Home 1
+
+                li.header__navigation-menu-link
+                  a(href='#')
+                    | Shop
+                    span.header__navigation-link-icon
+                      svg: use(href= path.icon + 'chevron')
+                  ul.header__navigation-drop-menu
+                    li.header__navigation-drop-menu-link
+                      a(href='#') Shop 1
+
+                li.header__navigation-menu-link
+                  a(href='#')
+                    | Pages
+                    span.header__navigation-link-icon
+                      svg: use(href= path.icon + 'chevron')
+                  ul.header__navigation-drop-menu
+                    li.header__navigation-drop-menu-link
+                      a(href='#') Page 1
+
+                li.header__navigation-menu-link
+                  a(href='#')
+                    | Blog
+                    span.header__navigation-link-icon
+                      svg: use(href= path.icon + 'chevron')
+                  ul.header__navigation-drop-menu
+                    li.header__navigation-drop-menu-link
+                      a(href='#') Blog
+                li.header__navigation-menu-link
+                  a(href='#') About us
+                li.header__navigation-menu-link
+                  a(href='#') Contact us
+            a.header__phone(href='tel:(219) 555-0114')
+                svg: use(href= path.icon + 'phone')
+                span (219) 555-0114

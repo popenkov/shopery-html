@@ -17,4 +17,165 @@
 
   &__top-location {
   }
+
+  &__top-menu {
+  }
+
+  &__sign-in {
+    padding-left: 20px;
+  }
+
+  &__middle {
+    padding: 24px 0px;
+  }
+
+  &__middle-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__favorite {
+    border-right: 1px solid var(--gray-scale--200);
+  }
+
+  &__cart {
+    //  todo
+  }
+
+  &__cart-info {
+    span {
+      font-size: 14px;
+      line-height: 14px;
+      color: --gray-scale--900;
+      font-weight: 500;
+    }
+  }
+
+  &__cart-title {
+    // todo
+  }
+
+  // navigation
+
+  &__navigation {
+    background-color: var(--gray-scale--800);
+
+    &--white {
+      background-color: #fff;
+      border-top: 1px solid var(--gray-scale--100);
+    }
+  }
+
+  &__navigation-menu {
+    display: flex;
+    &-link {
+      margin-right: 35px;
+      position: relative;
+      padding: 19.5px 0px;
+      &:nth-last-child(1) {
+        margin-right: 0px;
+      }
+      a {
+        font-size: 14px;
+        line-height: 21px;
+        color: color(gray-4);
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      &.active {
+        a {
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        .header__navigation-drop-menu {
+          top: 100%;
+          opacity: 1;
+          pointer-events: all;
+          //   user-select: all;
+          transition: all 0.3s ease-in-out;
+        }
+        a {
+          color: #fff;
+          transition: all 0.3s linear;
+
+          span {
+            svg {
+              transform: rotate(180deg);
+              transition: all 0.3s linear;
+            }
+          }
+        }
+      }
+    }
+
+    &--two {
+      .header__navigation-menu {
+        &-link {
+          &.active {
+            a {
+              color: color(primary);
+            }
+          }
+          a {
+            color: color(gray-6);
+          }
+        }
+      }
+    }
+  }
+
+  // dropdown menu
+  &__navigation-drop-menu {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    z-index: 99;
+    width: 240px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.12);
+
+    // Hove animation
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+
+    &-link {
+      &:hover,
+      &.active {
+        transition: all 0.3s linear;
+        background: linear-gradient(0deg, rgba(0, 179, 7, 0.1), rgba(0, 179, 7, 0.1)),
+          linear-gradient(0deg, #ffffff, #ffffff);
+
+        a {
+          color: rgba(0, 178, 7, 1) !important;
+        }
+      }
+      a {
+        font-size: 14px;
+        line-height: 21px;
+        color: rgba(77, 77, 77, 1) !important;
+        font-weight: 400;
+        padding: 8px 20px;
+        width: 100%;
+      }
+    }
+  }
+
+  // phone
+  &__telephone-number {
+    span {
+      color: #fff;
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 500;
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
 }

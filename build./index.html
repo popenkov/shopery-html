@@ -309,9 +309,78 @@ projectNavButton.addEventListener("click", () => {
     <div class="page">
       <div class="page__header"><!-- список модификаторов-->
         <div class="header">
-          <div class="container">
-            <div class="header__inner"><img class="header__logo" src="img/logo.png" /></div>
+          <div class="header__top">
+            <div class="header__top-container container">
+              <div class="header__top-location"><svg class="header__top-location-icon">
+                  <use href="img/svgSprite.svg#map-pin"></use>
+                </svg><span>Store Location: Lincoln- 344, Illinois, Chicago, USA</span></div>
+              <div class="header__top-menu">
+                <div class="header__dropdown"><select class="dropdown header__dropdown-menu">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </select></div>
+                <div class="header__sign-in"><a href="#">Sign in</a><span>/</span><a href="#">Sign up</a></div>
+              </div>
+            </div>
           </div>
+          <div class="header__middle container"><img class="header__logo" src="img/logo.png" />
+            <div class="header__search"><label class="field  field--search"><input type="search" name="search" placeholder="search" /><svg class="input__search-icon">
+                  <use href="img/svgSprite.svg#search"></use>
+                </svg></label></div>
+          </div>
+          <div class="header__middle-right">
+            <div class="header__favorite"><a class="header__favorite-link" href="#"><svg>
+                  <use href="img/svgSprite.svg#cart"></use>
+                </svg></a></div>
+            <div class="header__cart">
+              <div class="header__cart-item-content"><a class="header__cart-link" href="#"><svg>
+                    <use href="img/svgSprite.svg#heart"></use>
+                  </svg><span class="item-number">2</span></a>
+                <div class="header__cart-info"><span class="header__cart-title">Shopping cart:</span><span class="header__cart-amount">$57.0</span></div>
+              </div>
+            </div>
+          </div>
+          <nav class="header__navigation">
+            <div class="container">
+              <div class="header__navigation-content">
+                <div class="header__navigation-left">
+                  <div class="header__all-categories"><button class="header__all-categories-button"><span class="bar"></span>All Categories<svg>
+                        <use href="img/svgSprite.svg#chevron"></use>
+                      </svg></button>
+                    <ul class="header__category-content-dropdown">
+                      <li><a href="#"><span class="icon"><svg><use href="img/svgSprite.svg#steak"></use></svg><Fruit>&amp; Vegetables</Fruit></span></a></li>
+                    </ul>
+                  </div>
+                  <ul class="header__navigation-menu">
+                    <li class="header__navigation-menu-link active"><a href="#">Home<span class="drop-icon"><svg><use href="img/svgSprite.svg#chevron"></use></svg></span></a>
+                      <ul class="header__navigation-drop-menu">
+                        <li class="header__navigation-drop-menu-link"><a href="#">Home 1</a></li>
+                      </ul>
+                    </li>
+                    <li class="header__navigation-menu-link"><a href="#">Shop<span class="drop-icon"><svg><use href="img/svgSprite.svg#chevron"></use></svg></span></a>
+                      <ul class="header__navigation-drop-menu">
+                        <li class="header__navigation-drop-menu-link"><a href="#">Shop 1</a></li>
+                      </ul>
+                    </li>
+                    <li class="header__navigation-menu-link"><a href="#">Pages<span class="drop-icon"><svg><use href="img/svgSprite.svg#chevron"></use></svg></span></a>
+                      <ul class="header__navigation-drop-menu">
+                        <li class="header__navigation-drop-menu-link"><a href="#">Page 1</a></li>
+                      </ul>
+                    </li>
+                    <li class="header__navigation-menu-link"><a href="#">Blog<span class="drop-icon"><svg><use href="img/svgSprite.svg#chevron"></use></svg></span></a>
+                      <ul class="header__navigation-drop-menu">
+                        <li class="header__navigation-drop-menu-link"><a href="#">Blog</a></li>
+                      </ul>
+                    </li>
+                    <li class="header__navigation-menu-link"><a href="#">About us</a></li>
+                    <li class="header__navigation-menu-link"><a href="#">Contact us</a></li>
+                  </ul>
+                </div><a class="header__phone" href="tel:(219) 555-0114"><svg>
+                    <use href="img/svgSprite.svg#phone"></use>
+                  </svg><span>(219) 555-0114</span></a>
+              </div>
+            </div>
+          </nav>
         </div>
       </div>
       <div class="page__main">
@@ -341,9 +410,7 @@ projectNavButton.addEventListener("click", () => {
     </div>
     <div class="page__footer"><!-- список модификаторов-->
       <div class="footer">
-        <div class="container">
-          <div class="footer__inner">Page footer</div>
-        </div>
+        <div class="container"></div>
       </div>
     </div>
     </div><script src="js/bundle.js"></script>

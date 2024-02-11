@@ -1,0 +1,30 @@
+@import "../../scss/breakpoints";
+
+.burger-button {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  width: 18px;
+  height: 1.5px;
+  background-color: #fff;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 12px;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 1.5px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  &::after {
+    top: -7px;
+  }
+  &::before {
+    bottom: -7px;
+  }
+}
