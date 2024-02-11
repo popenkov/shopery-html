@@ -3,6 +3,8 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .round-button {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-center;
   @include box(40px);
 
@@ -92,5 +94,4 @@
   &__icon {
     @include box(20px);
   }
-  $block-name: &; // #{$block-name}__element
 }

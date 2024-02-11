@@ -22,5 +22,42 @@
       { "link": "#", "icon": "food", "title": "Cooking" },
       { "link": "#", "icon": "", "title": "" }
     ]
+  },
+
+  "footer": {
+    "instagram": [
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      }
+    ]
   }
 }

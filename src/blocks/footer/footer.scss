@@ -2,14 +2,69 @@
 
 .footer {
   $block-name: &; // #{$block-name}__element
+  background-color: var(--green-gray-scale-900);
 
-  height: 400px;
-  background:
-    url("../img/left.png") no-repeat left bottom,
-    url("../img/right.png") no-repeat right bottom;
-  background-color: var(--green-gray-scale-800);
+  &__wrapper {
+    background:
+      url("../img/left.svg") no-repeat left bottom,
+      url("../img/right.svg") no-repeat right bottom;
+  }
 
-  &__inner {
-    padding: 8px 0;
+  &__top {
+    padding: 66px 0px;
+  }
+
+  &__about {
+    // todo
+  }
+
+  &__navigation {
+  }
+
+  &__navigation-title {
+    margin-bottom: 20px;
+
+    color: var(--white);
+    text-transform: capitalize;
+  }
+
+  &__navigation-link {
+    font-size: 14px;
+    line-height: 21px;
+    transition: var(--transition);
+    text-transform: capitalize;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  &__bottom {
+    @include flex-center-sb;
+    padding: 30px 0px;
+
+    // todo
+    box-shadow: 0px -1px 0px 0px rgb(27, 66, 29);
+  }
+
+  &__copyright-text {
+    @include body-small-400;
+
+    color: var(--green-gray-scale-500);
+  }
+
+  &__payment {
+    @include flex-center-vertical;
+    gap: 8px;
+  }
+
+  // instagram
+  &__instagram {
+    @include flex-center-sb;
+
+    gap: 12px;
+    flex-wrap: wrap;
   }
 }

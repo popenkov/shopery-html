@@ -1,0 +1,38 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.instagram-card {
+  $block-name: &; // #{$block-name}__element
+
+  @include box(69px);
+
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &__img {
+  }
+
+  &__overlay {
+    @include flex-center;
+
+    position: absolute;
+    inset: 0;
+    background: rgba(43, 87, 46, 0.8);
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  &__icon {
+    @include box(32px);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      #{$block-name}__overlay {
+        opacity: 1;
+      }
+    }
+  }
+}

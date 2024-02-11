@@ -20,6 +20,74 @@ mixin footer(text, mods)
       }
     }
 
-  .footer(class=allMods)&attributes(attributes)
-    .container
+
+  footer.footer(class=allMods)&attributes(attributes)
+    .footer__wrapper
+      .container
+        .footer__top
+          .footer__about
+            h3.footer__about-title Shopery
+            p.footer__about-text Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.
+            .footer__about-contact
+              a(href='tel:#').footer__about-link (219)555-0114
+              | or
+              a(href='mailto:#').footer__about-link Proxy@gmail.com
+
+          .footer__navigation
+            h3.footer__navigation-title My Account
+            ul.footer__navigation-list
+              li.footer__navigation-link
+                a(href='#')  My Account
+              li.footer__navigation-link
+                a(href='#')  order History
+              li.footer__navigation-link
+                a(href='#')  Shoping Cart
+              li.footer__navigation-link
+                a(href='#')  Wishlist
+              li.footer__navigation-link
+                a(href='#')  Settings
+
+          .footer__navigation
+            h3.footer__navigation-title Helps
+            ul.footer__navigation-list
+              li.footer__navigation-link
+                a(href='#')  Contact
+              li.footer__navigation-link
+                a(href='#')  Faqs
+              li.footer__navigation-link
+                a(href='#')  Terms & Condition
+              li.footer__navigation-link
+                a(href='#')  Privacy Policy
+
+          .footer__navigation
+            h3.footer__navigation-title Proxy
+            ul.footer__navigation-list
+              li.footer__navigation-link
+                a(href='#')  About
+              li.footer__navigation-link
+                a(href='#')  Shop
+              li.footer__navigation-link
+                a(href='#')  Product
+              li.footer__navigation-link
+                a(href='#')  Products Details
+              li.footer__navigation-link
+                a(href='#')  Track Order
+
+          .footer__instagram
+            h3 Instagram
+            .footer__instagram
+              each data in json.info.footer.instagram
+                +instagram-card(data)
+
+        .footer__bottom
+          ul.footer__socials
+            li
+              a(href='#').footer__socials-link
+                svg.footer__socials-icon: use(href= path.icon + 'instagram')
+
+          p.footer__copyright-text Ecobazar eCommerce © 2021. All Rights Reserved
+          ul.footer__payment
+            li
+              a(href='#').footer__payment-item
+                svg.footer__payment-icon: use(href= path.icon + 'search')
 

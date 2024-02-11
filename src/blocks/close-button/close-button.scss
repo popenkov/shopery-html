@@ -3,6 +3,7 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .close-button {
+  $block-name: &; // #{$block-name}__element
   @include flex-center;
   @include box(22px);
 
