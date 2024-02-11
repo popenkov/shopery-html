@@ -97,6 +97,7 @@
   "dependencies": {
     "autosize": "^6.0.1",
     "imask": "^7.3.0",
+    "nice-select2": "^2.1.0",
     "sanitize.css": "^13.0.0"
   },
   "husky": {

@@ -46,4 +46,10 @@
 
   --font-primary: var(--gray-scale--900);
   --heading-color: var(--gray-scale-1000);
+
+  --transition: all 0.3s ease-in;
+
+  // z-indexes
+
+  --header-dropdown-z-index: 3;
 }

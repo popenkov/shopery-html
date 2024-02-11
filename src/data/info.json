@@ -1,3 +1,26 @@
 {
-  "data": "Content from json"
+  "header": {
+    "categories": [
+      {
+        "link": "#",
+        "icon": "apple",
+        "title": "Fresh Fruit"
+      },
+      {
+        "link": "#",
+        "icon": "salad",
+        "title": "Vegetables"
+      },
+      { "link": "#", "icon": "fish", "title": "River Fish" },
+      { "link": "#", "icon": "coffee", "title": "Drink & Water" },
+      { "link": "#", "icon": "ice-cream", "title": "Yogurt & Ice Cream" },
+      {
+        "icon": "cupcake",
+        "title": "Cake & Bread"
+      },
+      { "link": "#", "icon": "pie", "title": "Butter & Cream" },
+      { "link": "#", "icon": "food", "title": "Cooking" },
+      { "link": "#", "icon": "", "title": "" }
+    ]
+  }
 }

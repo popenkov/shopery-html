@@ -1,4 +1,5 @@
 @import ".././../scss/mixins/text-styles.scss";
+@import ".././../scss/mixins/blocks.scss";
 
 .field {
   $block-name: &; // #{$block-name}__element
@@ -37,12 +38,13 @@
 
       &:focus {
       }
+    }
+    #{$block-name}__search-icon {
+      @include box(20px);
 
-      #{$block-name}__search-icon {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+      position: absolute;
+      top: 12px;
+      left: 15px;
     }
   }
 }

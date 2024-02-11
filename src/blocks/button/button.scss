@@ -8,6 +8,8 @@
   border-radius: 43px;
   border: none;
 
+  transition: var(--transition);
+
   &--fill {
     background-color: var(--primary);
     color: var(--white);
