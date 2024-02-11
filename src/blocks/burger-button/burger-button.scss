@@ -4,25 +4,28 @@
   $block-name: &; // #{$block-name}__element
 
   position: relative;
+  display: inline-block;
   width: 18px;
   height: 1.5px;
   background-color: #fff;
   border-radius: 4px;
-  display: inline-block;
+
   &::after,
   &::before {
-    content: "";
     position: absolute;
     left: 0;
+    display: inline-block;
     width: 18px;
     height: 1.5px;
     background-color: #fff;
     border-radius: 4px;
-    display: inline-block;
+    content: "";
   }
+
   &::after {
     top: -7px;
   }
+
   &::before {
     bottom: -7px;
   }

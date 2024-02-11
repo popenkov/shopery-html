@@ -14,8 +14,8 @@
     @include body-tiny-400;
 
     padding: 9px 0;
-    background-color: var(--gray-scale--800);
-    color: var(--gray-scale--300);
+    color: var(--gray-scale-300);
+    background-color: var(--gray-scale-800);
   }
 
   &__top-container {
@@ -38,6 +38,7 @@
 
     gap: 20px;
   }
+
   &__top-select {
     border: none;
   }
@@ -45,7 +46,7 @@
   &__currency {
     display: flex;
     align-items: center;
-    border-right: 1px solid var(--gray-scale--500);
+    border-right: 1px solid var(--gray-scale-500);
   }
 
   &__currency-menu {
@@ -59,6 +60,7 @@
   &__sign-in-link {
     color: inherit;
   }
+
   &__sign-in-separator {
     padding: 0 5px;
   }
@@ -69,7 +71,7 @@
     @include flex-center-sb;
 
     gap: 20px;
-    padding: 24px 0px;
+    padding: 24px 0;
   }
 
   &__logo {
@@ -82,17 +84,20 @@
     width: 100%;
     max-width: 498px;
     border-radius: 6px;
+
     label {
       width: 100%;
     }
+
     input {
       height: 45px;
-      border-radius: 6px 0px 0px 6px;
+      border-radius: 6px 0 0 6px;
     }
+
     button {
       height: 45px;
       padding: 14px 24px;
-      border-radius: 0px 6px 6px 0px;
+      border-radius: 0 6px 6px 0;
     }
   }
 
@@ -106,14 +111,14 @@
     display: block;
     width: 1px;
     height: 24px;
-    background-color: var(--gray-scale--200);
+    background-color: var(--gray-scale-200);
   }
 
   &__favorite-icon {
     @include box(34px);
 
-    stroke: var(--gray-scale--900);
     fill: transparent;
+    stroke: var(--gray-scale-900);
   }
 
   &__cart {
@@ -129,7 +134,7 @@
   &__cart-icon {
     @include box(34px);
 
-    color: var(--gray-scale--900);
+    color: var(--gray-scale-900);
   }
 
   &__cart-items-amount {
@@ -138,18 +143,14 @@
     position: absolute;
     top: 1px;
     right: -2px;
-
     padding: 4px 6px;
-    background-color: var(--primary);
-
-    border-radius: 50%;
-
-    font-size: 10px;
+    color: var(--white);
     font-weight: 500;
+    font-size: 10px;
     line-height: 10px;
     letter-spacing: 0%;
-
-    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 50%;
   }
 
   &__cart-info {
@@ -159,22 +160,22 @@
   }
 
   &__cart-title {
+    color: var(--gray-scale-700);
     font-size: 11px;
     line-height: 120%;
     letter-spacing: 0%;
-    color: var(--gray-scale--700);
   }
 
   &__cart-amount {
-    font-size: 14px;
+    color: var(--gray-scale-900);
     font-weight: 500;
+    font-size: 14px;
     line-height: 100%;
-    color: var(--gray-scale--900);
   }
 
   // navigation
   &__navigation {
-    background-color: var(--gray-scale--50);
+    background-color: var(--gray-scale-50);
   }
 
   &__navigation-content {
@@ -203,13 +204,14 @@
     @include flex-center-vertical;
     @include body-small-600;
 
-    cursor: pointer;
     gap: 14px;
     padding: 20px 28px;
+    color: var(--white);
     background-color: var(--primary);
     border: none;
-    color: var(--white);
+    cursor: pointer;
     transition: var(--transition);
+
     @media (hover: hover) {
       &:hover {
         background-color: var(--hard-primary);
@@ -227,11 +229,11 @@
     position: absolute;
     top: 52px;
     left: 0;
-    opacity: 0;
     width: 100%;
     max-width: 300px;
     padding: 16px 22px;
     background-color: var(--white);
+    opacity: 0;
     transition: var(--transition);
 
     &.open {
@@ -245,6 +247,7 @@
 
     gap: 12px;
   }
+
   &__all-categories-icon {
     @include box(24px);
   }
@@ -282,9 +285,9 @@
     @include body-small-600;
 
     gap: 4px;
-    padding: 18px 0px;
+    padding: 18px 0;
+    color: var(--gray-scale-500);
     text-transform: capitalize;
-    color: var(--gray-scale--500);
 
     &--active {
       color: var(--primary);
@@ -303,21 +306,19 @@
     left: 0;
     z-index: var(--header-dropdown-z-index);
     min-width: 200px;
-    border-radius: 6px;
     overflow: hidden;
     background-color: var(--white);
-    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.12);
-
+    border-radius: 6px;
+    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
     opacity: 0;
   }
 
   &__navigation-drop-menu-link {
     @media (hover: hover) {
       &:hover {
-        transition: var(--transition);
-        background-color: var(--primary-soft);
-
         color: var(--primary);
+        background-color: var(--primary-soft);
+        transition: var(--transition);
       }
     }
   }
@@ -327,8 +328,7 @@
     @include flex-center-vertical;
 
     gap: 8px;
-
-    color: var(--gray-scale--900);
+    color: var(--gray-scale-900);
   }
 
   &__phone-icon {

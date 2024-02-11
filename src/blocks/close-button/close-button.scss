@@ -3,29 +3,28 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .close-button {
-  $block-name: &; // #{$block-name}__element
-
   @include flex-center;
   @include box(22px);
 
-  cursor: pointer;
-  border: 1px solid var(--gray-scale--200);
+  border: 1px solid var(--gray-scale-200);
   border-radius: 50%;
   outline: none;
-
-  &__icon {
-    @include box(16px);
-
-    color: var(--green-gray-scale-600);
-  }
+  cursor: pointer;
 
   @media (hover: hover) {
     &:hover {
-      border-color: var(--gray-scale--900);
+      border-color: var(--gray-scale-900);
 
       #{$block-name}__icon {
         color: var(--green-gray-scale-900);
       }
     }
   }
+
+  &__icon {
+    @include box(16px);
+
+    color: var(--green-gray-scale-600);
+  }
+  $block-name: &; // #{$block-name}__element
 }

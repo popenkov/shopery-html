@@ -3,25 +3,16 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .round-button {
-  $block-name: &; // #{$block-name}__element
-
   @include flex-center;
   @include box(40px);
 
-  cursor: pointer;
   border: none;
   border-radius: 50%;
   outline: none;
-
-  &__icon {
-    @include box(20px);
-  }
+  cursor: pointer;
 
   &--green {
     background-color: var(--primary);
-    #{$block-name}__icon {
-      color: var(--white);
-    }
 
     &:hover {
       background-color: var(--hard-primary);
@@ -32,20 +23,20 @@
     }
 
     &:disabled {
-      background-color: var(--gray-scale--50);
+      background-color: var(--gray-scale-50);
 
       #{$block-name}__icon {
-        color: var(--gray-scale--900);
+        color: var(--gray-scale-900);
       }
+    }
+    #{$block-name}__icon {
+      color: var(--white);
     }
   }
 
   &--white-green {
     // todo  не могу достать из макета тень
-    box-shadow: 0px 0px 8px 0px var(--gray-scale--200);
-    #{$block-name}__icon {
-      color: var(--gray-scale--900);
-    }
+    box-shadow: 0 0 8px 0 var(--gray-scale-200);
 
     &:hover {
       background-color: var(--primary);
@@ -54,15 +45,14 @@
         color: var(--white);
       }
     }
+    #{$block-name}__icon {
+      color: var(--gray-scale-900);
+    }
   }
 
   &--like {
     // todo  не могу достать из макета тень
-    box-shadow: 0px 0px 8px 0px var(--gray-scale--200);
-    #{$block-name}__icon {
-      fill: none;
-      stroke: var(--gray-scale--900);
-    }
+    box-shadow: 0 0 8px 0 var(--gray-scale-200);
 
     &:hover {
       background-color: var(--primary);
@@ -72,21 +62,21 @@
         stroke: var(--white);
       }
     }
+    #{$block-name}__icon {
+      fill: none;
+      stroke: var(--gray-scale-900);
+    }
 
     &:active,
     &.active {
       #{$block-name}__icon {
-        stroke: var(--primary);
         fill: var(--primary);
+        stroke: var(--primary);
       }
     }
   }
 
   &--transp {
-    #{$block-name}__icon {
-      color: var(--gray-scale--700);
-    }
-
     &:hover {
       background-color: var(--primary);
 
@@ -94,5 +84,13 @@
         color: var(--white);
       }
     }
+    #{$block-name}__icon {
+      color: var(--gray-scale-700);
+    }
   }
+
+  &__icon {
+    @include box(20px);
+  }
+  $block-name: &; // #{$block-name}__element
 }

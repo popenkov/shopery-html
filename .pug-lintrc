@@ -1,9 +1,19 @@
 {
   "validateExtensions": true,
   "validateDivTags": true,
-  "validateAttributeSeparator": { "separator": ", ", "multiLineSeparator": ",\n " },
-  "validateAttributeQuoteMarks": "'",
-  "requireSpecificAttributes": [ { "img": [ "src", "alt" ] } ],
+  "validateAttributeSeparator": {
+    "separator": ", ",
+    "multiLineSeparator": ",\n "
+  },
+  "validateAttributeQuoteMarks": "\"",
+  "requireSpecificAttributes": [
+    {
+      "img": [
+        "src",
+        "alt"
+      ]
+    }
+  ],
   "requireSpaceAfterCodeOperator": true,
   "requireLowerCaseTags": true,
   "requireClassLiteralsBeforeIdLiterals": true,
