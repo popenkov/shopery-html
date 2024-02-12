@@ -3,7 +3,7 @@
 .footer {
   $block-name: &; // #{$block-name}__element
 
-  background-color: var(--green-gray-scale-900);
+  background-color: var(--green-gray-900);
 
   &__wrapper {
     background:
@@ -50,16 +50,16 @@
   }
 
   &__about-title {
-    @include body-xl-500;
+    @include body-xl(500);
 
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
   }
 
   &__about-text {
-    @include body-small-400;
+    @include body-small;
 
-    color: var(--green-gray-scale-500);
+    color: var(--green-gray-500);
   }
 
   #{$block-name}__about-text + #{$block-name}__about-contact {
@@ -67,11 +67,11 @@
   }
 
   &__about-link {
-    @include body-small-500;
+    @include body-small(500);
 
     display: inline-block;
     padding-bottom: 6px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
     border-bottom: 1px solid var(--primary);
     transition: var(--transition);
 
@@ -83,10 +83,10 @@
   }
 
   &__about-separator {
-    @include body-small-400;
+    @include body-small;
 
     padding: 0 5px;
-    color: var(--green-gray-scale-500);
+    color: var(--green-gray-500);
   }
 
   &__navigation-wrapper {
@@ -96,10 +96,10 @@
   }
 
   &__navigation-title {
-    @include body-xl-500;
+    @include body-xl(500);
 
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
   }
 
   &__navigation-list {
@@ -109,14 +109,14 @@
   }
 
   &__navigation-link {
-    @include body-small-400;
+    @include body-small;
 
-    color: var(--green-gray-scale-500);
+    color: var(--green-gray-500);
     transition: var(--transition);
 
     @media (hover: hover) {
       &:hover {
-        color: var(--white);
+        color: var(--front-primary-inversed);
       }
     }
   }
@@ -126,10 +126,10 @@
   }
 
   &__instagram-title {
-    @include body-xl-500;
+    @include body-xl(500);
 
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
   }
 
   &__instagram-cards {
@@ -163,7 +163,7 @@
   &__socials-icon {
     @include box(18px);
 
-    color: var(--green-gray-scale-300);
+    color: var(--green-gray-300);
   }
 
   &__socials-link {
@@ -173,21 +173,23 @@
     background-color: transparent;
     border-radius: 50%;
 
+    transition: var(--transition);
+
     @media (hover: hover) {
       &:hover {
         background-color: var(--primary);
 
         #{$block-name}__socials-icon {
-          color: var(--white);
+          color: var(--front-primary-inversed);
         }
       }
     }
   }
 
   &__copyright-text {
-    @include body-small-400;
+    @include body-small;
 
-    color: var(--green-gray-scale-500);
+    color: var(--green-gray-500);
   }
 
   &__payment {
@@ -200,7 +202,7 @@
     display: block;
     width: 65px;
     height: 32px;
-    border: 1px solid var(--green-gray-scale-800);
+    border: 1px solid var(--green-gray-800);
     border-radius: 5px;
   }
 

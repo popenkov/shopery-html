@@ -20,94 +20,100 @@ mixin header(mods)
     }
 
   header.header(class=allMods)&attributes(attributes)
-      .header__top
-        .header__top-container.container
-          .header__top-location
-            svg.header__top-location-icon: use(href= path.icon + "map-pin")
-            span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA
-          .header__top-menu
-            select.header__top-select.js-header-language
-              option(value="ENG") ENG
-              option(value="DE") DE
+    .header__top
+      .header__top-container.container
+        .header__top-location
+          svg.header__top-location-icon: use(href= path.icon + "map-pin")
+          span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA
+        .header__top-menu
+          select.header__top-select.js-header-language
+            option(value="ENG") ENG
+            option(value="DE") DE
 
-            select.header__top-select.js-header-currency
-              option(value="USD") USD
-              option(value="EUR") EUR
-            .header__sign-in
-              a.header__sign-in-link(href="#") Sign in
-              span.header__sign-in-separator /
-              a.header__sign-in-link(href="#") Sign up
+          select.header__top-select.js-header-currency
+            option(value="USD") USD
+            option(value="EUR") EUR
+          .header__sign-in
+            a.header__sign-in-link(href="#") Sign in
+            span.header__sign-in-separator /
+            a.header__sign-in-link(href="#") Sign up
 
-      .header__middle.container
-        a.header__logo(href="#")
-          img(src= path.img + "logo.png", alt="image")
-        form.header__search.js-header-search-form
-          +field("search", "search", "search", "", "", true)
-          +button("Search", "fill, normal")
-        .header__middle-right
-          .header__favorite
-            a.header__favorite-link(href="#")
-              svg.header__favorite-icon: use(href= path.icon + "heart")
-          span.header__middle-right-separator
-          .header__cart
-            a.header__cart-link(href="#")
-              svg.header__cart-icon: use(href= path.icon + "cart")
-              span.header__cart-items-amount 2
-            .header__cart-info
-              span.header__cart-title Shopping cart:
-              span.header__cart-amount $57.00
+    .header__middle.container
+      button.burger-button.header__mobile-burger.js-mobile-menu-btn
+      a.header__logo(href="#")
+        img(src= path.img + "logo.png", alt="image")
+      form.header__search.js-header-search-form
+        +field("search", "search", "search", "", "", true)
+        +button("button","Search", "fill, normal")
+      .header__middle-right
+        .header__favorite
+          a.header__favorite-link(href="#")
+            svg.header__favorite-icon: use(href= path.icon + "heart")
+        span.header__middle-right-separator
+        .header__cart
+          a.header__cart-link(href="#")
+            svg.header__cart-icon: use(href= path.icon + "cart")
+            span.header__cart-items-amount 2
+          .header__cart-info
+            span.header__cart-title Shopping cart:
+            span.header__cart-amount $57.00
 
-      nav.header__navigation
-        .container
-          .header__navigation-content
-            .header__navigation-left
-              .header__all-categories
-                button.header__all-categories-button.js-header-all-categories-button
-                  span.burger-button
-                  | All Categories
-                  svg.header__all-categories-shevron: use(href= path.icon + "chevron")
-                ul.header__all-categories-dropdown.js-header-all-categories-content
-                  each categorie in json.info.header.categories
-                    li
-                      a.header__all-categories-link(href=categorie.link)
-                        svg.header__all-categories-icon: use(href= path.icon + categorie.icon)
-                        span=  categorie.title
+    nav.header__navigation
+      .container
+        .header__navigation-content
+          .header__navigation-left
+            .header__all-categories
+              button.header__all-categories-button.js-header-all-categories-button
+                span.burger-button
+                | All Categories
+                svg.header__all-categories-shevron: use(href= path.icon + "chevron")
+              ul.header__all-categories-dropdown.js-header-all-categories-content
+                each categorie in json.info.header.categories
+                  li
+                    a.header__all-categories-link(href=categorie.link)
+                      svg.header__all-categories-icon: use(href= path.icon + categorie.icon)
+                      span=  categorie.title
 
-              ul.header__navigation-menu
-                li.header__navigation-menu-item
-                  a.header__navigation-menu-link.header__navigation-menu-link--active(href="#")
-                    | Home
-                    svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                  ul.header__navigation-drop-menu
-                    li.header__navigation-drop-menu-link
-                      a(href="#") Home 1
-                li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href="#")
-                    | Shop
-                    svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                  ul.header__navigation-drop-menu
-                    li.header__navigation-drop-menu-link
-                      a(href="#") Shop 1
-                li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href="#")
-                    | Pages
-                    svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                  ul.header__navigation-drop-menu
-                    li.header__navigation-drop-menu-link
-                      a(href="#") Pages 1
-                li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href="#")
-                    | Blog
-                    svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                  ul.header__navigation-drop-menu
-                    li.header__navigation-drop-menu-link
-                      a(href="#") Blog 1
+            ul.header__navigation-menu
+              li.header__navigation-menu-item
+                a.header__navigation-menu-link.header__navigation-menu-link--active(href="#")
+                  | Home
+                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
+                ul.header__navigation-drop-menu
+                  li.header__navigation-drop-menu-link
+                    a(href="#") Home 1
+              li.header__navigation-menu-item
+                a.header__navigation-menu-link(href="#")
+                  | Shop
+                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
+                ul.header__navigation-drop-menu
+                  li.header__navigation-drop-menu-link
+                    a(href="#") Shop 1
+              li.header__navigation-menu-item
+                a.header__navigation-menu-link(href="#")
+                  | Pages
+                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
+                ul.header__navigation-drop-menu
+                  li.header__navigation-drop-menu-link
+                    a(href="#") Pages 1
+              li.header__navigation-menu-item
+                a.header__navigation-menu-link(href="#")
+                  | Blog
+                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
+                ul.header__navigation-drop-menu
+                  li.header__navigation-drop-menu-link
+                    a(href="#") Blog 1
 
-                li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href="#") About us
-                li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href="#") Contact us
+              li.header__navigation-menu-item
+                a.header__navigation-menu-link(href="#") About us
+              li.header__navigation-menu-item
+                a.header__navigation-menu-link(href="#") Contact us
 
-            a.header__phone(href="tel:(219) 555-0114")
-                svg.header__phone-icon: use(href= path.icon + "phone")
-                span.header__phone-text (219) 555-0114
+          a.header__phone(href="tel:(219) 555-0114")
+              svg.header__phone-icon: use(href= path.icon + "phone")
+              span.header__phone-text (219) 555-0114
+
+    .header__mobile-menu.mobile-menu
+      .mobile-menu__content
+        button.mobile-menu__close-button.close-button.js-close-mobile-menu-btn
+          svg.close-button__icon: use(href= path.icon + 'cross')
