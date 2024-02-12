@@ -1,6 +1,8 @@
 @import ".././../scss/mixins/text-styles.scss";
 @import ".././../scss/mixins/blocks.scss";
 
+/* stylelint-disable */
+
 .field {
   $block-name: &; // #{$block-name}__element
 

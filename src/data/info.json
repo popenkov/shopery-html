@@ -31,7 +31,15 @@
         "link": "#"
       },
       {
-        "img": "img/instagram-1.jpg",
+        "img": "img/instagram-2.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-3.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-4.jpg",
         "link": "#"
       },
       {
@@ -39,23 +47,51 @@
         "link": "#"
       },
       {
-        "img": "img/instagram-1.jpg",
+        "img": "img/instagram-2.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-3.jpg",
         "link": "#"
       },
       {
         "img": "img/instagram-1.jpg",
         "link": "#"
-      },
+      }
+    ],
+    "socialLinks": [
       {
-        "img": "img/instagram-1.jpg",
+        "img": "facebook",
         "link": "#"
       },
       {
-        "img": "img/instagram-1.jpg",
+        "img": "twitter",
         "link": "#"
       },
       {
-        "img": "img/instagram-1.jpg",
+        "img": "pinterest",
+        "link": "#"
+      },
+      {
+        "img": "instagram",
+        "link": "#"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "img": "apple-pay",
+        "link": "#"
+      },
+      {
+        "img": "visa-logo",
+        "link": "#"
+      },
+      {
+        "img": "discover",
+        "link": "#"
+      },
+      {
+        "img": "secure",
         "link": "#"
       }
     ]
