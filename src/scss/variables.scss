@@ -46,10 +46,10 @@
 
   --font-primary: var(--gray-scale-900);
   --heading-color: var(--gray-scale-1000);
-
   --transition: all 0.3s ease-in;
+  --modal-bg: rgba(0, 0, 0, 0.8);
 
   // z-indexes
-
   --header-dropdown-z-index: 3;
+  --mobile-menu-z-index: 3;
 }

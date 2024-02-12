@@ -3,6 +3,7 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .instagram-card {
+  $block-name: &; // #{$block-name}__element
   @include box(69px);
 
   position: relative;

@@ -20,6 +20,25 @@
     gap: 100px 78px;
     align-items: start;
     padding-top: 100px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template: repeat(2, auto) / repeat(2, 1fr);
+      grid-template-areas:
+        "about navigation"
+        "instagram instagram"
+        "copyright copyright";
+      gap: 100px 78px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template: repeat(2, auto) / repeat(2, 1fr);
+      grid-template-areas:
+        "about about"
+        "navigation navigation"
+        "instagram instagram"
+        "copyright copyright";
+      gap: 100px 78px;
+    }
   }
 
   &__top {
@@ -128,6 +147,11 @@
 
     // todo
     box-shadow: 0 -1px 0 0 rgb(27 66 29);
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__socials {
