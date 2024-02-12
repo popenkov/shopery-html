@@ -3,13 +3,185 @@
 .footer {
   $block-name: &; // #{$block-name}__element
 
-  height: 400px;
-  background-color: var(--green-gray-scale-800);
-  background:
-    url(../img/left.png) no-repeat left bottom,
-    url(../img/right.png) no-repeat right bottom;
+  background-color: var(--green-gray-scale-900);
 
-  &__inner {
-    padding: 8px 0;
+  &__wrapper {
+    background:
+      url("../img/left.svg") no-repeat left bottom,
+      url("../img/right.svg") no-repeat right bottom;
+  }
+
+  &__content {
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(3, 1fr);
+    grid-template-areas:
+      "about navigation instagram"
+      "copyright copyright copyright";
+    gap: 100px 78px;
+    align-items: start;
+    padding-top: 100px;
+  }
+
+  &__top {
+    padding: 66px 0;
+  }
+
+  &__about {
+    grid-area: about;
+  }
+
+  &__about-title {
+    @include body-xl-500;
+
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  &__about-text {
+    @include body-small-400;
+
+    color: var(--green-gray-scale-500);
+  }
+
+  #{$block-name}__about-text + #{$block-name}__about-contact {
+    margin-top: 22px;
+  }
+
+  &__about-link {
+    @include body-small-500;
+
+    display: inline-block;
+    padding-bottom: 6px;
+    color: var(--white);
+    border-bottom: 1px solid var(--primary);
+    transition: var(--transition);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__about-separator {
+    @include body-small-400;
+
+    padding: 0 5px;
+    color: var(--green-gray-scale-500);
+  }
+
+  &__navigation-wrapper {
+    display: flex;
+    grid-area: navigation;
+    gap: 78px;
+  }
+
+  &__navigation-title {
+    @include body-xl-500;
+
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  &__navigation-list {
+    @include flex-column;
+
+    gap: 12px;
+  }
+
+  &__navigation-link {
+    @include body-small-400;
+
+    color: var(--green-gray-scale-500);
+    transition: var(--transition);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  &__instagram {
+    grid-area: instagram;
+  }
+
+  &__instagram-title {
+    @include body-xl-500;
+
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  &__instagram-cards {
+    @include flex-center-vertical;
+
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__bottom {
+    @include flex-center-sb;
+
+    grid-area: copyright;
+    padding: 30px 0;
+
+    // todo
+    box-shadow: 0 -1px 0 0 rgb(27 66 29);
+  }
+
+  &__socials {
+    @include flex-center-vertical;
+
+    gap: 8px;
+  }
+
+  &__socials-icon {
+    @include box(18px);
+
+    color: var(--green-gray-scale-300);
+  }
+
+  &__socials-link {
+    @include flex-center;
+    @include box(40px);
+
+    background-color: transparent;
+    border-radius: 50%;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+
+        #{$block-name}__socials-icon {
+          color: var(--white);
+        }
+      }
+    }
+  }
+
+  &__copyright-text {
+    @include body-small-400;
+
+    color: var(--green-gray-scale-500);
+  }
+
+  &__payment {
+    @include flex-center-vertical;
+
+    gap: 8px;
+  }
+
+  &__payment-link {
+    display: block;
+    width: 65px;
+    height: 32px;
+    border: 1px solid var(--green-gray-scale-800);
+    border-radius: 5px;
+  }
+
+  &__payment-icon {
+    width: 65px;
+    height: 32px;
   }
 }

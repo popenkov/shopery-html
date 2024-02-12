@@ -1,3 +1,99 @@
 {
-  "data": "Content from json"
+  "header": {
+    "categories": [
+      {
+        "link": "#",
+        "icon": "apple",
+        "title": "Fresh Fruit"
+      },
+      {
+        "link": "#",
+        "icon": "salad",
+        "title": "Vegetables"
+      },
+      { "link": "#", "icon": "fish", "title": "River Fish" },
+      { "link": "#", "icon": "coffee", "title": "Drink & Water" },
+      { "link": "#", "icon": "ice-cream", "title": "Yogurt & Ice Cream" },
+      {
+        "icon": "cupcake",
+        "title": "Cake & Bread"
+      },
+      { "link": "#", "icon": "pie", "title": "Butter & Cream" },
+      { "link": "#", "icon": "food", "title": "Cooking" },
+      { "link": "#", "icon": "", "title": "" }
+    ]
+  },
+
+  "footer": {
+    "instagram": [
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-2.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-3.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-4.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-2.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-3.jpg",
+        "link": "#"
+      },
+      {
+        "img": "img/instagram-1.jpg",
+        "link": "#"
+      }
+    ],
+    "socialLinks": [
+      {
+        "img": "facebook",
+        "link": "#"
+      },
+      {
+        "img": "twitter",
+        "link": "#"
+      },
+      {
+        "img": "pinterest",
+        "link": "#"
+      },
+      {
+        "img": "instagram",
+        "link": "#"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "img": "apple-pay",
+        "link": "#"
+      },
+      {
+        "img": "visa-logo",
+        "link": "#"
+      },
+      {
+        "img": "discover",
+        "link": "#"
+      },
+      {
+        "img": "secure",
+        "link": "#"
+      }
+    ]
+  }
 }

@@ -2,6 +2,8 @@
 @import "../../scss/mixins/blocks.scss";
 @import "../../scss/mixins/hide-text.scss";
 
+/* stylelint-disable */
+
 .checkbox {
   $block-name: &; // #{$block-name}__element
 
@@ -10,6 +12,19 @@
   align-items: center;
 
   &--checkbox {
+    input {
+      @include hide-text;
+    }
+
+    label {
+      @include flex-center;
+      @include box(20px);
+
+      border: 1px solid var(--gray-scale-200);
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
     input:checked + label {
       position: relative;
       background-color: var(--primary);
@@ -21,6 +36,12 @@
       }
     }
 
+    svg {
+      @include box(16px);
+    }
+  }
+
+  &--radio {
     input {
       @include hide-text;
     }
@@ -29,30 +50,24 @@
       @include flex-center;
       @include box(20px);
 
+      position: relative;
+      border: 1px solid var(--gray-scale-200);
+      border-radius: 350%;
       cursor: pointer;
-
-      border: 1px solid var(--gray-scale--200);
-      border-radius: 3px;
     }
 
-    svg {
-      @include box(16px);
-    }
-  }
-
-  &--radio {
     input:checked + label {
       position: relative;
-      border-width: 2px;
       border-color: var(--primary);
+      border-width: 2px;
 
       &::before {
         @include absolute-center;
         @include box(12px);
 
-        content: "";
         background-color: var(--primary);
         border-radius: 50%;
+        content: "";
       }
     }
 
@@ -60,21 +75,6 @@
       &:hover {
         border-color: var(--primary);
       }
-    }
-
-    input {
-      @include hide-text;
-    }
-
-    label {
-      @include flex-center;
-      @include box(20px);
-
-      cursor: pointer;
-      position: relative;
-
-      border: 1px solid var(--gray-scale--200);
-      border-radius: 350%;
     }
 
     svg {

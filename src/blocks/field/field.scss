@@ -1,4 +1,7 @@
 @import ".././../scss/mixins/text-styles.scss";
+@import ".././../scss/mixins/blocks.scss";
+
+/* stylelint-disable */
 
 .field {
   $block-name: &; // #{$block-name}__element
@@ -8,20 +11,23 @@
 
   input {
     @include search-field;
+
     box-sizing: border-box;
     width: 100%;
+
     &::placeholder {
-      color: var(--gray-scale--500);
+      color: var(--gray-scale-500);
     }
 
     &:focus {
+      border-color: var(--primary);
     }
   }
 
   &--text {
     input {
       padding: 14px 16px;
-      border: 1px solid rgb(230, 230, 230);
+      border: 1px solid rgb(230 230 230);
       border-radius: 6px;
       outline: none;
     }
@@ -31,18 +37,21 @@
     input {
       position: relative;
       padding: 14px 16px 14px 44px;
-      border: 1px solid rgb(230, 230, 230);
+      border: 1px solid rgb(230 230 230);
       border-radius: 6px;
       outline: none;
 
       &:focus {
+        border-color: var(--primary);
       }
+    }
 
-      #{$block-name}__search-icon {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+    #{$block-name}__search-icon {
+      @include box(20px);
+
+      position: absolute;
+      top: 12px;
+      left: 15px;
     }
   }
 }

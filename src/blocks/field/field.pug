@@ -11,7 +11,6 @@ mixin field(type, fieldName, hint, mods)
   //-   options     {string} - список опций select
   //-   mods     {string} - список модификаторов
   //- Вызов:
-        +field('select', 'model', 'Модель', ['COOLRAY', 'Новый COOLRAY'], 'some-mod')
 
   -
     // список модификаторов
@@ -25,9 +24,9 @@ mixin field(type, fieldName, hint, mods)
 
   label.field(class=allMods + ' field--' + type)
     case type
-      when 'text'
+      when "text"
         input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
-      when 'search'
-        input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
-        svg.input__search-icon: use(href= path.icon + 'search')
+      when "search"
+        input(type="text", name=fieldName, placeholder=hint)&attributes(attributes)
+        svg.field__search-icon: use(href= path.icon + "search")
 

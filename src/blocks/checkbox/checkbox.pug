@@ -26,12 +26,12 @@ mixin checkbox(type, checkboxName, text, id, value, mods)
   .checkbox(class=allMods + ' checkbox--' + type)
     case type
       when 'radio'
-        input(type=type, name=checkboxName, id=id)&attributes(attributes).checkbox__input
-        label(for=id).checkbox__label
+        input.checkbox__input(type=type, name=checkboxName, id=id)&attributes(attributes)
+        label.checkbox__label(for=id)
         span= text
       when 'checkbox'
-        input(type=type, name=checkboxName, id=id, value= value)&attributes(attributes).checkbox__input
-        label(for=id).checkbox__label
+        input.checkbox__input(type=type, name=checkboxName, id=id, value= value)&attributes(attributes)
+        label.checkbox__label(for=id)
           svg: use(href= path.icon + 'check')
         span= text
 

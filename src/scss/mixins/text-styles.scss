@@ -8,180 +8,181 @@
 }
 
 @mixin display-400() {
-  font-size: 72px;
   font-weight: 400;
+  font-size: 72px;
   line-height: 120%;
 }
 
 @mixin display-600() {
-  font-size: 72px;
   font-weight: 600;
+  font-size: 72px;
   line-height: 120%;
 }
 
 @mixin heading-1-600() {
-  font-size: 56px;
   font-weight: 600;
+  font-size: 56px;
   line-height: 120%;
 }
 
 @mixin heading-1-400() {
-  font-size: 56px;
   font-weight: 400;
+  font-size: 56px;
   line-height: 120%;
 }
 
 @mixin heading-2-600() {
-  font-size: 48px;
   font-weight: 600;
+  font-size: 48px;
   line-height: 120%;
 }
 
 @mixin heading-2-400() {
-  font-size: 48px;
   font-weight: 400;
+  font-size: 48px;
   line-height: 120%;
 }
 
 @mixin heading-3-600() {
-  font-size: 40px;
   font-weight: 600;
+  font-size: 40px;
   line-height: 120%;
 }
 
 @mixin heading-3-400() {
+  font-weight: 400;
   font-size: 40px;
-  font-weight: 400;
   line-height: 120%;
 }
 
 @mixin heading-4-400() {
-  font-size: 36px;
   font-weight: 600;
+  font-size: 36px;
   line-height: 120%;
 }
 
 @mixin heading-4-400() {
-  font-size: 36px;
   font-weight: 400;
+  font-size: 36px;
   line-height: 120%;
 }
 
 @mixin heading-5-400() {
-  font-size: 32px;
   font-weight: 400;
+  font-size: 32px;
   line-height: 120%;
 }
 
 @mixin heading-5-600() {
-  font-size: 32px;
   font-weight: 600;
+  font-size: 32px;
   line-height: 120%;
 }
 
 @mixin body-xxl-400() {
-  font-size: 24px;
   font-weight: 400;
+  font-size: 24px;
   line-height: 150%;
 }
 
 @mixin body-xxl-500() {
-  font-size: 24px;
   font-weight: 500;
+  font-size: 24px;
   line-height: 150%;
 }
 
 @mixin body-xxl-600() {
-  font-size: 24px;
   font-weight: 600;
+  font-size: 24px;
   line-height: 150%;
 }
 
 @mixin body-xl-400() {
-  font-size: 20px;
   font-weight: 400;
+  font-size: 20px;
   line-height: 150%;
 }
 
 @mixin body-xl-500() {
-  font-size: 20px;
   font-weight: 500;
+  font-size: 20px;
   line-height: 150%;
 }
 
 @mixin body-xl-600() {
-  font-size: 20px;
   font-weight: 600;
+  font-size: 20px;
   line-height: 150%;
 }
 
 @mixin body-large-400() {
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 150%;
 }
 
 @mixin body-large-500() {
-  font-size: 18px;
   font-weight: 500;
+  font-size: 18px;
   line-height: 150%;
 }
 
 @mixin body-large-600() {
-  font-size: 18px;
   font-weight: 600;
+  font-size: 18px;
   line-height: 150%;
 }
 
 @mixin body-medium-400() {
-  font-size: 16px;
   font-weight: 400;
+  font-size: 16px;
   line-height: 150%;
 }
 
 @mixin body-medium-500() {
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   line-height: 150%;
 }
 
 @mixin body-medium-600() {
-  font-size: 16px;
   font-weight: 600;
+  font-size: 16px;
   line-height: 120%;
 }
 
 @mixin body-small-400() {
-  font-size: 14px;
   font-weight: 400;
+  font-size: 14px;
   line-height: 150%;
 }
 
 @mixin body-small-500() {
-  font-size: 14px;
   font-weight: 500;
+  font-size: 14px;
   line-height: 150%;
 }
 
 @mixin body-small-600() {
-  font-size: 14px;
   font-weight: 600;
+  font-size: 14px;
   line-height: 120%;
 }
 
 @mixin body-tiny-400() {
-  font-size: 12px;
   font-weight: 400;
+  font-size: 12px;
   line-height: 130%;
 }
+
 @mixin body-tiny-500() {
-  font-size: 12px;
   font-weight: 500;
+  font-size: 12px;
   line-height: 130%;
 }
 
 @mixin body-tiny-600() {
-  font-size: 12px;
   font-weight: 600;
+  font-size: 12px;
   line-height: 130%;
 }
