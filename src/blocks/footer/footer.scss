@@ -93,6 +93,10 @@
     display: flex;
     grid-area: navigation;
     gap: 78px;
+
+    @media screen and (max-width: $screen-t) {
+      flex-direction: column;
+    }
   }
 
   &__navigation-title {

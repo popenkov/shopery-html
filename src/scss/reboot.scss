@@ -30,6 +30,10 @@ body {
   font-family: var(--font-base);
   line-height: var(--line-height-base);
   background-color: var(--body-bg);
+
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 svg {

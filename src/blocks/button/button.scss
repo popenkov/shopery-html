@@ -51,10 +51,14 @@
   }
 
   &--normal {
+    @include body-small(600);
+
     padding: 14px 32px;
   }
 
   &--large {
+    @include body-medium(600);
+
     padding: 16px 40px;
   }
 }

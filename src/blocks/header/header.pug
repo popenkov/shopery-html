@@ -25,21 +25,34 @@ mixin header(mods)
         .header__top-location
           svg.header__top-location-icon: use(href= path.icon + "map-pin")
           span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA
-        .header__top-menu
-          select.header__top-select.js-header-language
-            option(value="ENG") ENG
-            option(value="DE") DE
+        .header__top-right
+          .header__top-menu
+            button.header__top-menu-button
+              span ENG
+              svg.header__top-menu-chevron: use(href= path.icon + "chevron-down")
+            ul.header__top-menu-content
+              li
+                button.header__top-menu-link(data-language="ENG") ENG
+              li
+                button.header__top-menu-link(data-language="DE") DE
+          .header__top-menu
+            button.header__top-menu-button
+              span USD
+              svg.header__top-menu-chevron: use(href= path.icon + "chevron-down")
+            ul.header__top-menu-content
+              li
+                button.header__top-menu-link(data-currency="USD") USD
+              li
+                button.header__top-menu-link(data-currency="EUR") EUR
 
-          select.header__top-select.js-header-currency
-            option(value="USD") USD
-            option(value="EUR") EUR
           .header__sign-in
             a.header__sign-in-link(href="#") Sign in
             span.header__sign-in-separator /
             a.header__sign-in-link(href="#") Sign up
 
     .header__middle.container
-      button.burger-button.header__mobile-burger.js-mobile-menu-btn
+      button.header__mobile-burger.js-mobile-menu-btn
+        span.burger-button
       a.header__logo(href="#")
         img(src= path.img + "logo.png", alt="image")
       form.header__search.js-header-search-form
@@ -64,45 +77,25 @@ mixin header(mods)
           .header__navigation-left
             .header__all-categories
               button.header__all-categories-button.js-header-all-categories-button
-                span.burger-button
+                span.burger-button.header__all-categories-burger
                 | All Categories
-                svg.header__all-categories-shevron: use(href= path.icon + "chevron")
+                svg.header__all-categories-chevron: use(href= path.icon + "chevron-down")
               ul.header__all-categories-dropdown.js-header-all-categories-content
-                each categorie in json.info.header.categories
+                each category in json.info.header.categories
                   li
-                    a.header__all-categories-link(href=categorie.link)
-                      svg.header__all-categories-icon: use(href= path.icon + categorie.icon)
-                      span=  categorie.title
+                    a.header__all-categories-link(href=category.link)
+                      svg.header__all-categories-icon: use(href= path.icon + category.icon)
+                      span=  category.title
 
             ul.header__navigation-menu
-              li.header__navigation-menu-item
-                a.header__navigation-menu-link.header__navigation-menu-link--active(href="#")
-                  | Home
-                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                ul.header__navigation-drop-menu
-                  li.header__navigation-drop-menu-link
-                    a(href="#") Home 1
-              li.header__navigation-menu-item
-                a.header__navigation-menu-link(href="#")
-                  | Shop
-                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                ul.header__navigation-drop-menu
-                  li.header__navigation-drop-menu-link
-                    a(href="#") Shop 1
-              li.header__navigation-menu-item
-                a.header__navigation-menu-link(href="#")
-                  | Pages
-                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                ul.header__navigation-drop-menu
-                  li.header__navigation-drop-menu-link
-                    a(href="#") Pages 1
-              li.header__navigation-menu-item
-                a.header__navigation-menu-link(href="#")
-                  | Blog
-                  svg.header__navigation-link-icon: use(href= path.icon + "chevron")
-                ul.header__navigation-drop-menu
-                  li.header__navigation-drop-menu-link
-                    a(href="#") Blog 1
+              each nav, idx in json.info.header.navigation
+                li.header__navigation-menu-item
+                  a.header__navigation-menu-link(href=nav.link, class= (idx === 0) ? "header__navigation-menu-link--active" : '')=nav.title
+                    svg.header__navigation-link-icon: use(href= path.icon + "chevron-down")
+                  ul.header__navigation-drop-menu
+                    each navItem in nav.items
+                      li
+                        a(href=navItem.link).header__navigation-drop-menu-link=navItem.title
 
               li.header__navigation-menu-item
                 a.header__navigation-menu-link(href="#") About us
@@ -113,7 +106,37 @@ mixin header(mods)
               svg.header__phone-icon: use(href= path.icon + "phone")
               span.header__phone-text (219) 555-0114
 
-    .header__mobile-menu.mobile-menu
+    .header__mobile-menu.mobile-menu.js-mobile-menu
       .mobile-menu__content
         button.mobile-menu__close-button.close-button.js-close-mobile-menu-btn
           svg.close-button__icon: use(href= path.icon + 'cross')
+
+        form.header__search.header__search--mobile.js-header-search-form
+          +field("search", "search", "search", "", "", true)
+          +button("button","Search", "fill, normal")
+
+        .mobile-menu__navigation
+          .accordeon
+            each nav, idx in json.info.header.navigation
+              li.accordeon__item
+                button.accordeon__button.header__navigation-menu-link=nav.title
+                  svg.accordeon__chevron-icon: use(href= path.icon + "chevron-down")
+                ul.accordeon__content
+                  each navItem in nav.items
+                    li.header__navigation-menu-item
+                      a.header__navigation-menu-link(href=navItem.link)=navItem.title
+
+          li.header__navigation-menu-item
+            a.header__navigation-menu-link(href="#") About us
+          li.header__navigation-menu-item
+            a.header__navigation-menu-link(href="#") Contact us
+
+        .mobile-menu__footer
+          a.header__phone.header__phone--mobile(href="tel:(219) 555-0114")
+            svg.header__phone-icon: use(href= path.icon + "phone")
+            span.header__phone-text (219) 555-0114
+          .header__top-location.header__top-location--mobile
+            svg.header__top-location-icon: use(href= path.icon + "map-pin")
+            span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA
+
+
