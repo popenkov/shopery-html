@@ -2,6 +2,7 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .product {
+  $block-name: &; // #{$block-name}__element
   @include flex-column;
 
   max-width: 264px;
@@ -94,5 +95,4 @@
     background-color: var(--gray-50);
     box-shadow: none;
   }
-  $block-name: &; // #{$block-name}__element
 }

@@ -2,6 +2,7 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .product-small {
+  $block-name: &; // #{$block-name}__element
   @include flex-center-vertical;
 
   display: flex;
@@ -86,5 +87,4 @@
 
     gap: 12px;
   }
-  $block-name: &; // #{$block-name}__element
 }
