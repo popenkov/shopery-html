@@ -73,7 +73,7 @@
     padding-bottom: 6px;
     color: var(--front-primary-inversed);
     border-bottom: 1px solid var(--primary);
-    transition: var(--transition);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
@@ -116,7 +116,7 @@
     @include body-small;
 
     color: var(--green-gray-500);
-    transition: var(--transition);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
@@ -177,7 +177,7 @@
     background-color: transparent;
     border-radius: 50%;
 
-    transition: var(--transition);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {

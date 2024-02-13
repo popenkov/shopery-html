@@ -12,7 +12,7 @@
   border-radius: 50%;
   outline: none;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition);
 
   &--green {
     background-color: var(--primary);

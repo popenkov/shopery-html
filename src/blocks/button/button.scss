@@ -7,7 +7,7 @@
   border: none;
   border-radius: 43px;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition);
 
   &--fill {
     color: var(--front-primary-inversed);

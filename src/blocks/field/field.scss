@@ -15,7 +15,7 @@
     box-sizing: border-box;
     width: 100%;
 
-    transition: var(--transition);
+    transition: all var(--transition);
 
     &::placeholder {
       color: var(--gray-500);

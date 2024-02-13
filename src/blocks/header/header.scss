@@ -68,14 +68,14 @@
     border-radius: 4px;
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
+    transition: all var(--transition);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
   }
 
   &__top-menu-chevron {
     @include box(12px);
     transform: rotate(0);
-    transition: var(--transition);
+    transition: all var(--transition);
   }
 
   &__top-menu-button {
@@ -98,7 +98,7 @@
         }
 
         color: var(--front-primary-inversed);
-        transition: var(--transition);
+        transition: all var(--transition);
 
         #{$block-name}__top-menu-chevron {
           transform: rotate(180deg);
@@ -331,7 +331,7 @@
 
     margin-left: 11px;
     transform: rotate(0deg);
-    transition: var(--transition);
+    transition: all var(--transition);
   }
 
   &__all-categories-button {
@@ -344,7 +344,7 @@
     background-color: var(--primary);
     border: none;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all var(--transition);
 
     @media screen and (max-width: $screen-t) {
       width: 100%;
@@ -384,7 +384,7 @@
     background-color: var(--back-primary);
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
+    transition: all var(--transition);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
 
     @media screen and (max-width: $screen-t) {
@@ -405,7 +405,7 @@
     gap: 12px;
 
     color: var(--gray-500);
-    transition: var(--transition);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
@@ -436,15 +436,15 @@
         #{$block-name}__navigation-drop-menu {
           top: 100%;
           opacity: 1;
-          transition: var(--transition);
+          transition: all var(--transition);
         }
 
         color: var(--front-primary-inversed);
-        transition: var(--transition);
+        transition: all var(--transition);
 
         #{$block-name}__navigation-link-icon {
           transform: rotate(180deg);
-          transition: var(--transition);
+          transition: all var(--transition);
         }
       }
     }
@@ -488,7 +488,7 @@
     border-radius: 6px;
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
     opacity: 0;
-    transition: var(--transition);
+    transition: all var(--transition);
 
     &.open {
       opacity: 1;
@@ -498,7 +498,7 @@
   &__navigation-drop-menu-link {
     display: block;
     padding: 4px 6px;
-    transition: var(--transition);
+    transition: all var(--transition);
     color: var(--gray-500);
 
     @media (hover: hover) {
@@ -553,7 +553,7 @@
 
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
+    transition: all var(--transition);
   }
 
   &__content {
@@ -567,7 +567,7 @@
     background-color: var(--back-primary);
 
     transform: translateX(-320px);
-    transition: var(--transition);
+    transition: all var(--transition);
 
     overflow-y: auto;
   }
