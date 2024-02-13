@@ -11,6 +11,10 @@
   gap: 20px;
   align-items: center;
 
+  label {
+    transition: var(--transition);
+  }
+
   &--checkbox {
     input {
       @include hide-text;

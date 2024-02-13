@@ -2,20 +2,61 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .product {
-  $block-name: &; // #{$block-name}__element
   @include flex-column;
 
   max-width: 264px;
   border: var(--card-border);
 
-  &__image-link {
+  @media (hover: hover) {
+    &:hover {
+      border: var(--card-hover-border);
+      box-shadow: var(--card-hover-shadow);
+
+      #{$block-name}__title {
+        color: var(--primary);
+      }
+
+      #{$block-name}__buttons {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #{$block-name}__button {
+        color: var(--color-white);
+        background-color: var(--primary);
+        box-shadow: 0 0 8px 2px var(--gray-200);
+      }
+    }
+  }
+
+  &__image-container {
+    position: relative;
     display: block;
     width: 100%;
   }
 
+  &__buttons {
+    @include flex-column;
+
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    gap: 6px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__image-button {
+    box-shadow: none;
+
+    @media (hover: hover) {
+      box-shadow: 0 0 8px 0 var(--gray-200);
+    }
+  }
+
   &__image {
     width: 100%;
-    height: 230px;
+    height: 240px;
     padding: 5px;
     object-fit: contain;
     object-position: center;
@@ -23,11 +64,10 @@
 
   &__description {
     display: flex;
+    gap: 8px;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-
-    padding: 24px 12px;
+    padding: 12px 16px 12px 11px;
   }
 
   &__title {
@@ -42,29 +82,17 @@
     color: var(--gray-900);
   }
 
+  &__rating svg {
+    @include box(12px);
+  }
+
   &__price + &__rating {
-    margin-top: 7px;
+    margin-top: 6px;
   }
 
   &__button {
     background-color: var(--gray-50);
     box-shadow: none;
   }
-
-  @media (hover: hover) {
-    &:hover {
-      border: var(--card-hover-border);
-      box-shadow: var(--card-hover-shadow);
-
-      #{$block-name}__title {
-        color: var(--primary);
-      }
-
-      #{$block-name}__button {
-        background-color: var(--primary);
-        color: var(--color-white);
-        box-shadow: 0 0 8px 2px var(--gray-200);
-      }
-    }
-  }
+  $block-name: &; // #{$block-name}__element
 }

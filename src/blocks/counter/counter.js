@@ -10,7 +10,7 @@ ready(function () {
 
         const days = counter.querySelector(".js-counter-days");
         const hours = counter.querySelector(".js-counter-seconds");
-        const minuts = counter.querySelector(".js-counter-minuts");
+        const minutes = counter.querySelector(".js-counter-minutes");
         const seconds = counter.querySelector(".js-counter-seconds");
 
         const now = new Date();
@@ -21,10 +21,10 @@ ready(function () {
         const minutesValue = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const secondsValue = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        days.textContent = daysValue;
-        hours.textContent = hoursValue;
-        minuts.textContent = minutesValue;
-        seconds.textContent = secondsValue;
+        days.textContent = daysValue >= 10 ? daysValue : `0${daysValue}`;
+        hours.textContent = hoursValue >= 10 ? hoursValue : `0${hoursValue}`;
+        minutes.textContent = minutesValue >= 10 ? minutesValue : `0${minutesValue}`;
+        seconds.textContent = secondsValue >= 10 ? secondsValue : `0${secondsValue}`;
       });
     };
 

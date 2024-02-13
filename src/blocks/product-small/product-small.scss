@@ -2,13 +2,42 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .product-small {
-  $block-name: &; // #{$block-name}__element
   @include flex-center-vertical;
 
-  max-width: 624px;
-  min-height: 127px;
+  display: flex;
+  align-items: flex-start;
+  max-width: 424px;
+  min-height: 118px;
   border: var(--card-border);
   border-radius: 6px;
+
+  @media (hover: hover) {
+    &:hover {
+      border: var(--card-hover-border);
+      box-shadow: var(--card-hover-shadow);
+
+      #{$block-name}__title {
+        color: var(--primary);
+      }
+
+      #{$block-name}__description {
+        gap: 6px;
+      }
+
+      #{$block-name}__description-hover {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity var(--transition);
+      }
+
+      #{$block-name}__description-main {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
 
   &__image {
     @include box(112px);
@@ -18,15 +47,18 @@
 
   &__description {
     @include flex-column;
-    gap: 8px;
 
+    gap: 1px;
     padding: 24px 12px;
   }
 
   &__description-main {
+    @include flex-column;
+
+    gap: 5px;
     height: 40px;
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
     transition: opacity var(--transition);
   }
 
@@ -43,10 +75,10 @@
   }
 
   &__description-hover {
-    height: 40px;
     position: absolute;
-    opacity: 0;
+    height: 40px;
     visibility: hidden;
+    opacity: 0;
   }
 
   &__buttons {
@@ -54,28 +86,5 @@
 
     gap: 12px;
   }
-
-  @media (hover: hover) {
-    &:hover {
-      border: var(--card-hover-border);
-      box-shadow: var(--card-hover-shadow);
-
-      #{$block-name}__title {
-        color: var(--primary);
-      }
-
-      #{$block-name}__description-hover {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transition: opacity var(--transition);
-      }
-
-      #{$block-name}__description-main {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-  }
+  $block-name: &; // #{$block-name}__element
 }

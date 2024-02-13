@@ -3,15 +3,29 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .product-large {
-  $block-name: &; // #{$block-name}__element
   @include flex-column;
 
-  gap: 24px;
-
-  max-width: 525px;
+  gap: 3px;
   border: var(--card-border);
 
-  &__image-link {
+  @media (hover: hover) {
+    &:hover {
+      border: var(--card-hover-border);
+      box-shadow: var(--card-hover-shadow);
+
+      #{$block-name}__title {
+        color: var(--primary);
+      }
+
+      #{$block-name}__button--cart {
+        color: var(--color-white);
+        background-color: var(--primary);
+        box-shadow: 0 0 8px 2px var(--gray-200);
+      }
+    }
+  }
+
+  &__image-container {
     position: relative;
     display: block;
     width: 100%;
@@ -19,8 +33,7 @@
 
   &__image {
     width: 100%;
-    height: 525px;
-    padding: 5px;
+    max-width: 525px;
     object-fit: contain;
     object-position: center;
   }
@@ -29,10 +42,8 @@
     @include flex-center-vertical;
 
     position: absolute;
-    top: 27px;
-    left: 32px;
-    right: 32px;
-
+    top: 25px;
+    left: 25px;
     flex-wrap: wrap;
     gap: 8px;
   }
@@ -41,40 +52,42 @@
     @include flex-center-vertical;
 
     position: absolute;
-    bottom: 27px;
-    left: 24px;
     right: 24px;
+    bottom: 20px;
+    left: 24px;
     gap: 8px;
-    margin: 0 24px;
   }
 
-  &__button {
-    background-color: var(--gray-50);
+  &__button.round-button {
+    @include box(46px);
+
     color: var(--gray-900);
-
-    &--cart {
-      @include flex-center;
-      @include body-small(600);
-
-      gap: 12px;
-      width: 100% !important;
-      border-radius: 43px !important;
-    }
+    background-color: var(--gray-50);
+    box-shadow: none;
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--primary);
         color: var(--color-white);
+        background-color: var(--primary);
         box-shadow: 0 0 8px 2px var(--gray-200);
       }
     }
   }
 
+  &__button--cart.round-button {
+    @include flex-center;
+    @include body-small(600);
+
+    gap: 12px;
+    width: 100% !important;
+    border-radius: 43px !important;
+  }
+
   &__description {
     @include flex-column;
 
+    gap: 4px;
     align-items: center;
-    gap: 18px;
     padding: 12px 24px 18px;
   }
 
@@ -102,6 +115,12 @@
 
   &__rating {
     @include flex-center;
+
+    gap: 2px;
+
+    svg {
+      @include box(18px);
+    }
   }
 
   &__rating-amount {
@@ -110,20 +129,12 @@
     color: var(--gray-500);
   }
 
-  @media (hover: hover) {
-    &:hover {
-      border: var(--card-hover-border);
-      box-shadow: var(--card-hover-shadow);
-
-      #{$block-name}__title {
-        color: var(--primary);
-      }
-
-      #{$block-name}__button--cart {
-        background-color: var(--primary);
-        color: var(--color-white);
-        box-shadow: 0 0 8px 2px var(--gray-200);
-      }
-    }
+  &__rating + &__counter {
+    margin-top: 13px;
   }
+
+  &__counter-title {
+    margin-left: 45px;
+  }
+  $block-name: &; // #{$block-name}__element
 }

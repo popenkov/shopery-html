@@ -3,17 +3,14 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .header {
-  $block-name: &; // #{$block-name}__element
-
   &__inner {
     padding: 8px 0;
   }
 
-  // top
   &__top {
     @include body-tiny;
 
-    padding: 10px 0;
+    padding: 11px 0 13px;
     color: var(--gray-300);
     background-color: var(--gray-800);
   }
@@ -51,29 +48,33 @@
     @include flex-center-vertical;
 
     gap: 20px;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-left: auto;
+    }
   }
 
   &__top-menu-content {
     @include flex-column;
 
-    gap: 12px;
     position: absolute;
     top: 55px;
     left: 50%;
-    transform: translateX(-50%);
+    gap: 12px;
     width: 100px;
-
     padding: 16px 22px;
     background-color: var(--gray-800);
     border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all var(--transition);
   }
 
   &__top-menu-chevron {
     @include box(12px);
+
     transform: rotate(0);
     transition: all var(--transition);
   }
@@ -81,9 +82,8 @@
   &__top-menu-button {
     @include flex-center-vertical;
 
-    gap: 6px;
-    border: none;
     padding: 0;
+    border: none;
   }
 
   &__top-menu {
@@ -91,14 +91,13 @@
 
     @media (hover: hover) {
       &:hover {
-        #{$block-name}__top-menu-content {
-          top: 100%;
-          opacity: 1;
-          visibility: visible;
-        }
-
         color: var(--front-primary-inversed);
         transition: all var(--transition);
+        #{$block-name}__top-menu-content {
+          top: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
 
         #{$block-name}__top-menu-chevron {
           transform: rotate(180deg);
@@ -108,9 +107,10 @@
   }
 
   &__top-menu-link {
-    cursor: pointer;
-    border: none;
     padding: 0;
+    border: none;
+    cursor: pointer;
+
     @media (hover: hover) {
       &:hover {
         color: var(--primary);
@@ -140,8 +140,6 @@
     padding: 0 5px;
   }
 
-  // middle
-
   &__middle {
     @include flex-center-sb;
 
@@ -159,15 +157,15 @@
     @media screen and (max-width: $screen-tl) {
       @include flex-center;
       @include box(38px);
+
       border: none;
       cursor: pointer;
 
       span {
         display: block;
-
-        border: none;
         padding: 0;
         background-color: var(--gray-900);
+        border: none;
       }
     }
   }
@@ -289,7 +287,6 @@
     line-height: 100%;
   }
 
-  // navigation
   &__navigation {
     background-color: var(--gray-50);
   }
@@ -347,8 +344,8 @@
     transition: all var(--transition);
 
     @media screen and (max-width: $screen-t) {
-      width: 100%;
       justify-content: space-between;
+      width: 100%;
     }
 
     @media (hover: hover) {
@@ -364,28 +361,21 @@
     }
   }
 
-  &__all-categories-burger {
-    // todo
-    // @media screen and (max-width: $screen-t) {
-    //   display: none;
-    // }
-  }
-
   &__all-categories-dropdown {
     @include flex-column;
 
-    gap: 12px;
     position: absolute;
     top: 55px;
     left: 0;
+    gap: 12px;
     width: 100%;
     max-width: 300px;
     padding: 16px 22px;
     background-color: var(--back-primary);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all var(--transition);
 
     @media screen and (max-width: $screen-t) {
       width: 100%;
@@ -393,8 +383,8 @@
     }
 
     &.open {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
   }
 
@@ -403,7 +393,6 @@
     @include body-small;
 
     gap: 12px;
-
     color: var(--gray-500);
     transition: all var(--transition);
 
@@ -433,14 +422,14 @@
 
     @media (hover: hover) {
       &:hover {
+        color: var(--front-primary-inversed);
+        transition: all var(--transition);
         #{$block-name}__navigation-drop-menu {
           top: 100%;
+          visibility: visible;
           opacity: 1;
           transition: all var(--transition);
         }
-
-        color: var(--front-primary-inversed);
-        transition: all var(--transition);
 
         #{$block-name}__navigation-link-icon {
           transform: rotate(180deg);
@@ -459,14 +448,14 @@
     color: var(--gray-500);
     text-transform: capitalize;
 
-    &--active {
-      color: var(--primary);
-    }
-
     @media (hover: hover) {
       &:hover {
         color: var(--primary);
       }
+    }
+
+    &--active {
+      color: var(--primary);
     }
   }
 
@@ -487,6 +476,7 @@
     background-color: var(--back-primary);
     border-radius: 6px;
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
+    visibility: hidden;
     opacity: 0;
     transition: all var(--transition);
 
@@ -498,8 +488,8 @@
   &__navigation-drop-menu-link {
     display: block;
     padding: 4px 6px;
-    transition: all var(--transition);
     color: var(--gray-500);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
@@ -537,39 +527,35 @@
   &__phone-text {
     @include body-small(600);
   }
+  $block-name: &; // #{$block-name}__element
 }
 
 .mobile-menu {
-  $block-name: &; // #{$block-name}__element
-
   display: none;
 
   @media screen and (max-width: $screen-tl) {
-    display: block;
     position: fixed;
-    inset: 0;
     z-index: var(--mobile-menu-z-index);
+    display: block;
     background-color: var(--modal-bg);
-
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
     transition: all var(--transition);
+    inset: 0;
   }
 
   &__content {
     @include flex-column;
 
-    gap: 20px;
     position: relative;
+    gap: 20px;
     width: 320px;
     height: 100vh;
     padding: 80px 20px 30px;
+    overflow-y: auto;
     background-color: var(--back-primary);
-
     transform: translateX(-320px);
     transition: all var(--transition);
-
-    overflow-y: auto;
   }
 
   &__close-button {
@@ -579,26 +565,23 @@
     top: 20px;
     right: 20px;
 
-    .close-button__icon {
+    &__icon {
       @include box(28px);
     }
   }
 
-  &__items {
-    // padding-top: 60px;
-  }
-
   &__footer {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    flex-grow: 1;
     gap: 12px;
+    justify-content: flex-end;
   }
+  $block-name: &; // #{$block-name}__element
 
   &.open {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 
     #{$block-name}__content {
       transform: translateX(0);

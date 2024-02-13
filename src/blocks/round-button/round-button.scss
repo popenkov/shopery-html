@@ -17,11 +17,13 @@
   &--green {
     background-color: var(--primary);
 
-    &:hover {
-      background-color: var(--hard-primary);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--hard-primary);
 
-      #{$block-name}__icon {
-        color: var(--front-primary-inversed);
+        #{$block-name}__icon {
+          color: var(--front-primary-inversed);
+        }
       }
     }
 
@@ -41,11 +43,13 @@
     // todo  не могу достать из макета тень
     box-shadow: 0 0 8px 0 var(--gray-200);
 
-    &:hover {
-      background-color: var(--primary);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
 
-      #{$block-name}__icon {
-        color: var(--front-primary-inversed);
+        #{$block-name}__icon {
+          color: var(--front-primary-inversed);
+        }
       }
     }
     #{$block-name}__icon {
@@ -57,17 +61,22 @@
     // todo  не могу достать из макета тень
     box-shadow: 0 0 8px 0 var(--gray-200);
 
-    &:hover {
-      background-color: var(--primary);
-      box-shadow: none;
-
-      #{$block-name}__icon {
-        stroke: var(--front-primary-inversed);
-      }
-    }
     #{$block-name}__icon {
+      stroke-width: 1.5px;
       fill: none;
       stroke: var(--gray-900);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+        box-shadow: none;
+        box-shadow: 0 0 8px 0 var(--gray-200);
+
+        #{$block-name}__icon {
+          stroke: var(--front-primary-inversed);
+        }
+      }
     }
 
     &:active,
@@ -80,15 +89,17 @@
   }
 
   &--transp {
-    &:hover {
-      background-color: var(--primary);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
 
-      #{$block-name}__icon {
-        color: var(--front-primary-inversed);
+        #{$block-name}__icon {
+          color: var(--front-primary-inversed);
+        }
       }
-    }
-    #{$block-name}__icon {
-      color: var(--gray-700);
+      #{$block-name}__icon {
+        color: var(--gray-700);
+      }
     }
   }
 

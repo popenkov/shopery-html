@@ -10,15 +10,17 @@ block content
   .container
     h2 Buttons
     .d-flex
-      +button('button', 'normal', "fill, small")
-      +button('button','normal', "fill, normal")
-      +button('button','normal', "fill, large")
-      +button('button','normal', "border, small")
-      +button('button','normal', 'border, normal')
-      +button('button','normal', "border, large")
-      +button('button','normal', "grey, small")
-      +button('button','normal', "grey, normal")
-      +button('button','normal', "grey, large")
+      +button('button', 'Small Fill', "fill, small")
+      +button('button','Small Border', "border, small")
+      +button('button','Small Ghost', "grey, small")
+
+      +button('button','Medium Fill', "fill, normal")
+      +button('button','Medium Border', 'border, normal')
+      +button('button','Medium Ghost', "grey, normal")
+
+      +button('button','Large Fill', "fill, large")
+      +button('button','Large Border', "border, large")
+      +button('button','Large Ghost', "grey, large")
 
     h2 Icon Buttons
     .d-flex
@@ -32,12 +34,11 @@ block content
         span.arrow-btn__text Large Fill
         svg.arrow-btn__icon: use(href= path.icon + 'arrow')
 
-    +star-rating(4)
-
 
     h2 close button
-    button.close-button
-      svg.close-button__icon: use(href= path.icon + 'cross')
+    .d-flex
+      button.close-button
+        svg.close-button__icon: use(href= path.icon + 'cross')
 
     h2 round buttons
     .d-flex
@@ -51,19 +52,24 @@ block content
         svg.round-button__icon: use(href= path.icon + 'facebook')
 
     h2 Product small
-    +product-small
+    .d-flex
+      +product-small
 
     h2 Product
-    +product
+    .d-flex
+      +product
 
     h2 Product Large
-    +product-large
+    .d-flex
+      +product-large
 
     h2 checkbox
-    +checkbox('checkbox', 'checkbox', '', 'checkbox')
-    span
-      +checkbox('radio', 'radio', '', '1','1')
-      +checkbox('radio', 'radio', '', '2','2')
+    .d-flex
+      +checkbox('checkbox', 'checkbox', '', 'checkbox')
+      span
+        +checkbox('radio', 'radio', '', '1','1')
+        +checkbox('radio', 'radio', '', '2','2')
 
     h2 Inputs
-    +field('text', 'text', 'text', '', '', true)
+    .d-flex
+      +field('text', 'text', 'text', '', '', true)

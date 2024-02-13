@@ -28,13 +28,13 @@ mixin header(mods)
         .header__top-right
           .header__top-menu
             button.header__top-menu-button
-              span ENG
+              span Eng
               svg.header__top-menu-chevron: use(href= path.icon + "chevron-down")
             ul.header__top-menu-content
               li
-                button.header__top-menu-link(data-language="ENG") ENG
+                button.header__top-menu-link(data-language="ENG") Eng
               li
-                button.header__top-menu-link(data-language="DE") DE
+                button.header__top-menu-link(data-language="DE") De
           .header__top-menu
             button.header__top-menu-button
               span USD
@@ -90,12 +90,12 @@ mixin header(mods)
             ul.header__navigation-menu
               each nav, idx in json.info.header.navigation
                 li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href=nav.link, class= (idx === 0) ? "header__navigation-menu-link--active" : '')=nav.title
+                  a.header__navigation-menu-link(href= nav.link, class= (idx === 0) ? "header__navigation-menu-link--active" : '')= nav.title
                     svg.header__navigation-link-icon: use(href= path.icon + "chevron-down")
                   ul.header__navigation-drop-menu
                     each navItem in nav.items
                       li
-                        a(href=navItem.link).header__navigation-drop-menu-link=navItem.title
+                        a.header__navigation-drop-menu-link(href= navItem.link)= navItem.title
 
               li.header__navigation-menu-item
                 a.header__navigation-menu-link(href="#") About us
@@ -119,12 +119,12 @@ mixin header(mods)
           .accordeon
             each nav, idx in json.info.header.navigation
               li.accordeon__item
-                button.accordeon__button.header__navigation-menu-link=nav.title
+                button.accordeon__button.header__navigation-menu-link= nav.title
                   svg.accordeon__chevron-icon: use(href= path.icon + "chevron-down")
                 ul.accordeon__content
                   each navItem in nav.items
                     li.header__navigation-menu-item
-                      a.header__navigation-menu-link(href=navItem.link)=navItem.title
+                      a.header__navigation-menu-link(href= navItem.link)= navItem.title
 
           li.header__navigation-menu-item
             a.header__navigation-menu-link(href="#") About us

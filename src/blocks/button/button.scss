@@ -54,11 +54,19 @@
     @include body-small(600);
 
     padding: 14px 32px;
+
+    &#{$block-name}--fill {
+      padding: 13px 32px;
+    }
   }
 
   &--large {
     @include body-medium(600);
 
     padding: 16px 40px;
+
+    &#{$block-name}--fill {
+      padding: 15px 40px;
+    }
   }
 }

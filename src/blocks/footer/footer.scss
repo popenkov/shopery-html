@@ -9,11 +9,15 @@
     background:
       url("../img/left.svg") no-repeat left bottom,
       url("../img/right.svg") no-repeat right bottom;
+
+    @media screen and (max-width: $screen-tl) {
+      background: none;
+    }
   }
 
   &__content {
     display: grid;
-    grid-template: repeat(2, auto) / repeat(3, 1fr);
+    grid-template: repeat(2, auto) / minmax(1fr, 336px) repeat(2, 1fr);
     grid-template-areas:
       "about navigation instagram"
       "copyright copyright copyright";
@@ -27,17 +31,15 @@
         "about navigation"
         "instagram instagram"
         "copyright copyright";
-      gap: 100px 78px;
     }
 
     @media screen and (max-width: $screen-tl) {
-      grid-template: repeat(2, auto) / repeat(2, 1fr);
+      grid-template: repeat(2, auto) / repeat(2, 1fr) !important;
       grid-template-areas:
         "about about"
         "navigation navigation"
         "instagram instagram"
-        "copyright copyright";
-      gap: 100px 78px;
+        "copyright copyright" !important;
     }
   }
 
@@ -52,7 +54,7 @@
   &__about-title {
     @include body-xl(500);
 
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: var(--front-primary-inversed);
   }
 
@@ -85,7 +87,7 @@
   &__about-separator {
     @include body-small;
 
-    padding: 0 5px;
+    padding: 0 16px;
     color: var(--green-gray-500);
   }
 
@@ -147,10 +149,8 @@
     @include flex-center-sb;
 
     grid-area: copyright;
-    padding: 30px 0;
-
-    // todo
-    box-shadow: 0 -1px 0 0 rgb(27 66 29);
+    padding: 23px 0;
+    border-top: 1px solid var(--green-gray-900);
 
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;
@@ -176,7 +176,6 @@
 
     background-color: transparent;
     border-radius: 50%;
-
     transition: all var(--transition);
 
     @media (hover: hover) {
@@ -193,7 +192,12 @@
   &__copyright-text {
     @include body-small;
 
+    margin-left: 86px;
     color: var(--green-gray-500);
+
+    @media screen and (max-width: $screen-tl) {
+      margin-left: 0;
+    }
   }
 
   &__payment {
@@ -204,14 +208,14 @@
 
   &__payment-link {
     display: block;
-    width: 65px;
+    width: 45px;
     height: 32px;
     border: 1px solid var(--green-gray-800);
     border-radius: 5px;
   }
 
   &__payment-icon {
-    width: 65px;
+    width: 45px;
     height: 32px;
   }
 }

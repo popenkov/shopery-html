@@ -7,7 +7,7 @@
   @include flex-center-vertical;
 
   &__star {
-    @include box(12px);
+    @include box(16px);
 
     color: var(--gray-200);
 

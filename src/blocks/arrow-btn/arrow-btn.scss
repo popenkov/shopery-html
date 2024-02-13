@@ -6,9 +6,17 @@
 
   @include flex-center-vertical;
 
-  gap: 8px;
-
-  &__text {
+  // stylelint-disable-next-line
+  &.button--small {
+    gap: 8px;
+  }
+  // stylelint-disable-next-line
+  &.button--normal {
+    gap: 12px;
+  }
+  // stylelint-disable-next-line
+  &.button--large {
+    gap: 16px;
   }
 
   &__icon {

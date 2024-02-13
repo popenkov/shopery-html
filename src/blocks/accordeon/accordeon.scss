@@ -9,14 +9,11 @@
 
   width: 100%;
 
-  &__item {
-  }
-
   &__content {
-    background-color: var(--back-primary);
-    padding: 0 16px;
     max-height: 0;
+    padding: 0 16px;
     overflow: hidden;
+    background-color: var(--back-primary);
     transition: max-height 0.3s ease-in;
   }
 
@@ -31,10 +28,10 @@
     @include flex-center-sb;
 
     width: 100%;
+    color: #333;
     border: none;
     border-bottom: 1px solid var(--gray-300);
     outline: none;
-    color: #333;
     cursor: pointer;
     transition: all var(--transition);
 

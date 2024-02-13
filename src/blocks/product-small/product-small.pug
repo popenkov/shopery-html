@@ -21,8 +21,8 @@ mixin product-small(text, mods)
     }
 
   .product-small(class=allMods)&attributes(attributes)
-    a(href="#").product-small__image-link
-      img(src= path.img + 'image.jpg', alt='product-small').product-small__image
+    a.product-small__image-link(href="#")
+      img.product-small__image(src= path.img + "image.jpg", alt="product-small")
     .product-small__description
       a(href="#")
         h3.product-small__title Chanise Cabbage
@@ -34,8 +34,9 @@ mixin product-small(text, mods)
         .product-small__description-hover
           .product-small__buttons
             button.round-button.round-button--white-green
-              svg.round-button__icon: use(href= path.icon + 'cart')
-            button.round-button.round-button--like
-              svg.round-button__icon: use(href= path.icon + 'heart')
+              svg.round-button__icon: use(href= path.icon + "cart")
             button.round-button.round-button--white-green
-              svg.round-button__icon: use(href= path.icon + 'eye')
+              svg.round-button__icon: use(href= path.icon + "eye")
+            button.round-button.round-button--like
+              svg.round-button__icon: use(href= path.icon + "heart")
+
