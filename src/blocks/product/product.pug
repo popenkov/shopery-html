@@ -21,5 +21,14 @@ mixin product(text, mods)
     }
 
   .product(class=allMods)&attributes(attributes)
-    .product__inner
-      block
+    a(href="#")
+      img(src= path.img + 'image.png', alt='product').product__image
+    .product__description
+      .product__description-text
+        a(href="#")
+          h3.product__title Chanise Cabbage
+        span.product__price $14.99
+        .product__rating
+          +star-rating(4)
+      button.round-button.product__button
+        svg.round-button__icon: use(href= path.icon + 'cart')

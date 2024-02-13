@@ -20,10 +20,12 @@ mixin product-small(text, mods)
       }
     }
 
-  a.product-small(href="#", class=allMods)&attributes(attributes)
-    img(src= path.img + 'image.jpg', alt='product-small').product-small__image
+  .product-small(class=allMods)&attributes(attributes)
+    a(href="#").product-small__image-link
+      img(src= path.img + 'image.jpg', alt='product-small').product-small__image
     .product-small__description
-      h3.product-small__title Chanise Cabbage
+      a(href="#")
+        h3.product-small__title Chanise Cabbage
       .product-small__description-container
         .product-small__description-main
           span.product-small__price $14.99
