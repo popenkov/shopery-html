@@ -9,29 +9,46 @@ block variables
 block content
   .container
     h2 Buttons
-    +button('button', 'normal', "fill, small")
-    +button('button','normal', "fill, normal")
-    +button('button','normal', "fill, large")
-    +button('button','normal', "border, small")
-    +button('button','normal', 'border, normal')
-    +button('button','normal', "border, large")
-    +button('button','normal', "grey, small")
-    +button('button','normal', "grey, normal")
-    +button('button','normal', "grey, large")
+    .d-flex
+      +button('button', 'normal', "fill, small")
+      +button('button','normal', "fill, normal")
+      +button('button','normal', "fill, large")
+      +button('button','normal', "border, small")
+      +button('button','normal', 'border, normal')
+      +button('button','normal', "border, large")
+      +button('button','normal', "grey, small")
+      +button('button','normal', "grey, normal")
+      +button('button','normal', "grey, large")
+
+    h2 Icon Buttons
+    .d-flex
+      +button('button', '', "fill, small").arrow-btn
+        span.arrow-btn__text Small Fill
+        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
+      +button('button', '', "fill, normal").arrow-btn
+        span.arrow-btn__text Medium Fill
+        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
+      +button('button', '', "fill, large").arrow-btn
+        span.arrow-btn__text Large Fill
+        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
+
+    +star-rating(4)
+
 
     h2 close button
     button.close-button
       svg.close-button__icon: use(href= path.icon + 'cross')
 
     h2 round buttons
-    button.round-button.round-button--green
-      svg.round-button__icon: use(href= path.icon + 'cart')
-    button.round-button.round-button--like
-      svg.round-button__icon: use(href= path.icon + 'heart')
-    button.round-button.round-button--white-green
-      svg.round-button__icon: use(href= path.icon + 'eye')
-    button.round-button.round-button--transp
-      svg.round-button__icon: use(href= path.icon + 'facebook')
+    .d-flex
+      button.round-button.round-button--green
+        svg.round-button__icon: use(href= path.icon + 'cart')
+      button.round-button.round-button--like
+        svg.round-button__icon: use(href= path.icon + 'heart')
+      button.round-button.round-button--white-green
+        svg.round-button__icon: use(href= path.icon + 'eye')
+      button.round-button.round-button--transp
+        svg.round-button__icon: use(href= path.icon + 'facebook')
 
     h2 checkbox
     +checkbox('checkbox', 'checkbox', '', 'checkbox')

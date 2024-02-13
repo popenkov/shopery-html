@@ -1,0 +1,18 @@
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.star-rating {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  &__star {
+    @include box(12px);
+
+    color: var(--gray-200);
+
+    &--full {
+      color: var(--status-warning);
+    }
+  }
+}

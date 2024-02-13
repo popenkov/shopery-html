@@ -142,6 +142,7 @@ export const config = {
     "sanitize.css/reduce-motion.css",
     "src/scss/variables.scss",
     "src/scss/reboot.scss",
+    'src/blocks/arrow-btn/arrow-btn.scss',
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
     // "src/scss/vendor.scss",

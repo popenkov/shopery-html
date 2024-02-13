@@ -30,6 +30,7 @@
 
   &__icon {
     @include box(32px);
+
+    color: var(--color-white);
   }
-  $block-name: &; // #{$block-name}__element
 }
