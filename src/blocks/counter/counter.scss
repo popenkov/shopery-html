@@ -1,0 +1,51 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/text-styles.scss";
+
+.counter {
+  $block-name: &; // #{$block-name}__element
+
+  &__title {
+    @include body-small;
+
+    color: var(--gray-400);
+  }
+
+  &__container {
+    @include flex-center-vertical;
+
+    gap: 10px;
+
+    width: 100%;
+  }
+
+  &__item {
+    @include flex-column;
+
+    align-items: center;
+
+    &--days {
+      margin-right: 10px;
+    }
+  }
+
+  &__separator {
+    @include body-xl;
+
+    color: var(--gray-500);
+  }
+
+  &__value {
+    @include body-large(500);
+
+    color: var(--gray-900);
+  }
+
+  &__description {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 3%;
+    color: var(--gray-400);
+  }
+}
