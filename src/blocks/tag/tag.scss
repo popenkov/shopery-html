@@ -1,0 +1,20 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+
+.tag {
+  $block-name: &; // #{$block-name}__element
+
+  @include body-small;
+
+  padding: 3px 8px;
+  color: var(--color-white);
+  border-radius: 4px;
+
+  &--red {
+    background-color: var(--status-danger);
+  }
+
+  &--blue {
+    background-color: var(--blue-500);
+  }
+}

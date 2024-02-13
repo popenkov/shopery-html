@@ -1,0 +1,42 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-small)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product-small(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-small("Текст", "some-mod")
+
+  // список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product-small--" + modsList[i].trim();
+      }
+    }
+
+  .product-small(class=allMods)&attributes(attributes)
+    a.product-small__image-link(href="#")
+      img.product-small__image(src= path.img + "image.jpg", alt="product-small")
+    .product-small__description
+      a(href="#")
+        h3.product-small__title Chanise Cabbage
+      .product-small__description-container
+        .product-small__description-main
+          span.product-small__price $14.99
+          .product-small__rating
+            +star-rating(4)
+        .product-small__description-hover
+          .product-small__buttons
+            button.round-button.round-button--white-green
+              svg.round-button__icon: use(href= path.icon + "cart")
+            button.round-button.round-button--white-green
+              svg.round-button__icon: use(href= path.icon + "eye")
+            button.round-button.round-button--like
+              svg.round-button__icon: use(href= path.icon + "heart")
+

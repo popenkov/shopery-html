@@ -19,43 +19,84 @@
         "title": "Cake & Bread"
       },
       { "link": "#", "icon": "pie", "title": "Butter & Cream" },
-      { "link": "#", "icon": "food", "title": "Cooking" },
-      { "link": "#", "icon": "", "title": "" }
+      { "link": "#", "icon": "food", "title": "Cooking" }
+    ],
+    "navigation": [
+      {
+        "title": "Home",
+        "link": "#",
+        "items": [
+          { "title": "Home 1", "link": "#" },
+          { "title": "Home 1", "link": "#" },
+          { "title": "Home 1", "link": "#" },
+          { "title": "Home 1", "link": "#" }
+        ]
+      },
+      {
+        "title": "Shop",
+        "link": "#",
+        "items": [
+          { "title": "Shop 1", "link": "#" },
+          { "title": "Shop 1", "link": "#" },
+          { "title": "Shop 1", "link": "#" },
+          { "title": "Shop 1", "link": "#" }
+        ]
+      },
+      {
+        "title": "Pages",
+        "link": "#",
+        "items": [
+          { "title": "Pages 1", "link": "#" },
+          { "title": "Pages 1", "link": "#" },
+          { "title": "Pages 1", "link": "#" },
+          { "title": "Pages 1", "link": "#" }
+        ]
+      },
+      {
+        "title": "Blog",
+        "link": "#",
+        "items": [
+          { "title": "Blog 1", "link": "#" },
+          { "title": "Blog 1", "link": "#" },
+          { "title": "Blog 1", "link": "#" },
+          { "title": "Blog 1", "link": "#" }
+        ]
+      }
     ]
   },
 
   "footer": {
     "instagram": [
       {
-        "img": "img/instagram-1.jpg",
+        "img": "img/instagram--01.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-2.jpg",
+        "img": "img/instagram--02.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-3.jpg",
+        "img": "img/instagram--03.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-4.jpg",
+        "img": "img/instagram--04.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-1.jpg",
+        "img": "img/instagram--05.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-2.jpg",
+        "img": "img/instagram--06.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-3.jpg",
+        "img": "img/instagram--07.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram-1.jpg",
+        "img": "img/instagram--08.jpg",
         "link": "#"
       }
     ],
@@ -83,11 +124,16 @@
         "link": "#"
       },
       {
-        "img": "visa-logo",
+        "img": "apple-pay",
         "link": "#"
       },
       {
-        "img": "discover",
+        "img": "visa",
+        "link": "#"
+      },
+
+      {
+        "img": "mastercard",
         "link": "#"
       },
       {

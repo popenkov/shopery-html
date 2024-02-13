@@ -17,16 +17,16 @@
     display: inline-block;
     width: 18px;
     height: 1.5px;
-    background-color: #fff;
+    background-color: inherit;
     border-radius: 4px;
     content: "";
   }
 
   &::after {
-    top: -6px;
+    top: -7px;
   }
 
   &::before {
-    bottom: -6px;
+    bottom: -7px;
   }
 }

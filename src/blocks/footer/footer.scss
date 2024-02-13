@@ -3,23 +3,44 @@
 .footer {
   $block-name: &; // #{$block-name}__element
 
-  background-color: var(--green-gray-scale-900);
+  background-color: var(--green-gray-900);
 
   &__wrapper {
     background:
       url("../img/left.svg") no-repeat left bottom,
       url("../img/right.svg") no-repeat right bottom;
+
+    @media screen and (max-width: $screen-tl) {
+      background: none;
+    }
   }
 
   &__content {
     display: grid;
-    grid-template: repeat(2, auto) / repeat(3, 1fr);
+    grid-template: repeat(2, auto) / minmax(1fr, 336px) repeat(2, 1fr);
     grid-template-areas:
       "about navigation instagram"
       "copyright copyright copyright";
     gap: 100px 78px;
     align-items: start;
     padding-top: 100px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template: repeat(2, auto) / repeat(2, 1fr);
+      grid-template-areas:
+        "about navigation"
+        "instagram instagram"
+        "copyright copyright";
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template: repeat(2, auto) / repeat(2, 1fr) !important;
+      grid-template-areas:
+        "about about"
+        "navigation navigation"
+        "instagram instagram"
+        "copyright copyright" !important;
+    }
   }
 
   &__top {
@@ -31,16 +52,16 @@
   }
 
   &__about-title {
-    @include body-xl-500;
+    @include body-xl(500);
 
-    margin-bottom: 20px;
-    color: var(--white);
+    margin-bottom: 16px;
+    color: var(--front-primary-inversed);
   }
 
   &__about-text {
-    @include body-small-400;
+    @include body-small;
 
-    color: var(--green-gray-scale-500);
+    color: var(--green-gray-500);
   }
 
   #{$block-name}__about-text + #{$block-name}__about-contact {
@@ -48,13 +69,13 @@
   }
 
   &__about-link {
-    @include body-small-500;
+    @include body-small(500);
 
     display: inline-block;
     padding-bottom: 6px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
     border-bottom: 1px solid var(--primary);
-    transition: var(--transition);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
@@ -64,23 +85,27 @@
   }
 
   &__about-separator {
-    @include body-small-400;
+    @include body-small;
 
-    padding: 0 5px;
-    color: var(--green-gray-scale-500);
+    padding: 0 16px;
+    color: var(--green-gray-500);
   }
 
   &__navigation-wrapper {
     display: flex;
     grid-area: navigation;
     gap: 78px;
+
+    @media screen and (max-width: $screen-t) {
+      flex-direction: column;
+    }
   }
 
   &__navigation-title {
-    @include body-xl-500;
+    @include body-xl(500);
 
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
   }
 
   &__navigation-list {
@@ -90,14 +115,14 @@
   }
 
   &__navigation-link {
-    @include body-small-400;
+    @include body-small;
 
-    color: var(--green-gray-scale-500);
-    transition: var(--transition);
+    color: var(--green-gray-500);
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
-        color: var(--white);
+        color: var(--front-primary-inversed);
       }
     }
   }
@@ -107,10 +132,10 @@
   }
 
   &__instagram-title {
-    @include body-xl-500;
+    @include body-xl(500);
 
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--front-primary-inversed);
   }
 
   &__instagram-cards {
@@ -124,10 +149,13 @@
     @include flex-center-sb;
 
     grid-area: copyright;
-    padding: 30px 0;
+    padding: 23px 0;
+    border-top: 1px solid var(--green-gray-900);
 
-    // todo
-    box-shadow: 0 -1px 0 0 rgb(27 66 29);
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__socials {
@@ -139,7 +167,7 @@
   &__socials-icon {
     @include box(18px);
 
-    color: var(--green-gray-scale-300);
+    color: var(--green-gray-300);
   }
 
   &__socials-link {
@@ -148,22 +176,28 @@
 
     background-color: transparent;
     border-radius: 50%;
+    transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
         background-color: var(--primary);
 
         #{$block-name}__socials-icon {
-          color: var(--white);
+          color: var(--front-primary-inversed);
         }
       }
     }
   }
 
   &__copyright-text {
-    @include body-small-400;
+    @include body-small;
 
-    color: var(--green-gray-scale-500);
+    margin-left: 86px;
+    color: var(--green-gray-500);
+
+    @media screen and (max-width: $screen-tl) {
+      margin-left: 0;
+    }
   }
 
   &__payment {
@@ -174,14 +208,14 @@
 
   &__payment-link {
     display: block;
-    width: 65px;
+    width: 45px;
     height: 32px;
-    border: 1px solid var(--green-gray-scale-800);
+    border: 1px solid var(--green-gray-800);
     border-radius: 5px;
   }
 
   &__payment-icon {
-    width: 65px;
+    width: 45px;
     height: 32px;
   }
 }

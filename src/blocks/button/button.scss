@@ -7,10 +7,10 @@
   border: none;
   border-radius: 43px;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition);
 
   &--fill {
-    color: var(--white);
+    color: var(--front-primary-inversed);
     background-color: var(--primary);
 
     @media (hover: hover) {
@@ -34,27 +34,39 @@
 
   &--grey {
     color: var(--primary);
-    background-color: var(--green-gray-scale-100);
+    background-color: var(--green-gray-100);
 
     @media (hover: hover) {
       &:hover {
         color: var(--hard-primary);
-        background-color: var(--green-gray-scale-200);
+        background-color: var(--green-gray-200);
       }
     }
   }
 
   &--small {
-    @include body-tiny-600;
+    @include body-tiny(600);
 
     padding: 10px 24px;
   }
 
   &--normal {
+    @include body-small(600);
+
     padding: 14px 32px;
+
+    &#{$block-name}--fill {
+      padding: 13px 32px;
+    }
   }
 
   &--large {
+    @include body-medium(600);
+
     padding: 16px 40px;
+
+    &#{$block-name}--fill {
+      padding: 15px 40px;
+    }
   }
 }

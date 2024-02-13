@@ -2,7 +2,7 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin button(text, mods)
+mixin button(type= "button", text, mods, href)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -19,6 +19,10 @@ mixin button(text, mods)
         allMods = allMods + " button--" + modsList[i].trim();
       }
     }
-
-  button.button(class=allMods)&attributes(attributes)= text
-    block
+  case type
+    when 'button'
+      button.button(class=allMods)&attributes(attributes)= text
+        block
+    when 'link'
+      a.button(class=allMods, href=href)&attributes(attributes)= text
+        block

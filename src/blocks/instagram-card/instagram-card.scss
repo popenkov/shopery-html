@@ -4,8 +4,8 @@
 
 .instagram-card {
   $block-name: &; // #{$block-name}__element
-  @include box(69px);
 
+  @include box(69px);
   position: relative;
   overflow: hidden;
   border-radius: 4px;
@@ -24,12 +24,13 @@
     position: absolute;
     background: rgb(43 87 46 / 80%);
     opacity: 0;
-    transition: var(--transition);
+    transition: all var(--transition);
     inset: 0;
   }
 
   &__icon {
     @include box(32px);
+
+    color: var(--color-white);
   }
-  $block-name: &; // #{$block-name}__element
 }

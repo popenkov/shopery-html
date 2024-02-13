@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product("Текст", "some-mod")
+
+  // список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product--" + modsList[i].trim();
+      }
+    }
+
+  .product(class=allMods)&attributes(attributes)
+    .product__image-container
+      .product__buttons
+        button.round-button.round-button--like.product__image-button
+          svg.round-button__icon: use(href= path.icon + "heart")
+        button.round-button.round-button--white-green.product__image-button
+          svg.round-button__icon: use(href= path.icon + "eye")
+      img.product__image(src= path.img + "product-image.png", alt="product")
+    .product__description
+      .product__description-text
+        a(href="#")
+          h3.product__title Green Apple
+        span.product__price $14.99
+        .product__rating
+          +star-rating(4)
+      button.round-button.product__button
+        svg.round-button__icon: use(href= path.icon + "cart")
