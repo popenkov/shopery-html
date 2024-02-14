@@ -23,10 +23,10 @@ mixin product(text, mods)
   .product(class=allMods)&attributes(attributes)
     .product__image-container
       .product__buttons
-        button.round-button.round-button--like.product__image-button
-          svg.round-button__icon: use(href= path.icon + "heart")
-        button.round-button.round-button--white-green.product__image-button
-          svg.round-button__icon: use(href= path.icon + "eye")
+        button.button-round.button-round--like.product__image-button
+          svg.button-round__icon: use(href= path.icon + "heart")
+        button.button-round.button-round--white-green.product__image-button
+          svg.button-round__icon: use(href= path.icon + "eye")
       img.product__image(src= path.img + "product-image.png", alt="product")
     .product__description
       .product__description-text
@@ -35,5 +35,5 @@ mixin product(text, mods)
         span.product__price $14.99
         .product__rating
           +star-rating(4)
-      button.round-button.product__button
-        svg.round-button__icon: use(href= path.icon + "cart")
+      button.button-round.product__button
+        svg.button-round__icon: use(href= path.icon + "cart")

@@ -1,0 +1,53 @@
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
+
+.radio {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-self: start;
+
+  transition: var(--transition);
+
+  &__input {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+  }
+
+  &__fake-input {
+    @include flex-center;
+    @include box(20px);
+
+    position: relative;
+    border: 1px solid var(--gray-200);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::after {
+      @include absolute-center;
+      @include box(12px);
+
+      border-radius: 50%;
+      transition: background 0.125s ease;
+      content: "";
+    }
+  }
+
+  &__input:checked + &__fake-input {
+    border-color: var(--primary);
+    border-width: 2px;
+  }
+
+  &__input:checked + &__fake-input::after {
+    background: var(--primary);
+  }
+
+  &__label {
+    cursor: pointer;
+    user-select: none;
+  }
+}

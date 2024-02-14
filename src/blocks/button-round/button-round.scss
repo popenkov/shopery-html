@@ -2,7 +2,7 @@
 @import "../../scss/mixins/blocks.scss";
 @import "../../scss/mixins/flexbox.scss";
 
-.round-button {
+.button-round {
   $block-name: &; // #{$block-name}__element
 
   @include flex-center;
@@ -13,6 +13,12 @@
   outline: none;
   cursor: pointer;
   transition: all var(--transition);
+
+  &__icon {
+    @include box(20px);
+
+    transition: all var(--transition);
+  }
 
   &--green {
     background-color: var(--primary);
@@ -88,7 +94,7 @@
     }
   }
 
-  &--transp {
+  &--ghost {
     @media (hover: hover) {
       &:hover {
         background-color: var(--primary);
@@ -101,9 +107,5 @@
         color: var(--gray-700);
       }
     }
-  }
-
-  &__icon {
-    @include box(20px);
   }
 }

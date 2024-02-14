@@ -83,8 +83,17 @@
   &__top-menu-button {
     @include flex-center-vertical;
 
+    gap: 3px;
     padding: 0;
     border: none;
+
+    transition: all var(--transition);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
   }
 
   &__top-menu {
@@ -135,6 +144,12 @@
 
   &__sign-in-link {
     color: inherit;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
   }
 
   &__sign-in-separator {
@@ -327,7 +342,7 @@
   &__all-categories-chevron {
     @include box(18px);
 
-    margin-left: 11px;
+    margin-left: 13px;
     transform: rotate(0deg);
     transition: all var(--transition);
   }
@@ -366,12 +381,12 @@
     @include flex-column;
 
     position: absolute;
+    z-index: var(--header-dropdown-z-index);
     top: 55px;
     left: 0;
-    gap: 12px;
     width: 100%;
     max-width: 300px;
-    padding: 16px 22px;
+    padding: 16px 0px;
     background-color: var(--back-primary);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
     visibility: hidden;
@@ -394,12 +409,14 @@
     @include body-small;
 
     gap: 12px;
+    padding: 6px 22px;
     color: var(--gray-500);
     transition: all var(--transition);
 
     @media (hover: hover) {
       &:hover {
-        color: var(--primary);
+        background-color: var(--primary);
+        color: var(--front-primary-inversed);
       }
     }
   }
@@ -444,7 +461,7 @@
     @include flex-center-vertical;
     @include body-small(600);
 
-    gap: 3px;
+    gap: 4px;
     padding: 18px 0;
     color: var(--gray-500);
     text-transform: capitalize;
@@ -526,7 +543,9 @@
   }
 
   &__phone-text {
-    @include body-small(600);
+    @include body-small(500);
+
+    letter-spacing: 1.2px;
   }
   $block-name: &; // #{$block-name}__element
 }

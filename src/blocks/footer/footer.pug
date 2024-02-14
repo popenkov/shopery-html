@@ -83,9 +83,8 @@ mixin footer(text, mods)
         .footer__bottom
           ul.footer__socials
             each data in json.info.footer.socialLinks
-              li
-                a.footer__socials-link(href=data.link)
-                  svg.footer__socials-icon: use(href= path.icon + data.img)
+              a.button-round.button-round--ghost(href=data.link)
+                svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.img)
 
           p.footer__copyright-text Ecobazar eCommerce © 2021. All Rights Reserved
           ul.footer__payment

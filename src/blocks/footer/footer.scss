@@ -10,6 +10,11 @@
       url("../img/left.svg") no-repeat left bottom,
       url("../img/right.svg") no-repeat right bottom;
 
+    // todo  так не работает
+    //     background:
+    // url(path.img + "left.svg") no-repeat left bottom,
+    // url(path.img + "right.svg") no-repeat right bottom;
+
     @media screen and (max-width: $screen-tl) {
       background: none;
     }
@@ -40,6 +45,8 @@
         "navigation navigation"
         "instagram instagram"
         "copyright copyright" !important;
+
+      gap: 60px 40px;
     }
   }
 
@@ -98,6 +105,8 @@
 
     @media screen and (max-width: $screen-t) {
       flex-direction: column;
+
+      gap: 30px;
     }
   }
 
@@ -164,29 +173,8 @@
     gap: 8px;
   }
 
-  &__socials-icon {
-    @include box(18px);
-
+  &__socials &__socials-icon.button-round__icon {
     color: var(--green-gray-300);
-  }
-
-  &__socials-link {
-    @include flex-center;
-    @include box(40px);
-
-    background-color: transparent;
-    border-radius: 50%;
-    transition: all var(--transition);
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--primary);
-
-        #{$block-name}__socials-icon {
-          color: var(--front-primary-inversed);
-        }
-      }
-    }
   }
 
   &__copyright-text {
@@ -210,7 +198,7 @@
     display: block;
     width: 45px;
     height: 32px;
-    border: 1px solid var(--green-gray-800);
+    outline: 1px solid var(--green-gray-800);
     border-radius: 5px;
   }
 

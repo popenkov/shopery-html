@@ -2,7 +2,8 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin checkbox(type, checkboxName, text, id, value, mods)
+//- mixin checkbox(type, checkboxName, text, id, value, mods)
+mixin checkbox(label, mods, name, id)
 
   //- Принимает:
   //-   type    {string} - тип поля
@@ -10,8 +11,8 @@ mixin checkbox(type, checkboxName, text, id, value, mods)
   //-   hint     {string} - плэйсхолдер
   //-   options     {string} - список опций select
   //-   mods     {string} - список модификаторов
-  //- Вызов:
-        +checkbox('select', 'model', 'Модель', ['COOLRAY', 'Новый COOLRAY'], 'some-mod')
+  //- Вызов
+        +checkbox('Текст лейбла', 'some-mod', 'some-name', 'some-id')
 
   -
     // список модификаторов
@@ -23,15 +24,9 @@ mixin checkbox(type, checkboxName, text, id, value, mods)
       }
     }
 
-  .checkbox(class=allMods + ' checkbox--' + type)
-    case type
-      when 'radio'
-        input.checkbox__input(type=type, name=checkboxName, id=id)&attributes(attributes)
-        label.checkbox__label(for=id)
-        span= text
-      when 'checkbox'
-        input.checkbox__input(type=type, name=checkboxName, id=id, value= value)&attributes(attributes)
-        label.checkbox__label(for=id)
-          svg: use(href= path.icon + 'check')
-        span= text
-
+  label.checkbox(class= allMods)
+    input.checkbox__input(id= id, type= 'checkbox', name= name)&attributes(attributes)
+    span.checkbox__fake-input
+      svg: use(href= path.icon + 'check')
+    if label
+      span.checkbox__label!= label

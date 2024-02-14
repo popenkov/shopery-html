@@ -141,13 +141,11 @@ export const config = {
     "sanitize.css/typography.css",
     "sanitize.css/reduce-motion.css",
     "src/scss/variables.scss",
+    "src/scss/reset.scss",
     "src/scss/reboot.scss",
-    'src/blocks/arrow-btn/arrow-btn.scss',
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
-    // "src/scss/vendor.scss",
-    "src/scss/fonts.scss",
-    // "src/scss/animations.scss"
+    "src/scss/vendor.scss",
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
   // style imports at end

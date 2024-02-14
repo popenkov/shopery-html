@@ -7,49 +7,81 @@ block variables
   - metaKeywords = "Shopery eywords"
 
 block content
+  .hero.container
+    .swiper.hero.js-hero-slider
+      .swiper-wrapper
+        each slide in json.info.hero
+          .swiper-slide.hero__slide
+            .hero__img-container
+              img.hero__img(src= path.img + slide.img, alt="slide")
+            .hero__description
+              span.hero__note= slide.note
+              h2.hero__title= slide.title
+              p.hero__text= slide.text
+              +button("button", "", "fill, large").arrow-btn.hero__button
+                span.arrow-btn__text Shop now
+                svg.arrow-btn__icon: use(href= path.icon + "arrow")
+    .swiper-pagination
+    .hero__navigation
+      button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
+        svg.button-round__icon: use(href= path.icon + "arrow")
+      button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
+        svg.button-round__icon: use(href= path.icon + "arrow")
+
   .container
+
+    style.
+      .d-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+
+
     h2 Buttons
     .d-flex
-      +button('button', 'Small Fill', "fill, small")
-      +button('button','Small Border', "border, small")
-      +button('button','Small Ghost', "grey, small")
+      +button("button", "Small Fill", "fill, small")
+      +button("button","Small Border", "border, small")
+      +button("button","Small Ghost", "grey, small")
 
-      +button('button','Medium Fill', "fill, normal")
-      +button('button','Medium Border', 'border, normal')
-      +button('button','Medium Ghost', "grey, normal")
+      +button("button","Medium Fill", "fill, normal")
+      +button("button","Medium Border", "border, normal")
+      +button("button","Medium Ghost", "grey, normal")
 
-      +button('button','Large Fill', "fill, large")
-      +button('button','Large Border', "border, large")
-      +button('button','Large Ghost', "grey, large")
+      +button("button","Large Fill", "fill, large")
+      +button("button","Large Border", "border, large")
+      +button("button","Large Ghost", "grey, large")
 
     h2 Icon Buttons
     .d-flex
-      +button('button', '', "fill, small").arrow-btn
+      +button("button", "", "fill, small")(class="arrow-btn")
         span.arrow-btn__text Small Fill
-        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
-      +button('button', '', "fill, normal").arrow-btn
+        svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      +button("button", "", "fill, normal")(class="arrow-btn")
         span.arrow-btn__text Medium Fill
-        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
-      +button('button', '', "fill, large").arrow-btn
+        svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      +button("button", "", "fill, large")(class="arrow-btn")
         span.arrow-btn__text Large Fill
-        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
+        svg.arrow-btn__icon: use(href= path.icon + "arrow")
 
 
     h2 close button
     .d-flex
       button.close-button
-        svg.close-button__icon: use(href= path.icon + 'cross')
+        svg.close-button__icon: use(href= path.icon + "cross")
 
     h2 round buttons
     .d-flex
-      button.round-button.round-button--green
-        svg.round-button__icon: use(href= path.icon + 'cart')
-      button.round-button.round-button--like
-        svg.round-button__icon: use(href= path.icon + 'heart')
-      button.round-button.round-button--white-green
-        svg.round-button__icon: use(href= path.icon + 'eye')
-      button.round-button.round-button--transp
-        svg.round-button__icon: use(href= path.icon + 'facebook')
+      button.button-round.button-round--primary
+        svg.button-round__icon: use(href= path.icon + "cart")
+      button.button-round.button-round--like
+        svg.button-round__icon: use(href= path.icon + "heart")
+      button.button-round.button-round--white-green
+        svg.button-round__icon: use(href= path.icon + "eye")
+      button.button-round.button-round--ghost
+        svg.button-round__icon: use(href= path.icon + "facebook")
 
     h2 Product small
     .d-flex
@@ -65,11 +97,11 @@ block content
 
     h2 checkbox
     .d-flex
-      +checkbox('checkbox', 'checkbox', '', 'checkbox')
+      +checkbox("checkbox", "", "checkbox")
       span
-        +checkbox('radio', 'radio', '', '1','1')
-        +checkbox('radio', 'radio', '', '2','2')
+        +radio("radio", "", "1","1")
+        +radio("radio", "", "2","2")
 
     h2 Inputs
     .d-flex
-      +field('text', 'text', 'text', '', '', true)
+      +field("text", "text", "text", "", "", true)

@@ -27,13 +27,13 @@ mixin product-large(text, mods)
         .tag.tag--blue Best Sale
       img.product-large__image(src= path.img + "image.png", alt="product-large")
       .product-large__buttons
-        button.round-button.round-button--like.product-large__button
-          svg.round-button__icon: use(href= path.icon + "heart")
-        button.round-button.product-large__button.product-large__button--cart
+        button.button-round.button-round--like.product-large__button
+          svg.button-round__icon: use(href= path.icon + "heart")
+        button.button-round.product-large__button.product-large__button--cart
           span Add to Cart
-          svg.round-button__icon: use(href= path.icon + "cart")
-        button.round-button.product-large__button
-          svg.round-button__icon: use(href= path.icon + "eye")
+          svg.button-round__icon: use(href= path.icon + "cart")
+        button.button-round.product-large__button
+          svg.button-round__icon: use(href= path.icon + "eye")
 
     .product-large__description
       a(href="#")

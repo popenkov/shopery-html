@@ -94,5 +94,9 @@
   &__button {
     background-color: var(--gray-50);
     box-shadow: none;
+
+    svg {
+      transition: all var(--transition);
+    }
   }
 }
