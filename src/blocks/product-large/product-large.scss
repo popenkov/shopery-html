@@ -4,6 +4,7 @@
 
 .product-large {
   $block-name: &; // #{$block-name}__element
+
   @include flex-column;
 
   gap: 3px;

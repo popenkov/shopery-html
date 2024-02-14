@@ -86,7 +86,6 @@
     gap: 3px;
     padding: 0;
     border: none;
-
     transition: all var(--transition);
 
     @media (hover: hover) {
@@ -381,12 +380,12 @@
     @include flex-column;
 
     position: absolute;
-    z-index: var(--header-dropdown-z-index);
     top: 55px;
     left: 0;
+    z-index: var(--header-dropdown-z-index);
     width: 100%;
     max-width: 300px;
-    padding: 16px 0px;
+    padding: 16px 0;
     background-color: var(--back-primary);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
     visibility: hidden;
@@ -415,8 +414,8 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--primary);
         color: var(--front-primary-inversed);
+        background-color: var(--primary);
       }
     }
   }

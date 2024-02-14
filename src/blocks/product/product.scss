@@ -3,6 +3,7 @@
 
 .product {
   $block-name: &; // #{$block-name}__element
+
   @include flex-column;
 
   max-width: 264px;

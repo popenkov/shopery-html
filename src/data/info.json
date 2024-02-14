@@ -66,21 +66,21 @@
   },
   "hero": [
     {
-      "img": "img/hero-slide-1.png",
+      "img": "hero-slide-1.png",
       "note": "Welcome to shopery",
-      "title": "Fresh & Healthy U+000A Organic Food",
+      "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     },
     {
-      "img": "img/hero-slide-1.png",
+      "img": "hero-slide-1.png",
       "note": "Welcome to shopery",
-      "title": "Fresh & Healthy U+000A Organic Food",
+      "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     },
     {
-      "img": "img/hero-slide-1.png",
+      "img": "hero-slide-1.png",
       "note": "Welcome to shopery",
-      "title": "Fresh & Healthy U+000A Organic Food",
+      "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     }
   ],

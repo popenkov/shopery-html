@@ -3,6 +3,7 @@
 
 .product-small {
   $block-name: &; // #{$block-name}__element
+
   @include flex-center-vertical;
 
   display: flex;

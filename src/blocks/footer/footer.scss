@@ -45,7 +45,6 @@
         "navigation navigation"
         "instagram instagram"
         "copyright copyright" !important;
-
       gap: 60px 40px;
     }
   }
@@ -105,7 +104,6 @@
 
     @media screen and (max-width: $screen-t) {
       flex-direction: column;
-
       gap: 30px;
     }
   }
@@ -173,6 +171,7 @@
     gap: 8px;
   }
 
+  // stylelint-disable-next-line
   &__socials &__socials-icon.button-round__icon {
     color: var(--green-gray-300);
   }
@@ -198,8 +197,8 @@
     display: block;
     width: 45px;
     height: 32px;
-    outline: 1px solid var(--green-gray-800);
     border-radius: 5px;
+    outline: 1px solid var(--green-gray-800);
   }
 
   &__payment-icon {
