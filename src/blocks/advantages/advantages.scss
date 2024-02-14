@@ -1,0 +1,62 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/text-styles.scss";
+
+.advantages {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  overflow: hidden;
+  border: 1px solid rgb(230 230 230);
+  border-radius: 8px;
+
+  &__icon-wrapper {
+    @include box(70px);
+    @include flex-center;
+
+    background-color: var(--color-white);
+    border-radius: 50%;
+  }
+
+  &__icon {
+    @include box(40px);
+  }
+
+  &__title {
+    @include body-large(600);
+  }
+
+  &__icon-wrapper + &__title {
+    margin-top: 16px;
+  }
+
+  &__text {
+    @include body-small;
+  }
+
+  &__title + &__text {
+    margin-top: 8px;
+  }
+
+  &__item {
+    @include flex-column;
+
+    flex-grow: 1;
+    padding: 40px;
+
+    &:first-child {
+      background-color: var(--primary);
+
+      #{$block-name}__title,
+      #{$block-name}__text {
+        color: var(--front-primary-inversed);
+      }
+    }
+
+    &:not(:first-child, :last-child) {
+      border-right: 1px solid rgb(230 230 230);
+    }
+  }
+}

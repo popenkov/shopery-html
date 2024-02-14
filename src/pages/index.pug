@@ -28,6 +28,16 @@ block content
       button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
         svg.button-round__icon: use(href= path.icon + "arrow")
 
+    .hero__advantages.advantages
+      each advantage in json.info.advantages
+        .advantages__item
+          .advantages__icon-wrapper
+            svg.advantages__icon: use(href= path.icon + advantage.icon)
+          h3.advantages__title= advantage.title
+          p.advantages__text= advantage.text
+
+
+
   .container
 
     style.

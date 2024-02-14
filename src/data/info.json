@@ -84,7 +84,28 @@
       "text": "Free shipping on all your order. we deliver, you enjoy"
     }
   ],
-
+  "advantages": [
+    {
+      "icon": "delivery-truck",
+      "title": "Free Shipping",
+      "text": "Free shipping with discount"
+    },
+    {
+      "icon": "headphones",
+      "title": "Great Support 24/7",
+      "text": "Instant access to Contact "
+    },
+    {
+      "icon": "shopping-bag",
+      "title": "100% Secure Payment",
+      "text": "We ensure your money is save"
+    },
+    {
+      "icon": "package",
+      "title": "Money-Back Guarantee",
+      "text": "30 days money-back guarantee"
+    }
+  ],
   "footer": {
     "instagram": [
       {

@@ -3,6 +3,8 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .button-round {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-center;
   @include box(40px);
 
@@ -106,5 +108,4 @@
 
     transition: all var(--transition);
   }
-  $block-name: &; // #{$block-name}__element
 }
