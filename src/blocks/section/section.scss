@@ -1,0 +1,14 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+
+.section {
+  $block-name: &; // #{$block-name}__element
+
+  margin-bottom: 100px;
+
+  &__title {
+    @include heading-3(600);
+
+    text-align: center;
+  }
+}

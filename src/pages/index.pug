@@ -37,6 +37,18 @@ block content
           p.advantages__text= advantage.text
 
 
+  .section
+    .container
+      h2.section__title Introducing Our Products
+      .tabs
+        .tabs__labels
+          button.tabs__label.tabs__label--active(data-href="#tab1") Таб 1
+          button.tabs__label(data-href="#tab2") Таб 2
+          button.tabs__label(data-href="#tab3") Таб 3
+        .tabs__panes
+          .tabs__pane.tabs__pane--active#tab1 Содержимое, таб 1
+          .tabs__pane#tab2 Содержимое, таб 2
+          .tabs__pane#tab3 Содержимое, таб 3
 
   .container
 
