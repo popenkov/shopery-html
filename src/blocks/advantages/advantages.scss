@@ -6,24 +6,48 @@
 .advantages {
   $block-name: &; // #{$block-name}__element
 
-  // @include flex-center-vertical;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  overflow: hidden;
-  border: 1px solid rgb(230 230 230);
-  border-radius: 8px;
+  position: relative;
 
   @media screen and (max-width: $screen-tl) {
-    grid-template-columns: 1fr 1fr;
+    // todo
   }
 
-  @media screen and (max-width: $screen-ti) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: $screen-tl) {
+    // todo
   }
 
-  @media screen and (max-width: $screen-t) {
-    grid-template-columns: 1fr;
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    background-color: var(--green-gray-50);
+    content: "";
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border: 1px solid rgb(230 230 230);
+    border-radius: 8px;
+    box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__icon-wrapper {
@@ -32,10 +56,18 @@
 
     background-color: var(--color-white);
     border-radius: 50%;
+
+    @media screen and (max-width: $screen-tl) {
+      @include box(50px);
+    }
   }
 
   &__icon {
     @include box(40px);
+
+    @media screen and (max-width: $screen-tl) {
+      @include box(30px);
+    }
   }
 
   &__title {
@@ -44,6 +76,10 @@
 
   &__icon-wrapper + &__title {
     margin-top: 16px;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-top: 10px;
+    }
   }
 
   &__text {

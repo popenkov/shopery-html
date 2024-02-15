@@ -8,6 +8,8 @@
 
     position: relative;
     gap: 12px;
+    overflow-y: auto;
+    outline: none;
 
     &::after {
       position: absolute;
@@ -25,6 +27,7 @@
     @include body-medium(500);
 
     position: relative;
+    flex-shrink: 0;
     padding: 0;
     padding: 8px 12px;
     color: var(--gray-500);
@@ -61,6 +64,12 @@
       //     right: -26px;
       //   }
       // }
+    }
+
+    &:first-child {
+      @media screen and (max-width: $screen-tl) {
+        margin-left: 20px;
+      }
     }
   }
 

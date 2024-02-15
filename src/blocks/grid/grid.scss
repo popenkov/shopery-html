@@ -8,6 +8,14 @@
   &__three-items {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template-columns: 1fr !important;
+    }
   }
 
   &__four-items {
@@ -22,7 +30,7 @@
     }
 
     @media screen and (max-width: $screen-t) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
     }
   }
 }

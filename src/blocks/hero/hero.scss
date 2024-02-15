@@ -2,7 +2,11 @@
 
 .hero {
   .swiper-pagination {
-    bottom: 188px;
+    bottom: 75px;
+
+    @media screen and (max-width: $screen-ti) {
+      bottom: 60px;
+    }
   }
 
   .swiper-pagination-bullet {
@@ -23,7 +27,12 @@
 
   &__slider {
     position: relative;
-    padding: 68px 0 229px;
+    // todo
+    padding: 68px 0 116px;
+
+    @media screen and (max-width: $screen-tl) {
+      padding: 68px 0 200px;
+    }
   }
 
   &__slide {
@@ -46,11 +55,12 @@
       width: 100%;
       height: auto;
       // todo
-      height: 480px;
+      height: 420px;
     }
   }
 
   &__img {
+    height: 100%;
     object-fit: contain;
   }
 
@@ -113,15 +123,19 @@
 
   &__navigation-button {
     position: absolute;
-    top: 38%;
+    top: 47%;
     box-shadow: none !important;
     transform: translateY(-50%);
 
     @media screen and (max-width: $screen-dxl) {
       position: static;
       top: auto;
-      margin-bottom: 188px;
+      margin-bottom: 75px;
       transform: none;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      margin-bottom: 60px;
     }
 
     @media (hover: hover) {
@@ -143,20 +157,5 @@
     }
   }
 
-  &__advantages {
-    position: absolute;
-    bottom: 53px;
-    left: 50%;
-    width: calc(100% - 40px);
-    background-color: var(--color-white);
-    box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
-    transform: translateX(-50%);
-    // todo
-    @media screen and (max-width: $screen-tl) {
-      //   position: static;
-      //   transform: none;
-      bottom: -294px;
-    }
-  }
   $block-name: &; // #{$block-name}__element
 }

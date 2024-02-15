@@ -6,6 +6,7 @@
 
   @include flex-column;
 
+  background-color: var(--color-white);
   border: var(--card-border);
 
   @media (hover: hover) {

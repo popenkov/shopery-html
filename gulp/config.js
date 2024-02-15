@@ -146,6 +146,7 @@ export const config = {
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
     "src/scss/vendor.scss",
+    "src/scss/blocks.scss",
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
   // style imports at end
@@ -187,6 +188,7 @@ export const config = {
   blockRegexp: /[^\\/]+(?=\.[^.])/g,
   templateRegexp: /(?<=extends.*templates\/).*.pug/g,
   // env
+  /* eslint-disable-next-line */
   mode: process.env.MODE || "development",
   // img copy mode
   isSeparatedBlockImg: false, // [false, true, "collected"]

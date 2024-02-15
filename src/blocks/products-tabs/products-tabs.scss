@@ -1,0 +1,40 @@
+@import "../../scss/breakpoints";
+
+.products-tabs {
+  $block-name: &; // #{$block-name}__element
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__panes {
+    @media screen and (max-width: $screen-ti) {
+      background-color: unset;
+    }
+  }
+
+  &__items {
+    gap: 2px;
+
+    &--desktop {
+      @media screen and (max-width: $screen-ti) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media screen and (max-width: $screen-ti) {
+        display: block;
+      }
+
+      .swiper {
+        max-width: calc(100vw - 40px);
+      }
+
+      .swiper-slide {
+        width: auto;
+      }
+    }
+  }
+}
