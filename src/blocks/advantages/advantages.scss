@@ -8,14 +8,6 @@
 
   position: relative;
 
-  @media screen and (max-width: $screen-tl) {
-    // todo
-  }
-
-  @media screen and (max-width: $screen-tl) {
-    // todo
-  }
-
   &::after {
     position: absolute;
     right: 0;
@@ -93,12 +85,15 @@
   &__item {
     @include flex-column;
 
-    // width: 25%;
     padding: 40px;
 
     @media screen and (max-width: $screen-tl) {
       padding: 20px;
-      outline: 1px solid rgb(230 230 230);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      border: none;
+      border-bottom: 1px solid rgb(230 230 230);
     }
 
     &:first-child {
@@ -114,7 +109,19 @@
       border-right: 1px solid rgb(230 230 230);
 
       @media screen and (max-width: $screen-tl) {
-        border: none;
+        border-right: none;
+      }
+    }
+
+    &:nth-child(2) {
+      @media screen and (max-width: $screen-tl) {
+        border-bottom: 1px solid rgb(230 230 230);
+      }
+    }
+
+    &:nth-child(3) {
+      @media screen and (max-width: $screen-tl) {
+        border-right: 1px solid rgb(230 230 230);
       }
     }
   }

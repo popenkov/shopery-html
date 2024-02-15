@@ -1,7 +1,6 @@
 @import "../../scss/breakpoints";
 
 .mobile-slider {
-  $block-name: &; // #{$block-name}__element
   .swiper-wrapper {
     padding-bottom: 20px;
   }
@@ -29,4 +28,10 @@
       border-radius: 50px;
     }
   }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+  $block-name: &; // #{$block-name}__element
 }

@@ -3,8 +3,11 @@
 .products-tabs {
   $block-name: &; // #{$block-name}__element
 
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 0;
+
+  @media screen and (max-width: $screen-ti) {
+    padding: 60px 0;
+  }
 
   &__panes {
     @media screen and (max-width: $screen-ti) {

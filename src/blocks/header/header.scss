@@ -59,7 +59,7 @@
     @include flex-column;
 
     position: absolute;
-    top: 55px;
+    top: 29px;
     left: 50%;
     gap: 12px;
     width: 100px;
@@ -86,7 +86,7 @@
     gap: 3px;
     padding: 0;
     border: none;
-    transition: all var(--transition);
+    cursor: pointer;
 
     @media (hover: hover) {
       &:hover {
@@ -98,19 +98,17 @@
   &__top-menu {
     position: relative;
 
-    @media (hover: hover) {
-      &:hover {
-        color: var(--front-primary-inversed);
-        transition: all var(--transition);
-        #{$block-name}__top-menu-content {
-          top: 100%;
-          visibility: visible;
-          opacity: 1;
-        }
+    &:hover {
+      color: var(--front-primary-inversed);
 
-        #{$block-name}__top-menu-chevron {
-          transform: rotate(180deg);
-        }
+      #{$block-name}__top-menu-content {
+        visibility: visible;
+        opacity: 1;
+        transition: all var(--transition);
+      }
+
+      #{$block-name}__top-menu-chevron {
+        transform: rotate(180deg);
       }
     }
   }

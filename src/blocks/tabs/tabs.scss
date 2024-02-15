@@ -4,12 +4,19 @@
   $block-name: &; // #{$block-name}__element
 
   &__labels {
+    overflow-y: auto;
+  }
+
+  &__scroll-container {
     @include flex-center;
 
     position: relative;
     gap: 12px;
-    overflow-y: auto;
     outline: none;
+
+    @media screen and (max-width: $screen-ti) {
+      width: max-content;
+    }
 
     &::after {
       position: absolute;
@@ -64,12 +71,6 @@
       //     right: -26px;
       //   }
       // }
-    }
-
-    &:first-child {
-      @media screen and (max-width: $screen-tl) {
-        margin-left: 20px;
-      }
     }
   }
 

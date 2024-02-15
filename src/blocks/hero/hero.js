@@ -10,14 +10,8 @@ ready(function () {
       modules: [Navigation, Pagination],
       spaceBetween: 1,
       loop: true,
-      loopFillGroupWithBlank: true,
-      effect: "fade",
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
       pagination: {
-        el: ".swiper-pagination",
+        el: ".hero__swiper-pagination",
         clickable: true,
       },
       navigation: {

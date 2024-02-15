@@ -22,7 +22,7 @@ block content
                 +button("button", "", "fill, large").arrow-btn.hero__button
                   span.arrow-btn__text Shop now
                   svg.arrow-btn__icon: use(href= path.icon + "arrow")
-      .swiper-pagination
+      .hero__swiper-pagination
       .hero__navigation
         button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
           svg.button-round__icon: use(href= path.icon + "arrow")
@@ -44,11 +44,12 @@ block content
       h2.section__title Introducing Our Products
       .tabs.section__content
         .tabs__labels
-          button.tabs__label.tabs__label--active(data-href="#tab1") All
-          button.tabs__label(data-href="#tab2") Vegetable
-          button.tabs__label(data-href="#tab3") Fruit
-          button.tabs__label(data-href="#tab4") Meat & Fish
-          button.tabs__label(data-href="#tab5") View All
+          .tabs__scroll-container
+            button.tabs__label.tabs__label--active(data-href="#tab1") All
+            button.tabs__label(data-href="#tab2") Vegetable
+            button.tabs__label(data-href="#tab3") Fruit
+            button.tabs__label(data-href="#tab4") Meat & Fish
+            button.tabs__label(data-href="#tab5") View All
         .tabs__panes.products-tabs__panes
           .tabs__pane.tabs__pane--active#tab1
             .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
@@ -88,7 +89,7 @@ block content
                 each banner in json.info.banners
                   .swiper-slide
                     +banner-s(banner, banner.type)
-              .mobile-slider__pagination.swiper-pagination
+              .mobile-slider__pagination.swiper-paginationprocess
 
   .container
 

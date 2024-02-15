@@ -6,6 +6,10 @@
 
   margin-bottom: 100px;
 
+  @media screen and (max-width: $screen-tl) {
+    margin-bottom: 60px;
+  }
+
   &--green {
     background-color: var(--green-gray-50);
   }
@@ -13,6 +17,7 @@
   &__title {
     @include heading-3(600);
 
+    letter-spacing: 0.5px;
     text-align: center;
   }
 

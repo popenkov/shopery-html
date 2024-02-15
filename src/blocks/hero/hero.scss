@@ -1,14 +1,21 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
 
 .hero {
-  .swiper-pagination {
-    bottom: 75px;
+  &__swiper-pagination {
+    @include flex-center;
+
+    position: absolute;
+    bottom: 79px;
+    display: flex;
+    justify-content: center;
 
     @media screen and (max-width: $screen-ti) {
       bottom: 60px;
     }
   }
 
+  // stylelint-disable-next-line
   .swiper-pagination-bullet {
     @include box(8px);
 
@@ -27,11 +34,14 @@
 
   &__slider {
     position: relative;
-    // todo
     padding: 68px 0 116px;
 
     @media screen and (max-width: $screen-tl) {
-      padding: 68px 0 200px;
+      padding-bottom: 200px;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      padding-bottom: 116px !important;
     }
   }
 
@@ -76,15 +86,17 @@
     color: var(--primary);
     font-weight: 400;
     font-size: 14px;
-    font-family: var(--font-segoe);
+    // todo test
+    font-family: var(--font-segoe) !important;
     line-height: 100%;
-    letter-spacing: 2%;
+    text-transform: uppercase;
   }
 
   &__title {
     @include heading-1(600);
 
     color: var(--green-gray-900);
+    letter-spacing: 1px;
   }
 
   &__note + &__title {
@@ -102,7 +114,7 @@
   }
 
   &__text + &__button {
-    margin-top: 32px;
+    margin-top: 30px;
   }
 
   &__navigation {
@@ -117,13 +129,16 @@
     }
 
     @media screen and (max-width: $screen-ti) {
-      display: none;
+      display: none !important;
     }
   }
 
   &__navigation-button {
+    @include box(45px);
+
     position: absolute;
     top: 47%;
+    border: 1px solid var(--green-gray-100);
     box-shadow: none !important;
     transform: translateY(-50%);
 

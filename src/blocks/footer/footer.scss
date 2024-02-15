@@ -10,11 +10,6 @@
       url("../img/left.svg") no-repeat left bottom,
       url("../img/right.svg") no-repeat right bottom;
 
-    // todo  так не работает
-    //     background:
-    // url(path.img + "left.svg") no-repeat left bottom,
-    // url(path.img + "right.svg") no-repeat right bottom;
-
     @media screen and (max-width: $screen-tl) {
       background: none;
     }
