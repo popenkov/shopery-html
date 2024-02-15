@@ -11,4 +11,8 @@
 
     text-align: center;
   }
+
+  &__title + &__content {
+    margin-top: 20px;
+  }
 }

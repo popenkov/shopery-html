@@ -1,0 +1,11 @@
+@import "../../scss/breakpoints";
+
+.grid {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+
+  &__four-items {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

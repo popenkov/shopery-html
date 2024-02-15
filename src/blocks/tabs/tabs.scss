@@ -7,7 +7,7 @@
     @include flex-center;
 
     position: relative;
-    gap: 24px;
+    gap: 23px;
 
     &::after {
       position: absolute;
@@ -25,18 +25,19 @@
     @include body-medium(500);
 
     position: relative;
+    padding: 0;
     color: var(--gray-500);
     border: none;
     cursor: pointer;
     transition: padding 0.25s ease;
 
     &:not(:last-child) {
-      margin-right: 24px;
+      margin-right: 26px;
 
       &::after {
         position: absolute;
         top: 50%;
-        right: -24px;
+        right: -26px;
         width: 1px;
         height: 16px;
         background-color: var(--green-gray-200);
@@ -46,9 +47,18 @@
     }
 
     &--active {
+      padding: 8px 12px;
       color: var(--primary);
-      border-bottom: 1px solid var(--primary);
+      border-bottom: 2px solid var(--primary);
       cursor: default;
+
+      &#{$block-name}__label:not(:last-child) {
+        margin-right: 25px;
+
+        &::after {
+          right: -26px;
+        }
+      }
     }
   }
 
@@ -61,11 +71,14 @@
     border-top: 0;
   }
 
+  &__labels + &__panes {
+    margin-top: 47px;
+  }
+
   &__pane {
     grid-area: tab;
     grid-column: 1/2;
     width: 100%;
-    padding: 16px;
     transform: translateY(16px);
     opacity: 0;
     transition:

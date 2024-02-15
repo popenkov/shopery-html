@@ -1,13 +1,11 @@
 @import "../../scss/breakpoints";
 @import "../../scss/mixins/flexbox.scss";
-@import "../../scss/mixins/text-styles.scss";
 
 .product-large {
   $block-name: &; // #{$block-name}__element
 
   @include flex-column;
 
-  gap: 3px;
   border: var(--card-border);
 
   @media (hover: hover) {
@@ -19,10 +17,9 @@
         color: var(--primary);
       }
 
-      #{$block-name}__button--cart {
-        color: var(--color-white);
-        background-color: var(--primary);
-        box-shadow: 0 0 8px 2px var(--gray-200);
+      #{$block-name}__buttons {
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
@@ -33,39 +30,101 @@
     width: 100%;
   }
 
-  &__image {
-    width: 100%;
-    max-width: 525px;
-    object-fit: contain;
-    object-position: center;
-  }
-
   &__tags {
     @include flex-center-vertical;
 
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 20px;
+    left: 19px;
     flex-wrap: wrap;
     gap: 8px;
   }
 
   &__buttons {
-    @include flex-center-vertical;
+    @include flex-column;
 
     position: absolute;
-    right: 24px;
-    bottom: 20px;
-    left: 24px;
-    gap: 8px;
+    top: 22px;
+    right: 20px;
+    gap: 4px;
+    visibility: hidden;
+    opacity: 0;
   }
 
-  &__button.button-round {
-    @include box(46px);
+  &__image-button {
+    @include box(48px);
 
-    color: var(--gray-900);
-    background-color: var(--gray-50);
+    background-color: var(--color-white);
+    border: 1px solid var(--gray-50);
     box-shadow: none;
+
+    @media (hover: hover) {
+      &:hover {
+        border: none;
+        box-shadow: 0 0 8px 0 var(--gray-200);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    padding: 5px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__description {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 22px 22px 20px;
+  }
+
+  &__title {
+    @include body-medium;
+
+    color: var(--gray-700);
+  }
+
+  &__price {
+    @include flex-center-vertical;
+    @include body-large(500);
+
+    gap: 4px;
+    color: var(--green-gray-900);
+
+    &--old {
+      color: var(--green-gray-400);
+    }
+  }
+
+  &__link + &__price {
+    margin-top: 1px;
+  }
+
+  &__rating svg {
+    @include box(18px);
+
+    &:not(:last-child) {
+      margin-right: 2px;
+    }
+  }
+
+  &__price + &__rating {
+    margin-top: 13px;
+  }
+
+  &__button {
+    @include box(50px);
+
+    background-color: var(--green-gray-100);
+    box-shadow: none;
+    // stylelint-disable-next-line
+    svg {
+      transition: color var(--transition);
+    }
 
     @media (hover: hover) {
       &:hover {
@@ -74,68 +133,5 @@
         box-shadow: 0 0 8px 2px var(--gray-200);
       }
     }
-  }
-
-  &__button--cart.button-round {
-    @include flex-center;
-    @include body-small(600);
-
-    gap: 12px;
-    width: 100% !important;
-    border-radius: 43px !important;
-  }
-
-  &__description {
-    @include flex-column;
-
-    gap: 4px;
-    align-items: center;
-    padding: 12px 24px 18px;
-  }
-
-  &__title {
-    @include body-large;
-
-    color: var(--gray-700);
-  }
-
-  &__price {
-    @include flex-center-vertical;
-    @include body-xxl(500);
-
-    gap: 4px;
-  }
-
-  &__price-new {
-    color: var(--gray-900);
-  }
-
-  &__price-old {
-    color: var(--gray-400);
-    text-decoration-line: line-through;
-  }
-
-  &__rating {
-    @include flex-center;
-
-    gap: 2px;
-
-    svg {
-      @include box(18px);
-    }
-  }
-
-  &__rating-amount {
-    @include body-tiny;
-
-    color: var(--gray-500);
-  }
-
-  &__rating + &__counter {
-    margin-top: 13px;
-  }
-
-  &__counter-title {
-    margin-left: 45px;
   }
 }

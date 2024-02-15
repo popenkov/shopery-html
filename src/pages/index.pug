@@ -40,15 +40,23 @@ block content
   .section
     .container
       h2.section__title Introducing Our Products
-      .tabs
+      .tabs.section__content
         .tabs__labels
-          button.tabs__label.tabs__label--active(data-href="#tab1") Таб 1
-          button.tabs__label(data-href="#tab2") Таб 2
-          button.tabs__label(data-href="#tab3") Таб 3
+          button.tabs__label.tabs__label--active(data-href="#tab1") All
+          button.tabs__label(data-href="#tab2") Vegetable
+          button.tabs__label(data-href="#tab3") Fruit
+          button.tabs__label(data-href="#tab4") Meat & Fish
+          button.tabs__label(data-href="#tab5") View All
         .tabs__panes
-          .tabs__pane.tabs__pane--active#tab1 Содержимое, таб 1
+          .tabs__pane.tabs__pane--active#tab1
+            .grid.grid__four-items
+              each product in json.info.products
+                +product-large(product)
+
           .tabs__pane#tab2 Содержимое, таб 2
           .tabs__pane#tab3 Содержимое, таб 3
+          .tabs__pane#tab4 Содержимое, таб 4
+          .tabs__pane#tab5 Содержимое, таб 5
 
   .container
 
@@ -111,11 +119,11 @@ block content
 
     h2 Product
     .d-flex
-      +product
+      +product(json.info.products[0])
 
     h2 Product Large
     .d-flex
-      +product-large
+      +product-xxl
 
     h2 checkbox
     .d-flex

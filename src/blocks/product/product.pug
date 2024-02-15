@@ -2,13 +2,20 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin product(text, mods)
+mixin product(data, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +product("Текст", "some-mod")
+        +product( {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }, "some-mod")
 
   // список модификаторов
   -
@@ -22,18 +29,25 @@ mixin product(text, mods)
 
   .product(class=allMods)&attributes(attributes)
     .product__image-container
+      if data.tags
+        .product__tags
+          each tag in data.tags
+            .tag(class= "tag--" +tag.type)= tag.text
       .product__buttons
         button.button-round.button-round--like.product__image-button
           svg.button-round__icon: use(href= path.icon + "heart")
         button.button-round.button-round--white-green.product__image-button
           svg.button-round__icon: use(href= path.icon + "eye")
-      img.product__image(src= path.img + "product-image.png", alt="product")
+      img.product__image(src= path.img + data.img, alt="product")
     .product__description
       .product__description-text
         a(href="#")
-          h3.product__title Green Apple
-        span.product__price $14.99
+          h3.product__title= data.title
+        p.product__price
+          span= data.price
+          if data.priceOld
+            span.product__price--old= data.priceOld
         .product__rating
-          +star-rating(4)
+          +star-rating(data.rating)
       button.button-round.product__button
         svg.button-round__icon: use(href= path.icon + "cart")
