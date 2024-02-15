@@ -7,7 +7,7 @@
     @include flex-center;
 
     position: relative;
-    gap: 23px;
+    gap: 12px;
 
     &::after {
       position: absolute;
@@ -26,18 +26,18 @@
 
     position: relative;
     padding: 0;
+    padding: 8px 12px;
     color: var(--gray-500);
     border: none;
     cursor: pointer;
-    transition: padding 0.25s ease;
 
     &:not(:last-child) {
-      margin-right: 26px;
+      margin-right: 15px;
 
       &::after {
         position: absolute;
         top: 50%;
-        right: -26px;
+        right: -15px;
         width: 1px;
         height: 16px;
         background-color: var(--green-gray-200);
@@ -47,18 +47,20 @@
     }
 
     &--active {
-      padding: 8px 12px;
+      padding-bottom: 6px;
       color: var(--primary);
       border-bottom: 2px solid var(--primary);
       cursor: default;
 
-      &#{$block-name}__label:not(:last-child) {
-        margin-right: 25px;
+      // todo  ошибка макета?
+      // &#{$block-name}__label:not(:last-child) {
+      // &#{$block-name}__label:first-child {
+      //   margin-right: 26px;
 
-        &::after {
-          right: -26px;
-        }
-      }
+      //   &::after {
+      //     right: -26px;
+      //   }
+      // }
     }
   }
 

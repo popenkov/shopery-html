@@ -2,6 +2,8 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .banner-s {
+  $block-name: &; // #{$block-name}__element
+
   padding: 0 24px;
   overflow: hidden;
   background-size: cover;
@@ -47,5 +49,4 @@
   &__price {
     @include body-xl(500);
   }
-  $block-name: &; // #{$block-name}__element
 }

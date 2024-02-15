@@ -6,6 +6,10 @@
 
   margin-bottom: 100px;
 
+  &--green {
+    background-color: var(--green-gray-50);
+  }
+
   &__title {
     @include heading-3(600);
 
@@ -13,6 +17,6 @@
   }
 
   &__title + &__content {
-    margin-top: 20px;
+    margin-top: 18px;
   }
 }

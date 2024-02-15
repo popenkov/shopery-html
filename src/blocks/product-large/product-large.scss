@@ -79,7 +79,7 @@
     gap: 8px;
     align-items: center;
     justify-content: space-between;
-    padding: 26px 22px 22px 20px;
+    padding: 27px 22px 17px 20px;
   }
 
   &__title {
@@ -98,10 +98,6 @@
     &--old {
       color: var(--green-gray-400);
     }
-  }
-
-  &__link + &__price {
-    margin-top: 1px;
   }
 
   &__rating svg {

@@ -8,27 +8,28 @@ block variables
 
 block content
   .hero.container
-    .swiper.hero.js-hero-slider
-      .swiper-wrapper
-        each slide in json.info.hero
-          .swiper-slide.hero__slide
-            .hero__img-container
-              img.hero__img(src= path.img + slide.img, alt="slide")
-            .hero__description
-              span.hero__note= slide.note
-              h2.hero__title= slide.title
-              p.hero__text= slide.text
-              +button("button", "", "fill, large").arrow-btn.hero__button
-                span.arrow-btn__text Shop now
-                svg.arrow-btn__icon: use(href= path.icon + "arrow")
-    .swiper-pagination
-    .hero__navigation
-      button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
-        svg.button-round__icon: use(href= path.icon + "arrow")
-      button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
-        svg.button-round__icon: use(href= path.icon + "arrow")
+    .hero__slider
+      .swiper.js-hero-slider
+        .swiper-wrapper
+          each slide in json.info.hero
+            .swiper-slide.hero__slide
+              .hero__img-container
+                img.hero__img(src= path.img + slide.img, alt="slide")
+              .hero__description
+                span.hero__note= slide.note
+                h2.hero__title= slide.title
+                p.hero__text= slide.text
+                +button("button", "", "fill, large").arrow-btn.hero__button
+                  span.arrow-btn__text Shop now
+                  svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      .swiper-pagination
+      .hero__navigation
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
+          svg.button-round__icon: use(href= path.icon + "arrow")
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
+          svg.button-round__icon: use(href= path.icon + "arrow")
 
-    .hero__advantages.advantages
+    .hero__advantages.advantages.container
       each advantage in json.info.advantages
         .advantages__item
           .advantages__icon-wrapper
@@ -37,7 +38,7 @@ block content
           p.advantages__text= advantage.text
 
 
-  .section
+  .section.section--green.products-tabs
     .container
       h2.section__title Introducing Our Products
       .tabs.section__content
@@ -49,7 +50,7 @@ block content
           button.tabs__label(data-href="#tab5") View All
         .tabs__panes
           .tabs__pane.tabs__pane--active#tab1
-            .grid.grid__four-items
+            .grid.grid__four-items.products-tabs__items
               each product in json.info.products
                 +product-large(product)
 
