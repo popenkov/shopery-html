@@ -2,6 +2,8 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .product {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-column;
 
   border: var(--card-border);
@@ -121,5 +123,4 @@
       transition: color var(--transition);
     }
   }
-  $block-name: &; // #{$block-name}__element
 }

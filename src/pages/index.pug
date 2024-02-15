@@ -58,6 +58,11 @@ block content
           .tabs__pane#tab4 Содержимое, таб 4
           .tabs__pane#tab5 Содержимое, таб 5
 
+  .section
+    .container.grid.grid__three-items
+      each banner in json.info.banners
+        +banner-s(banner, banner.type)
+
   .container
 
     style.

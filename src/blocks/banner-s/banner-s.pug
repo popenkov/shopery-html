@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (banner-s)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin banner-s(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +banner-s("Текст", "some-mod")
+
+  // список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " banner-s--" + modsList[i].trim();
+      }
+    }
+
+  .banner-s(class=allMods, style=`background-image: url(${path.img + data.background})`)&attributes(attributes)
+    .banner-s__content
+      if data.subtitle
+        p.banner-s__subtitle= data.subtitle
+      h3.banner-s__title= data.title
+      p.banner-s__text= data.text
+        if data.price
+          span.banner-s__price= data.price
+      .banner-s__button-container
+        +button("link", "", "white, normal")(class="arrow-btn banner-s__button")
+          span.arrow-btn__text Shop now
+          svg.arrow-btn__icon: use(href= path.icon + "arrow")

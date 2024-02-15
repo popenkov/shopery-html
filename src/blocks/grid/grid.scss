@@ -5,6 +5,11 @@
 
   display: grid;
 
+  &__three-items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+
   &__four-items {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

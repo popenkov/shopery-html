@@ -106,7 +106,6 @@
       "text": "30 days money-back guarantee"
     }
   ],
-
   "products": [
     {
       "img": "product-apple.jpg",
@@ -176,6 +175,35 @@
       "priceOld": "",
       "rating": 4,
       "tags": null
+    }
+  ],
+  "banners": [
+    {
+      "type": "left, white",
+      "background": "banner-s-1.jpg",
+      "subtitle": "",
+      "title": "100% Fresh Cow Milk",
+      "text": "Starting at ",
+      "price": "$14.99",
+      "link": "#"
+    },
+    {
+      "type": "right",
+      "background": "banner-s-2.jpg",
+      "subtitle": "Drink Sale",
+      "title": "Water & Soft Drink",
+      "text": "",
+      "price": "",
+      "link": "#"
+    },
+    {
+      "type": "left",
+      "background": "banner-s-3.jpg",
+      "subtitle": "100% Organic",
+      "title": "Quick Breakfast",
+      "text": "",
+      "price": "",
+      "link": "#"
     }
   ],
   "footer": {

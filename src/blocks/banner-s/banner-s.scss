@@ -1,0 +1,51 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+
+.banner-s {
+  padding: 0 24px;
+  overflow: hidden;
+  background-size: cover;
+  border-radius: 8px;
+
+  &--right {
+    #{$block-name}__content {
+      margin-left: auto;
+    }
+  }
+
+  &--white {
+    color: var(--front-primary-inversed);
+  }
+
+  &__content {
+    @include flex-column;
+
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    max-width: 164px;
+    min-height: 255px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 3%;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include heading-5(600);
+  }
+
+  &__text {
+    @include body-small;
+  }
+
+  &__price {
+    @include body-xl(500);
+  }
+  $block-name: &; // #{$block-name}__element
+}
