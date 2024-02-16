@@ -4,11 +4,26 @@
 .banner-s {
   $block-name: &; // #{$block-name}__element
 
+  position: relative;
   padding: 40px 24px;
   overflow: hidden;
+  color: var(--front-primary);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 8px;
+
+  @media (hover: hover) {
+    &:hover {
+      #{$block-name}__image {
+        transform: scale(1.1);
+      }
+
+      #{$block-name}__button {
+        color: var(--front-primary-inversed);
+        background-color: var(--primary);
+      }
+    }
+  }
 
   &--right {
     #{$block-name}__content {
@@ -25,6 +40,13 @@
       // todo  разная ширина текста по макету
       min-width: 183px;
     }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    transition: transform 0.4s ease-in;
+    inset: 0;
   }
 
   &__content {
@@ -53,8 +75,6 @@
 
   &__title {
     @include heading-5(600);
-
-    letter-spacing: 1.1px;
   }
 
   &__text {

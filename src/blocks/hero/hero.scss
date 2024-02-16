@@ -85,8 +85,7 @@
     color: var(--primary);
     font-weight: 400;
     font-size: 14px;
-    // todo test
-    font-family: var(--font-segoe) !important;
+    font-family: var(--font-segoe);
     line-height: 100%;
     text-transform: uppercase;
   }
@@ -95,7 +94,6 @@
     @include heading-1(600);
 
     color: var(--green-gray-900);
-    letter-spacing: 1px;
   }
 
   &__note + &__title {

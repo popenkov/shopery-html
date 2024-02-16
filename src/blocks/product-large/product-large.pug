@@ -35,9 +35,9 @@ mixin product-large(data, mods)
             .tag(class= "tag--" +tag.type)= tag.text
       .product-large__buttons
         button.button-round.button-round--like.product-large__image-button
-          svg.button-round__icon: use(href= path.icon + "heart")
+          svg.button-round__icon: use(href= path.icon + "icon__heart")
         button.button-round.button-round--white-green.product-large__image-button
-          svg.button-round__icon: use(href= path.icon + "eye")
+          svg.button-round__icon: use(href= path.icon + "icon__eye")
       img.product-large__image(src= path.img + data.img, alt="product-large")
     .product-large__description
       .product-large__description-text
@@ -50,4 +50,4 @@ mixin product-large(data, mods)
         .product-large__rating
           +star-rating(data.rating)
       button.button-round.product-large__button
-        svg.button-round__icon: use(href= path.icon + "cart")
+        svg.button-round__icon: use(href= path.icon + "icon__cart")

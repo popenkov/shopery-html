@@ -206,7 +206,116 @@
       "link": "#"
     }
   ],
+  "featuredProducts": [
+    {
+      "img": "product-apple.jpg",
+      "title": "Green Apple",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": [
+        {
+          "type": "red",
+          "text": "Sale 50%"
+        }
+      ]
+    },
+    {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-tomatos.jpg",
+      "title": "Red Tomatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-cauliflower.jpg",
+      "title": "Fresh Cauliflower",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-letucce.jpg",
+      "title": "Green Lettuce",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }
+  ],
   "footer": {
+    "account": [
+      {
+        "title": "My Account",
+        "link": "#"
+      },
+      {
+        "title": "Order History",
+        "link": "#"
+      },
+      {
+        "title": "Shoping Cart",
+        "link": "#"
+      },
+      {
+        "title": "Wishlist",
+        "link": "#"
+      },
+      {
+        "title": "Settings",
+        "link": "#"
+      }
+    ],
+    "helps": [
+      {
+        "title": "Contact",
+        "link": "#"
+      },
+      {
+        "title": "Faqs",
+        "link": "#"
+      },
+      {
+        "title": "Terms & Condition",
+        "link": "#"
+      },
+      {
+        "title": "Privacy Policy",
+        "link": "#"
+      }
+    ],
+    "proxy": [
+      {
+        "title": "About",
+        "link": "#"
+      },
+      {
+        "title": "Shop",
+        "link": "#"
+      },
+      {
+        "title": "Product",
+        "link": "#"
+      },
+      {
+        "title": "Products Details",
+        "link": "#"
+      },
+      {
+        "title": "Track Order",
+        "link": "#"
+      }
+    ],
     "instagram": [
       {
         "img": "img/instagram--01.jpg",
@@ -261,24 +370,19 @@
     ],
     "paymentMethods": [
       {
-        "img": "apple-pay",
-        "link": "#"
+        "img": "apple-pay"
       },
       {
-        "img": "visa",
-        "link": "#"
+        "img": "visa"
       },
       {
-        "img": "discover",
-        "link": "#"
+        "img": "discover"
       },
       {
-        "img": "mastercard",
-        "link": "#"
+        "img": "mastercard"
       },
       {
-        "img": "secure",
-        "link": "#"
+        "img": "secure"
       }
     ]
   }

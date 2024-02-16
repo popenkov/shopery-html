@@ -1,7 +1,7 @@
 @import "../../scss/breakpoints";
 @import "../../scss/mixins/flexbox.scss";
 
-.arrow-btn {
+.icon-button {
   $block-name: &; // #{$block-name}__element
 
   @include flex-center-vertical;
@@ -20,7 +20,6 @@
   }
 
   &__icon {
-    width: 15px;
-    height: 12px;
+    @include box(24px);
   }
 }

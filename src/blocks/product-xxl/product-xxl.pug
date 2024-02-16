@@ -28,12 +28,12 @@ mixin product-xxl(text, mods)
       img.product-xxl__image(src= path.img + "image.png", alt="product-xxl")
       .product-xxl__buttons
         button.button-round.button-round--like.product-xxl__button
-          svg.button-round__icon: use(href= path.icon + "heart")
+          svg.button-round__icon: use(href= path.icon + "icon__heart")
         button.button-round.product-xxl__button.product-xxl__button--cart
           span Add to Cart
-          svg.button-round__icon: use(href= path.icon + "cart")
+          svg.button-round__icon: use(href= path.icon + "icon__cart")
         button.button-round.product-xxl__button
-          svg.button-round__icon: use(href= path.icon + "eye")
+          svg.button-round__icon: use(href= path.icon + "icon__eye")
 
     .product-xxl__description
       a(href="#")

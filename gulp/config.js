@@ -146,6 +146,7 @@ export const config = {
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
     "src/scss/vendor.scss",
+    "src/scss/fonts.scss",
     "src/scss/blocks.scss",
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],

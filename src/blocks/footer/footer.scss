@@ -188,16 +188,25 @@
     gap: 8px;
   }
 
-  &__payment-link {
-    display: block;
-    width: 45px;
-    height: 32px;
-    border-radius: 5px;
-    outline: 1px solid var(--green-gray-800);
-  }
-
   &__payment-icon {
     width: 45px;
     height: 32px;
+  }
+
+  &__payment-item {
+    display: block;
+    width: 45px;
+    height: 32px;
+    background-color: var(--green-gray-900);
+    border-radius: 5px;
+    outline: 1px solid var(--green-gray-800);
+
+    &--large {
+      width: 65px;
+
+      #{$block-name}__payment-icon {
+        width: 65px;
+      }
+    }
   }
 }

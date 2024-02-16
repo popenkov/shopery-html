@@ -1,6 +1,10 @@
 .logo {
   $block-name: &; // #{$block-name}__element
 
-  width: 87px;
-  height: 24px;
+  max-width: 183px;
+
+  &__icon {
+    max-width: 183px;
+    height: 38px;
+  }
 }

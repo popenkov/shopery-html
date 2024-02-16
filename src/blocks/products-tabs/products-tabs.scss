@@ -10,8 +10,6 @@
   }
 
   &__items {
-    gap: 1px;
-
     &--desktop {
       @media screen and (max-width: $screen-ti) {
         display: none;
@@ -28,10 +26,10 @@
       .swiper {
         max-width: calc(100vw - 40px);
       }
-
-      .swiper-slide {
-        width: auto;
-      }
     }
+  }
+
+  &__item {
+    border: 1px solid var(--green-gray-100);
   }
 }

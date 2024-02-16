@@ -1,7 +1,7 @@
 extends ../templates/template__default.pug
 
 block variables
-  - isMainPage = false
+  - isMainPage = true
   - pageTitle = "Shopery"
   - metaDescription = "Shopery description"
   - metaKeywords = "Shopery eywords"
@@ -10,7 +10,7 @@ block content
   .hero.container
     .hero__slider
       .swiper.js-hero-slider
-        .swiper-wrapper
+        .swiper-wrapper.hero__slider-wrapper
           each slide in json.info.hero
             .swiper-slide.hero__slide
               .hero__img-container
@@ -19,15 +19,15 @@ block content
                 span.hero__note= slide.note
                 h2.hero__title= slide.title
                 p.hero__text= slide.text
-                +button("button", "", "fill, large").arrow-btn.hero__button
-                  span.arrow-btn__text Shop now
-                  svg.arrow-btn__icon: use(href= path.icon + "arrow")
+                +button("button", "", "fill, large").icon-button.hero__button
+                  span.icon-button__text Shop now
+                  svg.icon-button__icon: use(href= path.icon + "icon__arrow")
       .hero__swiper-pagination
       .hero__navigation
         button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
-          svg.button-round__icon: use(href= path.icon + "arrow")
+          svg.button-round__icon: use(href= path.icon + "icon__arrow")
         button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
-          svg.button-round__icon: use(href= path.icon + "arrow")
+          svg.button-round__icon: use(href= path.icon + "icon__arrow")
 
   .advantages
     .advantages__container.container
@@ -54,12 +54,12 @@ block content
           .tabs__pane.tabs__pane--active#tab1
             .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
               each product in json.info.products
-                +product-large(product)
+                +product-large(product)(class="products-tabs__item")
             .products-tabs__items--mobile.mobile-slider
-              .swiper.js-mobile-slider
-                .swiper-wrapper
+              .swiper.mobile-slider__slider.js-mobile-slider
+                .swiper-wrapper.mobile-slider__wrapper
                   each product in json.info.products
-                    .swiper-slide.products-tabs__slide
+                    .swiper-slide.mobile-slider__slide
                       +product-large(product)
                 .mobile-slider__pagination.swiper-pagination
 
@@ -68,8 +68,8 @@ block content
               each product in json.info.products
                 +product-large(product)
             .products-tabs__items--mobile.mobile-slider
-              .swiper.js-mobile-slider
-                .swiper-wrapper
+              .swiper.mobile-slider__slider.js-mobile-slider
+                .swiper-wrapper.mobile-slider__wrapper
                   each product in json.info.products
                     .swiper-slide.products-tabs__slide
                       +product-large(product)
@@ -84,8 +84,8 @@ block content
         +banner-s(banner, banner.type)
 
     .container.mobile-slider.d-mobile
-            .swiper.js-mobile-slider
-              .swiper-wrapper
+            .swiper.mobile-slider__slider.js-mobile-slider
+              .swiper-wrapper.mobile-slider__wrapper
                 each banner in json.info.banners
                   .swiper-slide
                     +banner-s(banner, banner.type)
@@ -111,85 +111,14 @@ block content
         .best-deals__counter-item
           span.best-deals__counter-value.js-counter-seconds 57
           span.best-deals__counter-description Secs
-      +button("link", "", "fill, normal")(class="arrow-btn best-deals__btn")
-        span.arrow-btn__text Shop now
-        svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      +button("link", "", "fill, normal")(class="icon-button best-deals__btn")
+        span.icon-button__text Shop now
+        svg.icon-button__icon: use(href= path.icon + "icon__arrow")
 
 
-  .container
-
-    style.
-      .d-flex {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 24px;
-        margin-bottom: 40px;
-      }
+  .section
+    .container
+      h2.section__title Featured Products
+      .grid.grid__three-items
 
 
-    h2 Buttons
-    .d-flex
-      +button("button", "Small Fill", "fill, small")
-      +button("button","Small Border", "border, small")
-      +button("button","Small Ghost", "grey, small")
-
-      +button("button","Medium Fill", "fill, normal")
-      +button("button","Medium Border", "border, normal")
-      +button("button","Medium Ghost", "grey, normal")
-
-      +button("button","Large Fill", "fill, large")
-      +button("button","Large Border", "border, large")
-      +button("button","Large Ghost", "grey, large")
-
-    h2 Icon Buttons
-    .d-flex
-      +button("button", "", "fill, small")(class="arrow-btn")
-        span.arrow-btn__text Small Fill
-        svg.arrow-btn__icon: use(href= path.icon + "arrow")
-      +button("button", "", "fill, normal")(class="arrow-btn")
-        span.arrow-btn__text Medium Fill
-        svg.arrow-btn__icon: use(href= path.icon + "arrow")
-      +button("button", "", "fill, large")(class="arrow-btn")
-        span.arrow-btn__text Large Fill
-        svg.arrow-btn__icon: use(href= path.icon + "arrow")
-
-
-    h2 close button
-    .d-flex
-      button.close-button
-        svg.close-button__icon: use(href= path.icon + "cross")
-
-    h2 round buttons
-    .d-flex
-      button.button-round.button-round--primary
-        svg.button-round__icon: use(href= path.icon + "cart")
-      button.button-round.button-round--like
-        svg.button-round__icon: use(href= path.icon + "heart")
-      button.button-round.button-round--white-green
-        svg.button-round__icon: use(href= path.icon + "eye")
-      button.button-round.button-round--ghost
-        svg.button-round__icon: use(href= path.icon + "facebook")
-
-    h2 Product small
-    .d-flex
-      +product-small
-
-    h2 Product
-    .d-flex
-      +product(json.info.products[0])
-
-    h2 Product Large
-    .d-flex
-      +product-xxl
-
-    h2 checkbox
-    .d-flex
-      +checkbox("checkbox", "", "checkbox")
-      span
-        +radio("radio", "", "1","1")
-        +radio("radio", "", "2","2")
-
-    h2 Inputs
-    .d-flex
-      +field("text", "text", "text", "", "", true)

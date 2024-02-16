@@ -28,5 +28,5 @@ mixin field(type, fieldName, hint, mods)
         input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
       when "search"
         input(type="text", name=fieldName, placeholder=hint)&attributes(attributes)
-        svg.field__search-icon: use(href= path.icon + "search")
+        svg.field__search-icon: use(href= path.icon + "icon__search")
 

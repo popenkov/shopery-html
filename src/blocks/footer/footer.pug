@@ -24,55 +24,35 @@ mixin footer(text, mods)
   footer.footer(class=allMods)&attributes(attributes)
     .footer__wrapper
       .footer__content.container
-        //- .footer__top
         .footer__about
           h3.footer__about-title About Shopery
           p.footer__about-text Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.
           .footer__about-contact
-            a.footer__about-link(href="tel:#") (219) 555-0114
+            a.footer__about-link(href="tel:(219)555-0114") (219) 555-0114
             span.footer__about-separator or
-            a.footer__about-link(href="mailto:#") Proxy@gmail.com
+            a.footer__about-link(href="mailto:proxy@gmail.com") Proxy@gmail.com
 
         .footer__navigation-wrapper
           .footer__navigation
             h3.footer__navigation-title My Account
             ul.footer__navigation-list
-              li
-                a.footer__navigation-link(href="#")  My Account
-              li
-                a.footer__navigation-link(href="#")  order History
-              li
-                a.footer__navigation-link(href="#")  Shoping Cart
-              li
-                a.footer__navigation-link(href="#")  Wishlist
-              li
-                a.footer__navigation-link(href="#")  Settings
+              each link in json.info.footer.account
+                li
+                  a.footer__navigation-link(href= link.href)= link.title
 
           .footer__navigation
             h3.footer__navigation-title Helps
             ul.footer__navigation-list
-              li
-                a.footer__navigation-link(href="#")  Contact
-              li
-                a.footer__navigation-link(href="#")  Faqs
-              li
-                a.footer__navigation-link(href="#")  Terms & Condition
-              li
-                a.footer__navigation-link(href="#")  Privacy Policy
+              each link in json.info.footer.helps
+                li
+                  a.footer__navigation-link(href= link.href)= link.title
 
           .footer__navigation
             h3.footer__navigation-title Proxy
             ul.footer__navigation-list
-              li
-                a.footer__navigation-link(href="#")  About
-              li
-                a.footer__navigation-link(href="#")  Shop
-              li
-                a.footer__navigation-link(href="#")  Product
-              li
-                a.footer__navigation-link(href="#")  Products Details
-              li
-                a.footer__navigation-link(href="#")  Track Order
+              each link in json.info.footer.proxy
+                li
+                  a.footer__navigation-link(href= link.href)= link.title
 
         .footer__instagram
           h3.footer__instagram-title Instagram
@@ -89,7 +69,6 @@ mixin footer(text, mods)
           p.footer__copyright-text Ecobazar eCommerce © 2021. All Rights Reserved
           ul.footer__payment
             each data in json.info.footer.paymentMethods
-              li
-                a.footer__payment-link(href=data.link)
-                  svg.footer__payment-icon: use(href= path.icon + data.img)
+              li.footer__payment-item(class= (data.img === "secure") ? "footer__payment-item--large" : "")
+                svg.footer__payment-icon: use(href= path.icon + data.img)
 

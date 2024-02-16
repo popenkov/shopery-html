@@ -1,14 +1,14 @@
-//- Все примеси в этом файле должны начинаться c имени блока (instagram-card)
+//- Все примеси в этом файле должны начинаться c имени блока (logo)
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin instagram-card(data, mods)
+mixin logo(href, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +instagram-card("Текст", "some-mod")
+        +logo("href", "some-mod")
 
   // список модификаторов
   -
@@ -16,12 +16,9 @@ mixin instagram-card(data, mods)
     if (typeof (mods) !== "undefined" && mods) {
       var modsList = mods.split(",");
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + " instagram-card--" + modsList[i].trim();
+        allMods = allMods + " logo--" + modsList[i].trim();
       }
     }
 
-  a.instagram-card(href=data.link, class=allMods)&attributes(attributes)
-    .instagram-card__img
-      img(src=data.img, alt="alt")
-      .instagram-card__overlay
-        svg.instagram-card__icon: use(href= path.icon + "icon__instagram")
+  a.logo(href= href, class=allMods)&attributes(attributes)
+    svg.logo__icon: use(href= path.icon + "logo__default")

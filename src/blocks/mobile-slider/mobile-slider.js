@@ -22,13 +22,18 @@ ready(function () {
       });
     };
     initSlider();
+    // todo  разобраться с инициализацией при ресайзе. скорее всего ломается, потому что слайдеров несколько
     window.addEventListener("resize", () => {
       if (mobileBreakpoint.matches) {
         if (slider === "undefined" || slider?.destroyed) {
           initSlider();
         }
       } else {
-        slider.destroy();
+        if (slider.length > 1) {
+          slider.forEach((item) => item.destroy());
+        } else {
+          slider.destroy();
+        }
       }
     });
   }
