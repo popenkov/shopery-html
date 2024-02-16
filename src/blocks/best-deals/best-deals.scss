@@ -1,0 +1,94 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/text-styles.scss";
+
+.best-deals {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 100px 0;
+  background:
+    url("../../img/deals-bg-left.png") no-repeat left bottom,
+    url("../../img/deals-bg-right.png") no-repeat right bottom;
+
+  @media screen and (max-width: $screen-tl) {
+    background: none;
+  }
+
+  &__container {
+    @include flex-column-center;
+
+    gap: 12px;
+    width: calc(100% - 40px);
+    max-width: 508px;
+    margin: 0 auto;
+  }
+
+  &__subtitle {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include heading-3(600);
+
+    text-align: center;
+  }
+
+  &__counter {
+    @include flex-center;
+
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__title + &__counter {
+    margin-top: 12px;
+  }
+
+  &__counter-title + &__counter-container {
+    margin-top: 6px;
+  }
+
+  &__counter-item {
+    @include box(96px);
+    @include flex-column;
+
+    gap: 4px;
+    align-items: center;
+    min-width: 60px;
+    padding: 20px 8px;
+    background-color: var(--color-white);
+    border-radius: 6px;
+  }
+
+  &__counter-separator {
+    @include body-xl;
+
+    color: var(--green-gray-500);
+  }
+
+  &__counter-value {
+    @include heading-5;
+
+    color: var(--primary);
+  }
+
+  &__counter-description {
+    color: var(--green-gray-500);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 3%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__counter + &__btn {
+    margin-top: 20px;
+  }
+}
