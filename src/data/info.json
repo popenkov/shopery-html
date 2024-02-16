@@ -3,23 +3,23 @@
     "categories": [
       {
         "link": "#",
-        "icon": "apple",
+        "icon": "icon__apple",
         "title": "Fresh Fruit"
       },
       {
         "link": "#",
-        "icon": "salad",
+        "icon": "icon__salad",
         "title": "Vegetables"
       },
-      { "link": "#", "icon": "fish", "title": "River Fish" },
-      { "link": "#", "icon": "coffee", "title": "Drink & Water" },
-      { "link": "#", "icon": "ice-cream", "title": "Yogurt & Ice Cream" },
+      { "link": "#", "icon": "icon__fish", "title": "River Fish" },
+      { "link": "#", "icon": "icon__coffee", "title": "Drink & Water" },
+      { "link": "#", "icon": "icon__ice-cream", "title": "Yogurt & Ice Cream" },
       {
-        "icon": "cupcake",
+        "icon": "icon__cupcake",
         "title": "Cake & Bread"
       },
-      { "link": "#", "icon": "pie", "title": "Butter & Cream" },
-      { "link": "#", "icon": "food", "title": "Cooking" }
+      { "link": "#", "icon": "icon__pie", "title": "Butter & Cream" },
+      { "link": "#", "icon": "icon__food", "title": "Cooking" }
     ],
     "navigation": [
       {
@@ -86,22 +86,22 @@
   ],
   "advantages": [
     {
-      "icon": "delivery-truck",
+      "icon": "icon__delivery-truck",
       "title": "Free Shipping",
       "text": "Free shipping with discount"
     },
     {
-      "icon": "headphones",
+      "icon": "icon__headphones",
       "title": "Great Support 24/7",
       "text": "Instant access to Contact "
     },
     {
-      "icon": "shopping-bag",
+      "icon": "icon__shopping-bag",
       "title": "100% Secure Payment",
       "text": "We ensure your money is save"
     },
     {
-      "icon": "package",
+      "icon": "icon__package",
       "title": "Money-Back Guarantee",
       "text": "30 days money-back guarantee"
     }
@@ -352,37 +352,37 @@
     ],
     "socialLinks": [
       {
-        "img": "facebook",
-        "link": "#"
+        "icon": "icon__facebook",
+        "href": "#"
       },
       {
-        "img": "twitter",
-        "link": "#"
+        "icon": "icon__twitter",
+        "href": "#"
       },
       {
-        "img": "pinterest",
-        "link": "#"
+        "icon": "icon__pinterest",
+        "href": "#"
       },
       {
-        "img": "instagram",
-        "link": "#"
+        "icon": "icon__instagram",
+        "href": "#"
       }
     ],
     "paymentMethods": [
       {
-        "img": "apple-pay"
+        "icon": "icon__apple-pay"
       },
       {
-        "img": "visa"
+        "icon": "icon__visa"
       },
       {
-        "img": "discover"
+        "icon": "icon__discover"
       },
       {
-        "img": "mastercard"
+        "icon": "icon__mastercard"
       },
       {
-        "img": "secure"
+        "icon": "icon__secure"
       }
     ]
   }

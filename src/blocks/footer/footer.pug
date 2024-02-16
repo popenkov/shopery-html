@@ -64,11 +64,11 @@ mixin footer(text, mods)
           ul.footer__socials
             each data in json.info.footer.socialLinks
               a.button-round.button-round--ghost(href=data.link)
-                svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.img)
+                svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
 
           p.footer__copyright-text Ecobazar eCommerce © 2021. All Rights Reserved
           ul.footer__payment
             each data in json.info.footer.paymentMethods
               li.footer__payment-item(class= (data.img === "secure") ? "footer__payment-item--large" : "")
-                svg.footer__payment-icon: use(href= path.icon + data.img)
+                svg.footer__payment-icon: use(href= path.icon + data.icon)
 
