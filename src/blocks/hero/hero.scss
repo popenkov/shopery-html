@@ -2,7 +2,8 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .hero {
-  &__swiper-pagination {
+  // stylelint-disable-next-line
+  &__swiper-pagination.swiper-pagination-bullets {
     @include flex-center;
 
     position: absolute;
@@ -63,8 +64,6 @@
       @include flex-center;
 
       width: 100%;
-      height: auto;
-      // todo
       height: 420px;
     }
   }

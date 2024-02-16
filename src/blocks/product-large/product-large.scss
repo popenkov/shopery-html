@@ -7,7 +7,7 @@
   @include flex-column;
 
   background-color: var(--color-white);
-  border: var(--card-border);
+  border: 1px solid transparent;
 
   @media (hover: hover) {
     &:hover {

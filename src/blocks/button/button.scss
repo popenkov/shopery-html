@@ -67,7 +67,8 @@
 
     padding: 14px 32px;
 
-    &#{$block-name}--fill {
+    &#{$block-name}--fill,
+    &#{$block-name}--white {
       padding: 13px 32px;
     }
   }

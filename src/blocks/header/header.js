@@ -1,4 +1,4 @@
-import { lockBody, unlockBody } from "../../js/utils/bodyLock.js";
+import { toggleBodyLock } from "../../js/bodyLock.js";
 import ready from "../../js/utils/documentReady.js";
 
 ready(function () {
@@ -23,12 +23,12 @@ ready(function () {
 
     const openMenu = () => {
       mobileMenu.classList.add("open");
-      lockBody();
+      toggleBodyLock();
     };
 
     const closeMenu = () => {
       mobileMenu.classList.remove("open");
-      unlockBody();
+      toggleBodyLock();
     };
 
     mobileMenuBtn.addEventListener("click", openMenu);

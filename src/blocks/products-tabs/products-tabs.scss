@@ -9,14 +9,8 @@
     padding: 60px 0;
   }
 
-  &__panes {
-    @media screen and (max-width: $screen-ti) {
-      background-color: unset;
-    }
-  }
-
   &__items {
-    gap: 2px;
+    gap: 1px;
 
     &--desktop {
       @media screen and (max-width: $screen-ti) {

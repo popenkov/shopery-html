@@ -23,7 +23,7 @@ ready(function () {
     }
   }
 
-  let tabs = document.querySelector(".tabs__labels");
+  let tabs = document.querySelector(".tabs__labels .tabs__scroll-container");
   let panes = document.querySelector(".tabs__panes");
 
   makeTabs(tabs, panes);

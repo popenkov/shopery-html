@@ -540,7 +540,8 @@
   }
 
   &__phone-text {
-    @include body-small(500);
+    // todo  не работает 500
+    @include body-small(600);
 
     letter-spacing: 1.2px;
   }
