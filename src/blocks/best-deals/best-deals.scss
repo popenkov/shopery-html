@@ -1,0 +1,5 @@
+@import "../../scss/breakpoints";
+
+.best-deals {
+  $block-name: &; // #{$block-name}__element
+}
