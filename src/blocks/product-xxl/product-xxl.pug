@@ -1,0 +1,65 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-xxl)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product-xxl(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-xxl("Текст", "some-mod")
+
+  // список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product-xxl--" + modsList[i].trim();
+      }
+    }
+
+  .product-xxl(class=allMods)&attributes(attributes)
+    .product-xxl__image-container
+      .product-xxl__tags
+        .tag.tag--red Sale 50%
+        .tag.tag--blue Best Sale
+      img.product-xxl__image(src= path.img + "image.png", alt="product-xxl")
+      .product-xxl__buttons
+        button.button-round.button-round--like.product-xxl__button
+          svg.button-round__icon: use(href= path.icon + "heart")
+        button.button-round.product-xxl__button.product-xxl__button--cart
+          span Add to Cart
+          svg.button-round__icon: use(href= path.icon + "cart")
+        button.button-round.product-xxl__button
+          svg.button-round__icon: use(href= path.icon + "eye")
+
+    .product-xxl__description
+      a(href="#")
+        h3.product-xxl__title Chanise Cabbage
+
+      .product-xxl__price
+        span.product-xxl__price-new  $12.00
+        span.product-xxl__price-old  $24.00
+      .product-xxl__rating
+        +star-rating(5)
+        span.product-xxl__rating-amount  (524 Feedback)
+
+      .product-xxl__counter.counter.js-counter(data-end="2024-02-17T03:24:00")
+        .counter__title.product-xxl__counter-title Hurry up! Offer ends In:
+        .counter__container
+          .counter__item
+            span.counter__value.js-counter-days 01
+            span.counter__description Days
+          .counter__item
+            span.counter__value.js-counter-hours 23
+            span.counter__description Hours
+          span.counter__separator :
+          .counter__item
+            span.counter__value.js-counter-minutes 34
+            span.counter__description Mins
+          span.counter__separator :
+          .counter__item
+            span.counter__value.js-counter-seconds 57
+            span.counter__description Secs

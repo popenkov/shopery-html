@@ -2,13 +2,20 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin product-large(text, mods)
+mixin product-large(data, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +product-large("Текст", "some-mod")
+        +product-large( {
+      "img": "product-large-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }, "some-mod")
 
   // список модификаторов
   -
@@ -22,44 +29,25 @@ mixin product-large(text, mods)
 
   .product-large(class=allMods)&attributes(attributes)
     .product-large__image-container
-      .product-large__tags
-        .tag.tag--red Sale 50%
-        .tag.tag--blue Best Sale
-      img.product-large__image(src= path.img + "image.png", alt="product-large")
+      if data.tags
+        .product-large__tags
+          each tag in data.tags
+            .tag(class= "tag--" +tag.type)= tag.text
       .product-large__buttons
-        button.round-button.round-button--like.product-large__button
-          svg.round-button__icon: use(href= path.icon + "heart")
-        button.round-button.product-large__button.product-large__button--cart
-          span Add to Cart
-          svg.round-button__icon: use(href= path.icon + "cart")
-        button.round-button.product-large__button
-          svg.round-button__icon: use(href= path.icon + "eye")
-
+        button.button-round.button-round--like.product-large__image-button
+          svg.button-round__icon: use(href= path.icon + "heart")
+        button.button-round.button-round--white-green.product-large__image-button
+          svg.button-round__icon: use(href= path.icon + "eye")
+      img.product-large__image(src= path.img + data.img, alt="product-large")
     .product-large__description
-      a(href="#")
-        h3.product-large__title Chanise Cabbage
-
-      .product-large__price
-        span.product-large__price-new  $12.00
-        span.product-large__price-old  $24.00
-      .product-large__rating
-        +star-rating(5)
-        span.product-large__rating-amount  (524 Feedback)
-
-      .product-large__counter.counter.js-counter(data-end="2024-02-17T03:24:00")
-        .counter__title.product-large__counter-title Hurry up! Offer ends In:
-        .counter__container
-          .counter__item
-            span.counter__value.js-counter-days 01
-            span.counter__description Days
-          .counter__item
-            span.counter__value.js-counter-hours 23
-            span.counter__description Hours
-          span.counter__separator :
-          .counter__item
-            span.counter__value.js-counter-minutes 34
-            span.counter__description Mins
-          span.counter__separator :
-          .counter__item
-            span.counter__value.js-counter-seconds 57
-            span.counter__description Secs
+      .product-large__description-text
+        a.product-large__link(href="#")
+          h3.product-large__title= data.title
+        p.product-large__price
+          span= data.price
+          if data.priceOld
+            span.product-large__price--old= data.priceOld
+        .product-large__rating
+          +star-rating(data.rating)
+      button.button-round.product-large__button
+        svg.button-round__icon: use(href= path.icon + "cart")

@@ -7,82 +7,45 @@
 .checkbox {
   $block-name: &; // #{$block-name}__element
 
+  position: relative;
   display: flex;
   gap: 20px;
-  align-items: center;
+  justify-self: start;
 
-  label {
-    transition: var(--transition);
+  &__input {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
   }
 
-  &--checkbox {
-    input {
-      @include hide-text;
-    }
+  &__fake-input {
+    @include flex-center;
+    @include box(20px);
 
-    label {
-      @include flex-center;
-      @include box(20px);
-
-      border: 1px solid var(--gray-200);
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    input:checked + label {
-      position: relative;
-      background-color: var(--primary);
-    }
-
-    input:not(:checked) + label {
-      &:hover {
-        border-color: var(--primary);
-      }
-    }
+    border: 1px solid var(--gray-200);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.125s ease;
 
     svg {
       @include box(16px);
     }
   }
 
-  &--radio {
-    input {
-      @include hide-text;
-    }
+  &__input:checked + &__fake-input {
+    position: relative;
+    background-color: var(--primary);
+  }
 
-    label {
-      @include flex-center;
-      @include box(20px);
-
-      position: relative;
-      border: 1px solid var(--gray-200);
-      border-radius: 350%;
-      cursor: pointer;
-    }
-
-    input:checked + label {
-      position: relative;
+  &__input:not(:checked) + &__fake-input {
+    &:hover {
       border-color: var(--primary);
-      border-width: 2px;
-
-      &::before {
-        @include absolute-center;
-        @include box(12px);
-
-        background-color: var(--primary);
-        border-radius: 50%;
-        content: "";
-      }
     }
+  }
 
-    input:not(:checked) + label {
-      &:hover {
-        border-color: var(--primary);
-      }
-    }
-
-    svg {
-      @include box("16px");
-    }
+  &__label {
+    cursor: pointer;
+    user-select: none;
   }
 }

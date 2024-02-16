@@ -7,49 +7,144 @@ block variables
   - metaKeywords = "Shopery eywords"
 
 block content
+  .hero.container
+    .hero__slider
+      .swiper.js-hero-slider
+        .swiper-wrapper
+          each slide in json.info.hero
+            .swiper-slide.hero__slide
+              .hero__img-container
+                img.hero__img(src= path.img + slide.img, alt="slide")
+              .hero__description
+                span.hero__note= slide.note
+                h2.hero__title= slide.title
+                p.hero__text= slide.text
+                +button("button", "", "fill, large").arrow-btn.hero__button
+                  span.arrow-btn__text Shop now
+                  svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      .hero__swiper-pagination
+      .hero__navigation
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
+          svg.button-round__icon: use(href= path.icon + "arrow")
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
+          svg.button-round__icon: use(href= path.icon + "arrow")
+
+  .advantages
+    .advantages__container.container
+      each advantage in json.info.advantages
+        .advantages__item
+          .advantages__icon-wrapper
+            svg.advantages__icon: use(href= path.icon + advantage.icon)
+          h3.advantages__title= advantage.title
+          p.advantages__text= advantage.text
+
+
+  .section.section--green.products-tabs
+    .container
+      h2.section__title Introducing Our Products
+      .tabs.section__content
+        .tabs__labels
+          .tabs__scroll-container
+            button.tabs__label.tabs__label--active(data-href="#tab1") All
+            button.tabs__label(data-href="#tab2") Vegetable
+            button.tabs__label(data-href="#tab3") Fruit
+            button.tabs__label(data-href="#tab4") Meat & Fish
+            button.tabs__label(data-href="#tab5") View All
+        .tabs__panes
+          .tabs__pane.tabs__pane--active#tab1
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
+              each product in json.info.products
+                +product-large(product)
+            .products-tabs__items--mobile.mobile-slider
+              .swiper.js-mobile-slider
+                .swiper-wrapper
+                  each product in json.info.products
+                    .swiper-slide.products-tabs__slide
+                      +product-large(product)
+                .mobile-slider__pagination.swiper-pagination
+
+          .tabs__pane#tab2
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
+              each product in json.info.products
+                +product-large(product)
+            .products-tabs__items--mobile.mobile-slider
+              .swiper.js-mobile-slider
+                .swiper-wrapper
+                  each product in json.info.products
+                    .swiper-slide.products-tabs__slide
+                      +product-large(product)
+                .mobile-slider__pagination.swiper-pagination
+          .tabs__pane#tab3 Содержимое, таб 3
+          .tabs__pane#tab4 Содержимое, таб 4
+          .tabs__pane#tab5 Содержимое, таб 5
+
+  .section
+    .container.grid.grid__three-items.d-desktop
+      each banner in json.info.banners
+        +banner-s(banner, banner.type)
+
+    .container.mobile-slider.d-mobile
+            .swiper.js-mobile-slider
+              .swiper-wrapper
+                each banner in json.info.banners
+                  .swiper-slide
+                    +banner-s(banner, banner.type)
+              .mobile-slider__pagination.swiper-paginationprocess
+
   .container
+
+    style.
+      .d-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+
+
     h2 Buttons
     .d-flex
-      +button('button', 'Small Fill', "fill, small")
-      +button('button','Small Border', "border, small")
-      +button('button','Small Ghost', "grey, small")
+      +button("button", "Small Fill", "fill, small")
+      +button("button","Small Border", "border, small")
+      +button("button","Small Ghost", "grey, small")
 
-      +button('button','Medium Fill', "fill, normal")
-      +button('button','Medium Border', 'border, normal')
-      +button('button','Medium Ghost', "grey, normal")
+      +button("button","Medium Fill", "fill, normal")
+      +button("button","Medium Border", "border, normal")
+      +button("button","Medium Ghost", "grey, normal")
 
-      +button('button','Large Fill', "fill, large")
-      +button('button','Large Border', "border, large")
-      +button('button','Large Ghost', "grey, large")
+      +button("button","Large Fill", "fill, large")
+      +button("button","Large Border", "border, large")
+      +button("button","Large Ghost", "grey, large")
 
     h2 Icon Buttons
     .d-flex
-      +button('button', '', "fill, small").arrow-btn
+      +button("button", "", "fill, small")(class="arrow-btn")
         span.arrow-btn__text Small Fill
-        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
-      +button('button', '', "fill, normal").arrow-btn
+        svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      +button("button", "", "fill, normal")(class="arrow-btn")
         span.arrow-btn__text Medium Fill
-        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
-      +button('button', '', "fill, large").arrow-btn
+        svg.arrow-btn__icon: use(href= path.icon + "arrow")
+      +button("button", "", "fill, large")(class="arrow-btn")
         span.arrow-btn__text Large Fill
-        svg.arrow-btn__icon: use(href= path.icon + 'arrow')
+        svg.arrow-btn__icon: use(href= path.icon + "arrow")
 
 
     h2 close button
     .d-flex
       button.close-button
-        svg.close-button__icon: use(href= path.icon + 'cross')
+        svg.close-button__icon: use(href= path.icon + "cross")
 
     h2 round buttons
     .d-flex
-      button.round-button.round-button--green
-        svg.round-button__icon: use(href= path.icon + 'cart')
-      button.round-button.round-button--like
-        svg.round-button__icon: use(href= path.icon + 'heart')
-      button.round-button.round-button--white-green
-        svg.round-button__icon: use(href= path.icon + 'eye')
-      button.round-button.round-button--transp
-        svg.round-button__icon: use(href= path.icon + 'facebook')
+      button.button-round.button-round--primary
+        svg.button-round__icon: use(href= path.icon + "cart")
+      button.button-round.button-round--like
+        svg.button-round__icon: use(href= path.icon + "heart")
+      button.button-round.button-round--white-green
+        svg.button-round__icon: use(href= path.icon + "eye")
+      button.button-round.button-round--ghost
+        svg.button-round__icon: use(href= path.icon + "facebook")
 
     h2 Product small
     .d-flex
@@ -57,19 +152,19 @@ block content
 
     h2 Product
     .d-flex
-      +product
+      +product(json.info.products[0])
 
     h2 Product Large
     .d-flex
-      +product-large
+      +product-xxl
 
     h2 checkbox
     .d-flex
-      +checkbox('checkbox', 'checkbox', '', 'checkbox')
+      +checkbox("checkbox", "", "checkbox")
       span
-        +checkbox('radio', 'radio', '', '1','1')
-        +checkbox('radio', 'radio', '', '2','2')
+        +radio("radio", "", "1","1")
+        +radio("radio", "", "2","2")
 
     h2 Inputs
     .d-flex
-      +field('text', 'text', 'text', '', '', true)
+      +field("text", "text", "text", "", "", true)

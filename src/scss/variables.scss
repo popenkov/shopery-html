@@ -7,6 +7,9 @@
   --font-sans: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
     "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
+  --font-segoe: Segoe, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+    "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   --font-serif: Georgia, "Times New Roman", Times, serif;
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, "Courier New", monospace;
   --font-size-root: 100%;
@@ -14,8 +17,8 @@
   --font-weight-base: 400;
   --line-height-base: 1.25;
 
-  --color-white: #fff;
-  --color-black: #fff;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
   --green-gray-900: #002603;
   --green-gray-800: #173b1a;
@@ -46,25 +49,27 @@
   --primary: #00b207;
   --hard-primary: #2c742f;
 
-  --status-warning: #ff8a00;
-  --status-danger: #ea4b48;
+  --orange: #ff8a00;
+  --red: #ea4b48;
+
+  --status-warning: var(--orange);
+  --status-danger: var(--red);
 
   --front-primary: var(--gray-900);
   --front-primary-inversed: var(--color-white);
 
   --back-primary: var(--color-white);
-  --back-inversed: var(--gray-900);
 
-  --heading-color: var(--blue-900);
-  --transition: 0.3s ease-in;
+  --transition: 0.2s ease-in;
   --modal-bg: rgba(0, 0, 0, 0.8);
 
   // card
   --card-border: 1px solid var(--gray-100);
   --card-hover-border: 1px solid var(--primary);
-  --card-hover-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
+  --card-hover-shadow: 0 0 12px 0 rgba(32, 181, 38, 0.32);
 
   // z-indexes
   --header-dropdown-z-index: 3;
   --mobile-menu-z-index: 3;
+  --hero-navigation-z-index: 11;
 }

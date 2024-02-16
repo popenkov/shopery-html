@@ -1,0 +1,128 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/text-styles.scss";
+
+.advantages {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    background-color: var(--green-gray-50);
+    content: "";
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border: 1px solid rgb(230 230 230);
+    border-radius: 8px;
+    box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__icon-wrapper {
+    @include box(70px);
+    @include flex-center;
+
+    background-color: var(--color-white);
+    border-radius: 50%;
+
+    @media screen and (max-width: $screen-tl) {
+      @include box(50px);
+    }
+  }
+
+  &__icon {
+    @include box(40px);
+
+    @media screen and (max-width: $screen-tl) {
+      @include box(30px);
+    }
+  }
+
+  &__title {
+    @include body-large(600);
+  }
+
+  &__icon-wrapper + &__title {
+    margin-top: 16px;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-top: 10px;
+    }
+  }
+
+  &__text {
+    @include body-small;
+  }
+
+  &__title + &__text {
+    margin-top: 8px;
+  }
+
+  &__item {
+    @include flex-column;
+
+    padding: 40px;
+
+    @media screen and (max-width: $screen-tl) {
+      padding: 20px;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      border: none;
+      border-bottom: 1px solid rgb(230 230 230);
+    }
+
+    &:first-child {
+      background-color: var(--primary);
+
+      #{$block-name}__title,
+      #{$block-name}__text {
+        color: var(--front-primary-inversed);
+      }
+    }
+
+    &:not(:first-child, :last-child) {
+      border-right: 1px solid rgb(230 230 230);
+
+      @media screen and (max-width: $screen-tl) {
+        border-right: none;
+      }
+    }
+
+    &:nth-child(2) {
+      @media screen and (max-width: $screen-tl) {
+        border-bottom: 1px solid rgb(230 230 230);
+      }
+    }
+
+    &:nth-child(3) {
+      @media screen and (max-width: $screen-tl) {
+        border-right: 1px solid rgb(230 230 230);
+      }
+    }
+  }
+}

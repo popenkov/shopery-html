@@ -64,7 +64,148 @@
       }
     ]
   },
-
+  "hero": [
+    {
+      "img": "hero-slide-1.png",
+      "note": "Welcome to shopery",
+      "title": "Fresh & Healthy Organic Food",
+      "text": "Free shipping on all your order. we deliver, you enjoy"
+    },
+    {
+      "img": "hero-slide-1.png",
+      "note": "Welcome to shopery",
+      "title": "Fresh & Healthy Organic Food",
+      "text": "Free shipping on all your order. we deliver, you enjoy"
+    },
+    {
+      "img": "hero-slide-1.png",
+      "note": "Welcome to shopery",
+      "title": "Fresh & Healthy Organic Food",
+      "text": "Free shipping on all your order. we deliver, you enjoy"
+    }
+  ],
+  "advantages": [
+    {
+      "icon": "delivery-truck",
+      "title": "Free Shipping",
+      "text": "Free shipping with discount"
+    },
+    {
+      "icon": "headphones",
+      "title": "Great Support 24/7",
+      "text": "Instant access to Contact "
+    },
+    {
+      "icon": "shopping-bag",
+      "title": "100% Secure Payment",
+      "text": "We ensure your money is save"
+    },
+    {
+      "icon": "package",
+      "title": "Money-Back Guarantee",
+      "text": "30 days money-back guarantee"
+    }
+  ],
+  "products": [
+    {
+      "img": "product-apple.jpg",
+      "title": "Green Apple",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": [
+        {
+          "type": "red",
+          "text": "Sale 50%"
+        }
+      ]
+    },
+    {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-tomatos.jpg",
+      "title": "Red Tomatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-cauliflower.jpg",
+      "title": "Fresh Cauliflower",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-letucce.jpg",
+      "title": "Green Lettuce",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-eggplant.jpg",
+      "title": "Eggplant",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-chilli.jpg",
+      "title": "Green Chilli",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-eggplant-dark.jpg",
+      "title": "Eggplant",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }
+  ],
+  "banners": [
+    {
+      "type": "left, white",
+      "background": "banner-s-1.jpg",
+      "subtitle": "",
+      "title": "100% Fresh Cow Milk",
+      "text": "Starting at ",
+      "price": "$14.99",
+      "link": "#"
+    },
+    {
+      "type": "right",
+      "background": "banner-s-2.jpg",
+      "subtitle": "Drink Sale",
+      "title": "Water & Soft Drink",
+      "text": "",
+      "price": "",
+      "link": "#"
+    },
+    {
+      "type": "left",
+      "background": "banner-s-3.jpg",
+      "subtitle": "100% Organic",
+      "title": "Quick Breakfast",
+      "text": "",
+      "price": "",
+      "link": "#"
+    }
+  ],
   "footer": {
     "instagram": [
       {
@@ -124,14 +265,13 @@
         "link": "#"
       },
       {
-        "img": "apple-pay",
-        "link": "#"
-      },
-      {
         "img": "visa",
         "link": "#"
       },
-
+      {
+        "img": "discover",
+        "link": "#"
+      },
       {
         "img": "mastercard",
         "link": "#"

@@ -37,7 +37,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.23.9",
-    "@babel/eslint-parser": "^7.23.9",
+    "@babel/eslint-parser": "^7.5.4",
     "@babel/plugin-transform-runtime": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@htmlacademy/editorconfig-cli": "^2.0.8",
@@ -73,8 +73,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
-    "husky": "^9.0.6",
-    "lint-staged": "^15.2.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.9",
     "mkdirp": "^3.0.1",
     "path": "^0.12.7",
     "postcss": "^8.4.33",
@@ -98,7 +98,8 @@
     "autosize": "^6.0.1",
     "imask": "^7.3.0",
     "nice-select2": "^2.1.0",
-    "sanitize.css": "^13.0.0"
+    "sanitize.css": "^13.0.0",
+    "swiper": "^11.0.6"
   },
   "husky": {
     "hooks": {

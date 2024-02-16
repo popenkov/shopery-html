@@ -11,10 +11,18 @@
   border-radius: 4px;
 
   &--red {
-    background-color: var(--status-danger);
+    background-color: var(--red);
   }
 
   &--blue {
     background-color: var(--blue-500);
+  }
+
+  &--orange {
+    background-color: var(--orange);
+  }
+
+  &--black {
+    background-color: var(--gray-900);
   }
 }

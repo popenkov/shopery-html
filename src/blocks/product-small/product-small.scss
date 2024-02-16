@@ -3,10 +3,12 @@
 
 .product-small {
   $block-name: &; // #{$block-name}__element
+
   @include flex-center-vertical;
 
   display: flex;
   align-items: flex-start;
+  min-width: 282px;
   max-width: 424px;
   min-height: 118px;
   border: var(--card-border);

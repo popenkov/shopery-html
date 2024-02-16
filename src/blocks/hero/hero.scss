@@ -1,0 +1,175 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+
+.hero {
+  // stylelint-disable-next-line
+  &__swiper-pagination.swiper-pagination-bullets {
+    @include flex-center;
+
+    position: absolute;
+    bottom: 79px;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: $screen-ti) {
+      bottom: 60px;
+    }
+  }
+
+  // stylelint-disable-next-line
+  .swiper-pagination-bullet {
+    @include box(8px);
+
+    width: 8px;
+    height: 8px;
+    background-color: var(--green-gray-200);
+    border-radius: 50%;
+    transition: width var(--transition);
+
+    &-active {
+      width: 16px;
+      background-color: var(--primary);
+      border-radius: 50px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    padding: 68px 0 116px;
+
+    @media screen and (max-width: $screen-tl) {
+      padding-bottom: 200px;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      padding-bottom: 116px !important;
+    }
+  }
+
+  &__slide {
+    @include flex-center-vertical;
+
+    gap: 19px;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+    }
+  }
+
+  &__img-container {
+    width: 58%;
+    height: 564px;
+
+    @media screen and (max-width: $screen-tl) {
+      @include flex-center;
+
+      width: 100%;
+      height: 420px;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__description {
+    width: 40%;
+
+    @media screen and (max-width: $screen-tl) {
+      width: 100%;
+    }
+  }
+
+  &__note {
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 14px;
+    // todo test
+    font-family: var(--font-segoe) !important;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include heading-1(600);
+
+    color: var(--green-gray-900);
+    letter-spacing: 1px;
+  }
+
+  &__note + &__title {
+    margin-top: 7px;
+  }
+
+  &__text {
+    @include body-large;
+
+    color: var(--gray-500);
+  }
+
+  &__title + &__text {
+    margin-top: 20px;
+  }
+
+  &__text + &__button {
+    margin-top: 30px;
+  }
+
+  &__navigation {
+    @media screen and (max-width: $screen-dxl) {
+      @include flex-center-vertical;
+
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      z-index: var(--hero-navigation-z-index);
+      gap: 30px;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      display: none !important;
+    }
+  }
+
+  &__navigation-button {
+    @include box(45px);
+
+    position: absolute;
+    top: 47%;
+    border: 1px solid var(--green-gray-100);
+    box-shadow: none !important;
+    transform: translateY(-50%);
+
+    @media screen and (max-width: $screen-dxl) {
+      position: static;
+      top: auto;
+      margin-bottom: 75px;
+      transform: none;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      margin-bottom: 60px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 0 8px 0 var(--gray-200) !important;
+      }
+    }
+
+    &--prev {
+      left: -110px;
+
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &--next {
+      right: -110px;
+    }
+  }
+
+  $block-name: &; // #{$block-name}__element
+}

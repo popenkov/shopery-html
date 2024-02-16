@@ -6,18 +6,7 @@ ready(function () {
   if (accordeon) {
     const accordeonBtns = accordeon.querySelectorAll(".accordeon__button");
 
-    // todo
-    const closeAllAccordeons = () => {
-      accordeonBtns.forEach((btn) => {
-        btn.classList.remove("is-open");
-        const content = btn.nextElementSibling;
-        content.style.maxHeight = null;
-      });
-    };
-
     const handleAccordeonBtnClick = (btn) => {
-      // closeAllAccordeons();
-
       btn.classList.toggle("is-open");
 
       const content = btn.nextElementSibling;
