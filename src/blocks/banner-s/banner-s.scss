@@ -2,6 +2,8 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .banner-s {
+  $block-name: &; // #{$block-name}__element
+
   padding: 0 24px;
   // todo
   padding: 40px 24px;
@@ -68,5 +70,4 @@
   &__text + &__button-container {
     padding-top: 6px;
   }
-  $block-name: &; // #{$block-name}__element
 }
