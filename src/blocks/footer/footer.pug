@@ -38,21 +38,21 @@ mixin footer(text, mods)
             ul.footer__navigation-list
               each link in json.info.footer.account
                 li
-                  a.footer__navigation-link(href= link.href)= link.title
+                  a.footer__navigation-link(href= link.link)= link.title
 
           .footer__navigation
             h3.footer__navigation-title Helps
             ul.footer__navigation-list
               each link in json.info.footer.helps
                 li
-                  a.footer__navigation-link(href= link.href)= link.title
+                  a.footer__navigation-link(href= link.link)= link.title
 
           .footer__navigation
             h3.footer__navigation-title Proxy
             ul.footer__navigation-list
               each link in json.info.footer.proxy
                 li
-                  a.footer__navigation-link(href= link.href)= link.title
+                  a.footer__navigation-link(href= link.link)= link.title
 
         .footer__instagram
           h3.footer__instagram-title Instagram
@@ -63,7 +63,7 @@ mixin footer(text, mods)
         .footer__bottom
           ul.footer__socials
             each data in json.info.footer.socialLinks
-              a.button-round.button-round--ghost(href=data.link)
+              a.button-round.button-round--ghost(href= data.link)
                 svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
 
           p.footer__copyright-text Ecobazar eCommerce © 2021. All Rights Reserved

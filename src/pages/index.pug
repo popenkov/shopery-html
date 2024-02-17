@@ -119,6 +119,16 @@ block content
   .section
     .container
       h2.section__title Featured Products
-      .grid.grid__three-items
+      .section__content
+        .grid.grid__five-items.d-desktop
+          each product in json.info.featuredProducts
+            +product(product)
+        .mobile-slider.d-mobile
+          .swiper.mobile-slider__slider.js-mobile-slider
+            .swiper-wrapper.mobile-slider__wrapper
+              each product in json.info.products
+                .swiper-slide.mobile-slider__slide
+                  +product(product)
+            .mobile-slider__pagination.swiper-pagination
 
 

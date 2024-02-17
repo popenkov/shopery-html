@@ -1,5 +1,4 @@
-// ghPagesUrl — https://[userName].github.io/[projectName]/index.html
-let ghPagesUrl = ``;
+let ghPagesUrl = ``; // ghPagesUrl: https://[userName].github.io/[projectName]/index.html
 let pathToPrefix = ``;
 
 const htmlPathObj = {
@@ -7,14 +6,14 @@ const htmlPathObj = {
   css: ``,
   img: ``,
   fonts: ``,
-}
+};
 
 const cssPathObj = {
   js: ``,
   css: ``,
   img: ``,
   fonts: `../`,
-}
+};
 
 // deploy/build template condition
 // if (process.env.MODE === "deploy" || process.env.MODE === "production") {}
@@ -53,6 +52,9 @@ const fromObj = {
   },
   get symbols() {
     return `${this.root}/symbols`;
+  },
+  get library() {
+    return `${this.root}/library`;
   },
   get service() {
     return `${this.root}/service`;
@@ -140,14 +142,15 @@ export const config = {
     "sanitize.css/assets.css",
     "sanitize.css/typography.css",
     "sanitize.css/reduce-motion.css",
-    "src/scss/variables.scss",
-    "src/scss/reset.scss",
+    "src/scss/_variables.scss",
     "src/scss/reboot.scss",
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
     "src/scss/vendor.scss",
+    "src/scss/reset.scss",
     "src/scss/fonts.scss",
-    "src/scss/blocks.scss",
+    "src/scss/utils.scss",
+    // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
   // style imports at end
@@ -181,6 +184,8 @@ export const config = {
   },
   // px to rem properties
   pxToRem: ["font", "font-size", "line-height", "letter-spacing"],
+  // svg attributes to be removed
+  removeSvgAttr: ["symbol:width", "symbol:height", "stroke-width"],
   // message
   doNotEditMsg:
     "\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n",
@@ -188,15 +193,18 @@ export const config = {
   classRegexp: /(?<!(=|!=|[({]|include|extends).+)((\.|\B\+)[a-zA-Z0-9-_]+)+?|(class=["']?([\w\-_ ]+)+["']?)/g,
   blockRegexp: /[^\\/]+(?=\.[^.])/g,
   templateRegexp: /(?<=extends.*templates\/).*.pug/g,
+  // strategy
+  strategy: "mobile-first", // ["mobile-first", "desktop-first"]
   // env
-  /* eslint-disable-next-line */
   mode: process.env.MODE || "development",
   // img copy mode
   isSeparatedBlockImg: false, // [false, true, "collected"]
-  // log
-  logging: false,
+  // library
+  buildLibrary: process.env.BUILD_LIBRARY || false,
   // navigation
   isProjectNav: true,
   // repository ghPages url
-  deployUrl: ghPagesUrl
+  deployUrl: ghPagesUrl,
+  // log
+  logging: false,
 };

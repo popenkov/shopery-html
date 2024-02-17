@@ -26,7 +26,7 @@ if (blockName) {
     let fileCreateMsg = "";
 
     if (extension === "scss") {
-      fileContent = `@import "../../scss/breakpoints";\n\n.${blockName} {\n  $block-name: &; // #{$block-name}__element\n}\n`;
+      fileContent = `@import "../../scss/_breakpoints";\n\n.${blockName} {\n  $block-name: &; // #{$block-name}__element\n}\n`;
     } else if (extension === "js") {
       fileContent = `// import ready from "../../js/utils/documentReady.js";\n\n// ready(function () {\n//   your code goes here\n// });\n`;
     } else if (extension === "md") {
