@@ -10,7 +10,7 @@ mixin button(type= "button", text, mods, href)
   //- Вызов:
         +button("Текст", "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -20,9 +20,9 @@ mixin button(type= "button", text, mods, href)
       }
     }
   case type
-    when 'button'
-      button.button(class=allMods)&attributes(attributes)= text
-        block
     when 'link'
       a.button(class=allMods, href=href)&attributes(attributes)= text
+        block
+    default
+      button.button(class=allMods)&attributes(attributes)= text
         block

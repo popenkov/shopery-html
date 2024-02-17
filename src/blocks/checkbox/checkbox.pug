@@ -12,21 +12,21 @@ mixin checkbox(label, mods, name, id)
   //-   options     {string} - список опций select
   //-   mods     {string} - список модификаторов
   //- Вызов
-        +checkbox('Текст лейбла', 'some-mod', 'some-name', 'some-id')
+        +checkbox("Текст лейбла", "some-mod", "some-name", "some-id")
 
   -
-    // список модификаторов
-    var allMods = '';
-    if (typeof (mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
+    //- список модификаторов
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' checkbox--' + modsList[i].trim();
+        allMods = allMods + " checkbox--" + modsList[i].trim();
       }
     }
 
   label.checkbox(class= allMods)
-    input.checkbox__input(id= id, type= 'checkbox', name= name)&attributes(attributes)
+    input.checkbox__input(id= id, type= "checkbox", name= name)&attributes(attributes)
     span.checkbox__fake-input
-      svg: use(href= path.icon + 'check')
+      svg: use(href= path.icon + "check")
     if label
       span.checkbox__label!= label
