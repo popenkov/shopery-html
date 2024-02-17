@@ -1,0 +1,5 @@
+@import "../../scss/_breakpoints";
+
+.news {
+  $block-name: &; // #{$block-name}__element
+}

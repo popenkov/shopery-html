@@ -4,10 +4,14 @@
 .section {
   $block-name: &; // #{$block-name}__element
 
-  margin-bottom: 100px;
+  padding: 100px 0;
+  // todo
+  // margin-bottom: 100px;
 
   @media screen and (max-width: $screen-tl) {
-    margin-bottom: 60px;
+    padding: 60px 0;
+    // todo
+    // margin-bottom: 60px;
   }
 
   &--green {

@@ -131,4 +131,17 @@ block content
                   +product(product)
             .mobile-slider__pagination.swiper-pagination
 
-
+  .section.section--green
+    .container
+      h2.section__title What our Clients Says
+      .section__content
+        .grid.grid__three-items.d-desktop
+         each review in json.info.reviews
+           +review(review)
+        .mobile-slider.d-mobile
+          .swiper.mobile-slider__slider.js-mobile-slider
+            .swiper-wrapper.mobile-slider__wrapper
+              each review in json.info.reviews
+                .swiper-slide.mobile-slider__slide
+                  +review(review)
+            .mobile-slider__pagination.swiper-pagination

@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (review)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin review(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +review({data}, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " review--" + modsList[i].trim();
+      }
+    }
+
+  .review(class=allMods)&attributes(attributes)
+    .review__content
+      svg.review__icon: use(href= path.icon + "icon__quote")
+      p.review__text= data.text
+    .review__author
+      img.review__photo(src= path.img + data.photo, alt="author")
+      p.review__name= data.name
+      p.review__role= data.role

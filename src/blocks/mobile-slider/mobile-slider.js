@@ -11,10 +11,19 @@ ready(function () {
     const initSlider = () => {
       slider = new Swiper(".js-mobile-slider", {
         modules: [Pagination],
-        spaceBetween: 10,
+        spaceBetween: 20,
         loop: true,
-        loopFillGroupWithBlank: true,
-        effect: "fade",
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          // when window width is >= 640px
+          520: {
+            slidesPerView: 2,
+          },
+        },
         pagination: {
           el: ".mobile-slider__pagination",
           clickable: true,
