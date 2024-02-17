@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (subscription)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin subscription(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +subscription("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " subscription--" + modsList[i].trim();
+      }
+    }
+
+  .subscription.js-subscription(class=allMods)&attributes(attributes)
+    .subscription__container.container
+      +logo
+      .subscription__text
+        h2.subscription__title Subcribe our Newsletter
+        p.subscription__subtitle Pellentesque eu nibh eget mauris congue mattis matti.
+      form.subscription__form
+        +field("text", "Your email address", "text", "", "", true)
+        +button("button","Subscribe", "fill, normal")

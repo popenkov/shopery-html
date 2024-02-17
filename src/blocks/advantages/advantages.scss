@@ -8,16 +8,6 @@
 
   position: relative;
 
-  &::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 50%;
-    background-color: var(--green-gray-50);
-    content: "";
-  }
-
   &__container {
     position: relative;
     z-index: 1;

@@ -5,13 +5,9 @@
   $block-name: &; // #{$block-name}__element
 
   padding: 100px 0;
-  // todo
-  // margin-bottom: 100px;
 
   @media screen and (max-width: $screen-tl) {
     padding: 60px 0;
-    // todo
-    // margin-bottom: 60px;
   }
 
   &--green {
@@ -26,5 +22,35 @@
 
   &__title + &__content {
     margin-top: 18px;
+  }
+
+  &__green-background {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      height: 50%;
+      background-color: var(--green-gray-50);
+      content: "";
+    }
+
+    &--top {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        height: 50%;
+        background-color: var(--green-gray-50);
+        content: "";
+      }
+    }
   }
 }

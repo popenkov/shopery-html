@@ -2,13 +2,20 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin news(text, mods)
+mixin news(data, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +news("Текст", "some-mod")
+        +news({    {
+          "dateDay": "23",
+          "dateMouth": "Jan",
+          "img": "news-img--1.jpg",
+          "title": "text",
+          "text": "text",
+          "link": "#"
+        },}, "some-mod")
 
   //- список модификаторов
   -
@@ -21,5 +28,14 @@ mixin news(text, mods)
     }
 
   .news(class=allMods)&attributes(attributes)
-    .news__inner
-      block
+    .news__img-wrapper
+      img.news__img(src= path.img + data.img, alt= data.title)
+      .news__date
+        span.news__date-day= data.dateDay
+        span.news__date-month= data.dateMonth
+    .news__description
+      h3.news__title= data.title
+      p.news__text= data.text
+      a.news__link(href= data.link)
+        | Read More
+        svg.news__link-icon: use(href= path.icon + "icon__arrow")

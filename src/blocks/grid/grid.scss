@@ -1,4 +1,4 @@
-@import "../../scss/_breakpoints";
+@import "../../scss/breakpoints";
 
 .grid {
   $block-name: &; // #{$block-name}__element
@@ -9,11 +9,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $screen-tl) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $screen-ti) {
       grid-template-columns: 1fr !important;
     }
   }

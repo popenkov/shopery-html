@@ -278,6 +278,32 @@
     "video": "https://www.youtube.com/embed/2eX2TCfiFuY",
     "title": "We’re the Best Organic Farm in the World"
   },
+  "news": [
+    {
+      "dateDay": "23",
+      "dateMonth": "Jan",
+      "img": "news-img--1.jpg",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis.",
+      "text": "Nulla libero lorem, euismod venenatis nibh sed, sodales dictum ex. Etiam nisi augue, malesuada et pulvinar at, posuere eu neque.",
+      "link": "#"
+    },
+    {
+      "dateDay": "23",
+      "dateMonth": "Jan",
+      "img": "news-img--2.jpg",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis.",
+      "text": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
+      "link": "#"
+    },
+    {
+      "dateDay": "23",
+      "dateMonth": "Jan",
+      "img": "news-img--3.jpg",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis.",
+      "text": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
+      "link": "#"
+    }
+  ],
   "footer": {
     "account": [
       {

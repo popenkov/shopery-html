@@ -1,0 +1,35 @@
+@import "../../scss/_breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+
+.subscription {
+  $block-name: &; // #{$block-name}__element
+
+  border-top: 1px solid rgb(180 204 180 / 70%);
+
+  &__container {
+    @include flex-center-sb;
+
+    gap: 20px;
+    padding: 50px 0;
+  }
+
+  &__text {
+    @include flex-column;
+
+    gap: 4px;
+  }
+
+  &__title {
+    @include body-xxl(500);
+  }
+
+  &__subtitle {
+    @include body-small;
+
+    color: var(--green-gray-400);
+  }
+
+  &__form {
+    @include flex-center-vertical;
+  }
+}

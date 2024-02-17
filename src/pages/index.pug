@@ -29,7 +29,7 @@ block content
         button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
           svg.button-round__icon: use(href= path.icon + "icon__arrow")
 
-  .advantages
+  .advantages.section__green-background
     .advantages__container.container
       each advantage in json.info.advantages
         .advantages__item
@@ -146,12 +146,24 @@ block content
                   +review(review)
             .mobile-slider__pagination.swiper-pagination
 
-  .section.section--green
+  .section.section__green-background--top
     .container
       +video(json.info.video)
 
-
-
-  .section.section--green
+  .section.section__green-background
     .container
       h2.section__title Latest News
+      .section__content
+        .grid.grid__three-items.d-desktop
+         each news in json.info.news
+           +news(news)
+        .mobile-slider.d-mobile
+          .swiper.mobile-slider__slider.js-mobile-slider
+            .swiper-wrapper.mobile-slider__wrapper
+              each news in json.info.news
+                .swiper-slide.mobile-slider__slide
+                  +news(news)
+            .mobile-slider__pagination.swiper-pagination
+
+
+  +subscription
