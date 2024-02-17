@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (video)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin video(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +video({
+          "preview": "video-preview.jpg",
+          "video": "https://www.youtube.com/embed/2eX2TCfiFuY",
+          "title": "We’re the Best Organic Farm in the World"
+        }, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " video--" + modsList[i].trim();
+      }
+    }
+
+  .video(class=allMods, data-video= data.video)&attributes(attributes)
+    .video__preview.with-overlay.js-video-preview(style= `background-image: url("${path.img + data.preview}")`)
+      .video__text
+        p.video__subtitle Video
+        h2.video__title= data.title
+        button.video__play-button.js-video-play-button
+          svg.video__play-icon: use(href= path.icon + "icon__play-button")
+

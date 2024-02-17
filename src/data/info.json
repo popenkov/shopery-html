@@ -273,6 +273,11 @@
       "role": "Customer"
     }
   ],
+  "video": {
+    "preview": "video-preview.jpg",
+    "video": "https://www.youtube.com/embed/2eX2TCfiFuY",
+    "title": "We’re the Best Organic Farm in the World"
+  },
   "footer": {
     "account": [
       {

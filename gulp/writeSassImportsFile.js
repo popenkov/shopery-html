@@ -39,5 +39,6 @@ export function writeSassImportsFile(cb) {
     console.log("---------- Write new style.scss");
     config.scssImportsList = newScssImportsList;
   }
-  cb();
+  // todo TypeError: cb is not a function
+  cb?.();
 }
