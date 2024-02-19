@@ -5,11 +5,6 @@
 
   max-width: 183px;
 
-  &__icon {
-    max-width: 183px;
-    height: 38px;
-  }
-
   &--large {
     max-width: 223px;
 
@@ -25,5 +20,10 @@
     #{$block-name}__icon {
       @include box(32px);
     }
+  }
+
+  &__icon {
+    max-width: 183px;
+    height: 38px;
   }
 }

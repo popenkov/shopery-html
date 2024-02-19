@@ -20,10 +20,11 @@ block content
 
 
   .section.section--green.products-tabs
-    .container
-      h2.section__title Introducing Our Products
+      //- todo
+      .container
+      h2.section__title.container Introducing Our Products
       .tabs.section__content
-        .tabs__labels
+        .tabs__labels.container
           .tabs__scroll-container
             button.tabs__label.tabs__label--active(data-href="#tab1") All
             button.tabs__label(data-href="#tab2") Vegetable
@@ -32,10 +33,10 @@ block content
             button.tabs__label(data-href="#tab5") View All
         .tabs__panes
           .tabs__pane.tabs__pane--active#tab1
-            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop.container
               each product in json.info.products
                 +product-large(product)(class="products-tabs__item")
-            .products-tabs__items--mobile.mobile-slider
+            .container.products-tabs__items--mobile.mobile-slider
               .swiper.mobile-slider__slider.js-mobile-slider
                 .swiper-wrapper.mobile-slider__wrapper
                   each product in json.info.products
@@ -47,7 +48,7 @@ block content
             .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
               each product in json.info.products
                 +product-large(product)
-            .products-tabs__items--mobile.mobile-slider
+            .container.products-tabs__items--mobile.mobile-slider
               .swiper.mobile-slider__slider.js-mobile-slider
                 .swiper-wrapper.mobile-slider__wrapper
                   each product in json.info.products
@@ -64,12 +65,12 @@ block content
         +banner-s(banner, banner.type)
 
     .container.mobile-slider.d-mobile
-            .swiper.mobile-slider__slider.js-mobile-slider
-              .swiper-wrapper.mobile-slider__wrapper
-                each banner in json.info.banners
-                  .swiper-slide
-                    +banner-s(banner, banner.type)
-              .mobile-slider__pagination.swiper-paginationprocess
+      .swiper.mobile-slider__slider.js-mobile-slider
+        .swiper-wrapper.mobile-slider__wrapper
+          each banner in json.info.banners
+            .swiper-slide
+              +banner-s(banner, banner.type)
+        .mobile-slider__pagination.swiper-paginationprocess
 
   .section.section--green.best-deals
     .best-deals__container
@@ -97,34 +98,32 @@ block content
 
 
   .section
-    .container
-      h2.section__title Featured Products
-      .section__content
-        .grid.grid__five-items.d-desktop
-          each product in json.info.featuredProducts
-            +product(product)
-        .mobile-slider.d-mobile
-          .swiper.mobile-slider__slider.js-mobile-slider
-            .swiper-wrapper.mobile-slider__wrapper
-              each product in json.info.products
-                .swiper-slide.mobile-slider__slide
-                  +product(product)
-            .mobile-slider__pagination.swiper-pagination
+    h2.section__title.container Featured Products
+    .section__content
+      .grid.grid__five-items.d-desktop.container
+        each product in json.info.featuredProducts
+          +product(product)
+      .mobile-slider.d-mobile.container
+        .swiper.mobile-slider__slider.js-mobile-slider
+          .swiper-wrapper.mobile-slider__wrapper
+            each product in json.info.products
+              .swiper-slide.mobile-slider__slide
+                +product(product)
+          .mobile-slider__pagination.swiper-pagination
 
   .section.section--green
-    .container
-      h2.section__title What our Clients Says
-      .section__content
-        .grid.grid__three-items.d-desktop
-         each review in json.info.reviews
-           +review(review)
-        .mobile-slider.d-mobile
-          .swiper.mobile-slider__slider.js-mobile-slider
-            .swiper-wrapper.mobile-slider__wrapper
-              each review in json.info.reviews
-                .swiper-slide.mobile-slider__slide
-                  +review(review)
-            .mobile-slider__pagination.swiper-pagination
+    h2.section__title.container What our Clients Says
+    .section__content
+      .grid.grid__three-items.d-desktop.container
+        each review in json.info.reviews
+          +review(review)
+      .mobile-slider.d-mobile.container
+        .swiper.mobile-slider__slider.js-mobile-slider
+          .swiper-wrapper.mobile-slider__wrapper
+            each review in json.info.reviews
+              .swiper-slide.mobile-slider__slide
+                +review(review)
+          .mobile-slider__pagination.swiper-pagination
 
   .section.section__green-background--top
     .container

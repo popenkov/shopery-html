@@ -13,14 +13,19 @@ ready(function () {
         modules: [Pagination],
         spaceBetween: 20,
         loop: true,
+        // todo
+        // slidesOffsetBefore: 20,
+        // slidesOffsetAfter: 20,
+
         breakpoints: {
           // when window width is >= 320px
           320: {
             slidesPerView: 1,
+            slidesPerGroup: 1,
             spaceBetween: 20,
           },
           // when window width is >= 640px
-          520: {
+          576: {
             slidesPerView: 2,
           },
         },

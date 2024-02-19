@@ -49,17 +49,19 @@
   }
 
   &__about {
+    @include flex-column;
+
     grid-area: about;
+    gap: 16px;
 
     @media screen and (max-width: $screen-tl) {
-      @include flex-column-center;
+      align-items: center;
     }
   }
 
   &__about-title {
     @include body-xl(500);
 
-    margin-bottom: 16px;
     color: var(--front-primary-inversed);
   }
 
@@ -70,7 +72,7 @@
   }
 
   #{$block-name}__about-text + #{$block-name}__about-contact {
-    margin-top: 22px;
+    margin-top: 6px;
   }
 
   &__about-link {
@@ -96,7 +98,7 @@
     color: var(--green-gray-500);
   }
 
-  &__navigation-wrapper {
+  &__navigation {
     display: flex;
     grid-area: navigation;
     gap: 78px;
@@ -114,10 +116,15 @@
     }
   }
 
+  &__navigation-item {
+    @include flex-column;
+
+    gap: 20px;
+  }
+
   &__navigation-title {
     @include body-xl(500);
 
-    margin-bottom: 20px;
     color: var(--front-primary-inversed);
   }
 
@@ -141,7 +148,10 @@
   }
 
   &__instagram {
+    @include flex-column;
+
     grid-area: instagram;
+    gap: 20px;
 
     @media screen and (max-width: $screen-tl) {
       @include flex-column-center;
@@ -151,7 +161,6 @@
   &__instagram-title {
     @include body-xl(500);
 
-    margin-bottom: 20px;
     color: var(--front-primary-inversed);
   }
 
@@ -201,6 +210,7 @@
 
     @media screen and (max-width: $screen-tl) {
       margin-left: 0;
+      text-align: center;
     }
   }
 

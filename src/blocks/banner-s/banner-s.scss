@@ -5,6 +5,7 @@
   $block-name: &; // #{$block-name}__element
 
   position: relative;
+  display: block;
   padding: 40px 24px;
   overflow: hidden;
   color: var(--front-primary);
@@ -55,7 +56,11 @@
     gap: 8px;
     align-items: flex-start;
     justify-content: center;
+    justify-content: flex-start;
     width: 44%;
+
+    // todo
+    height: 100%;
     min-height: 173px;
 
     @media screen and (max-width: $screen-t) {
@@ -83,6 +88,10 @@
 
   &__price {
     @include body-xl(500);
+  }
+
+  &__button-container {
+    margin-top: auto;
   }
 
   &__text + &__button-container {

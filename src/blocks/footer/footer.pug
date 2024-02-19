@@ -32,22 +32,22 @@ mixin footer(text, mods)
             span.footer__about-separator or
             a.footer__about-link(href="mailto:proxy@gmail.com") Proxy@gmail.com
 
-        .footer__navigation-wrapper
-          .footer__navigation
+        .footer__navigation
+          .footer__navigation-item
             h2.footer__navigation-title My Account
             ul.footer__navigation-list
               each link in json.info.footer.account
                 li
                   a.footer__navigation-link(href= link.link)= link.title
 
-          .footer__navigation
+          .footer__navigation-item
             h2.footer__navigation-title Helps
             ul.footer__navigation-list
               each link in json.info.footer.helps
                 li
                   a.footer__navigation-link(href= link.link)= link.title
 
-          .footer__navigation
+          .footer__navigation-item
             h2.footer__navigation-title Proxy
             ul.footer__navigation-list
               each link in json.info.footer.proxy
