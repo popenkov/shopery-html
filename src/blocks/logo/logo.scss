@@ -1,5 +1,14 @@
+@import "../../scss/mixins/blocks.scss";
+
 .logo {
+  $block-name: &; // #{$block-name}__element
+
   max-width: 183px;
+
+  &__icon {
+    max-width: 183px;
+    height: 38px;
+  }
 
   &--large {
     max-width: 223px;
@@ -10,9 +19,11 @@
     }
   }
 
-  &__icon {
-    max-width: 183px;
-    height: 38px;
+  &--mini {
+    @include box(32px);
+
+    #{$block-name}__icon {
+      @include box(32px);
+    }
   }
-  $block-name: &; // #{$block-name}__element
 }

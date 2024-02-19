@@ -1,6 +1,12 @@
 @import "../../scss/_breakpoints";
 
 .mobile-slider {
+  .swiper {
+    @media screen and (max-width: $screen-ti) {
+      overflow: visible;
+    }
+  }
+
   .swiper-wrapper {
     padding-bottom: 20px;
   }

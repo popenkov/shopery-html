@@ -30,9 +30,14 @@
     top: 50%;
     left: 50%;
     gap: 12px;
+    max-width: calc(100% - 40px);
     color: var(--front-primary-inversed);
     text-align: center;
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: $screen-tl) {
+      width: 100%;
+    }
   }
 
   &__subtitle {

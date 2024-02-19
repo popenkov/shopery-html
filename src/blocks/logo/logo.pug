@@ -2,13 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin logo(href, mods)
+mixin logo(href, mods, isSmall= false)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +logo("href", "some-mod")
+        +logo("/link.html", "some-mod", false)
 
   //- список модификаторов
   -
@@ -21,4 +21,8 @@ mixin logo(href, mods)
     }
 
   a.logo(href= href, class=allMods)&attributes(attributes)
-    svg.logo__icon: use(href= path.icon + "logo__default")
+    case isSmall
+      when true
+        svg.logo__icon: use(href= path.icon + "logo__mini")
+      default
+        svg.logo__icon: use(href= path.icon + "logo__default")

@@ -39,6 +39,7 @@ mixin header(mods)
       button.header__mobile-burger.js-mobile-menu-btn
         span.burger-button
       +logo(isMainPage ? "" : "/index.html")(class="header__logo")
+      +logo(isMainPage ? "" : "/index.html", "mini", true)(class="header__logo-mobile")
       .header__search
         +search-form(class="js-header-search-form")
       .header__navbar

@@ -120,6 +120,17 @@
 
   &__logo {
     max-width: 183px;
+
+    @media screen and (max-width: $screen-t) {
+      display: none;
+    }
+  }
+
+  &__logo-mobile {
+    display: none;
+    @media screen and (max-width: $screen-t) {
+      display: block;
+    }
   }
 
   &__search {
