@@ -2,8 +2,6 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .banner-s {
-  $block-name: &; // #{$block-name}__element
-
   position: relative;
   padding: 40px 24px;
   overflow: hidden;
@@ -88,4 +86,12 @@
   &__text + &__button-container {
     padding-top: 6px;
   }
+
+  &__button.button {
+    @include flex-center-vertical;
+
+    gap: 8px;
+    padding: 11px 27px 11px 32px;
+  }
+  $block-name: &; // #{$block-name}__element
 }

@@ -27,5 +27,5 @@ mixin subscription(text, mods)
         h2.subscription__title Subcribe our Newsletter
         p.subscription__subtitle Pellentesque eu nibh eget mauris congue mattis matti.
       form.subscription__form
-        +field("text", "Your email address", "text", "", "", true)
-        +button("button","Subscribe", "fill, normal")
+        +field("text", "subscription-email", "Your email address", "", "", true)(class="subscription__input")
+        +button("button","Subscribe", "fill, large")(class="subscription__button")

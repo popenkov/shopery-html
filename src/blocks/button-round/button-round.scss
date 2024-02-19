@@ -41,7 +41,7 @@
   }
 
   &--white-green {
-    // todo  не могу достать из макета тень
+    background-color: var(--back-primary);
     box-shadow: 0 0 8px 0 var(--gray-200);
 
     @media (hover: hover) {
@@ -59,7 +59,6 @@
   }
 
   &--like {
-    // todo  не могу достать из макета тень
     box-shadow: 0 0 8px 0 var(--gray-200);
 
     @media (hover: hover) {

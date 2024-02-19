@@ -1,0 +1,73 @@
+@import "../../scss/_breakpoints";
+
+.dropdown {
+  position: relative;
+
+  &:hover {
+    color: var(--front-primary-inversed);
+
+    #{$block-name}__content {
+      visibility: visible;
+      opacity: 1;
+      transition: all var(--transition);
+    }
+
+    #{$block-name}__chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    @include flex-column;
+
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    gap: 12px;
+    width: 100px;
+    padding: 16px 22px;
+    background-color: var(--gray-800);
+    border-radius: 4px;
+    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all var(--transition);
+  }
+
+  &__chevron {
+    @include box(12px);
+
+    transform: rotate(0);
+    transition: all var(--transition);
+  }
+
+  &__button {
+    @include flex-center-vertical;
+
+    gap: 3px;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__link {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+  $block-name: &; // #{$block-name}__element
+}

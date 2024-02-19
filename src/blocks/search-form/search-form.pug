@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (search-form)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin search-form(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +search-form("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " search-form--" + modsList[i].trim();
+      }
+    }
+
+  form.search-form(class=allMods)&attributes(attributes)
+    +field("search", "search", "search", "", "", true)(class="search-form__field")
+    +button("button","Search", "fill, normal")(class="search-form__button")

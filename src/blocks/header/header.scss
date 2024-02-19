@@ -4,9 +4,6 @@
 
 .header {
   $block-name: &; // #{$block-name}__element
-  &__inner {
-    padding: 8px 0;
-  }
 
   &__top {
     @include body-tiny;
@@ -16,8 +13,14 @@
     background-color: var(--gray-800);
   }
 
-  &__top-container {
+  &__content {
     @include flex-center-sb;
+
+    gap: 35px;
+
+    @media screen and (max-width: $screen-d) {
+      gap: 15px;
+    }
   }
 
   &__top-location {
@@ -45,101 +48,33 @@
     }
   }
 
-  &__top-right {
+  &__actions {
     @include flex-center-vertical;
 
-    gap: 20px;
+    gap: 19px;
 
     @media screen and (max-width: $screen-tl) {
       margin-left: auto;
     }
   }
 
-  &__top-menu-content {
-    @include flex-column;
-
-    position: absolute;
-    top: 29px;
-    left: 50%;
-    gap: 12px;
-    width: 100px;
-    padding: 16px 22px;
-    background-color: var(--gray-800);
-    border-radius: 4px;
-    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
-    transform: translateX(-50%);
-    visibility: hidden;
-    opacity: 0;
-    transition: all var(--transition);
+  &__actions-separator {
+    width: 1px;
+    height: 15px;
+    background-color: rgb(255 255 255 / 10%);
   }
 
-  &__top-menu-chevron {
-    @include box(12px);
-
-    transform: rotate(0);
-    transition: all var(--transition);
-  }
-
-  &__top-menu-button {
+  &__dropdowns {
     @include flex-center-vertical;
 
-    gap: 3px;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-
-    @media (hover: hover) {
-      &:hover {
-        color: var(--primary);
-      }
-    }
+    gap: 17px;
   }
 
-  &__top-menu {
+  &__auth {
     position: relative;
-
-    &:hover {
-      color: var(--front-primary-inversed);
-
-      #{$block-name}__top-menu-content {
-        visibility: visible;
-        opacity: 1;
-        transition: all var(--transition);
-      }
-
-      #{$block-name}__top-menu-chevron {
-        transform: rotate(180deg);
-      }
-    }
   }
 
-  &__top-menu-link {
-    padding: 0;
-    border: none;
-    cursor: pointer;
-
-    @media (hover: hover) {
-      &:hover {
-        color: var(--primary);
-      }
-    }
-  }
-
-  &__currency {
-    display: flex;
-    align-items: center;
-    border-right: 1px solid var(--gray-500);
-  }
-
-  &__currency-menu {
-    border: none;
-  }
-
-  &__sign-in {
-    padding-left: 20px;
-  }
-
-  &__sign-in-link {
+  &__auth-link {
     color: inherit;
 
     @media (hover: hover) {
@@ -149,7 +84,7 @@
     }
   }
 
-  &__sign-in-separator {
+  &__auth-separator {
     padding: 0 5px;
   }
 
@@ -188,37 +123,12 @@
   }
 
   &__search {
-    @include flex-center-vertical;
-
     width: 100%;
     max-width: 498px;
-    border-radius: 6px;
-
-    @media screen and (max-width: $screen-tl) {
-      display: none;
-
-      &--mobile {
-        display: flex;
-      }
-    }
-
-    label {
-      width: 100%;
-    }
-
-    input {
-      height: 45px;
-      border-radius: 6px 0 0 6px;
-    }
-
-    button {
-      height: 45px;
-      padding: 14px 24px;
-      border-radius: 0 6px 6px 0;
-    }
+    margin-left: 9px;
   }
 
-  &__middle-right {
+  &__navbar {
     @include flex-center-vertical;
 
     gap: 16px;
@@ -229,7 +139,7 @@
     }
   }
 
-  &__middle-right-separator {
+  &__navbar-separator {
     display: block;
     width: 1px;
     height: 24px;
@@ -303,16 +213,6 @@
     background-color: var(--gray-50);
   }
 
-  &__navigation-content {
-    @include flex-center-sb;
-
-    gap: 35px;
-
-    @media screen and (max-width: $screen-d) {
-      gap: 15px;
-    }
-  }
-
   &__navigation-left {
     @include flex-center-vertical;
 
@@ -348,7 +248,7 @@
     @include body-small(500);
 
     gap: 10px;
-    padding: 18px 26px;
+    padding: 18px 24px 17px 26px;
     color: var(--front-primary-inversed);
     background-color: var(--primary);
     border: none;
@@ -455,10 +355,10 @@
 
   &__navigation-menu-link {
     @include flex-center-vertical;
-    @include body-small(600);
+    @include body-small(500);
 
-    gap: 4px;
-    padding: 18px 0;
+    gap: 5px;
+    padding: 18px 0 17px;
     color: var(--gray-500);
     text-transform: capitalize;
 
@@ -474,7 +374,7 @@
   }
 
   &__navigation-link-icon {
-    @include box(18px);
+    @include box(16px);
 
     transform: rotate(0);
   }

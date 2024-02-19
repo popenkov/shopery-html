@@ -1,0 +1,43 @@
+//- Все примеси в этом файле должны начинаться c имени блока (hero)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin hero(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +hero("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " hero--" + modsList[i].trim();
+      }
+    }
+
+  .hero.container(class=allMods)&attributes(attributes)
+    .hero__slider
+      .swiper.js-hero-slider
+        .swiper-wrapper.hero__slider-wrapper
+          each slide in json.info.hero
+            .swiper-slide.hero__slide
+              .hero__img-container
+                img.hero__img(src= path.img + slide.img, alt="slide")
+              .hero__description
+                span.hero__note= slide.note
+                h2.hero__title= slide.title
+                p.hero__text= slide.text
+                +button("link", "", "fill, large")(class="hero__button")
+                  span.icon-button__text Shop now
+                  svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      .hero__swiper-pagination
+      .hero__navigation
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
+          svg.button-round__icon: use(href= path.icon + "icon__arrow")
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
+          svg.button-round__icon: use(href= path.icon + "icon__arrow")

@@ -66,19 +66,19 @@
   },
   "hero": [
     {
-      "img": "hero-slide-1.png",
+      "img": "hero-slide-0.jpg",
       "note": "Welcome to shopery",
       "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     },
     {
-      "img": "hero-slide-1.png",
+      "img": "hero-slide-0.jpg",
       "note": "Welcome to shopery",
       "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     },
     {
-      "img": "hero-slide-1.png",
+      "img": "hero-slide-0.jpg",
       "note": "Welcome to shopery",
       "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
@@ -369,35 +369,35 @@
     ],
     "instagram": [
       {
-        "img": "img/instagram--01.jpg",
+        "img": "instagram--01.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--02.jpg",
+        "img": "instagram--02.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--03.jpg",
+        "img": "instagram--03.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--04.jpg",
+        "img": "instagram--04.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--05.jpg",
+        "img": "instagram--05.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--06.jpg",
+        "img": "instagram--06.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--07.jpg",
+        "img": "instagram--07.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--08.jpg",
+        "img": "instagram--08.jpg",
         "link": "#"
       }
     ],

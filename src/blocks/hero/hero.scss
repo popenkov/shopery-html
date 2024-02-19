@@ -7,7 +7,7 @@
     @include flex-center;
 
     position: absolute;
-    bottom: 79px;
+    bottom: 81px;
     display: flex;
     justify-content: center;
 
@@ -24,7 +24,7 @@
     height: 8px;
     background-color: var(--green-gray-200);
     border-radius: 50%;
-    transition: width var(--transition);
+    transition: all var(--transition);
 
     &-active {
       width: 16px;
@@ -35,7 +35,7 @@
 
   &__slider {
     position: relative;
-    padding: 68px 0 116px;
+    padding: 68px 0 118px;
 
     @media screen and (max-width: $screen-tl) {
       padding-bottom: 200px;
@@ -74,6 +74,9 @@
   }
 
   &__description {
+    @include flex-column;
+
+    align-items: flex-start;
     width: 40%;
 
     @media screen and (max-width: $screen-tl) {
@@ -97,7 +100,7 @@
   }
 
   &__note + &__title {
-    margin-top: 7px;
+    margin-top: 8px;
   }
 
   &__text {
@@ -108,6 +111,14 @@
 
   &__title + &__text {
     margin-top: 20px;
+  }
+
+  // stylelint-disable-next-line
+  &__button.button--large {
+    @include flex-center-vertical;
+
+    gap: 12px;
+    padding-right: 35px;
   }
 
   &__text + &__button {
@@ -134,7 +145,7 @@
     @include box(45px);
 
     position: absolute;
-    top: 47%;
+    top: 46.7%;
     border: 1px solid var(--green-gray-100);
     box-shadow: none !important;
     transform: translateY(-50%);

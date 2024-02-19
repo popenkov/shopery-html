@@ -31,5 +31,21 @@
 
   &__form {
     @include flex-center-vertical;
+
+    position: relative;
+  }
+
+  &__input {
+    padding-right: 160px;
+    color: var(--green-gray-500);
+    border: 1px solid var(--green-gray-100);
+    border-radius: 46px;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 43px;
   }
 }

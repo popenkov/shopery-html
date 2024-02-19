@@ -32,6 +32,6 @@ mixin banner-s(data, mods)
         if data.price
           span.banner-s__price= data.price
       .banner-s__button-container
-        +button("button", "", "white, normal")(class="icon-button banner-s__button")
-          span.icon-button__text Shop now
+        +button("button", "", "white, normal")(class="banner-s__button icon-button")
+          span.icon-button__text Shop Now
           svg.icon-button__icon: use(href= path.icon + "icon__arrow")

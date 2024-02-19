@@ -22,6 +22,6 @@ mixin instagram-card(data, mods)
 
   a.instagram-card(href= data.link, class=allMods)&attributes(attributes)
     .instagram-card__img
-      img(src= path.img + data.preview, alt="alt")
+      img(src= path.img + data.img, alt="alt")
       .instagram-card__overlay
         svg.instagram-card__icon: use(href= path.icon + "icon__instagram")

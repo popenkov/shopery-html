@@ -11,12 +11,17 @@
     gap: 8px;
   }
   // stylelint-disable-next-line
-  &.button--normal {
+  &--normal {
     gap: 12px;
   }
+  // TODO
   // stylelint-disable-next-line
-  &.button--large {
+  &--large {
     gap: 16px;
+  }
+
+  &__text {
+    white-space: nowrap;
   }
 
   &__icon {

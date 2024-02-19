@@ -20,7 +20,7 @@
     height: 8px;
     background-color: var(--green-gray-200);
     border-radius: 50%;
-    transition: width var(--transition);
+    transition: all var(--transition);
 
     &-active {
       width: 16px;
