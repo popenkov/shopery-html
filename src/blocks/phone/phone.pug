@@ -1,14 +1,14 @@
-//- Все примеси в этом файле должны начинаться c имени блока (instagram-card)
+//- Все примеси в этом файле должны начинаться c имени блока (phone)
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin instagram-card(data, mods)
+mixin phone(text, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +instagram-card("Текст", "some-mod")
+        +phone("Текст", "some-mod")
 
   //- список модификаторов
   -
@@ -16,11 +16,11 @@ mixin instagram-card(data, mods)
     if (typeof (mods) !== "undefined" && mods) {
       var modsList = mods.split(",");
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + " instagram-card--" + modsList[i].trim();
+        allMods = allMods + " phone--" + modsList[i].trim();
       }
     }
 
-  a.instagram-card(href= data.link, class=allMods)&attributes(attributes)
-    img.instagram-card__img(src= path.img + data.img, alt="alt")
-    .instagram-card__overlay
-      svg.instagram-card__icon: use(href= path.icon + "icon__instagram")
+  .phone(class=allMods)&attributes(attributes)
+    a.phone(href="tel:(219) 555-0114")
+      svg.phone__icon: use(href= path.icon + "icon__phone")
+      span.phone__text (219) 555-0114

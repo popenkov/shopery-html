@@ -22,10 +22,10 @@ mixin footer(text, mods)
 
 
   footer.footer(class=allMods)&attributes(attributes)
-    .footer__wrapper
+    .footer__inner
       .footer__content.container
         .footer__about
-          h3.footer__about-title About Shopery
+          h2.footer__about-title About Shopery
           p.footer__about-text Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.
           .footer__about-contact
             a.footer__about-link(href="tel:(219)555-0114") (219) 555-0114
@@ -34,28 +34,28 @@ mixin footer(text, mods)
 
         .footer__navigation-wrapper
           .footer__navigation
-            h3.footer__navigation-title My Account
+            h2.footer__navigation-title My Account
             ul.footer__navigation-list
               each link in json.info.footer.account
                 li
                   a.footer__navigation-link(href= link.link)= link.title
 
           .footer__navigation
-            h3.footer__navigation-title Helps
+            h2.footer__navigation-title Helps
             ul.footer__navigation-list
               each link in json.info.footer.helps
                 li
                   a.footer__navigation-link(href= link.link)= link.title
 
           .footer__navigation
-            h3.footer__navigation-title Proxy
+            h2.footer__navigation-title Proxy
             ul.footer__navigation-list
               each link in json.info.footer.proxy
                 li
                   a.footer__navigation-link(href= link.link)= link.title
 
         .footer__instagram
-          h3.footer__instagram-title Instagram
+          h2.footer__instagram-title Instagram
           .footer__instagram-cards
             each data in json.info.footer.instagram
               +instagram-card(data)

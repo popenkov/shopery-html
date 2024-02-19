@@ -5,10 +5,10 @@
 
   background-color: var(--green-gray-900);
 
-  &__wrapper {
+  &__inner {
     background:
-      url("../img/left.svg") no-repeat left bottom,
-      url("../img/right.svg") no-repeat right bottom;
+      url("..//{{img}}//left.svg") no-repeat left bottom,
+      url("..//{{img}}//right.svg") no-repeat right bottom;
 
     @media screen and (max-width: $screen-tl) {
       background: none;
@@ -34,13 +34,13 @@
     }
 
     @media screen and (max-width: $screen-tl) {
-      grid-template: repeat(2, auto) / repeat(2, 1fr) !important;
+      grid-template: repeat(2, auto) / repeat(2, 1fr);
       grid-template-areas:
         "about about"
         "navigation navigation"
         "instagram instagram"
-        "copyright copyright" !important;
-      gap: 60px 40px;
+        "copyright copyright";
+      gap: 50px 40px;
     }
   }
 
@@ -50,6 +50,10 @@
 
   &__about {
     grid-area: about;
+
+    @media screen and (max-width: $screen-tl) {
+      @include flex-column-center;
+    }
   }
 
   &__about-title {
@@ -97,9 +101,16 @@
     grid-area: navigation;
     gap: 78px;
 
+    @media screen and (max-width: $screen-tl) {
+      @include flex-center;
+
+      align-items: flex-start;
+    }
+
     @media screen and (max-width: $screen-t) {
-      flex-direction: column;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: flex-start;
     }
   }
 
@@ -131,6 +142,10 @@
 
   &__instagram {
     grid-area: instagram;
+
+    @media screen and (max-width: $screen-tl) {
+      @include flex-column-center;
+    }
   }
 
   &__instagram-title {
@@ -141,10 +156,17 @@
   }
 
   &__instagram-cards {
-    @include flex-center-vertical;
-
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: repeat(4, 80px);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__bottom {

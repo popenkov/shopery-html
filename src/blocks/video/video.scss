@@ -8,6 +8,8 @@
     position: relative;
     width: 100%;
     aspect-ratio: 66 / 37;
+    min-height: 400px;
+    background-position: center;
 
     &.with-overlay {
       position: relative;
@@ -47,12 +49,20 @@
     @include heading-4;
 
     text-align: center;
+
+    @media screen and (max-width: $screen-tl) {
+      @include heading-5;
+    }
   }
 
   &__play-icon {
     @include box(80px);
 
     transition: color var(--transition);
+
+    @media screen and (max-width: $screen-ti) {
+      @include box(70px);
+    }
   }
 
   &__play-button {

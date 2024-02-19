@@ -1,6 +1,8 @@
 @import "../../scss/_breakpoints";
 
 .dropdown {
+  $block-name: &; // #{$block-name}__element
+
   position: relative;
 
   &:hover {
@@ -69,5 +71,4 @@
       }
     }
   }
-  $block-name: &; // #{$block-name}__element
 }
