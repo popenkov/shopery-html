@@ -1,0 +1,102 @@
+@import "../../scss/_breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+
+.subscription {
+  $block-name: &; // #{$block-name}__element
+
+  border-top: 1px solid rgb(180 204 180 / 70%);
+
+  &__container {
+    display: grid;
+    grid-template-areas: "logo text form";
+    grid-template-columns: minmax(auto, 223px) minmax(auto, 433px) minmax(auto, 535px);
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template: repeat(2, auto) / 1fr minmax(auto, 535px);
+      grid-template-areas: "logo logo" "text form";
+      justify-content: start;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template: repeat(3, auto) / 1fr;
+      grid-template-areas: "logo" "text" "form";
+      justify-content: start;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__text {
+    @include flex-column;
+
+    grid-area: text;
+    gap: 4px;
+    margin-left: auto;
+
+    @media screen and (max-width: $screen-d) {
+      margin-left: unset;
+    }
+  }
+
+  &__title {
+    @include body-xxl(500);
+
+    color: var(--green-gray-900);
+  }
+
+  &__subtitle {
+    @include body-small;
+
+    color: var(--green-gray-400);
+  }
+
+  &__form {
+    @include flex-center-vertical;
+
+    position: relative;
+    grid-area: form;
+    height: 51px;
+
+    @media screen and (max-width: $screen-t) {
+      @include flex-column;
+
+      position: static;
+      gap: 20px;
+      align-items: flex-start;
+      height: auto;
+    }
+  }
+
+  &__input {
+    @include body-medium;
+
+    padding-right: 180px;
+    padding-left: 24px;
+    color: var(--green-gray-500);
+    border: 1px solid var(--green-gray-100);
+    border-radius: 46px;
+
+    @media screen and (max-width: $screen-t) {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 43px;
+
+    @media screen and (max-width: $screen-t) {
+      position: static;
+      width: 100%;
+    }
+  }
+}

@@ -9,17 +9,33 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $screen-tl) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $screen-ti) {
       grid-template-columns: 1fr !important;
     }
   }
 
   &__four-items {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  &__five-items {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
     @media screen and (max-width: $screen-tl) {
       grid-template-columns: 1fr 1fr 1fr;

@@ -2,7 +2,6 @@ import ready from "../../js/utils/documentReady.js";
 
 ready(function () {
   const counterList = document.querySelectorAll(".js-counter");
-
   if (counterList) {
     const updateCountdown = () => {
       counterList.forEach((counter) => {
@@ -21,10 +20,10 @@ ready(function () {
         const minutesValue = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const secondsValue = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        days.textContent = daysValue >= 10 ? daysValue : `0${daysValue}`;
-        hours.textContent = hoursValue >= 10 ? hoursValue : `0${hoursValue}`;
-        minutes.textContent = minutesValue >= 10 ? minutesValue : `0${minutesValue}`;
-        seconds.textContent = secondsValue >= 10 ? secondsValue : `0${secondsValue}`;
+        days.textContent = Math.abs(daysValue) >= 10 ? daysValue : `0${daysValue}`;
+        hours.textContent = Math.abs(hoursValue) >= 10 ? hoursValue : `0${hoursValue}`;
+        minutes.textContent = Math.abs(minutesValue) >= 10 ? minutesValue : `0${minutesValue}`;
+        seconds.textContent = Math.abs(secondsValue) >= 10 ? secondsValue : `0${secondsValue}`;
       });
     };
 

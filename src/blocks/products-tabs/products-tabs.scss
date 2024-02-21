@@ -1,4 +1,4 @@
-@import "../../scss/breakpoints";
+@import "../../scss/_breakpoints";
 
 .products-tabs {
   $block-name: &; // #{$block-name}__element
@@ -10,8 +10,6 @@
   }
 
   &__items {
-    gap: 1px;
-
     &--desktop {
       @media screen and (max-width: $screen-ti) {
         display: none;
@@ -24,14 +22,10 @@
       @media screen and (max-width: $screen-ti) {
         display: block;
       }
-
-      .swiper {
-        max-width: calc(100vw - 40px);
-      }
-
-      .swiper-slide {
-        width: auto;
-      }
     }
+  }
+
+  &__item {
+    border: 1px solid var(--green-gray-100);
   }
 }

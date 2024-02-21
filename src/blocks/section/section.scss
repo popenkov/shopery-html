@@ -1,27 +1,75 @@
-@import "../../scss/breakpoints";
+@import "../../scss/_breakpoints";
 @import "../../scss/mixins/text-styles.scss";
 
 .section {
-  $block-name: &; // #{$block-name}__element
-
-  margin-bottom: 100px;
+  padding: 100px 0;
 
   @media screen and (max-width: $screen-tl) {
-    margin-bottom: 60px;
+    padding: 40px 0;
   }
 
   &--green {
     background-color: var(--green-gray-50);
   }
 
+  &__pb {
+    padding-bottom: 100px;
+
+    @media screen and (max-width: $screen-tl) {
+      padding-bottom: 40px;
+    }
+  }
+
   &__title {
     @include heading-3(600);
 
-    letter-spacing: 0.5px;
     text-align: center;
+
+    @media screen and (max-width: $screen-tl) {
+      @include heading-5(600);
+    }
   }
 
   &__title + &__content {
     margin-top: 18px;
   }
+
+  &__title + &__content--large {
+    margin-top: 50px;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-top: 30px;
+    }
+  }
+
+  &__green-background {
+    position: relative;
+
+    &--top {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        height: 50%;
+        background-color: var(--green-gray-50);
+        content: "";
+      }
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      height: 50%;
+      background-color: var(--green-gray-50);
+      content: "";
+    }
+  }
+  $block-name: &; // #{$block-name}__element
 }

@@ -3,23 +3,23 @@
     "categories": [
       {
         "link": "#",
-        "icon": "apple",
+        "icon": "icon__apple",
         "title": "Fresh Fruit"
       },
       {
         "link": "#",
-        "icon": "salad",
+        "icon": "icon__salad",
         "title": "Vegetables"
       },
-      { "link": "#", "icon": "fish", "title": "River Fish" },
-      { "link": "#", "icon": "coffee", "title": "Drink & Water" },
-      { "link": "#", "icon": "ice-cream", "title": "Yogurt & Ice Cream" },
+      { "link": "#", "icon": "icon__fish", "title": "River Fish" },
+      { "link": "#", "icon": "icon__coffee", "title": "Drink & Water" },
+      { "link": "#", "icon": "icon__ice-cream", "title": "Yogurt & Ice Cream" },
       {
-        "icon": "cupcake",
+        "icon": "icon__cupcake",
         "title": "Cake & Bread"
       },
-      { "link": "#", "icon": "pie", "title": "Butter & Cream" },
-      { "link": "#", "icon": "food", "title": "Cooking" }
+      { "link": "#", "icon": "icon__pie", "title": "Butter & Cream" },
+      { "link": "#", "icon": "icon__food", "title": "Cooking" }
     ],
     "navigation": [
       {
@@ -66,19 +66,19 @@
   },
   "hero": [
     {
-      "img": "hero-slide-1.png",
+      "img": "hero-slide-0.jpg",
       "note": "Welcome to shopery",
       "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     },
     {
-      "img": "hero-slide-1.png",
+      "img": "hero-slide-0.jpg",
       "note": "Welcome to shopery",
       "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
     },
     {
-      "img": "hero-slide-1.png",
+      "img": "hero-slide-0.jpg",
       "note": "Welcome to shopery",
       "title": "Fresh & Healthy Organic Food",
       "text": "Free shipping on all your order. we deliver, you enjoy"
@@ -86,22 +86,22 @@
   ],
   "advantages": [
     {
-      "icon": "delivery-truck",
+      "icon": "icon__delivery-truck",
       "title": "Free Shipping",
       "text": "Free shipping with discount"
     },
     {
-      "icon": "headphones",
+      "icon": "icon__headphones",
       "title": "Great Support 24/7",
       "text": "Instant access to Contact "
     },
     {
-      "icon": "shopping-bag",
+      "icon": "icon__shopping-bag",
       "title": "100% Secure Payment",
       "text": "We ensure your money is save"
     },
     {
-      "icon": "package",
+      "icon": "icon__package",
       "title": "Money-Back Guarantee",
       "text": "30 days money-back guarantee"
     }
@@ -206,79 +206,234 @@
       "link": "#"
     }
   ],
+  "featuredProducts": [
+    {
+      "img": "product-apple.jpg",
+      "title": "Green Apple",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": [
+        {
+          "type": "red",
+          "text": "Sale 50%"
+        }
+      ]
+    },
+    {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-tomatos.jpg",
+      "title": "Red Tomatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-cauliflower.jpg",
+      "title": "Fresh Cauliflower",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-letucce.jpg",
+      "title": "Green Lettuce",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }
+  ],
+  "reviews": [
+    {
+      "text": "“Aenean et nisl eget eros consectetur vestibulum vel id erat. Aliquam feugiat massa dui. Sed sagittis diam sit amet ante sodales semper. Aliquam commodo lorem laoreet ultricies ele. ”",
+      "photo": "review-author--1.jpg",
+      "name": "Jenny Wilson",
+      "role": "Customer"
+    },
+    {
+      "text": "“Proin sed neque nec tellus malesuada ultrices eget a justo. Nullam a nibh faucibus, semper risus ac, ultricies est. Maecenas eget purus in enim imperdiet dapibus in ac mi. Fusce faucibus lacus felis”",
+      "photo": "review-author--2.jpg",
+      "name": "Guy Hawkins",
+      "role": "Customer"
+    },
+    {
+      "text": "“Nam sed odio diam. Mauris sagittis sapien sed convallis cursus. Proin mattis ultrices urna ac eleifend. Cras vel nisi nec lectus sagittis venenatis. Curabitur laoreet leo sed lorem pulvina”",
+      "photo": "review-author--3.jpg",
+      "name": "Kathryn Murphy",
+      "role": "Customer"
+    }
+  ],
+  "video": {
+    "preview": "video-preview.jpg",
+    "video": "https://www.youtube.com/embed/2eX2TCfiFuY",
+    "title": "We’re the Best Organic Farm in the World"
+  },
+  "news": [
+    {
+      "dateDay": "23",
+      "dateMonth": "Jan",
+      "img": "news-img--1.jpg",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis.",
+      "text": "Nulla libero lorem, euismod venenatis nibh sed, sodales dictum ex. Etiam nisi augue, malesuada et pulvinar at, posuere eu neque.",
+      "link": "#"
+    },
+    {
+      "dateDay": "23",
+      "dateMonth": "Jan",
+      "img": "news-img--2.jpg",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis.",
+      "text": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
+      "link": "#"
+    },
+    {
+      "dateDay": "23",
+      "dateMonth": "Jan",
+      "img": "news-img--3.jpg",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis.",
+      "text": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
+      "link": "#"
+    }
+  ],
   "footer": {
+    "account": [
+      {
+        "title": "My Account",
+        "link": "#"
+      },
+      {
+        "title": "Order History",
+        "link": "#"
+      },
+      {
+        "title": "Shoping Cart",
+        "link": "#"
+      },
+      {
+        "title": "Wishlist",
+        "link": "#"
+      },
+      {
+        "title": "Settings",
+        "link": "#"
+      }
+    ],
+    "helps": [
+      {
+        "title": "Contact",
+        "link": "#"
+      },
+      {
+        "title": "Faqs",
+        "link": "#"
+      },
+      {
+        "title": "Terms & Condition",
+        "link": "#"
+      },
+      {
+        "title": "Privacy Policy",
+        "link": "#"
+      }
+    ],
+    "proxy": [
+      {
+        "title": "About",
+        "link": "#"
+      },
+      {
+        "title": "Shop",
+        "link": "#"
+      },
+      {
+        "title": "Product",
+        "link": "#"
+      },
+      {
+        "title": "Products Details",
+        "link": "#"
+      },
+      {
+        "title": "Track Order",
+        "link": "#"
+      }
+    ],
     "instagram": [
       {
-        "img": "img/instagram--01.jpg",
+        "img": "instagram--01.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--02.jpg",
+        "img": "instagram--02.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--03.jpg",
+        "img": "instagram--03.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--04.jpg",
+        "img": "instagram--04.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--05.jpg",
+        "img": "instagram--05.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--06.jpg",
+        "img": "instagram--06.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--07.jpg",
+        "img": "instagram--07.jpg",
         "link": "#"
       },
       {
-        "img": "img/instagram--08.jpg",
+        "img": "instagram--08.jpg",
         "link": "#"
       }
     ],
     "socialLinks": [
       {
-        "img": "facebook",
-        "link": "#"
+        "icon": "icon__facebook",
+        "href": "#"
       },
       {
-        "img": "twitter",
-        "link": "#"
+        "icon": "icon__twitter",
+        "href": "#"
       },
       {
-        "img": "pinterest",
-        "link": "#"
+        "icon": "icon__pinterest",
+        "href": "#"
       },
       {
-        "img": "instagram",
-        "link": "#"
+        "icon": "icon__instagram",
+        "href": "#"
       }
     ],
     "paymentMethods": [
       {
-        "img": "apple-pay",
-        "link": "#"
+        "icon": "icon__apple-pay"
       },
       {
-        "img": "visa",
-        "link": "#"
+        "icon": "icon__visa"
       },
       {
-        "img": "discover",
-        "link": "#"
+        "icon": "icon__discover"
       },
       {
-        "img": "mastercard",
-        "link": "#"
+        "icon": "icon__mastercard"
       },
       {
-        "img": "secure",
-        "link": "#"
+        "icon": "icon__secure"
       }
     ]
   }

@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (phone)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin phone(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +phone("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " phone--" + modsList[i].trim();
+      }
+    }
+
+  .phone(class=allMods)&attributes(attributes)
+    a.phone(href="tel:(219) 555-0114")
+      svg.phone__icon: use(href= path.icon + "icon__phone")
+      span.phone__text (219) 555-0114

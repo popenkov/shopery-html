@@ -1,16 +1,33 @@
-@import "../../scss/breakpoints";
+@import "../../scss/_breakpoints";
 @import "../../scss/mixins/text-styles.scss";
 
 .banner-s {
   $block-name: &; // #{$block-name}__element
 
-  padding: 0 24px;
-  // todo
+
+  position: relative;
+  display: block;
+  height: 100%;
+
   padding: 40px 24px;
   overflow: hidden;
+  color: var(--front-primary);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 8px;
+
+  @media (hover: hover) {
+    &:hover {
+      #{$block-name}__image {
+        transform: scale(1.1);
+      }
+
+      #{$block-name}__button {
+        color: var(--front-primary-inversed);
+        background-color: var(--primary);
+      }
+    }
+  }
 
   &--right {
     #{$block-name}__content {
@@ -24,18 +41,26 @@
 
   &--left {
     #{$block-name}__content {
-      // todo  разная ширина текста по макету
       min-width: 183px;
     }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    transition: transform 0.4s ease-in;
+    inset: 0;
   }
 
   &__content {
     @include flex-column;
 
-    gap: 8px;
+    gap: 6px;
     align-items: flex-start;
     justify-content: center;
+    justify-content: flex-start;
     width: 44%;
+    height: 100%;
     min-height: 173px;
 
     @media screen and (max-width: $screen-t) {
@@ -55,8 +80,6 @@
 
   &__title {
     @include heading-5(600);
-
-    letter-spacing: 1.1px;
   }
 
   &__text {
@@ -68,6 +91,13 @@
   }
 
   &__text + &__button-container {
-    padding-top: 6px;
+    padding-top: 10px;
+  }
+
+  &__button.button {
+    @include flex-center-vertical;
+
+    gap: 8px;
+    padding: 10px 27px 10px 32px !important;
   }
 }

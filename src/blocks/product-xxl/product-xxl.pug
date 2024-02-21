@@ -10,7 +10,7 @@ mixin product-xxl(text, mods)
   //- Вызов:
         +product-xxl("Текст", "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -28,12 +28,12 @@ mixin product-xxl(text, mods)
       img.product-xxl__image(src= path.img + "image.png", alt="product-xxl")
       .product-xxl__buttons
         button.button-round.button-round--like.product-xxl__button
-          svg.button-round__icon: use(href= path.icon + "heart")
+          svg.button-round__icon: use(href= path.icon + "icon__heart")
         button.button-round.product-xxl__button.product-xxl__button--cart
           span Add to Cart
-          svg.button-round__icon: use(href= path.icon + "cart")
+          svg.button-round__icon: use(href= path.icon + "icon__cart")
         button.button-round.product-xxl__button
-          svg.button-round__icon: use(href= path.icon + "eye")
+          svg.button-round__icon: use(href= path.icon + "icon__eye")
 
     .product-xxl__description
       a(href="#")
@@ -46,20 +46,20 @@ mixin product-xxl(text, mods)
         +star-rating(5)
         span.product-xxl__rating-amount  (524 Feedback)
 
-      .product-xxl__counter.counter.js-counter(data-end="2024-02-17T03:24:00")
-        .counter__title.product-xxl__counter-title Hurry up! Offer ends In:
-        .counter__container
-          .counter__item
-            span.counter__value.js-counter-days 01
-            span.counter__description Days
-          .counter__item
-            span.counter__value.js-counter-hours 23
-            span.counter__description Hours
-          span.counter__separator :
-          .counter__item
-            span.counter__value.js-counter-minutes 34
-            span.counter__description Mins
-          span.counter__separator :
-          .counter__item
-            span.counter__value.js-counter-seconds 57
-            span.counter__description Secs
+      .product-xxl__counter.product-counter.js-counter(data-end="2024-02-17T03:24:00")
+        .product-counter__title.product-xxl__counter-title Hurry up! Offer ends In:
+        .product-counter__container
+          .product-counter__item
+            span.product-counter__value.js-counter-days 01
+            span.product-counter__description Days
+          .product-counter__item
+            span.product-counter__value.js-counter-hours 23
+            span.product-counter__description Hours
+          span.product-counter__separator :
+          .product-counter__item
+            span.product-counter__value.js-counter-minutes 34
+            span.product-counter__description Mins
+          span.product-counter__separator :
+          .product-counter__item
+            span.product-counter__value.js-counter-seconds 57
+            span.product-counter__description Secs

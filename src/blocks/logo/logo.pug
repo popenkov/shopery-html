@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (logo)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin logo(href, mods, isSmall= false)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +logo("/link.html", "some-mod", false)
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " logo--" + modsList[i].trim();
+      }
+    }
+
+  a.logo(href= href, class=allMods)&attributes(attributes)
+    case isSmall
+      when true
+        svg.logo__icon: use(href= path.icon + "logo__mini")
+      default
+        svg.logo__icon: use(href= path.icon + "logo__default")

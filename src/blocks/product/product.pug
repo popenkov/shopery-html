@@ -17,7 +17,7 @@ mixin product(data, mods)
       "tags": null
     }, "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -35,13 +35,13 @@ mixin product(data, mods)
             .tag(class= "tag--" +tag.type)= tag.text
       .product__buttons
         button.button-round.button-round--like.product__image-button
-          svg.button-round__icon: use(href= path.icon + "heart")
+          svg.button-round__icon: use(href= path.icon + "icon__heart-lined")
         button.button-round.button-round--white-green.product__image-button
-          svg.button-round__icon: use(href= path.icon + "eye")
+          svg.button-round__icon: use(href= path.icon + "icon__eye")
       img.product__image(src= path.img + data.img, alt="product")
     .product__description
       .product__description-text
-        a(href="#")
+        a.product__link(href="#")
           h3.product__title= data.title
         p.product__price
           span= data.price
@@ -50,4 +50,4 @@ mixin product(data, mods)
         .product__rating
           +star-rating(data.rating)
       button.button-round.product__button
-        svg.button-round__icon: use(href= path.icon + "cart")
+        svg.button-round__icon: use(href= path.icon + "icon__cart")

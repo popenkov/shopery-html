@@ -10,7 +10,7 @@ mixin instagram-card(data, mods)
   //- Вызов:
         +instagram-card("Текст", "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -20,8 +20,7 @@ mixin instagram-card(data, mods)
       }
     }
 
-  a.instagram-card(href=data.link, class=allMods)&attributes(attributes)
-    .instagram-card__img
-      img(src=data.img, alt="alt")
-      .instagram-card__overlay
-        svg.instagram-card__icon: use(href= path.icon + "instagram")
+  a.instagram-card(href= data.link, class=allMods)&attributes(attributes)
+    img.instagram-card__img(src= path.img + data.img, alt="alt")
+    .instagram-card__overlay
+      svg.instagram-card__icon: use(href= path.icon + "icon__instagram")

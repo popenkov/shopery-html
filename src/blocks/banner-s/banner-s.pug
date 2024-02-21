@@ -10,7 +10,7 @@ mixin banner-s(data, mods)
   //- Вызов:
         +banner-s("Текст", "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -22,7 +22,8 @@ mixin banner-s(data, mods)
 
     const backgroundStyle = mods.includes("left") ? `background: linear-gradient(127.46deg, rgba(0, 0, 0, 0.25) 6.262%,rgba(0, 0, 0, 0) 79.384%), center / cover no-repeat url(${path.img + data.background}) ;` : `background: center / cover  url(${path.img + data.background}) ;`
 
-  .banner-s(class=allMods, style= backgroundStyle)&attributes(attributes)
+  a.banner-s(class=allMods, href= data.link)&attributes(attributes)
+    .banner-s__image(style= backgroundStyle)
     .banner-s__content
       if data.subtitle
         p.banner-s__subtitle= data.subtitle
@@ -31,6 +32,6 @@ mixin banner-s(data, mods)
         if data.price
           span.banner-s__price= data.price
       .banner-s__button-container
-        +button("link", "", "white, normal")(class="arrow-btn banner-s__button")
-          span.arrow-btn__text Shop now
-          svg.arrow-btn__icon: use(href= path.icon + "arrow")
+        +button("button", "", "white, normal")(class="banner-s__button icon-button")
+          span.icon-button__text Shop Now
+          svg.icon-button__icon: use(href= path.icon + "icon__arrow")

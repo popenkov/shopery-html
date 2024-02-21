@@ -1,4 +1,4 @@
-@import "../../scss/breakpoints";
+@import "../../scss/_breakpoints";
 @import "../../scss/mixins/blocks.scss";
 @import "../../scss/mixins/flexbox.scss";
 
@@ -8,6 +8,7 @@
   @include flex-center;
   @include box(40px);
 
+  padding: 0;
   border: none;
   border-radius: 50%;
   outline: none;
@@ -40,7 +41,7 @@
   }
 
   &--white-green {
-    // todo  не могу достать из макета тень
+    background-color: var(--back-primary);
     box-shadow: 0 0 8px 0 var(--gray-200);
 
     @media (hover: hover) {
@@ -58,7 +59,6 @@
   }
 
   &--like {
-    // todo  не могу достать из макета тень
     box-shadow: 0 0 8px 0 var(--gray-200);
 
     @media (hover: hover) {
@@ -68,23 +68,24 @@
         box-shadow: 0 0 8px 0 var(--gray-200);
 
         #{$block-name}__icon {
-          stroke: var(--front-primary-inversed);
+          color: var(--front-primary-inversed);
         }
       }
     }
 
     #{$block-name}__icon {
-      stroke-width: 1.5px;
-      fill: none;
-      stroke: var(--gray-900);
+      // stroke-width: 1.5px;
+      // fill: none;
+      // stroke: var(--gray-900);
+      // fill: transparent;
     }
 
     &:active,
     &.active {
-      #{$block-name}__icon {
-        fill: var(--primary);
-        stroke: var(--primary);
-      }
+      // #{$block-name}__icon {
+      //   fill: var(--primary);
+      //   stroke: var(--primary);
+      // }
     }
   }
 
@@ -106,6 +107,6 @@
   &__icon {
     @include box(20px);
 
-    transition: all var(--transition);
+    transition: color var(--transition);
   }
 }

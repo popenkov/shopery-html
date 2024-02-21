@@ -8,8 +8,9 @@
 
   position: relative;
   display: block;
+  width: 100%;
 
-  input {
+  &__input {
     @include search-field;
 
     box-sizing: border-box;
@@ -24,19 +25,15 @@
     &:focus {
       border-color: var(--primary);
     }
-  }
 
-  &--text {
-    input {
+    &--text {
       padding: 14px 16px;
       border: 1px solid rgb(230 230 230);
       border-radius: 6px;
       outline: none;
     }
-  }
 
-  &--search {
-    input {
+    &--search {
       position: relative;
       padding: 14px 16px 14px 44px;
       border: 1px solid rgb(230 230 230);
@@ -47,13 +44,13 @@
         border-color: var(--primary);
       }
     }
+  }
 
-    #{$block-name}__search-icon {
-      @include box(20px);
+  &__search-icon {
+    @include box(20px);
 
-      position: absolute;
-      top: 12px;
-      left: 15px;
-    }
+    position: absolute;
+    top: 12px;
+    left: 15px;
   }
 }

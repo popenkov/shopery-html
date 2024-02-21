@@ -1,0 +1,33 @@
+@import "../../scss/_breakpoints";
+
+.search-form {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  border-radius: 6px;
+
+  &__field {
+    width: 100%;
+    height: 45px;
+    border-radius: 6px 0 0 6px;
+
+    @media screen and (max-width: $screen-tl) {
+      padding: 8px;
+    }
+  }
+
+  // stylelint-disable-next-line
+  .field__search-icon {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  // stylelint-disable-next-line
+  &__button.button--fill {
+    height: 45px;
+    padding: 14px 24px;
+    border-radius: 0 6px 6px 0;
+  }
+}

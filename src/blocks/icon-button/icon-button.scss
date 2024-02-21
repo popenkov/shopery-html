@@ -1,0 +1,30 @@
+@import "../../scss/_breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+
+.icon-button {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  // stylelint-disable-next-line
+  &.button--small {
+    gap: 8px;
+  }
+  // stylelint-disable-next-line
+  &--normal {
+    gap: 12px;
+  }
+  // TODO
+  // stylelint-disable-next-line
+  &--large {
+    gap: 16px;
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+
+  &__icon {
+    @include box(24px);
+  }
+}

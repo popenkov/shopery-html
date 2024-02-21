@@ -1,14 +1,14 @@
-@import "../../scss/breakpoints";
+@import "../../scss/_breakpoints";
 
 .footer {
   $block-name: &; // #{$block-name}__element
 
   background-color: var(--green-gray-900);
 
-  &__wrapper {
+  &__inner {
     background:
-      url("../img/left.svg") no-repeat left bottom,
-      url("../img/right.svg") no-repeat right bottom;
+      url("..//{{img}}//left.svg") no-repeat left 62px,
+      url("..//{{img}}//right.svg") no-repeat right 20px;
 
     @media screen and (max-width: $screen-tl) {
       background: none;
@@ -34,13 +34,13 @@
     }
 
     @media screen and (max-width: $screen-tl) {
-      grid-template: repeat(2, auto) / repeat(2, 1fr) !important;
+      grid-template: repeat(2, auto) / repeat(2, 1fr);
       grid-template-areas:
         "about about"
         "navigation navigation"
         "instagram instagram"
-        "copyright copyright" !important;
-      gap: 60px 40px;
+        "copyright copyright";
+      gap: 50px 40px;
     }
   }
 
@@ -49,13 +49,19 @@
   }
 
   &__about {
+    @include flex-column;
+
     grid-area: about;
+    gap: 16px;
+
+    @media screen and (max-width: $screen-tl) {
+      align-items: center;
+    }
   }
 
   &__about-title {
     @include body-xl(500);
 
-    margin-bottom: 16px;
     color: var(--front-primary-inversed);
   }
 
@@ -63,10 +69,14 @@
     @include body-small;
 
     color: var(--green-gray-500);
+
+    @media screen and (max-width: $screen-tl) {
+      text-align: center;
+    }
   }
 
   #{$block-name}__about-text + #{$block-name}__about-contact {
-    margin-top: 22px;
+    margin-top: 6px;
   }
 
   &__about-link {
@@ -92,21 +102,39 @@
     color: var(--green-gray-500);
   }
 
-  &__navigation-wrapper {
+  &__navigation {
     display: flex;
     grid-area: navigation;
     gap: 78px;
 
+    @media screen and (max-width: $screen-tl) {
+      @include flex-center;
+
+      align-items: flex-start;
+    }
+
     @media screen and (max-width: $screen-t) {
-      flex-direction: column;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__navigation-item {
+    @include flex-column;
+
+    gap: 20px;
+
+    @media screen and (max-width: $screen-t) {
+      align-items: center;
+      width: 100%;
+      text-align: center;
     }
   }
 
   &__navigation-title {
     @include body-xl(500);
 
-    margin-bottom: 20px;
     color: var(--front-primary-inversed);
   }
 
@@ -130,29 +158,42 @@
   }
 
   &__instagram {
+    @include flex-column;
+
     grid-area: instagram;
+    gap: 20px;
+
+    @media screen and (max-width: $screen-tl) {
+      @include flex-column-center;
+    }
   }
 
   &__instagram-title {
     @include body-xl(500);
 
-    margin-bottom: 20px;
     color: var(--front-primary-inversed);
   }
 
   &__instagram-cards {
-    @include flex-center-vertical;
-
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: repeat(4, 80px);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__bottom {
     @include flex-center-sb;
 
     grid-area: copyright;
-    padding: 23px 0;
-    border-top: 1px solid var(--green-gray-900);
+    padding: 32px 0 23px;
+    border-top: 1px solid var(--green-gray-800);
 
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;
@@ -179,6 +220,7 @@
 
     @media screen and (max-width: $screen-tl) {
       margin-left: 0;
+      text-align: center;
     }
   }
 
@@ -188,16 +230,25 @@
     gap: 8px;
   }
 
-  &__payment-link {
-    display: block;
-    width: 45px;
-    height: 32px;
-    border-radius: 5px;
-    outline: 1px solid var(--green-gray-800);
-  }
-
   &__payment-icon {
     width: 45px;
     height: 32px;
+  }
+
+  &__payment-item {
+    display: block;
+    width: 45px;
+    height: 32px;
+    background-color: var(--green-gray-900);
+    border-radius: 5px;
+    outline: 1px solid var(--green-gray-800);
+
+    &--large {
+      width: 65px;
+
+      #{$block-name}__payment-icon {
+        width: 65px;
+      }
+    }
   }
 }

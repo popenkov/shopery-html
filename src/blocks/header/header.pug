@@ -9,7 +9,7 @@ mixin header(mods)
   //- Вызов:
         +header("Текст", "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -21,51 +21,35 @@ mixin header(mods)
 
   header.header(class=allMods)&attributes(attributes)
     .header__top
-      .header__top-container.container
+      .header__content.container
         .header__top-location
-          svg.header__top-location-icon: use(href= path.icon + "map-pin")
+          svg.header__top-location-icon: use(href= path.icon + "icon__map-pin")
           span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA
-        .header__top-right
-          .header__top-menu
-            button.header__top-menu-button
-              span Eng
-              svg.header__top-menu-chevron: use(href= path.icon + "chevron-down")
-            ul.header__top-menu-content
-              li
-                button.header__top-menu-link(data-language="ENG") Eng
-              li
-                button.header__top-menu-link(data-language="DE") De
-          .header__top-menu
-            button.header__top-menu-button
-              span USD
-              svg.header__top-menu-chevron: use(href= path.icon + "chevron-down")
-            ul.header__top-menu-content
-              li
-                button.header__top-menu-link(data-currency="USD") USD
-              li
-                button.header__top-menu-link(data-currency="EUR") EUR
-
-          .header__sign-in
-            a.header__sign-in-link(href="#") Sign in
-            span.header__sign-in-separator /
-            a.header__sign-in-link(href="#") Sign up
+        .header__actions
+          .header__dropdowns
+            +dropdown("Eng", ["Eng", "De"])
+            +dropdown("USD", ["USD", "EUR"])
+          .header__actions-separator
+          .header__auth
+            a.header__auth-link(href="#") Sign in
+            span.header__auth-separator /
+            a.header__auth-link(href="#") Sign up
 
     .header__middle.container
       button.header__mobile-burger.js-mobile-menu-btn
         span.burger-button
-      a.header__logo(href="#")
-        img(src= path.img + "logo.png", alt="image")
-      form.header__search.js-header-search-form
-        +field("search", "search", "search", "", "", true)
-        +button("button","Search", "fill, normal")
-      .header__middle-right
+      +logo(isMainPage ? "" : "/index.html")(class="header__logo")
+      +logo(isMainPage ? "" : "/index.html", "mini", true)(class="header__logo-mobile")
+      .header__search
+        +search-form(class="js-header-search-form")
+      .header__navbar
         .header__favorite
           a.header__favorite-link(href="#")
-            svg.header__favorite-icon: use(href= path.icon + "heart-stroke")
-        span.header__middle-right-separator
+            svg.header__favorite-icon: use(href= path.icon + "icon__heart")
+        span.header__navbar-separator
         .header__cart
           a.header__cart-link(href="#")
-            svg.header__cart-icon: use(href= path.icon + "cart")
+            svg.header__cart-icon: use(href= path.icon + "icon__cart")
             span.header__cart-items-amount 2
           .header__cart-info
             span.header__cart-title Shopping cart:
@@ -73,54 +57,50 @@ mixin header(mods)
 
     nav.header__navigation
       .container
-        .header__navigation-content
-          .header__navigation-left
-            .header__all-categories
-              button.header__all-categories-button.js-header-all-categories-button
-                span.burger-button.header__all-categories-burger
-                | All Categories
-                svg.header__all-categories-chevron: use(href= path.icon + "chevron-down")
-              ul.header__all-categories-dropdown.js-header-all-categories-content
-                each category in json.info.header.categories
-                  li
-                    a.header__all-categories-link(href=category.link)
-                      svg.header__all-categories-icon: use(href= path.icon + category.icon)
-                      span=  category.title
+        .header__content
+            .header__navigation-content
+              .header__all-categories
+                button.header__all-categories-button.js-header-all-categories-button
+                  span.burger-button.header__all-categories-burger
+                  span All Categories
+                  svg.header__all-categories-chevron: use(href= path.icon + "icon__chevron-down")
+                ul.header__all-categories-dropdown.js-header-all-categories-content
+                  each category in json.info.header.categories
+                    li
+                      a.header__all-categories-link(href=category.link)
+                        svg.header__all-categories-icon: use(href= path.icon + category.icon)
+                        span=  category.title
 
-            ul.header__navigation-menu
-              each nav, idx in json.info.header.navigation
+              ul.header__navigation-menu
+                each nav, idx in json.info.header.navigation
+                  li.header__navigation-menu-item
+                    a.header__navigation-menu-link(href= nav.link, class= (idx === 0) ? "header__navigation-menu-link--active" : '')= nav.title
+                      svg.header__navigation-link-icon: use(href= path.icon + "icon__chevron-down")
+                    ul.header__navigation-drop-menu
+                      each navItem in nav.items
+                        li
+                          a.header__navigation-drop-menu-link(href= navItem.link)= navItem.title
+
                 li.header__navigation-menu-item
-                  a.header__navigation-menu-link(href= nav.link, class= (idx === 0) ? "header__navigation-menu-link--active" : '')= nav.title
-                    svg.header__navigation-link-icon: use(href= path.icon + "chevron-down")
-                  ul.header__navigation-drop-menu
-                    each navItem in nav.items
-                      li
-                        a.header__navigation-drop-menu-link(href= navItem.link)= navItem.title
+                  a.header__navigation-menu-link(href="#") About us
+                li.header__navigation-menu-item
+                  a.header__navigation-menu-link(href="#") Contact us
+            +phone(class="header__phone")
 
-              li.header__navigation-menu-item
-                a.header__navigation-menu-link(href="#") About us
-              li.header__navigation-menu-item
-                a.header__navigation-menu-link(href="#") Contact us
-
-          a.header__phone(href="tel:(219) 555-0114")
-              svg.header__phone-icon: use(href= path.icon + "phone")
-              span.header__phone-text (219) 555-0114
 
     .header__mobile-menu.mobile-menu.js-mobile-menu
       .mobile-menu__content
         button.mobile-menu__close-button.close-button.js-close-mobile-menu-btn
-          svg.close-button__icon: use(href= path.icon + 'cross')
+          svg.close-button__icon: use(href= path.icon + 'icon__cross')
 
-        form.header__search.header__search--mobile.js-header-search-form
-          +field("search", "search", "search", "", "", true)
-          +button("button","Search", "fill, normal")
+        +search-form(class="header__search--mobile js-header-search-form")
 
         .mobile-menu__navigation
           .accordeon
             each nav, idx in json.info.header.navigation
               li.accordeon__item
                 button.accordeon__button.header__navigation-menu-link= nav.title
-                  svg.accordeon__chevron-icon: use(href= path.icon + "chevron-down")
+                  svg.accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
                 ul.accordeon__content
                   each navItem in nav.items
                     li.header__navigation-menu-item
@@ -132,11 +112,9 @@ mixin header(mods)
             a.header__navigation-menu-link(href="#") Contact us
 
         .mobile-menu__footer
-          a.header__phone.header__phone--mobile(href="tel:(219) 555-0114")
-            svg.header__phone-icon: use(href= path.icon + "phone")
-            span.header__phone-text (219) 555-0114
+          +phone(class="header__phone header__phone--mobile")
           .header__top-location.header__top-location--mobile
-            svg.header__top-location-icon: use(href= path.icon + "map-pin")
+            svg.header__top-location-icon: use(href= path.icon + "icon__map-pin")
             span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA
 
 

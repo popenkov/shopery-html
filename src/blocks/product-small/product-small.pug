@@ -10,7 +10,7 @@ mixin product-small(text, mods)
   //- Вызов:
         +product-small("Текст", "some-mod")
 
-  // список модификаторов
+  //- список модификаторов
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {
@@ -34,9 +34,9 @@ mixin product-small(text, mods)
         .product-small__description-hover
           .product-small__buttons
             button.button-round.button-round--white-green
-              svg.button-round__icon: use(href= path.icon + "cart")
+              svg.button-round__icon: use(href= path.icon + "icon__cart")
             button.button-round.button-round--white-green
-              svg.button-round__icon: use(href= path.icon + "eye")
+              svg.button-round__icon: use(href= path.icon + "icon__eye")
             button.button-round.button-round--like
-              svg.button-round__icon: use(href= path.icon + "heart")
+              svg.button-round__icon: use(href= path.icon + "icon__heart")
 

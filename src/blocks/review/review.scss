@@ -1,0 +1,71 @@
+@import "../../scss/_breakpoints";
+@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.review {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-column-center;
+
+  gap: 29px;
+  height: 100%;
+
+  &__content {
+    @include flex-column-center;
+
+    position: relative;
+    flex-grow: 1;
+    gap: 21px;
+    padding: 28px 32px 30px;
+    background-color: var(--back-primary);
+    border-radius: 10px;
+
+    &::after {
+      @include box(24px);
+
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      background-color: var(--back-primary);
+      transform: translateX(-50%) rotate(45deg);
+      content: "";
+    }
+  }
+
+  &__icon {
+    @include box(40px);
+  }
+
+  &__text {
+    @include body-medium;
+
+    color: var(--green-gray-600);
+    text-align: center;
+  }
+
+  &__author {
+    @include flex-column-center;
+  }
+
+  &__photo {
+    @include box(64px);
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include body-medium(500);
+  }
+
+  &__photo + &__name {
+    margin-top: 15px;
+  }
+
+  &__role {
+    @include body-small;
+
+    color: var(--green-gray-600);
+  }
+}

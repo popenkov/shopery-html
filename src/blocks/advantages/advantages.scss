@@ -1,4 +1,4 @@
-@import "../../scss/breakpoints";
+@import "../../scss/_breakpoints";
 @import "../../scss/mixins/flexbox.scss";
 @import "../../scss/mixins/blocks.scss";
 @import "../../scss/mixins/text-styles.scss";
@@ -8,25 +8,15 @@
 
   position: relative;
 
-  &::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 50%;
-    background-color: var(--green-gray-50);
-    content: "";
-  }
-
   &__container {
     position: relative;
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow: hidden;
-    background-color: var(--color-white);
-    border: 1px solid rgb(230 230 230);
+    background-color: var(--back-primary);
     border-radius: 8px;
+    outline: 1px solid rgb(230 230 230);
     box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
 
     @media screen and (max-width: $screen-tl) {
@@ -47,6 +37,7 @@
     @include flex-center;
 
     background-color: var(--color-white);
+    border: 1px solid var(--green-gray-100);
     border-radius: 50%;
 
     @media screen and (max-width: $screen-tl) {
@@ -56,6 +47,8 @@
 
   &__icon {
     @include box(40px);
+
+    color: var(--primary);
 
     @media screen and (max-width: $screen-tl) {
       @include box(30px);
@@ -97,6 +90,8 @@
     }
 
     &:first-child {
+      position: relative;
+      inset: -1px;
       background-color: var(--primary);
 
       #{$block-name}__title,

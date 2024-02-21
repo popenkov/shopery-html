@@ -11,10 +11,19 @@ ready(function () {
     const initSlider = () => {
       slider = new Swiper(".js-mobile-slider", {
         modules: [Pagination],
-        spaceBetween: 10,
+        spaceBetween: 20,
         loop: true,
-        loopFillGroupWithBlank: true,
-        effect: "fade",
+
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+        },
         pagination: {
           el: ".mobile-slider__pagination",
           clickable: true,
@@ -24,11 +33,23 @@ ready(function () {
     initSlider();
     window.addEventListener("resize", () => {
       if (mobileBreakpoint.matches) {
+        console.log(slider);
+
+        if (slider.length > 1) {
+          slider.forEach((item) => {
+            if (item === "undefined" || item?.destroyed) {
+              initSlider();
+            }
+          });
+        } else {
+          initSlider();
+        }
+
         if (slider === "undefined" || slider?.destroyed) {
           initSlider();
         }
       } else {
-        slider.destroy();
+        slider.forEach((item) => item.destroy());
       }
     });
   }
