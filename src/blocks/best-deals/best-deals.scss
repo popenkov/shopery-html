@@ -1,3 +1,4 @@
+
 @import "../../scss/_breakpoints";
 @import "../../scss/mixins/flexbox.scss";
 @import "../../scss/mixins/text-styles.scss";
@@ -111,4 +112,5 @@
   &__counter + &__button {
     margin-top: 20px;
   }
+
 }

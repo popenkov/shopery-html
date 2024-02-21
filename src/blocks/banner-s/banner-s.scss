@@ -4,9 +4,11 @@
 .banner-s {
   $block-name: &; // #{$block-name}__element
 
+
   position: relative;
   display: block;
   height: 100%;
+
   padding: 40px 24px;
   overflow: hidden;
   color: var(--front-primary);
