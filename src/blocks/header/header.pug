@@ -93,9 +93,7 @@ mixin header(mods)
         button.mobile-menu__close-button.close-button.js-close-mobile-menu-btn
           svg.close-button__icon: use(href= path.icon + 'icon__cross')
 
-        form.header__search.header__search--mobile.js-header-search-form
-          +field("search", "search", "search", "", "", true)
-          +button("button","Search", "fill, normal")
+        +search-form(class="header__search--mobile js-header-search-form")
 
         .mobile-menu__navigation
           .accordeon

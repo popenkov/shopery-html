@@ -13,18 +13,13 @@ ready(function () {
         modules: [Pagination],
         spaceBetween: 20,
         loop: true,
-        // todo
-        // slidesOffsetBefore: 20,
-        // slidesOffsetAfter: 20,
 
         breakpoints: {
-          // when window width is >= 320px
           320: {
             slidesPerView: 1,
             slidesPerGroup: 1,
             spaceBetween: 20,
           },
-          // when window width is >= 640px
           576: {
             slidesPerView: 2,
           },
@@ -36,18 +31,25 @@ ready(function () {
       });
     };
     initSlider();
-    // todo  разобраться с инициализацией при ресайзе. скорее всего ломается, потому что слайдеров несколько
     window.addEventListener("resize", () => {
       if (mobileBreakpoint.matches) {
+        console.log(slider);
+
+        if (slider.length > 1) {
+          slider.forEach((item) => {
+            if (item === "undefined" || item?.destroyed) {
+              initSlider();
+            }
+          });
+        } else {
+          initSlider();
+        }
+
         if (slider === "undefined" || slider?.destroyed) {
           initSlider();
         }
       } else {
-        if (slider.length > 1) {
-          slider.forEach((item) => item.destroy());
-        } else {
-          slider.destroy();
-        }
+        slider.forEach((item) => item.destroy());
       }
     });
   }

@@ -8,6 +8,7 @@
 
   background-color: var(--color-white);
   border: 1px solid transparent;
+  transition: border var(--transition-long);
 
   @media (hover: hover) {
     &:hover {
@@ -45,11 +46,12 @@
     @include flex-column;
 
     position: absolute;
-    top: 22px;
+    top: 20px;
     right: 20px;
-    gap: 4px;
+    gap: 6px;
     visibility: hidden;
     opacity: 0;
+    transition: opacity var(--transition-long);
   }
 
   &__image-button {
@@ -86,6 +88,7 @@
     @include body-medium;
 
     color: var(--gray-700);
+    transition: color var(--transition-long);
   }
 
   &__price {
@@ -117,10 +120,6 @@
 
     background-color: var(--green-gray-100);
     box-shadow: none;
-    // stylelint-disable-next-line
-    svg {
-      transition: color var(--transition);
-    }
 
     @media (hover: hover) {
       &:hover {
@@ -129,5 +128,9 @@
         box-shadow: 0 0 8px 2px var(--gray-200);
       }
     }
+  }
+
+  &__button-icon {
+    @include box(24px);
   }
 }

@@ -7,8 +7,8 @@
 
   &__inner {
     background:
-      url("..//{{img}}//left.svg") no-repeat left bottom,
-      url("..//{{img}}//right.svg") no-repeat right bottom;
+      url("..//{{img}}//left.svg") no-repeat left 62px,
+      url("..//{{img}}//right.svg") no-repeat right 20px;
 
     @media screen and (max-width: $screen-tl) {
       background: none;
@@ -69,6 +69,10 @@
     @include body-small;
 
     color: var(--green-gray-500);
+
+    @media screen and (max-width: $screen-tl) {
+      text-align: center;
+    }
   }
 
   #{$block-name}__about-text + #{$block-name}__about-contact {
@@ -120,6 +124,12 @@
     @include flex-column;
 
     gap: 20px;
+
+    @media screen and (max-width: $screen-t) {
+      align-items: center;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__navigation-title {
@@ -182,8 +192,8 @@
     @include flex-center-sb;
 
     grid-area: copyright;
-    padding: 23px 0;
-    border-top: 1px solid var(--green-gray-900);
+    padding: 32px 0 23px;
+    border-top: 1px solid var(--green-gray-800);
 
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;

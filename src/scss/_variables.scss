@@ -60,7 +60,8 @@
 
   --back-primary: var(--color-white);
 
-  --transition: 0.2s ease-in;
+  --transition: 0.2s ease-in-out;
+  --transition-long: 0.5s ease-in-out;
   --modal-bg: rgba(0, 0, 0, 0.8);
 
   // card

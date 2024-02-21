@@ -20,7 +20,6 @@ block content
 
 
   .section.section--green.products-tabs
-      //- todo
       .container
       h2.section__title.container Introducing Our Products
       .tabs.section__content
@@ -45,19 +44,49 @@ block content
                 .mobile-slider__pagination.swiper-pagination
 
           .tabs__pane#tab2
-            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop.container
               each product in json.info.products
-                +product-large(product)
+                +product-large(product)(class="products-tabs__item")
             .container.products-tabs__items--mobile.mobile-slider
               .swiper.mobile-slider__slider.js-mobile-slider
                 .swiper-wrapper.mobile-slider__wrapper
                   each product in json.info.products
-                    .swiper-slide.products-tabs__slide
+                    .swiper-slide.mobile-slider__slide
                       +product-large(product)
                 .mobile-slider__pagination.swiper-pagination
-          .tabs__pane#tab3 Содержимое, таб 3
-          .tabs__pane#tab4 Содержимое, таб 4
-          .tabs__pane#tab5 Содержимое, таб 5
+          .tabs__pane#tab3
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop.container
+              each product in json.info.products
+                +product-large(product)(class="products-tabs__item")
+            .container.products-tabs__items--mobile.mobile-slider
+              .swiper.mobile-slider__slider.js-mobile-slider
+                .swiper-wrapper.mobile-slider__wrapper
+                  each product in json.info.products
+                    .swiper-slide.mobile-slider__slide
+                      +product-large(product)
+                .mobile-slider__pagination.swiper-pagination
+          .tabs__pane#tab4
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop.container
+              each product in json.info.products
+                +product-large(product)(class="products-tabs__item")
+            .container.products-tabs__items--mobile.mobile-slider
+              .swiper.mobile-slider__slider.js-mobile-slider
+                .swiper-wrapper.mobile-slider__wrapper
+                  each product in json.info.products
+                    .swiper-slide.mobile-slider__slide
+                      +product-large(product)
+                .mobile-slider__pagination.swiper-pagination
+          .tabs__pane#tab5
+            .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop.container
+              each product in json.info.products
+                +product-large(product)(class="products-tabs__item")
+            .container.products-tabs__items--mobile.mobile-slider
+              .swiper.mobile-slider__slider.js-mobile-slider
+                .swiper-wrapper.mobile-slider__wrapper
+                  each product in json.info.products
+                    .swiper-slide.mobile-slider__slide
+                      +product-large(product)
+                .mobile-slider__pagination.swiper-pagination
 
   .section
     .container.grid.grid__three-items.d-desktop
@@ -68,38 +97,39 @@ block content
       .swiper.mobile-slider__slider.js-mobile-slider
         .swiper-wrapper.mobile-slider__wrapper
           each banner in json.info.banners
-            .swiper-slide
+            .swiper-slide.mobile-slider__slide
               +banner-s(banner, banner.type)
         .mobile-slider__pagination.swiper-paginationprocess
 
-  .section.section--green.best-deals
-    .best-deals__container
-      p.best-deals__subtitle Best Deals
-      h2.best-deals__title Our Special Products Deal of the Month
-      .best-deals__counter.js-counter(data-end="2024-02-17T03:24:00")
-        .best-deals__counter-item
-          span.best-deals__counter-value.js-counter-days 01
-          span.best-deals__counter-description Days
-        span.best-deals__counter-separator :
-        .best-deals__counter-item
-          span.best-deals__counter-value.js-counter-hours 23
-          span.best-deals__counter-description Hours
-        span.best-deals__counter-separator :
-        .best-deals__counter-item
-          span.best-deals__counter-value.js-counter-minutes 34
-          span.best-deals__counter-description Mins
-        span.best-deals__counter-separator :
-        .best-deals__counter-item
-          span.best-deals__counter-value.js-counter-seconds 57
-          span.best-deals__counter-description Secs
-      +button("link", "", "fill, normal")(class="icon-button best-deals__btn")
-        span.icon-button__text Shop now
-        svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+  .section--green
+    .best-deals
+      .best-deals__container
+        p.best-deals__subtitle Best Deals
+        h2.best-deals__title Our Special Products Deal of the Month
+        .best-deals__counter.counter.js-counter(data-end="2024-03-17T03:24:00")
+          .best-deals__counter-item
+            span.best-deals__counter-value.js-counter-days 01
+            span.best-deals__counter-description Days
+          span.best-deals__counter-separator :
+          .best-deals__counter-item
+            span.best-deals__counter-value.js-counter-hours 23
+            span.best-deals__counter-description Hours
+          span.best-deals__counter-separator :
+          .best-deals__counter-item
+            span.best-deals__counter-value.js-counter-minutes 34
+            span.best-deals__counter-description Mins
+          span.best-deals__counter-separator :
+          .best-deals__counter-item
+            span.best-deals__counter-value.js-counter-seconds 57
+            span.best-deals__counter-description Secs
+        +button("link", "", "fill, large")(class="icon-button best-deals__button")
+          span.icon-button__text Shop now
+          svg.icon-button__icon: use(href= path.icon + "icon__arrow")
 
 
   .section
     h2.section__title.container Featured Products
-    .section__content
+    .section__content--large
       .grid.grid__five-items.d-desktop.container
         each product in json.info.featuredProducts
           +product(product)
@@ -113,7 +143,7 @@ block content
 
   .section.section--green
     h2.section__title.container What our Clients Says
-    .section__content
+    .section__content--large
       .grid.grid__three-items.d-desktop.container
         each review in json.info.reviews
           +review(review)
@@ -125,14 +155,14 @@ block content
                 +review(review)
           .mobile-slider__pagination.swiper-pagination
 
-  .section.section__green-background--top
+  .section__pb.section__green-background--top
     .container
       +video(json.info.video)
 
-  .section.section__green-background
+  .section__pb.section__green-background
     .container
       h2.section__title Latest News
-      .section__content
+      .section__content--large
         .grid.grid__three-items.d-desktop
          each news in json.info.news
            +news(news)

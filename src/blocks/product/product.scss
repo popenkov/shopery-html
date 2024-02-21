@@ -7,6 +7,7 @@
   @include flex-column;
 
   border: var(--card-border);
+  transition: border var(--transition-long);
 
   @media (hover: hover) {
     &:hover {
@@ -40,8 +41,8 @@
     @include flex-center-vertical;
 
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 16px;
+    left: 15px;
     flex-wrap: wrap;
     gap: 8px;
   }
@@ -55,6 +56,7 @@
     gap: 6px;
     visibility: hidden;
     opacity: 0;
+    transition: opacity var(--transition-long);
   }
 
   &__image-button {
@@ -78,13 +80,14 @@
     gap: 8px;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 16px 12px 11px;
+    padding: 12px 16px 9px 11px;
   }
 
   &__title {
     @include body-small;
 
     color: var(--gray-700);
+    transition: color var(--transition-long);
   }
 
   &__price {
@@ -97,6 +100,10 @@
     &--old {
       color: var(--green-gray-400);
     }
+  }
+
+  &__link + &__price {
+    margin-top: 2px;
   }
 
   &__rating svg {

@@ -7,10 +7,21 @@
 
   padding: 100px 0;
   background:
-    url("../../img/deals-bg-left.png") no-repeat left bottom,
-    url("../../img/deals-bg-right.png") no-repeat right bottom;
+    url("../../img/deals-bg-left.png") no-repeat 10% center,
+    url("../../img/deals-bg-right.png") no-repeat 93% bottom;
+
+  @media screen and (max-width: $screen-d) {
+    background:
+      url("../../img/deals-bg-left.png") no-repeat left center,
+      url("../../img/deals-bg-right.png") no-repeat right bottom;
+    background-size: 40%;
+  }
 
   @media screen and (max-width: $screen-tl) {
+    background: url("../../img/deals-bg-left.png") no-repeat left center;
+  }
+
+  @media screen and (max-width: $screen-t) {
     background: none;
   }
 
@@ -37,6 +48,10 @@
     @include heading-3(600);
 
     text-align: center;
+
+    @media screen and (max-width: $screen-tl) {
+      @include heading-5(600);
+    }
   }
 
   &__counter {
@@ -88,7 +103,12 @@
     text-transform: uppercase;
   }
 
-  &__counter + &__btn {
+  &__button.icon-button {
+    gap: 12px;
+    padding: 14px 36px 13px 40px;
+  }
+
+  &__counter + &__button {
     margin-top: 20px;
   }
 }

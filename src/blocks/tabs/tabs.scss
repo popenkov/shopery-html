@@ -32,9 +32,12 @@
     border-bottom: 2px solid transparent;
     border-left-width: 0;
     cursor: pointer;
-    transition: border-color var(--transition);
+    transition:
+      border-color var(--transition-long),
+      color var(--transition-long);
 
     &--active {
+      color: var(--primary);
       border-color: var(--primary);
       cursor: default;
 

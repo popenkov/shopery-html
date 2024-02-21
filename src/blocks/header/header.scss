@@ -56,12 +56,21 @@
     @media screen and (max-width: $screen-tl) {
       margin-left: auto;
     }
+
+    @media screen and (max-width: $screen-ti) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 
   &__actions-separator {
     width: 1px;
     height: 15px;
     background-color: rgb(255 255 255 / 10%);
+
+    @media screen and (max-width: $screen-ti) {
+      display: none;
+    }
   }
 
   &__dropdowns {
@@ -72,6 +81,10 @@
 
   &__auth {
     position: relative;
+
+    @media screen and (max-width: $screen-ti) {
+      margin-left: auto;
+    }
   }
 
   &__auth-link {

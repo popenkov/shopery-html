@@ -7,7 +7,7 @@
   border: none;
   border-radius: 43px;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: background-color var(--transition);
 
   &--fill {
     color: var(--front-primary-inversed);
@@ -67,21 +67,11 @@
 
     min-height: 45px;
     padding: 14px 32px;
-
-    &#{$block-name}--fill,
-    &#{$block-name}--white {
-      padding: 12px 32px;
-    }
   }
 
   &--large {
     @include body-medium(600);
 
     padding: 15px 40px;
-
-    &#{$block-name}--fill,
-    &#{$block-name}--white {
-      padding: 15px 40px;
-    }
   }
 }

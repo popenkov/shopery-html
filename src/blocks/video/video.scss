@@ -4,12 +4,15 @@
 .video {
   $block-name: &; // #{$block-name}__element
 
+  overflow: hidden;
+  border-radius: 20px;
+
   &__preview {
     position: relative;
     width: 100%;
-    aspect-ratio: 66 / 37;
     min-height: 400px;
     background-position: center;
+    aspect-ratio: 66 / 37;
 
     &.with-overlay {
       position: relative;
@@ -53,6 +56,7 @@
   &__title {
     @include heading-4;
 
+    max-width: 500px;
     text-align: center;
 
     @media screen and (max-width: $screen-tl) {

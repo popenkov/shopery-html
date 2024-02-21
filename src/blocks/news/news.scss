@@ -7,6 +7,15 @@
 
   @include flex-column;
 
+  padding: 24px 24px 20px;
+  background-color: var(--back-primary);
+  border-radius: 8px;
+  box-shadow: 0 10px 80px 0 rgb(0 0 0 / 10%);
+
+  @media screen and (max-width: $screen-ti) {
+    box-shadow: none;
+  }
+
   &__img-wrapper {
     position: relative;
   }
@@ -17,6 +26,7 @@
   }
 
   &__date {
+    @include box(58px);
     @include flex-column;
 
     position: absolute;
@@ -48,7 +58,8 @@
   &__description {
     @include flex-column;
 
-    padding: 8px;
+    gap: 8px;
+    padding-top: 24px;
     background-color: var(--color-white);
     border-radius: 8px;
   }
@@ -61,16 +72,23 @@
 
   &__text {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
     overflow: hidden;
     color: var(--green-gray-500);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   &__link {
     @include flex-center-vertical;
 
+    gap: 7px;
     color: var(--primary);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
     transition: color var(--transition);
 
     @media (hover: hover) {
@@ -81,7 +99,7 @@
   }
 
   &__text + &__link {
-    margin-top: 16px;
+    margin-top: 10px;
   }
 
   &__link-icon {
