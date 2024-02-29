@@ -9,6 +9,7 @@ include mixins.pug
 - var json = locals
 - var path = pugPaths
 - var isNav = nav
+- var isLibrary = library
 
 block variables
 
@@ -20,7 +21,10 @@ html(class="no-js", lang="ru")
     noscript У вас отключен JavaScript. Это пугает.
 
     if isNav
-      include ../service/projectNav.pug
+      include ../service/project-nav.pug
+
+    if isLibrary
+      include ../library/blocks/library-trigger/library-trigger.pug
 
     .page
       .page__header

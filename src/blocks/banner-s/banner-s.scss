@@ -1,9 +1,9 @@
 @import "../../scss/_breakpoints";
 @import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/flexbox.scss";
 
 .banner-s {
   $block-name: &; // #{$block-name}__element
-
 
   position: relative;
   display: block;

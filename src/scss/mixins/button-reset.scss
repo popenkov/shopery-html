@@ -8,11 +8,3 @@
   cursor: pointer;
   appearance: none;
 }
-
-@mixin round-button($size: "40px") {
-  @include flex-center;
-
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-}
