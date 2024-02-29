@@ -142,10 +142,11 @@ export const config = {
     "sanitize.css/assets.css",
     "sanitize.css/typography.css",
     "sanitize.css/reduce-motion.css",
-    "src/scss/_variables.scss",
+    "src/scss/variables.scss",
     "src/scss/reboot.scss",
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
+    // "src/scss/vendor.scss",
     "src/scss/vendor.scss",
     "src/scss/reset.scss",
     "src/scss/fonts.scss",
@@ -153,6 +154,7 @@ export const config = {
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
+
   // style imports at end
   addStyleAfter: [],
   // js imports at start
@@ -162,6 +164,11 @@ export const config = {
   // js imports at end
   addJsAfter: [
     "./script.js",
+  ],
+  // style sheets
+  styleSheets: [
+    "src/scss/style.scss",
+    // "src/scss/another.scss",
   ],
   // browserSync options
   serverOptions: {
@@ -185,8 +192,7 @@ export const config = {
   // px to rem properties
   pxToRem: ["font", "font-size", "line-height", "letter-spacing"],
   // svg attributes to be removed
-  // todo , "stroke-width"
-  removeSvgAttr: ["symbol:width", "symbol:height"],
+  removeSvgAttr: ["symbol:width", "symbol:height", "stroke-width"],
   // message
   doNotEditMsg:
     "\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n",
@@ -199,7 +205,7 @@ export const config = {
   // env
   mode: process.env.MODE || "development",
   // img copy mode
-  isSeparatedBlockImg: false, // [false, true, "collected"]
+  isSeparatedBlockImg: "collected", // [false, true, "collected"]
   // library
   buildLibrary: process.env.BUILD_LIBRARY || false,
   // navigation
