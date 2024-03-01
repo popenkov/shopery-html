@@ -4,7 +4,10 @@
   $block-name: &; // #{$block-name}__element
 
   &__labels {
-    overflow-y: auto;
+    height: 100%;
+    overflow: auto hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   &__scroll-container {
@@ -40,16 +43,6 @@
       color: var(--primary);
       border-color: var(--primary);
       cursor: default;
-
-      // todo  ошибка макета?
-      // &#{$block-name}__label:not(:last-child) {
-      // &#{$block-name}__label:first-child {
-      //   margin-right: 26px;
-
-      //   &::after {
-      //     right: -26px;
-      //   }
-      // }
     }
 
     &:not(:last-child) {

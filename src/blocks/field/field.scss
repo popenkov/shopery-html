@@ -1,5 +1,5 @@
 @import ".././../scss/mixins/text-styles.scss";
-@import ".././../scss/mixins/blocks.scss";
+@import ".././../scss/mixins/box.scss";
 
 /* stylelint-disable */
 
@@ -13,7 +13,6 @@
   &__input {
     @include search-field;
 
-    box-sizing: border-box;
     width: 100%;
 
     transition: all var(--transition);

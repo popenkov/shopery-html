@@ -1,5 +1,6 @@
 @import "../../scss/mixins/flexbox";
 @import "../../scss/mixins/text-styles";
+@import "../../scss/mixins/absolute-positioning";
 
 .radio {
   $block-name: &; // #{$block-name}__element

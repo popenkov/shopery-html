@@ -4,10 +4,31 @@ block variables
   - isMainPage = true
   - pageTitle = "Shopery"
   - metaDescription = "Shopery description"
-  - metaKeywords = "Shopery eywords"
+  - metaKeywords = "Shopery keywords"
 
 block content
-  +hero
+  h1.visually-hidden shopery
+  .hero.container
+    .hero__slider
+      .swiper.js-hero-slider
+        .swiper-wrapper.hero__slider-wrapper
+          each slide in json.info.hero
+            .swiper-slide.hero__slide
+              .hero__img-container
+                img.hero__img(src= path.img + slide.img, alt="slide")
+              .hero__description
+                span.hero__note= slide.note
+                h2.hero__title= slide.title
+                p.hero__text= slide.text
+                +button("link", "", "fill, large")(class="hero__button")
+                  span.icon-button__text Shop now
+                  svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      .hero__swiper-pagination
+      .hero__navigation
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--prev
+          svg.button-round__icon: use(href= path.icon + "icon__arrow")
+        button.button-round.button-round--white-green.hero__navigation-button.hero__navigation-button--next
+          svg.button-round__icon: use(href= path.icon + "icon__arrow")
 
   .advantages.section__green-background
     .advantages__container.container
@@ -15,7 +36,7 @@ block content
         .advantages__item
           .advantages__icon-wrapper
             svg.advantages__icon: use(href= path.icon + advantage.icon)
-          h3.advantages__title= advantage.title
+          h2.advantages__title= advantage.title
           p.advantages__text= advantage.text
 
 

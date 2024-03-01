@@ -8,7 +8,12 @@ mixin instagram-card(data, mods)
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +instagram-card("Текст", "some-mod")
+        +instagram-card(
+          {
+            "img": "img.jpg,
+            "link": "#"
+          }
+          , "some-mod")
 
   //- список модификаторов
   -

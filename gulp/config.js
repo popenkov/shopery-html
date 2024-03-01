@@ -148,9 +148,9 @@ export const config = {
     // "src/scss/typography.scss",
     // "src/scss/vendor.scss",
     "src/scss/vendor.scss",
-    "src/scss/reset.scss",
     "src/scss/fonts.scss",
-    "src/scss/utils.scss",
+    "src/scss/utils/d-none.scss",
+    "src/scss/utils/visually-hidden.scss",
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],

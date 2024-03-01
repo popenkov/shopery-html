@@ -7,7 +7,7 @@ mixin header(mods)
   //- Принимает:
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +header("Текст", "some-mod")
+        +header("some-mod")
 
   //- список модификаторов
   -
@@ -85,7 +85,7 @@ mixin header(mods)
                   a.header__navigation-menu-link(href="#") About us
                 li.header__navigation-menu-item
                   a.header__navigation-menu-link(href="#") Contact us
-            +phone(class="header__phone")
+            +phone('(219) 555-0114')(class="header__phone")
 
 
     .header__mobile-menu.mobile-menu.js-mobile-menu
@@ -112,7 +112,7 @@ mixin header(mods)
             a.header__navigation-menu-link(href="#") Contact us
 
         .mobile-menu__footer
-          +phone(class="header__phone header__phone--mobile")
+          +phone('(219) 555-0114')(class="header__phone header__phone--mobile")
           .header__top-location.header__top-location--mobile
             svg.header__top-location-icon: use(href= path.icon + "icon__map-pin")
             span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA

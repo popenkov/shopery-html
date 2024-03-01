@@ -2,13 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin phone(text, mods)
+mixin phone(number, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +phone("Текст", "some-mod")
+        +phone("+phone('(219) 555-0114')", "some-mod")
 
   //- список модификаторов
   -
@@ -21,6 +21,6 @@ mixin phone(text, mods)
     }
 
   .phone(class=allMods)&attributes(attributes)
-    a.phone(href="tel:(219) 555-0114")
+    a.phone(href="tel:" + number + '"')
       svg.phone__icon: use(href= path.icon + "icon__phone")
-      span.phone__text (219) 555-0114
+      span.phone__text=number
