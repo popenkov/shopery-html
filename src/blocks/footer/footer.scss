@@ -7,8 +7,8 @@
 
   &__inner {
     background:
-      url("..//{{img}}//left.svg") no-repeat left 62px,
-      url("..//{{img}}//right.svg") no-repeat right 20px;
+      url("..//{{img}}//left.svg") no-repeat left bottom,
+      url("..//{{img}}//right.svg") no-repeat right bottom;
 
     @media screen and (max-width: $screen-tl) {
       background: none;
@@ -21,7 +21,7 @@
     grid-template-areas:
       "about navigation instagram"
       "copyright copyright copyright";
-    gap: 100px 78px;
+    gap: 108px 78px;
     align-items: start;
     padding-top: 100px;
 
@@ -62,12 +62,14 @@
   &__about-title {
     @include body-xl(500);
 
+    margin: 0;
     color: var(--front-primary-inversed);
   }
 
   &__about-text {
     @include body-small;
 
+    margin: 0;
     color: var(--green-gray-500);
 
     @media screen and (max-width: $screen-tl) {
@@ -124,6 +126,7 @@
     @include flex-column;
 
     gap: 20px;
+    list-style: none;
 
     @media screen and (max-width: $screen-t) {
       align-items: center;
@@ -135,6 +138,7 @@
   &__navigation-title {
     @include body-xl(500);
 
+    margin: 0;
     color: var(--front-primary-inversed);
   }
 
@@ -142,6 +146,8 @@
     @include flex-column;
 
     gap: 12px;
+    margin: 0;
+    padding: 0;
   }
 
   &__navigation-link {
@@ -171,6 +177,7 @@
   &__instagram-title {
     @include body-xl(500);
 
+    margin: 0;
     color: var(--front-primary-inversed);
   }
 
@@ -192,7 +199,7 @@
     @include flex-center-sb;
 
     grid-area: copyright;
-    padding: 32px 0 23px;
+    padding: 24px 0 23px;
     border-top: 1px solid var(--green-gray-800);
 
     @media screen and (max-width: $screen-tl) {
@@ -205,6 +212,8 @@
     @include flex-center-vertical;
 
     gap: 8px;
+    margin: 0;
+    padding: 0;
   }
 
   // stylelint-disable-next-line
@@ -215,7 +224,7 @@
   &__copyright-text {
     @include body-small;
 
-    margin-left: 86px;
+    margin: 0 0 0 114px;
     color: var(--green-gray-500);
 
     @media screen and (max-width: $screen-tl) {
@@ -228,6 +237,8 @@
     @include flex-center-vertical;
 
     gap: 8px;
+    margin: 0;
+    padding: 0;
   }
 
   &__payment-icon {

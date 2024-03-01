@@ -98,6 +98,7 @@
   &__title {
     @include heading-1(600);
 
+    margin: 0;
     color: var(--green-gray-900);
 
     @media screen and (max-width: $screen-tl) {
@@ -112,6 +113,7 @@
   &__text {
     @include body-large;
 
+    margin: 0;
     color: var(--gray-500);
 
     @media screen and (max-width: $screen-tl) {
@@ -128,6 +130,7 @@
     @include flex-center-vertical;
 
     gap: 12px;
+    height: 51px;
     padding-right: 35px;
   }
 

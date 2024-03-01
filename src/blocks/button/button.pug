@@ -2,13 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin button(type= "button", text, mods, href)
+mixin button(type, text, mods, href)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +button("Текст", "some-mod")
+        +button("link", "Текст", "some-mod", "/index.html")
 
   //- список модификаторов
   -

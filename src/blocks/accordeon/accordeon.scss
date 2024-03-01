@@ -1,6 +1,6 @@
 @import "../../scss/_breakpoints";
 @import "../../scss/mixins/flexbox.scss";
-@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/box.scss";
 
 .accordeon {
   $block-name: &; // #{$block-name}__element
@@ -15,6 +15,10 @@
     overflow: hidden;
     background-color: var(--back-primary);
     transition: max-height 0.3s ease-in;
+  }
+
+  &__item {
+    list-style: none;
   }
 
   &__chevron-icon {

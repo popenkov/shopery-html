@@ -2,7 +2,7 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin logo(href, mods, isSmall= false)
+mixin logo(mods, isSmall= false)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -20,7 +20,7 @@ mixin logo(href, mods, isSmall= false)
       }
     }
 
-  a.logo(href= href, class=allMods)&attributes(attributes)
+  .logo(class=allMods)&attributes(attributes)
     case isSmall
       when true
         svg.logo__icon: use(href= path.icon + "logo__mini")

@@ -2,13 +2,12 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin footer(text, mods)
+mixin footer(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +footer("Текст", "some-mod")
+        +footer( "some-mod")
 
   //- список модификаторов
   -
@@ -37,21 +36,21 @@ mixin footer(text, mods)
             h2.footer__navigation-title My Account
             ul.footer__navigation-list
               each link in json.info.footer.account
-                li
+                li.footer__navigation-item
                   a.footer__navigation-link(href= link.link)= link.title
 
           .footer__navigation-item
             h2.footer__navigation-title Helps
             ul.footer__navigation-list
               each link in json.info.footer.helps
-                li
+                li.footer__navigation-item
                   a.footer__navigation-link(href= link.link)= link.title
 
           .footer__navigation-item
             h2.footer__navigation-title Proxy
             ul.footer__navigation-list
               each link in json.info.footer.proxy
-                li
+                li.footer__navigation-item
                   a.footer__navigation-link(href= link.link)= link.title
 
         .footer__instagram
@@ -66,9 +65,9 @@ mixin footer(text, mods)
               a.button-round.button-round--ghost(href= data.link)
                 svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
 
-          p.footer__copyright-text Ecobazar eCommerce © 2021. All Rights Reserved
+          p.footer__copyright-text Shopery eCommerce © 2021. All Rights Reserved
           ul.footer__payment
             each data in json.info.footer.paymentMethods
-              li.footer__payment-item(class= (data.img === "secure") ? "footer__payment-item--large" : "")
+              li.footer__payment-item(class= (data.icon === "icon__secure") ? "footer__payment-item--large" : "")
                 svg.footer__payment-icon: use(href= path.icon + data.icon)
 

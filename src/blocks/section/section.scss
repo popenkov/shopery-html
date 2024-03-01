@@ -12,6 +12,10 @@
     background-color: var(--green-gray-50);
   }
 
+  &--small {
+    padding: 100px 0 89px;
+  }
+
   &__pb {
     padding-bottom: 100px;
 
@@ -23,6 +27,7 @@
   &__title {
     @include heading-3(600);
 
+    margin: 0 auto;
     text-align: center;
 
     @media screen and (max-width: $screen-tl) {
@@ -32,6 +37,14 @@
 
   &__title + &__content {
     margin-top: 18px;
+  }
+
+  &__title + &__content--medium {
+    margin-top: 43px;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-top: 30px;
+    }
   }
 
   &__title + &__content--large {

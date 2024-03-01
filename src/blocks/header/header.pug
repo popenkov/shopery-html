@@ -7,7 +7,7 @@ mixin header(mods)
   //- Принимает:
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +header("Текст", "some-mod")
+        +header("some-mod")
 
   //- список модификаторов
   -
@@ -38,9 +38,14 @@ mixin header(mods)
     .header__middle.container
       button.header__mobile-burger.js-mobile-menu-btn
         span.burger-button
-      +logo(isMainPage ? "" : "/index.html")(class="header__logo")
-      +logo(isMainPage ? "" : "/index.html", "mini", true)(class="header__logo-mobile")
-      .header__search
+      if isMainPage
+        +logo(class="header__logo")
+        +logo("mini", true)(class="header__logo-mobile")
+      else
+        a.header__logo-link(href="/")
+          +logo(class="header__logo")
+          +logo("mini", true)(class="header__logo-mobile")
+      .header__search.d-desktop
         +search-form(class="js-header-search-form")
       .header__navbar
         .header__favorite
@@ -85,15 +90,15 @@ mixin header(mods)
                   a.header__navigation-menu-link(href="#") About us
                 li.header__navigation-menu-item
                   a.header__navigation-menu-link(href="#") Contact us
-            +phone(class="header__phone")
+            +phone('(219) 555-0114')(class="header__phone")
 
 
     .header__mobile-menu.mobile-menu.js-mobile-menu
       .mobile-menu__content
         button.mobile-menu__close-button.close-button.js-close-mobile-menu-btn
           svg.close-button__icon: use(href= path.icon + 'icon__cross')
-
-        +search-form(class="header__search--mobile js-header-search-form")
+        .header__search--mobile.d-mobile
+          +search-form(class="js-header-search-form")
 
         .mobile-menu__navigation
           .accordeon
@@ -112,7 +117,7 @@ mixin header(mods)
             a.header__navigation-menu-link(href="#") Contact us
 
         .mobile-menu__footer
-          +phone(class="header__phone header__phone--mobile")
+          +phone('(219) 555-0114')(class="header__phone header__phone--mobile")
           .header__top-location.header__top-location--mobile
             svg.header__top-location-icon: use(href= path.icon + "icon__map-pin")
             span.header__top-location-text Store Location: Lincoln- 344, Illinois, Chicago, USA

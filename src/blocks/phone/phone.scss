@@ -7,6 +7,7 @@
 
   gap: 8px;
   color: var(--gray-900);
+  text-decoration: none;
 
   @media screen and (max-width: $screen-t) {
     display: none;
@@ -20,6 +21,8 @@
   &__icon {
     @include box(28px);
 
+    stroke-width: 1.3px;
+
     @media screen and (max-width: $screen-tl) {
       @include box(26px);
     }
@@ -27,5 +30,7 @@
 
   &__text {
     @include body-small(500);
+
+    margin: 0;
   }
 }

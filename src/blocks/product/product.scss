@@ -25,6 +25,17 @@
     }
   }
 
+  @media (hover: none) {
+    #{$block-name}__title {
+      color: var(--primary);
+    }
+
+    #{$block-name}__buttons {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   &--large {
     #{$block-name}__image {
       height: 300px;
@@ -86,6 +97,7 @@
   &__title {
     @include body-small;
 
+    margin: 0;
     color: var(--gray-700);
     transition: color var(--transition-long);
   }
@@ -95,11 +107,16 @@
     @include body-medium(500);
 
     gap: 4px;
+    margin: 0;
     color: var(--green-gray-900);
 
     &--old {
       color: var(--green-gray-400);
     }
+  }
+
+  &__link {
+    text-decoration: none;
   }
 
   &__link + &__price {
@@ -111,7 +128,7 @@
   }
 
   &__price + &__rating {
-    margin-top: 6px;
+    margin-top: 4px;
   }
 
   &__button {

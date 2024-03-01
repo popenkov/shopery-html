@@ -8,4 +8,81 @@ block variables
 
 block content
   .container
-    div!= json.info.data
+
+    style.
+      .d-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+
+
+    h2 Buttons
+    .d-flex
+      +button("button", "Small Fill", "fill, small")
+      +button("button","Small Border", "border, small")
+      +button("button","Small Ghost", "grey, small")
+
+      +button("button","Medium Fill", "fill, normal")
+      +button("button","Medium Border", "border, normal")
+      +button("button","Medium Ghost", "grey, normal")
+
+      +button("button","", "fill, large")
+        span Large Fill
+      +button("button","Large Border", "border, large")
+      +button("button","Large Ghost", "grey, large")
+
+    h2 Icon Buttons
+    .d-flex
+      +button("button", "", "fill, small")(class="icon-button")
+        span.icon-button__text Small Fill
+        svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      +button("button", "", "fill, normal")(class="icon-button")
+        span.icon-button__text Medium Fill
+        svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      +button("button", "", "fill, large")(class="icon-button")
+        span.icon-button__text Large Fill
+        svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+
+
+    h2 close button
+    .d-flex
+      button.close-button
+        svg.close-button__icon: use(href= path.icon + "icon__cross")
+
+    h2 round buttons
+    .d-flex
+      button.button-round.button-round--primary
+        svg.button-round__icon: use(href= path.icon + "icon__cart")
+      button.button-round.button-round--like
+        svg.button-round__icon: use(href= path.icon + "icon__heart")
+      button.button-round.button-round--white-green
+        svg.button-round__icon: use(href= path.icon + "icon__eye")
+      button.button-round.button-round--ghost
+        svg.button-round__icon: use(href= path.icon + "icon__facebook")
+
+    h2 Product small
+    .d-flex
+      +product-small
+
+    h2 Product
+    .d-flex
+      +product(json.info.products[0])
+
+    h2 Product Large
+    .d-flex
+      +product-xxl
+
+    h2 checkbox
+    .d-flex
+      +checkbox("checkbox", "", "checkbox")
+      span
+        +radio("radio", "", "1","1")
+        +radio("radio", "", "2","2")
+
+    h2 Inputs
+    .d-flex
+      +field("text", "text", "text", "", "", true)
+

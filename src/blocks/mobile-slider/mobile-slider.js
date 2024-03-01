@@ -13,7 +13,6 @@ ready(function () {
         modules: [Pagination],
         spaceBetween: 20,
         loop: true,
-
         breakpoints: {
           320: {
             slidesPerView: 1,
@@ -33,12 +32,11 @@ ready(function () {
     initSlider();
     window.addEventListener("resize", () => {
       if (mobileBreakpoint.matches) {
-        console.log(slider);
-
-        if (slider.length > 1) {
+        if (slider?.length > 1) {
           slider.forEach((item) => {
             if (item === "undefined" || item?.destroyed) {
               initSlider();
+              item.updateProgress();
             }
           });
         } else {

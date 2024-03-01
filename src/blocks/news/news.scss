@@ -67,11 +67,13 @@
   &__title {
     @include body-large(500);
 
+    margin: 0;
     color: var(--green-gray-900);
   }
 
   &__text {
     display: -webkit-box;
+    margin: 0;
     overflow: hidden;
     color: var(--green-gray-500);
     font-weight: 400;
@@ -89,6 +91,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 120%;
+    text-decoration: none;
     transition: color var(--transition);
 
     @media (hover: hover) {

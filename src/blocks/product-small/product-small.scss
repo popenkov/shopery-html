@@ -68,12 +68,14 @@
   &__title {
     @include body-small;
 
+    margin: 0;
     color: var(--gray-700);
   }
 
   &__price {
     @include body-medium(500);
 
+    margin: 0;
     color: var(--gray-900);
   }
 

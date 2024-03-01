@@ -9,6 +9,18 @@ ready(function () {
       elem.addEventListener("click", activateTab);
     });
 
+    const scrollContainerOnTabClick = (clickedTab, clickedTabValue) => {
+      // скролл таба
+      const tabIndex = Number(clickedTabValue.at(-1));
+      const allTabsLength = Array.from(tabsLabels).length;
+      const scrollContainer = clickedTab.closest(".tabs__labels-content");
+      const position = (tabIndex - Math.floor(allTabsLength / 2)) * 200;
+      scrollContainer.scrollTo({
+        left: position,
+        behavior: "smooth",
+      });
+    };
+
     function activateTab(e) {
       e.preventDefault();
       Array.from(tabsLabels).forEach(function (label) {
@@ -18,8 +30,11 @@ ready(function () {
         pane.classList.remove("tabs__pane--active");
       });
       e.target.classList.add("tabs__label--active");
-      let clickedTab = e.target.getAttribute("data-href");
-      document.querySelector(clickedTab).classList.add("tabs__pane--active");
+      let clickedTab = e.target;
+      let clickedTabValue = clickedTab.getAttribute("data-href");
+      document.querySelector(clickedTabValue).classList.add("tabs__pane--active");
+
+      scrollContainerOnTabClick(clickedTab, clickedTabValue);
     }
   }
 

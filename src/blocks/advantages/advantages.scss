@@ -1,6 +1,6 @@
 @import "../../scss/_breakpoints";
 @import "../../scss/mixins/flexbox.scss";
-@import "../../scss/mixins/blocks.scss";
+@import "../../scss/mixins/box.scss";
 @import "../../scss/mixins/text-styles.scss";
 
 .advantages {
@@ -57,6 +57,8 @@
 
   &__title {
     @include body-large(600);
+
+    margin: 0;
   }
 
   &__icon-wrapper + &__title {
@@ -69,6 +71,8 @@
 
   &__text {
     @include body-small;
+
+    margin: 0;
   }
 
   &__title + &__text {

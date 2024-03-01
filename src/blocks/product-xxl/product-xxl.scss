@@ -93,9 +93,14 @@
     padding: 12px 24px 18px;
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__title {
     @include body-large;
 
+    margin: 0;
     color: var(--gray-700);
   }
 
@@ -104,6 +109,7 @@
     @include body-xxl(500);
 
     gap: 4px;
+    margin: 0;
   }
 
   &__price-new {
