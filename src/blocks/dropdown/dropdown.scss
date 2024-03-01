@@ -37,6 +37,10 @@
     transition: all var(--transition);
   }
 
+  &__item {
+    list-style: none;
+  }
+
   &__chevron {
     @include box(12px);
 
@@ -64,6 +68,7 @@
     padding: 0;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {

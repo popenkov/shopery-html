@@ -89,6 +89,7 @@
 
   &__auth-link {
     color: inherit;
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
@@ -174,6 +175,7 @@
   &__favorite-icon {
     @include box(33px);
 
+    stroke-width: 1.3px;
     color: var(--gray-900);
     fill: transparent;
   }
@@ -191,6 +193,7 @@
   &__cart-icon {
     @include box(34px);
 
+    stroke-width: 1.3px;
     color: var(--gray-900);
   }
 
@@ -221,6 +224,7 @@
   }
 
   &__cart-title {
+    margin: 0;
     color: var(--gray-700);
     font-size: 11px;
     line-height: 1.1825;
@@ -307,6 +311,7 @@
     z-index: var(--header-dropdown-z-index);
     width: 100%;
     max-width: 300px;
+    margin: 0;
     padding: 16px 0;
     background-color: var(--back-primary);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 12%);
@@ -333,6 +338,7 @@
     padding: 6px 22px;
     color: var(--gray-500);
     transition: all var(--transition);
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
@@ -350,6 +356,8 @@
     @include flex-center-vertical;
 
     gap: 31px;
+    margin: 0;
+    padding: 0;
 
     @media screen and (max-width: $screen-tl) {
       display: none;
@@ -358,6 +366,7 @@
 
   &__navigation-menu-item {
     position: relative;
+    list-style: none;
 
     @media (hover: hover) {
       &:hover {
@@ -386,6 +395,7 @@
     padding: 18px 0 17px;
     color: var(--gray-500);
     text-transform: capitalize;
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {

@@ -57,6 +57,8 @@
 
   &__title {
     @include body-large(600);
+
+    margin: 0;
   }
 
   &__icon-wrapper + &__title {
@@ -69,6 +71,8 @@
 
   &__text {
     @include body-small;
+
+    margin: 0;
   }
 
   &__title + &__text {

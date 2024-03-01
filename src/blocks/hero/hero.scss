@@ -98,6 +98,7 @@
   &__title {
     @include heading-1(600);
 
+    margin: 0;
     color: var(--green-gray-900);
 
     @media screen and (max-width: $screen-tl) {
@@ -112,6 +113,7 @@
   &__text {
     @include body-large;
 
+    margin: 0;
     color: var(--gray-500);
 
     @media screen and (max-width: $screen-tl) {
@@ -127,6 +129,7 @@
   &__button.button--large {
     @include flex-center-vertical;
 
+    height: 51px;
     gap: 12px;
     padding-right: 35px;
   }

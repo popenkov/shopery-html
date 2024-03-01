@@ -20,7 +20,7 @@ block content
                 span.hero__note= slide.note
                 h2.hero__title= slide.title
                 p.hero__text= slide.text
-                +button("link", "", "fill, large")(class="hero__button")
+                +button("link", "", "fill, large")(class="hero__button icon-button")
                   span.icon-button__text Shop now
                   svg.icon-button__icon: use(href= path.icon + "icon__arrow")
       .hero__swiper-pagination
@@ -41,16 +41,16 @@ block content
 
 
   .section.section--green.products-tabs
-      .container
       h2.section__title.container Introducing Our Products
       .tabs.section__content
         .tabs__labels.container
-          .tabs__scroll-container
-            button.tabs__label.tabs__label--active(data-href="#tab1") All
-            button.tabs__label(data-href="#tab2") Vegetable
-            button.tabs__label(data-href="#tab3") Fruit
-            button.tabs__label(data-href="#tab4") Meat & Fish
-            button.tabs__label(data-href="#tab5") View All
+          .tabs__labels-content
+            .tabs__scroll-container
+              button.tabs__label.tabs__label--active(data-href="#tab1") All
+              button.tabs__label(data-href="#tab2") Vegetable
+              button.tabs__label(data-href="#tab3") Fruit
+              button.tabs__label(data-href="#tab4") Meat & Fish
+              button.tabs__label(data-href="#tab5") View All
         .tabs__panes
           .tabs__pane.tabs__pane--active#tab1
             .grid.grid__four-items.products-tabs__items.products-tabs__items--desktop.container
@@ -162,9 +162,9 @@ block content
                 +product(product)
           .mobile-slider__pagination.swiper-pagination
 
-  .section.section--green
+  .section--small.section--green
     h2.section__title.container What our Clients Says
-    .section__content--large
+    .section__content--medium
       .grid.grid__three-items.d-desktop.container
         each review in json.info.reviews
           +review(review)
@@ -195,5 +195,5 @@ block content
                   +news(news)
             .mobile-slider__pagination.swiper-pagination
 
-
-  +subscription
+  .section--green
+    +subscription

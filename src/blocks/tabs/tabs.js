@@ -13,7 +13,7 @@ ready(function () {
       // скролл таба
       const tabIndex = Number(clickedTabValue.at(-1));
       const allTabsLength = Array.from(tabsLabels).length;
-      const scrollContainer = clickedTab.closest(".tabs__labels");
+      const scrollContainer = clickedTab.closest(".tabs__labels-content");
       const position = (tabIndex - Math.floor(allTabsLength / 2)) * 200;
       scrollContainer.scrollTo({
         left: position,

@@ -3,11 +3,50 @@
 .tabs {
   $block-name: &; // #{$block-name}__element
 
+  max-width: 100vw;
+  overflow: hidden;
+
   &__labels {
-    height: 100%;
-    overflow: auto hidden;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    @media screen and (max-width: $screen-ti) {
+      position: relative;
+      width: 100%;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        z-index: 2;
+        background: linear-gradient(to left, rgba(4, 119, 210, 0), var(--green-gray-50));
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 16px;
+        z-index: 2;
+        background: linear-gradient(to right, rgba(4, 119, 210, 0), var(--green-gray-50));
+      }
+    }
+  }
+
+  &__labels-content {
+    @media screen and (max-width: $screen-ti) {
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+      height: 100%;
+      overflow: auto hidden;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   &__scroll-container {
@@ -65,6 +104,7 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
+
     border-top: 0;
   }
 
@@ -76,9 +116,14 @@
     grid-area: tab;
     grid-column: 1/2;
     width: 100%;
+    max-width: 100vw;
     opacity: 0;
     transition: opacity var(--transition);
     pointer-events: none;
+
+    // @media screen and (max-width: $screen-ti) {
+    //   grid-column: 1;
+    // }
 
     &--active {
       opacity: 1;

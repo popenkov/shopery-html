@@ -26,5 +26,5 @@ mixin dropdown(title, options, mods)
       svg.dropdown__chevron: use(href= path.icon + "icon__chevron-down")
     ul.dropdown__content
       each option in options
-        li
+        li.dropdown__item
           button.dropdown__link(data-value= option)= option

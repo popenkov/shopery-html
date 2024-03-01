@@ -6,10 +6,10 @@ mixin star-rating(rating)
     each starNumber in [1, 2, 3, 4, 5]
       if starNumber <= fullStars
         svg.star-rating__star.star-rating__star--full
-          use(href=path.icon + 'star')
-      else if starNumber == fullStars + 1 && halfStars == 1
+          use(href=path.icon + 'icon__star')
+      else if starNumber === fullStars + 1 && halfStars === 1
         svg.star-rating__star.star-rating__star--halfed
-          use(href=path.icon + 'star')
+          use(href=path.icon + 'icon__star')
       else
         svg.star-rating__star
-          use(href=path.icon + 'star')
+          use(href=path.icon + 'icon__star')

@@ -38,9 +38,14 @@ mixin header(mods)
     .header__middle.container
       button.header__mobile-burger.js-mobile-menu-btn
         span.burger-button
-      +logo(isMainPage ? "" : "/index.html")(class="header__logo")
-      +logo(isMainPage ? "" : "/index.html", "mini", true)(class="header__logo-mobile")
-      .header__search
+      if isMainPage
+        +logo(class="header__logo")
+        +logo("mini", true)(class="header__logo-mobile")
+      else
+        a.header__logo-link(href="/")
+          +logo(class="header__logo")
+          +logo("mini", true)(class="header__logo-mobile")
+      .header__search.d-desktop
         +search-form(class="js-header-search-form")
       .header__navbar
         .header__favorite
@@ -92,8 +97,8 @@ mixin header(mods)
       .mobile-menu__content
         button.mobile-menu__close-button.close-button.js-close-mobile-menu-btn
           svg.close-button__icon: use(href= path.icon + 'icon__cross')
-
-        +search-form(class="header__search--mobile js-header-search-form")
+        .header__search--mobile.d-mobile
+          +search-form(class="js-header-search-form")
 
         .mobile-menu__navigation
           .accordeon

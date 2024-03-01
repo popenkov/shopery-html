@@ -17,6 +17,10 @@
     transition: max-height 0.3s ease-in;
   }
 
+  &__item {
+    list-style: none;
+  }
+
   &__chevron-icon {
     @include box(12px);
 

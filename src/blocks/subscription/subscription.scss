@@ -37,7 +37,7 @@
 
     grid-area: text;
     gap: 4px;
-    margin-left: auto;
+    margin: 0 0 0 auto;
 
     @media screen and (max-width: $screen-d) {
       margin-left: unset;
@@ -47,12 +47,14 @@
   &__title {
     @include body-xxl(500);
 
+    margin: 0;
     color: var(--green-gray-900);
   }
 
   &__subtitle {
     @include body-small;
 
+    margin: 0;
     color: var(--green-gray-400);
   }
 
@@ -61,7 +63,7 @@
 
     position: relative;
     grid-area: form;
-    height: 51px;
+    height: 52px;
 
     @media screen and (max-width: $screen-t) {
       @include flex-column;
@@ -76,15 +78,22 @@
   &__input {
     @include body-medium;
 
+    height: 52px;
     padding-right: 180px;
     padding-left: 24px;
-    color: var(--green-gray-500);
+    color: var(--green-gray-800);
+    background-color: var(--back-primary);
     border: 1px solid var(--green-gray-100);
     border-radius: 46px;
 
     @media screen and (max-width: $screen-t) {
       padding-right: 16px;
       padding-left: 16px;
+    }
+
+    &::placeholder {
+      color: var(--green-gray-500);
+      opacity: 1;
     }
   }
 
@@ -93,6 +102,7 @@
     top: 0;
     right: 0;
     border-radius: 43px;
+    height: 52px;
 
     @media screen and (max-width: $screen-t) {
       position: static;

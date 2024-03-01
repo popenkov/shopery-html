@@ -1,5 +1,6 @@
 @import "../../scss/_breakpoints";
 @import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/box.scss";
 
 .icon-button {
   $block-name: &; // #{$block-name}__element
@@ -14,13 +15,14 @@
   &--normal {
     gap: 12px;
   }
-  // TODO
+
   // stylelint-disable-next-line
   &--large {
     gap: 16px;
   }
 
   &__text {
+    margin: 0;
     white-space: nowrap;
   }
 
