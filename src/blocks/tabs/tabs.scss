@@ -12,27 +12,27 @@
       width: 100%;
 
       &::before {
-        content: "";
-        display: block;
-        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        width: 16px;
         z-index: 2;
-        background: linear-gradient(to left, rgba(4, 119, 210, 0), var(--green-gray-50));
+        display: block;
+        width: 16px;
+        height: 100%;
+        background: linear-gradient(to left, rgb(4 119 210 / 0%), var(--green-gray-50));
+        content: "";
       }
 
       &::after {
-        content: "";
-        display: block;
-        height: 100%;
         position: absolute;
         top: 0;
         right: 0;
-        width: 16px;
         z-index: 2;
-        background: linear-gradient(to right, rgba(4, 119, 210, 0), var(--green-gray-50));
+        display: block;
+        width: 16px;
+        height: 100%;
+        background: linear-gradient(to right, rgb(4 119 210 / 0%), var(--green-gray-50));
+        content: "";
       }
     }
   }
@@ -41,8 +41,8 @@
     @media screen and (max-width: $screen-ti) {
       position: relative;
       width: 100%;
-      padding: 0 20px;
       height: 100%;
+      padding: 0 20px;
       overflow: auto hidden;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
@@ -104,7 +104,6 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-
     border-top: 0;
   }
 

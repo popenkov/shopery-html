@@ -22,6 +22,7 @@
     @include box(28px);
 
     stroke-width: 1.3px;
+
     @media screen and (max-width: $screen-tl) {
       @include box(26px);
     }

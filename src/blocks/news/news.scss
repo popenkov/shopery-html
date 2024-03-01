@@ -91,8 +91,8 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 120%;
-    transition: color var(--transition);
     text-decoration: none;
+    transition: color var(--transition);
 
     @media (hover: hover) {
       &:hover {

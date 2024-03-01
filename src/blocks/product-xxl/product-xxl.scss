@@ -108,8 +108,8 @@
     @include flex-center-vertical;
     @include body-xxl(500);
 
-    margin: 0;
     gap: 4px;
+    margin: 0;
   }
 
   &__price-new {

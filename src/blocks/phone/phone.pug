@@ -21,6 +21,6 @@ mixin phone(number, mods)
     }
 
   .phone(class=allMods)&attributes(attributes)
-    a.phone(href="tel:" + number + '"')
+    a.phone(href="tel:" + number + "\"")
       svg.phone__icon: use(href= path.icon + "icon__phone")
-      span.phone__text=number
+      span.phone__text= number

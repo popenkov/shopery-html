@@ -129,8 +129,8 @@
   &__button.button--large {
     @include flex-center-vertical;
 
-    height: 51px;
     gap: 12px;
+    height: 51px;
     padding-right: 35px;
   }
 

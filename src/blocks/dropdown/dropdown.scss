@@ -66,9 +66,9 @@
 
   &__link {
     padding: 0;
+    text-decoration: none;
     border: none;
     cursor: pointer;
-    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
