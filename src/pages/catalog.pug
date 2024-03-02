@@ -1,0 +1,12 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Catalog"
+  - metaDescription = "Catalog description"
+  - metaKeywords = "Catalog keywords"
+
+block content
+  h1.visually-hidden shopery catalog
+
+  +breadcrumps([{path: '#', title: 'Categories'}], 'Vegetables')

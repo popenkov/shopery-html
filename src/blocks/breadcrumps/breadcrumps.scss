@@ -1,0 +1,75 @@
+.page-divider {
+  width: calc(100% - 40px);
+  max-width: 1440px;
+  height: 1px;
+  margin: 0 auto 11px;
+  padding: 0 20px;
+  background-color: rgba($color: #000, $alpha: 10%);
+
+  @media (max-width: 1168px) {
+    display: none;
+  }
+}
+
+.breadcrumps {
+  $block-name: &; // #{$block-name}__element
+
+  background: linear-gradient(95.02deg, rgba(0, 0, 0, 0.7) 0.034%, rgba(0, 0, 0, 0) 91.306%),
+    url("//{{img}}//breadcrumbs-img.jpg");
+
+  &__list {
+    @include flex-center-vertical;
+
+    gap: 8px;
+    margin: 0;
+    padding: 48px 0;
+    overflow-y: auto;
+
+    @media (max-width: 724px) {
+      align-items: flex-start;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include flex-center-vertical;
+
+    text-decoration: none;
+    color: var(--gray-400);
+    white-space: nowrap;
+
+    &--active {
+      color: var(--primary);
+      pointer-events: none;
+    }
+  }
+
+  &__home-icon {
+    @include box(24px);
+
+    color: var(--gray-400);
+  }
+
+  &__chevron {
+    @include box(12px);
+
+    color: var(--gray-400);
+    transform: rotate(-90deg);
+  }
+
+  &__item {
+    @include flex-center-vertical;
+
+    gap: 12px;
+    list-style: none;
+
+    &:hover {
+      .breadcrumps__link {
+        color: var(--primary);
+      }
+    }
+  }
+}
