@@ -1,0 +1,18 @@
+{
+  "sort": {
+    "filter": [
+      {
+        "title": "price",
+        "value": "price"
+      },
+      {
+        "title": "popular",
+        "value": "popular"
+      },
+      {
+        "title": "latest",
+        "value": "latest"
+      }
+    ]
+  }
+}

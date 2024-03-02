@@ -1,0 +1,5 @@
+@import "../../scss/breakpoints";
+
+.filter-button {
+  $block-name: &; // #{$block-name}__element
+}

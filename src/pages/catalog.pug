@@ -10,3 +10,9 @@ block content
   h1.visually-hidden shopery catalog
 
   +breadcrumps([{path: '#', title: 'Categories'}], 'Vegetables')
+
+  .catalog-page.container
+    .catalog-page__sorting
+      +filter-button
+      +select(json.catalog.sort.filter, "Sort by:")(class="js-catalog-filter")
+    .catalog-filter.aside-filter

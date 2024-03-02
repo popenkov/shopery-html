@@ -1,0 +1,9 @@
+@import "../../scss/breakpoints";
+
+.catalog-page {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: 312px 1fr;
+  grid-template-areas: "sort sort" "filter result";
+}
