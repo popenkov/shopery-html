@@ -1,0 +1,66 @@
+@import "../../scss/breakpoints";
+
+.pagination {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+  gap: 10px;
+
+  &__pages {
+    @include flex-center-vertical;
+
+    gap: 5px;
+  }
+
+  &__page {
+    @include button-reset;
+    @include box(36px);
+
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color var(--transition);
+
+    &:hover {
+      background-color: var(--primary);
+      background-color: var(--primary);
+      color: var(--front-primary-inversed);
+    }
+
+    &.active {
+      background-color: var(--primary);
+      color: var(--front-primary-inversed);
+    }
+  }
+
+  &__prev,
+  &__next {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e1e1e1;
+    }
+
+    &:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  }
+
+  &__icon {
+    @include box(22px);
+
+    color: var(--front-primary);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+        color: var(--front-primary-inversed);
+      }
+    }
+  }
+}

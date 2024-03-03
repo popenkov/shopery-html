@@ -5,5 +5,41 @@
 
   display: grid;
   grid-template-columns: 312px 1fr;
-  grid-template-areas: "sort sort" "filter result";
+  grid-template-areas: "filter sort" "filter result" "filter pagination";
+  gap: 26px 24px;
+  padding-top: 32px;
+
+  &__filter {
+    grid-area: filter;
+  }
+
+  &__sorting {
+    grid-area: sort;
+
+    @include flex-center-sb;
+  }
+
+  &__items-found {
+    @include flex-center-vertical;
+    @include body-medium;
+
+    gap: 2px;
+  }
+
+  &__items-found-value {
+    font-weight: 600;
+    color: var(--gray-900);
+  }
+
+  &__items-found-text {
+    color: var(--gray-600);
+  }
+
+  &__result {
+    grid-area: result;
+  }
+
+  &__pagination {
+    grid-area: pagination;
+  }
 }

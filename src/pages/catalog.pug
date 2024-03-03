@@ -12,7 +12,32 @@ block content
   +breadcrumps([{path: '#', title: 'Categories'}], 'Vegetables')
 
   .catalog-page.container
-    .catalog-page__sorting
+
+    .catalog-page__filter.aside-filter
       +filter-button
+
+      .range-slider
+        input(type="range", id="priceRange", min="50", max="1500", step="50", value="50")
+        label(for="priceRange") Price: <span id="priceValue">50</span>
+
+
+    .catalog-page__sorting
       +select(json.catalog.sort.filter, "Sort by:")(class="js-catalog-filter")
-    .catalog-filter.aside-filter
+      .catalog-page__items-found
+        span.catalog-page__items-found-value 52
+        span.catalog-page__items-found-text Results Found
+    .catalog-page__result.grid.grid__three-items
+      each product in json.catalog.items
+        +product(product)
+    .catalog-page__pagination.pagination.js-pagination
+      button.pagination__page.pagination__page-prev(disabled)
+        svg.pagination__icon: use(href= path.icon + "icon__chevron-down")
+      .pagination__pages
+        button.pagination__page 1
+        button.pagination__page.active 2
+        button.pagination__page 3
+        button.pagination__page 4
+        button.pagination__page 5
+        button.pagination__page 21
+      button.pagination__page.pagination__page-next
+        svg.pagination__icon: use(href= path.icon + "icon__chevron-down")

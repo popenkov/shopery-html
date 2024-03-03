@@ -2,6 +2,9 @@ import ready from "../../js/utils/documentReady.js";
 
 ready(function () {
   function makeTabs(tabs, panes) {
+    if (!tabs && !panes) {
+      return;
+    }
     const tabsLabels = tabs.children;
     const tabsPanes = panes.children;
 

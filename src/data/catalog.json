@@ -14,5 +14,77 @@
         "value": "latest"
       }
     ]
-  }
+  },
+  "filter": [],
+  "items": [
+    {
+      "img": "product-apple.jpg",
+      "title": "Green Apple",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": [
+        {
+          "type": "red",
+          "text": "Sale 50%"
+        }
+      ]
+    },
+    {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-tomatos.jpg",
+      "title": "Red Tomatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-cauliflower.jpg",
+      "title": "Fresh Cauliflower",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-letucce.jpg",
+      "title": "Green Lettuce",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-eggplant.jpg",
+      "title": "Eggplant",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-chilli.jpg",
+      "title": "Green Chilli",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-eggplant-dark.jpg",
+      "title": "Eggplant",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }
+  ]
 }

@@ -20,6 +20,6 @@ mixin filter-button(text, mods)
       }
     }
 
-  .filter-button(class=allMods)&attributes(attributes)
-    .filter-button__inner
-      block
+  button.filter-button(class=allMods)&attributes(attributes)
+    span.filter-button__text Filter
+    svg.filter-button__icon: use(href= path.icon + "icon__filter")
