@@ -13,47 +13,54 @@ block content
 
   .catalog-page.container
 
-    .catalog-page__filter
+    .catalog-page__filter.aside-filter
       +filter-button
 
-      .catalog-page__filter-accordeon.filter-accordeon
-        .filter-accordeon__item
-          button.filter-accordeon__button.is-open All categories
-            svg.filter-accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
-          .filter-accordeon__content
+      .catalog-page__filter-accordion.filter-accordion
+        .filter-accordion__item
+          button.filter-accordion__button.is-open All categories
+            svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordion__content
             each category in json.catalog.filter.categories
-              +radio(category.title, "filter-category", category.value, category.amount, "")(class="filter-accordeon__content-item")
+              +radio(category.title, "filter-category", category.value, category.amount, "")(class="filter-accordion__content-item")
 
-        .filter-accordeon__item
-          button.filter-accordeon__button.is-open Price
-            svg.filter-accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
-          .filter-accordeon__content
+        .filter-accordion__item
+          button.filter-accordion__button.is-open Price
+            svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordion__content
             +range-input(0, 1700)
 
-        .filter-accordeon__item
-          button.filter-accordeon__button.is-open Rating
-            svg.filter-accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
-          .filter-accordeon__content
-            .filter-accordeon__checkbox
+        .filter-accordion__item
+          button.filter-accordion__button.is-open Rating
+            svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordion__content
+            .aside-filter__checkbox
               +checkbox("", "rating", "rating-5")
                 +star-rating(5)
                 span 5.0
-            .filter-accordeon__checkbox
+            .aside-filter__checkbox
               +checkbox("", "rating", "rating-4")
                 +star-rating(4)
                 span 4.0 & up
-            .filter-accordeon__checkbox
+            .aside-filter__checkbox
               +checkbox("", "rating", "rating-3")
                 +star-rating(3)
                 span 3.0 & up
-            .filter-accordeon__checkbox
+            .aside-filter__checkbox
               +checkbox("", "rating", "rating-2")
                 +star-rating(2)
                 span 2.0 & up
-            .filter-accordeon__checkbox
+            .aside-filter__checkbox
               +checkbox("", "rating", "rating-1")
                 +star-rating(1)
                 span 3.0 & up
+
+        .filter-accordion__item
+          button.filter-accordion__button.is-open Popular Tag
+            svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordion__content.aside-filter__tags-container
+            each tag in json.catalog.filter.tags
+              +tag-checkbox(tag.text, tag.value)
 
 
     .catalog-page__sorting

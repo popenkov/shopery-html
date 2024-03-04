@@ -1,0 +1,16 @@
+@import "../../scss/breakpoints";
+
+.aside-filter {
+  $block-name: &; // #{$block-name}__element
+
+  &__checkbox {
+    padding: 10px 0;
+  }
+
+  &__tags-container {
+    @include flex-center-vertical;
+
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

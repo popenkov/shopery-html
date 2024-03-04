@@ -1,14 +1,14 @@
-//- Все примеси в этом файле должны начинаться c имени блока (button)
+//- Все примеси в этом файле должны начинаться c имени блока (tag-checkbox)
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin button(type, text, mods, link)
+mixin tag-checkbox(text, value, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +button("link", "Текст", "some-mod", "/index.html")
+        +tag-checkbox("Текст", "some-mod")
 
   //- список модификаторов
   -
@@ -16,14 +16,13 @@ mixin button(type, text, mods, link)
     if (typeof (mods) !== "undefined" && mods) {
       var modsList = mods.split(",");
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + " button--" + modsList[i].trim();
+        allMods = allMods + " tag-checkbox--" + modsList[i].trim();
       }
     }
-    console.log('link', link)
-  case type
-    when 'link'
-      a.button(class=allMods, href= link)&attributes(attributes)= text
-        block
-    default
-      button.button(class=allMods)&attributes(attributes)= text
-        block
+
+  label.tag-checkbox(class=allMods)&attributes(attributes)
+    input.tag-checkbox__input(type="checkbox", value= value)
+    span.tag-checkbox__text= text
+      block
+
+

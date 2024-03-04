@@ -17,7 +17,7 @@
     align-items: flex-start;
   }
 
-  &__filter-accordeon {
+  &__filter-accordion {
     @include flex-column;
 
     gap: 20px;

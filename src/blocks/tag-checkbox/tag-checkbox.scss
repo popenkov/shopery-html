@@ -1,0 +1,30 @@
+@import "../../scss/breakpoints";
+
+.tag-checkbox {
+  $block-name: &; // #{$block-name}__element
+
+  cursor: pointer;
+
+  &__text {
+    @include body-small;
+
+    display: block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    background-color: var(--gray-50);
+    color: var(--gray-900);
+  }
+
+  #{$block-name}__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ #{$block-name}__text {
+      color: var(--front-primary-inversed);
+      background-color: var(--primary);
+    }
+  }
+}

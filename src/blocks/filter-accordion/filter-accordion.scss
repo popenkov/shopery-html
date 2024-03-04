@@ -1,8 +1,9 @@
 @import "../../scss/_breakpoints";
 @import "../../scss/mixins/flexbox.scss";
 @import "../../scss/mixins/box.scss";
+@import "../../scss/mixins/button-reset.scss";
 
-.accordeon {
+.filter-accordion {
   $block-name: &; // #{$block-name}__element
 
   @include flex-column;
@@ -10,11 +11,14 @@
   width: 100%;
 
   &__content {
-    max-height: 0;
-    padding: 0 16px;
+    // todo
+    // max-height: 0;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     background-color: var(--back-primary);
-    transition: max-height 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    border-bottom: 1px solid var(--gray-100);
   }
 
   &__item {
@@ -22,22 +26,23 @@
   }
 
   &__chevron-icon {
-    @include box(12px);
+    @include box(15px);
 
-    transform: rotate(270deg);
+    transform: rotate(0deg);
     transition: all var(--transition);
+    stroke-width: 1.6px;
   }
 
   &__button {
+    @include button-reset;
     @include flex-center-sb;
+    @include body-xl(500);
 
     width: 100%;
-    color: #333;
-    border: none;
-    border-bottom: 1px solid var(--gray-300);
-    outline: none;
+    padding-bottom: 6px;
+    color: var(--gray-900);
     cursor: pointer;
-    transition: all var(--transition);
+    transition: color var(--transition);
 
     @media (hover: hover) {
       &:hover {
@@ -47,8 +52,16 @@
 
     &.is-open {
       #{$block-name}__chevron-icon {
-        transform: rotate(360deg);
+        transform: rotate(-180deg);
       }
     }
+
+    &.is-open + #{$block-name}__content {
+      padding: 4px 0 15px;
+    }
+  }
+
+  &__content-item {
+    padding: 10px 0;
   }
 }

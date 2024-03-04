@@ -1,12 +1,12 @@
 import ready from "../../js/utils/documentReady.js";
 
 ready(function () {
-  const accordeon = document.querySelector(".accordeon");
+  const accordion = document.querySelector(".accordion");
 
-  if (accordeon) {
-    const accordeonBtns = accordeon.querySelectorAll(".accordeon__button");
+  if (accordion) {
+    const accordionBtns = accordion.querySelectorAll(".accordion__button");
 
-    const handleAccordeonBtnClick = (btn) => {
+    const handleaccordionBtnClick = (btn) => {
       btn.classList.toggle("is-open");
 
       const content = btn.nextElementSibling;
@@ -17,8 +17,8 @@ ready(function () {
         content.style.maxHeight = content.scrollHeight + "px";
       }
     };
-    accordeonBtns.forEach((btn) => {
-      btn.addEventListener("click", () => handleAccordeonBtnClick(btn));
+    accordionBtns.forEach((btn) => {
+      btn.addEventListener("click", () => handleaccordionBtnClick(btn));
     });
   }
 });
