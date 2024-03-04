@@ -1,0 +1,49 @@
+@import "../../scss/breakpoints";
+
+.range-input {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 16px 0 8px;
+  &__text {
+    @include body-small;
+
+    color: var(--gray-700);
+  }
+
+  &__text-value {
+    color: var(--gray-900);
+    font-weight: 500;
+  }
+
+  &__slider {
+    height: 6px;
+    background-color: var(--gray-100);
+    border-radius: 15px;
+  }
+
+  &__slider + &__text {
+    display: block;
+    margin-top: 22px;
+  }
+}
+
+.range-slider {
+  & &__range {
+    background-color: var(--primary);
+    border-radius: 15px;
+  }
+
+  & &__thumb {
+    @include box(18px);
+
+    background-color: var(--back-primary);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+      }
+    }
+  }
+}

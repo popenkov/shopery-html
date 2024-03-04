@@ -13,12 +13,47 @@ block content
 
   .catalog-page.container
 
-    .catalog-page__filter.aside-filter
+    .catalog-page__filter
       +filter-button
 
-      .range-slider
-        input(type="range", id="priceRange", min="50", max="1500", step="50", value="50")
-        label(for="priceRange") Price: <span id="priceValue">50</span>
+      .catalog-page__filter-accordeon.filter-accordeon
+        .filter-accordeon__item
+          button.filter-accordeon__button.is-open All categories
+            svg.filter-accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordeon__content
+            each category in json.catalog.filter.categories
+              +radio(category.title, "filter-category", category.value, category.amount, "")(class="filter-accordeon__content-item")
+
+        .filter-accordeon__item
+          button.filter-accordeon__button.is-open Price
+            svg.filter-accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordeon__content
+            +range-input(0, 1700)
+
+        .filter-accordeon__item
+          button.filter-accordeon__button.is-open Rating
+            svg.filter-accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
+          .filter-accordeon__content
+            .filter-accordeon__checkbox
+              +checkbox("", "rating", "rating-5")
+                +star-rating(5)
+                span 5.0
+            .filter-accordeon__checkbox
+              +checkbox("", "rating", "rating-4")
+                +star-rating(4)
+                span 4.0 & up
+            .filter-accordeon__checkbox
+              +checkbox("", "rating", "rating-3")
+                +star-rating(3)
+                span 3.0 & up
+            .filter-accordeon__checkbox
+              +checkbox("", "rating", "rating-2")
+                +star-rating(2)
+                span 2.0 & up
+            .filter-accordeon__checkbox
+              +checkbox("", "rating", "rating-1")
+                +star-rating(1)
+                span 3.0 & up
 
 
     .catalog-page__sorting

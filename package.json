@@ -99,6 +99,7 @@
     "autosize": "^6.0.1",
     "imask": "^7.4.0",
     "nice-select2": "^2.1.0",
+    "range-slider-input": "^2.4.4",
     "sanitize.css": "^13.0.0",
     "swiper": "^11.0.6"
   },

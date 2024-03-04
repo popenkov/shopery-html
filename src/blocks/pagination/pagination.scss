@@ -19,7 +19,7 @@
     padding: 8px;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color var(--transition);
+    transition: all var(--transition);
 
     &:hover {
       background-color: var(--primary);

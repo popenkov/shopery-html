@@ -1,0 +1,67 @@
+@import "../../scss/_breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/box.scss";
+@import "../../scss/mixins/button-reset.scss";
+
+.filter-accordeon {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-column;
+
+  width: 100%;
+
+  &__content {
+    // todo
+    // max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--back-primary);
+    transition: all 0.3s ease-in;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__chevron-icon {
+    @include box(15px);
+
+    transform: rotate(0deg);
+    transition: all var(--transition);
+    stroke-width: 1.6px;
+  }
+
+  &__button {
+    @include button-reset;
+    @include flex-center-sb;
+    @include body-xl(500);
+
+    width: 100%;
+    padding-bottom: 6px;
+    color: var(--gray-900);
+    cursor: pointer;
+    transition: color var(--transition);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    &.is-open {
+      #{$block-name}__chevron-icon {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &.is-open + #{$block-name}__content {
+      padding: 4px 0 15px;
+    }
+  }
+
+  &__content-item {
+    padding: 10px 0;
+  }
+}

@@ -37,6 +37,7 @@
   &__link {
     @include flex-center-vertical;
 
+    gap: 8px;
     text-decoration: none;
     color: var(--gray-400);
     white-space: nowrap;
@@ -63,7 +64,7 @@
   &__item {
     @include flex-center-vertical;
 
-    gap: 12px;
+    gap: 9px;
     list-style: none;
 
     &:hover {
