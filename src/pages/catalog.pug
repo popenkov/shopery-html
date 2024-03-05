@@ -62,6 +62,16 @@ block content
             each tag in json.catalog.filter.tags
               +tag-checkbox(tag.text, tag.value)
 
+        .discount-banner
+          img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
+          .discount-banner__text
+            p.discount-banner__title
+              span.discount-banner__title--bold 79%
+              |  Discount
+            p.discount-banner__subtitle on your first order
+            +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
+              span.icon-button__text Shop Now
+              svg.icon-button__icon: use(href= path.icon + "icon__arrow")
 
     .catalog-page__sorting
       +select(json.catalog.sort.filter, "Sort by:")(class="js-catalog-filter")

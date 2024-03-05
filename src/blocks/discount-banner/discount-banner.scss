@@ -1,0 +1,47 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.discount-banner {
+  $block-name: &; // #{$block-name}__element
+
+  // todo
+  // @include flex-center;
+
+  position: relative;
+  min-height: 295px;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &__text {
+    @include flex-column-center;
+  }
+
+  &__title {
+    @include body-xxl;
+
+    margin: 0;
+    &--bold {
+      font-weight: 600;
+      color: var(--orange);
+    }
+  }
+
+  &__subtitle {
+    @include body-medium;
+
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  &__button {
+    gap: 10px;
+  }
+}
