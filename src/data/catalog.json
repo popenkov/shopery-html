@@ -2,16 +2,16 @@
   "sort": {
     "filter": [
       {
-        "title": "price",
+        "title": "Latest",
+        "value": "latest"
+      },
+      {
+        "title": "Price",
         "value": "price"
       },
       {
-        "title": "popular",
+        "title": "Popular",
         "value": "popular"
-      },
-      {
-        "title": "latest",
-        "value": "latest"
       }
     ]
   },
