@@ -1,4 +1,6 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/text-styles.scss";
 
 .aside-filter {
   $block-name: &; // #{$block-name}__element
@@ -12,5 +14,21 @@
 
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  &__item {
+    @include flex-column;
+
+    gap: 12px;
+  }
+
+  &__title {
+    @include body-xl(500);
+  }
+
+  &__product-cards {
+    @include flex-column;
+
+    gap: 16px;
   }
 }

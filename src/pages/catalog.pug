@@ -14,7 +14,8 @@ block content
   .catalog-page.container
 
     .catalog-page__filter.aside-filter
-      +filter-button
+      .catalog-page__filter-button.d-mobile
+        +filter-button
 
       .catalog-page__filter-accordion.filter-accordion
         .filter-accordion__item
@@ -73,13 +74,19 @@ block content
               span.icon-button__text Shop Now
               svg.icon-button__icon: use(href= path.icon + "icon__arrow")
 
+        .aside-filter__item
+          p.aside-filter__title Sale Products
+          .aside-filter__product-cards
+            each product in json.catalogItems.featuredItems
+              +product-small(product)
+
     .catalog-page__sorting
       +select(json.catalog.sort.filter, "Sort by:")(class="js-catalog-filter")
       .catalog-page__items-found
         span.catalog-page__items-found-value 52
         span.catalog-page__items-found-text Results Found
     .catalog-page__result.grid.grid__three-items
-      each product in json.catalog.items
+      each product in json.catalogItems.items
         +product(product)
     .catalog-page__pagination.pagination.js-pagination
       button.pagination__page.pagination__page-prev(disabled)

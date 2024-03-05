@@ -19,7 +19,6 @@ mixin button(type, text, mods, link)
         allMods = allMods + " button--" + modsList[i].trim();
       }
     }
-    console.log('link', link)
   case type
     when 'link'
       a.button(class=allMods, href= link)&attributes(attributes)= text
