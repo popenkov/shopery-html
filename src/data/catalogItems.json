@@ -1,45 +1,24 @@
 {
   "items": [
     {
-      "img": "product-apple.jpg",
-      "title": "Green Apple",
-      "price": "$14.99",
-      "priceOld": "$20.99",
-      "rating": 4,
-      "tags": [
-        {
-          "type": "red",
-          "text": "Sale 50%"
-        }
-      ]
-    },
-    {
-      "img": "product-mango.jpg",
-      "title": "Surjapur Mango",
+      "img": "product-big-potatos.jpg",
+      "title": "Big Potatos",
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
       "tags": null
     },
     {
-      "img": "product-tomatos.jpg",
-      "title": "Red Tomatos",
+      "img": "product-chanise-cabbage.jpg",
+      "title": "Chanise Cabbage",
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
       "tags": null
     },
     {
-      "img": "product-cauliflower.jpg",
-      "title": "Fresh Cauliflower",
-      "price": "$14.99",
-      "priceOld": "",
-      "rating": 4,
-      "tags": null
-    },
-    {
-      "img": "product-letucce.jpg",
-      "title": "Green Lettuce",
+      "img": "product-ladies-finger.jpg",
+      "title": "Ladies Finger",
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
@@ -54,16 +33,98 @@
       "tags": null
     },
     {
-      "img": "product-chilli.jpg",
-      "title": "Green Chilli",
+      "img": "product-cauliflower.jpg",
+      "title": "Fresh Cauliflower",
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
       "tags": null
     },
     {
-      "img": "product-eggplant-dark.jpg",
-      "title": "Eggplant",
+      "img": "product-apple.jpg",
+      "title": "Green Apple",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": [
+        {
+          "type": "red",
+          "text": "Sale 50%"
+        }
+      ]
+    },
+
+    {
+      "img": "product-green-capsicum.jpg",
+      "title": "Green Capsicum",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-green-chilli.jpg",
+      "title": "Green Chili",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-green-cucumber.jpg",
+      "title": "Green Cucumber",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-letucce.jpg",
+      "title": "Green Lettuce",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-green-ladies-finger.jpg",
+      "title": "Ladies Finger",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-red-capsicum.jpg",
+      "title": "Green Capsicum",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-red-chilli.jpg",
+      "title": "Red Chili",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-tomatos.jpg",
+      "title": "Red Tomatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
