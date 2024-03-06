@@ -6,10 +6,40 @@
   }
 }
 
+.d-desktop-till-tablet {
+  @media screen and (max-width: $screen-tl) {
+    display: none !important;
+  }
+}
+
 .d-mobile {
-  display: none;
+  display: none !important;
 
   @media screen and (max-width: $screen-ti) {
-    display: block;
+    display: block !important;
+  }
+}
+
+.d-mobile--flex {
+  display: none !important;
+
+  @media screen and (max-width: $screen-ti) {
+    display: flex !important;
+  }
+}
+
+.d-tablet {
+  display: none !important;
+
+  @media screen and (max-width: $screen-tl) {
+    display: block !important;
+  }
+}
+
+.d-tablet--flex {
+  display: none !important;
+
+  @media screen and (max-width: $screen-tl) {
+    display: flex !important;
   }
 }

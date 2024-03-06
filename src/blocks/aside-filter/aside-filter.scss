@@ -1,6 +1,7 @@
 @import "../../scss/breakpoints";
 @import "../../scss/mixins/flexbox.scss";
 @import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/button-reset.scss";
 
 .aside-filter {
   $block-name: &; // #{$block-name}__element
@@ -27,6 +28,90 @@
     .star-rating__star {
       @include box(16px);
     }
+  }
+
+  &__header {
+    @include flex-center-vertical;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: none !important;
+    justify-content: space-between;
+    gap: 20px;
+
+    max-width: 390px;
+    padding: 10px 16px;
+    background-color: var(--back-primary);
+    border-bottom: 1px solid var(--gray-300);
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: none !important;
+    justify-content: flex-end;
+    max-width: 390px;
+    padding: 10px 16px;
+    background-color: var(--back-primary);
+    border-top: 1px solid var(--gray-300);
+  }
+
+  &__filter-menu {
+    @media screen and (max-width: $screen-tl) {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &.opened {
+      z-index: var(--mobile-menu-z-index);
+      left: 0;
+      top: 0;
+      bottom: 0;
+      display: block;
+      height: 100vh;
+      max-width: 390px;
+      padding: 80px 16px;
+      background-color: var(--back-primary);
+      overflow-y: auto;
+      opacity: 1;
+      pointer-events: auto;
+      transition: all var(--transition);
+
+      &::before {
+        content: "";
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 390px;
+        z-index: 1;
+        background-color: var(--modal-bg);
+      }
+
+      #{$block-name}__header {
+        display: flex !important;
+      }
+      #{$block-name}__footer {
+        display: flex !important;
+      }
+    }
+  }
+
+  &__close-button {
+    @include button-reset;
+  }
+
+  &__close-icon {
+    @include box(25px);
   }
 
   &__tags-container {

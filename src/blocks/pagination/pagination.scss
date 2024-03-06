@@ -4,16 +4,16 @@
   $block-name: &; // #{$block-name}__element
 
   @include flex-center-vertical;
-  gap: 10px;
+
+  gap: 12px;
 
   &__pages {
-    @include flex-center-vertical;
-
-    gap: 5px;
+    display: flex;
+    align-items: flex-end;
   }
 
   &__icon {
-    @include box(22px);
+    @include box(20px);
 
     transition: color var(--transition);
   }
@@ -21,10 +21,12 @@
   &__page {
     @include button-reset;
     @include box(36px);
+    @include body-medium;
 
     padding: 8px;
     border-radius: 50%;
     cursor: pointer;
+    color: var(--gray-400);
     transition:
       background-color var(--transition),
       border-color var(--transition);
@@ -39,6 +41,13 @@
       background-color: var(--primary);
       color: var(--front-primary-inversed);
     }
+  }
+
+  &__dots {
+    @include body-medium;
+
+    padding: 0 13px 5px;
+    color: var(--gray-400);
   }
 
   &__page-prev,

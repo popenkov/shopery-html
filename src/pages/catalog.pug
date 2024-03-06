@@ -16,10 +16,15 @@ block content
 
     .catalog-page__filter.aside-filter
 
-      .catalog-page__filter-button
-        +filter-button
+      .aside-filter__filter-button.d-mobile
+        +filter-button(class="js-filter-button")
 
-      .catalog-page__filter-accordion.filter-accordion
+      .catalog-page__filter-accordion.filter-accordion.aside-filter__filter-menu.js-filter-menu
+        .aside-filter__header.d-mobile--flex
+          p.aside-filter__title Filter
+          button.aside-filter__close-button.js-filter-close-button
+            svg.aside-filter__close-icon: use(href= path.icon + "icon__close")
+
         .filter-accordion__item.aside-filter__item
           button.filter-accordion__button.is-open All categories
             svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
@@ -60,40 +65,63 @@ block content
             each tag in json.catalog.filter.tags
               +tag-checkbox(tag.text, tag.value)
 
-        .discount-banner.aside-filter__banner
-          img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
-          .discount-banner__text
-            p.discount-banner__title
-              span.discount-banner__title--bold 79%
-              |  Discount
-            p.discount-banner__subtitle on your first order
-            +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
-              span.icon-button__text Shop Now
-              svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+        .aside-filter__footer
+          +button("button","Apply filter", "fill, large")(class="aside-filter__button js-apply-filter-button d-mobile")
 
-        .aside-filter__products
-          p.aside-filter__title Sale Products
-          .aside-filter__product-cards
-            each product in json.catalogItems.featuredItems
-              +product-xs(product)
+      .discount-banner.aside-filter__banner.d-desktop
+        img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
+        .discount-banner__text
+          p.discount-banner__title
+            span.discount-banner__title--bold 79%
+            |  Discount
+          p.discount-banner__subtitle on your first order
+          +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
+            span.icon-button__text Shop Now
+            svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+
+      .aside-filter__products.d-desktop
+        p.aside-filter__title Sale Products
+        .aside-filter__product-cards
+          each product in json.catalogItems.featuredItems
+            +product-xs(product)
 
     .catalog-page__sorting
       +select(json.catalog.sort.filter, "Sort by:")(class="js-catalog-filter")
       .catalog-page__items-found
         span.catalog-page__items-found-value 52
         span.catalog-page__items-found-text Results Found
-    .catalog-page__result.grid.grid__three-items
+    .catalog-page__result.grid.grid__three-items.d-desktop
       each product in json.catalogItems.items
         +product(product)(class="catalog-page__product")
+    .catalog-page__result.grid.grid__three-items.d-mobile--flex
+      each product in json.catalogItems.items
+        +product-small(product)(class="catalog-page__product")
+      .discount-banner.catalog-page__banner.d-mobile
+        img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
+        .discount-banner__text
+          p.discount-banner__title
+            span.discount-banner__title--bold 79%
+            |  Discount
+          p.discount-banner__subtitle on your first order
+          +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
+            span.icon-button__text Shop Now
+            svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+
+    .catalog-page__sale-products.d-mobile--column
+        p.aside-filter__title Sale Products
+        .aside-filter__product-cards
+          each product in json.catalogItems.featuredItems
+            +product-xs(product)
     .catalog-page__pagination.pagination.js-pagination
       button.pagination__page.pagination__page-prev(disabled)
         svg.pagination__icon: use(href= path.icon + "icon__chevron-down")
       .pagination__pages
-        button.pagination__page 1
-        button.pagination__page.active 2
+        button.pagination__page.active 1
+        button.pagination__page 2
         button.pagination__page 3
         button.pagination__page 4
         button.pagination__page 5
+        span.pagination__dots ...
         button.pagination__page 21
       button.pagination__page.pagination__page-next
         svg.pagination__icon: use(href= path.icon + "icon__chevron-down")

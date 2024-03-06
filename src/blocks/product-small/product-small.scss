@@ -13,6 +13,7 @@
   min-height: 118px;
   border: var(--card-border);
   border-radius: 6px;
+  overflow: hidden;
 
   @media (hover: hover) {
     &:hover {

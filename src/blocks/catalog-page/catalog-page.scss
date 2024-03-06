@@ -7,7 +7,12 @@
   grid-template-columns: 312px 1fr;
   grid-template-areas: "filter sort" "filter result" "filter pagination";
   gap: 26px 24px;
-  padding-top: 32px;
+  padding: 32px 0 82px;
+
+  @media screen and (max-width: $screen-tl) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "filter" "sort" "result" "pagination" "banner" "saleItems";
+  }
 
   &__filter {
     @include flex-column;
@@ -28,6 +33,13 @@
 
     grid-area: sort;
     padding-top: 2px;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      gap: 10px;
+    }
   }
 
   &__items-found {
@@ -49,6 +61,15 @@
 
   &__result {
     grid-area: result;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__banner {
+    grid-area: banner;
   }
 
   &__pagination {
@@ -56,6 +77,10 @@
 
     grid-area: pagination;
     justify-content: center;
+  }
+
+  &__result + &__pagination {
+    margin-top: 14px;
   }
 
   &__product {
@@ -77,5 +102,11 @@
     .product__description {
       padding: 15px 19px 15px 15px;
     }
+  }
+
+  &__sale-products {
+    @include flex-column;
+
+    gap: 10px;
   }
 }
