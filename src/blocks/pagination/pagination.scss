@@ -12,6 +12,12 @@
     gap: 5px;
   }
 
+  &__icon {
+    @include box(22px);
+
+    transition: color var(--transition);
+  }
+
   &__page {
     @include button-reset;
     @include box(36px);
@@ -19,11 +25,13 @@
     padding: 8px;
     border-radius: 50%;
     cursor: pointer;
-    transition: all var(--transition);
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
 
     &:hover {
       background-color: var(--primary);
-      background-color: var(--primary);
+      border-color: var(--primary);
       color: var(--front-primary-inversed);
     }
 
@@ -33,34 +41,32 @@
     }
   }
 
-  &__prev,
-  &__next {
+  &__page-prev,
+  &__page-next {
+    @include flex-center;
+
     padding: 5px 10px;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 5px;
+
+    border: 1px solid var(--gray-100);
+    border-radius: 50%;
     cursor: pointer;
 
-    &:hover {
-      background-color: #e1e1e1;
-    }
-
     &:disabled {
-      background-color: #ddd;
-      cursor: not-allowed;
+      background-color: var(--gray-50);
+      border-color: var(--gray-50);
+      pointer-events: none;
+
+      #{$block-name}__icon {
+        color: var(--gray-300);
+      }
     }
   }
 
-  &__icon {
-    @include box(22px);
+  &__page-prev &__icon {
+    transform: rotate(90deg);
+  }
 
-    color: var(--front-primary);
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--primary);
-        color: var(--front-primary-inversed);
-      }
-    }
+  &__page-next &__icon {
+    transform: rotate(-90deg);
   }
 }

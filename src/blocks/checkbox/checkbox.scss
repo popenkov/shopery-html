@@ -13,9 +13,9 @@
   justify-self: start;
 
   &__input {
+    @include box(20px);
+
     position: absolute;
-    width: 16px;
-    height: 16px;
     opacity: 0;
   }
 

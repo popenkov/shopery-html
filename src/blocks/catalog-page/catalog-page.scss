@@ -7,7 +7,7 @@
   grid-template-columns: 312px 1fr;
   grid-template-areas: "filter sort" "filter result" "filter pagination";
   gap: 26px 24px;
-  padding-top: 34px;
+  padding-top: 32px;
 
   &__filter {
     @include flex-column;
@@ -27,6 +27,7 @@
     @include flex-center-sb;
 
     grid-area: sort;
+    padding-top: 2px;
   }
 
   &__items-found {
@@ -51,6 +52,30 @@
   }
 
   &__pagination {
+    @include flex-center;
+
     grid-area: pagination;
+    justify-content: center;
+  }
+
+  &__product {
+    border-radius: 8px;
+
+    .product__tags {
+      top: 15px;
+    }
+
+    .product__buttons {
+      right: 19px;
+      top: 19px;
+    }
+
+    .product__image {
+      height: 312px;
+    }
+
+    .product__description {
+      padding: 15px 19px 15px 15px;
+    }
   }
 }

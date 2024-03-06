@@ -6,7 +6,27 @@
   $block-name: &; // #{$block-name}__element
 
   &__checkbox {
-    padding: 10px 0;
+    padding: 10px 0 11px;
+
+    &:first-child {
+      padding-top: 21px;
+    }
+
+    &:last-child {
+      padding-bottom: 9px;
+    }
+
+    .checkbox {
+      gap: 9px;
+    }
+
+    .star-rating {
+      gap: 2px;
+    }
+
+    .star-rating__star {
+      @include box(16px);
+    }
   }
 
   &__tags-container {
@@ -14,9 +34,14 @@
 
     flex-wrap: wrap;
     gap: 8px;
+    padding-top: 12px !important;
   }
 
-  &__item {
+  &__item + &__banner {
+    margin-top: -8px;
+  }
+
+  &__products {
     @include flex-column;
 
     gap: 12px;
@@ -24,6 +49,8 @@
 
   &__title {
     @include body-xl(500);
+
+    margin: 0;
   }
 
   &__product-cards {

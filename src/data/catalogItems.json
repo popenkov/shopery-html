@@ -22,7 +22,12 @@
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
-      "tags": null
+      "tags": [
+        {
+          "type": "black",
+          "text": "Out of Stock"
+        }
+      ]
     },
     {
       "img": "product-eggplant.jpg",
@@ -46,12 +51,7 @@
       "price": "$14.99",
       "priceOld": "",
       "rating": 4,
-      "tags": [
-        {
-          "type": "red",
-          "text": "Sale 50%"
-        }
-      ]
+      "tags": null
     },
 
     {

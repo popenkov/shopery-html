@@ -1,5 +1,6 @@
 @import "../../scss/mixins/box.scss";
 @import "../../scss/mixins/flexbox.scss";
+@import "../../scss/mixins/text-styles.scss";
 
 .star-rating {
   $block-name: &; // #{$block-name}__element
@@ -14,5 +15,12 @@
     &--full {
       color: var(--orange);
     }
+  }
+
+  &__text {
+    @include body-small;
+
+    margin-left: 3px;
+    line-height: 1.429;
   }
 }

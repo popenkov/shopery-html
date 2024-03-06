@@ -1,0 +1,108 @@
+@import "../../scss/_breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+
+.product-xs {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  min-width: 282px;
+  max-width: 424px;
+  min-height: 112px;
+  border: var(--card-border);
+  border-radius: 6px;
+
+  @media (hover: hover) {
+    &:hover {
+      border: var(--card-hover-border);
+      box-shadow: var(--card-hover-shadow);
+
+      #{$block-name}__title {
+        color: var(--primary);
+      }
+
+      #{$block-name}__description {
+        gap: 6px;
+        padding-bottom: 19px;
+      }
+
+      #{$block-name}__description-hover {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity var(--transition);
+      }
+
+      #{$block-name}__description-main {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__image {
+    @include box(102px);
+
+    object-fit: contain;
+  }
+
+  &__description {
+    @include flex-column;
+
+    gap: 1px;
+    padding: 24px 12px 24px 20px;
+  }
+
+  &__description-main {
+    @include flex-column;
+
+    gap: 5px;
+    height: 40px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity var(--transition);
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__title {
+    @include body-small;
+
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  &__price {
+    @include flex-center-vertical;
+    @include body-medium(500);
+
+    gap: 4px;
+    margin: 0;
+    color: var(--gray-900);
+
+    &--old {
+      color: var(--green-gray-400);
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__rating svg {
+    @include box(12px);
+  }
+
+  &__description-hover {
+    position: absolute;
+    height: 40px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__buttons {
+    @include flex-center-vertical;
+
+    gap: 12px;
+  }
+}
