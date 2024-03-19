@@ -24,7 +24,7 @@
     .star-rating {
       gap: 2px;
     }
-
+    // stylelint-disable-next-line
     .star-rating__star {
       @include box(16px);
     }
@@ -35,15 +35,12 @@
 
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
     left: 0;
-    right: 0;
     z-index: 1;
     display: none !important;
-    justify-content: space-between;
     gap: 20px;
-
+    justify-content: space-between;
     max-width: 390px;
     padding: 10px 16px;
     background-color: var(--back-primary);
@@ -52,9 +49,9 @@
 
   &__footer {
     position: fixed;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     z-index: 1;
     display: none !important;
     justify-content: flex-end;
@@ -64,37 +61,39 @@
     border-top: 1px solid var(--gray-300);
   }
 
-  &__filter-menu {
+  &__filter-button {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: block;
+    }
+  }
+
+  &__filter-menu-background {
     @media screen and (max-width: $screen-tl) {
       position: fixed;
+      background-color: var(--modal-bg);
       opacity: 0;
       pointer-events: none;
+      inset: 0;
     }
 
     &.opened {
-      z-index: var(--mobile-menu-z-index);
-      left: 0;
       top: 0;
       bottom: 0;
-      display: block;
-      height: 100vh;
-      max-width: 390px;
-      padding: 80px 16px;
-      background-color: var(--back-primary);
-      overflow-y: auto;
+      left: 0;
+      z-index: var(--mobile-menu-z-index);
       opacity: 1;
-      pointer-events: auto;
       transition: all var(--transition);
+      pointer-events: auto;
 
-      &::before {
-        content: "";
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        left: 390px;
-        z-index: 1;
-        background-color: var(--modal-bg);
+      #{$block-name}__filter-menu {
+        display: block;
+        max-width: 390px;
+        height: 100vh;
+        padding: 80px 16px;
+        overflow-y: auto;
+        background-color: var(--back-primary);
       }
 
       #{$block-name}__header {
@@ -122,6 +121,14 @@
     padding-top: 12px !important;
   }
 
+  &__banner--desktop {
+    display: block;
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
   &__item + &__banner {
     margin-top: -8px;
   }
@@ -130,6 +137,17 @@
     @include flex-column;
 
     gap: 12px;
+    width: 100%;
+  }
+
+  &__banner + &__products {
+    margin-top: -4px;
+  }
+
+  &__products--desktop {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
   }
 
   &__title {

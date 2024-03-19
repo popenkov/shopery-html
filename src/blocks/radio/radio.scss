@@ -3,13 +3,21 @@
 @import "../../scss/mixins/absolute-positioning";
 
 .radio {
-  $block-name: &; // #{$block-name}__element
-
   position: relative;
   display: flex;
   gap: 8px;
   justify-self: start;
   transition: var(--transition);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primary);
+
+      #{$block-name}__fake-input {
+        border-color: var(--primary);
+      }
+    }
+  }
 
   &__input {
     position: absolute;
@@ -62,14 +70,5 @@
   &__label + &__amount {
     margin-left: -4px;
   }
-
-  @media (hover: hover) {
-    &:hover {
-      color: var(--primary);
-
-      #{$block-name}__fake-input {
-        border-color: var(--primary);
-      }
-    }
-  }
+  $block-name: &; // #{$block-name}__element
 }

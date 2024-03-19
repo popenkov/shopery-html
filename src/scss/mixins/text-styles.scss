@@ -67,7 +67,9 @@
 
   @if $weight == 600 {
     line-height: 1.3125;
-  } @else {
+  }
+
+ @else {
     line-height: 1.5;
   }
 }
@@ -78,7 +80,9 @@
 
   @if $weight == 600 {
     line-height: 1.215;
-  } @else {
+  }
+
+ @else {
     line-height: 1.5;
   }
 }

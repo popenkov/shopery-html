@@ -4,14 +4,14 @@
   $block-name: &; // #{$block-name}__element
 
   display: grid;
-  grid-template-columns: 312px 1fr;
   grid-template-areas: "filter sort" "filter result" "filter pagination";
+  grid-template-columns: 312px 1fr;
   gap: 26px 24px;
   padding: 32px 0 82px;
 
   @media screen and (max-width: $screen-tl) {
-    grid-template-columns: 1fr;
     grid-template-areas: "filter" "sort" "result" "pagination" "banner" "saleItems";
+    grid-template-columns: 1fr;
   }
 
   &__filter {
@@ -36,9 +36,8 @@
 
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;
-      align-items: flex-start;
-
       gap: 10px;
+      align-items: flex-start;
     }
   }
 
@@ -51,8 +50,8 @@
   }
 
   &__items-found-value {
-    font-weight: 600;
     color: var(--gray-900);
+    font-weight: 600;
   }
 
   &__items-found-text {
@@ -68,8 +67,30 @@
     }
   }
 
+  &__result--desktop {
+    @media screen and (max-width: $screen-tl) {
+      display: none !important;
+    }
+  }
+
+  &__result--mobile {
+    display: none !important;
+
+    @media screen and (max-width: $screen-tl) {
+      display: grid !important;
+    }
+  }
+
   &__banner {
     grid-area: banner;
+  }
+
+  &__banner--mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: block;
+    }
   }
 
   &__pagination {
@@ -77,28 +98,25 @@
 
     grid-area: pagination;
     justify-content: center;
-  }
-
-  &__result + &__pagination {
     margin-top: 14px;
   }
 
   &__product {
     border-radius: 8px;
-
+    // stylelint-disable-next-line
     .product__tags {
       top: 15px;
     }
-
+    // stylelint-disable-next-line
     .product__buttons {
-      right: 19px;
       top: 19px;
+      right: 19px;
     }
-
+    // stylelint-disable-next-line
     .product__image {
       height: 312px;
     }
-
+    // stylelint-disable-next-line
     .product__description {
       padding: 15px 19px 15px 15px;
     }
@@ -108,5 +126,14 @@
     @include flex-column;
 
     gap: 10px;
+  }
+
+  &__sale-products--mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: flex !important;
+      gap: 10px;
+    }
   }
 }

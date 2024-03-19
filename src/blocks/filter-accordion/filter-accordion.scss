@@ -17,8 +17,12 @@
     background-color: var(--back-primary);
     transition: all 0.3s ease-in;
 
-    &:not(.filter-accordion__content--no-border) {
+    &:not(#{$block-name}__content--no-border) {
       border-bottom: 1px solid var(--gray-100);
+    }
+
+    &--no-border {
+      padding-bottom: 3px !important;
     }
   }
 

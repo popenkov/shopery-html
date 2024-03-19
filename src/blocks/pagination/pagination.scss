@@ -24,22 +24,22 @@
     @include body-medium;
 
     padding: 8px;
+    color: var(--gray-400);
     border-radius: 50%;
     cursor: pointer;
-    color: var(--gray-400);
     transition:
       background-color var(--transition),
       border-color var(--transition);
 
     &:hover {
+      color: var(--front-primary-inversed);
       background-color: var(--primary);
       border-color: var(--primary);
-      color: var(--front-primary-inversed);
     }
 
     &.active {
-      background-color: var(--primary);
       color: var(--front-primary-inversed);
+      background-color: var(--primary);
     }
   }
 
@@ -55,10 +55,13 @@
     @include flex-center;
 
     padding: 5px 10px;
-
     border: 1px solid var(--gray-100);
     border-radius: 50%;
     cursor: pointer;
+
+    @media screen and (max-width: $screen-t) {
+      display: none;
+    }
 
     &:disabled {
       background-color: var(--gray-50);

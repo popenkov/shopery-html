@@ -9,13 +9,21 @@ ready(function () {
 
     const handeMenuToggle = () => {
       filterMenu.classList.toggle("opened");
+      document.body.classList.toggle("lock");
     };
 
     const handeMenuClose = () => {
       filterMenu.classList.remove("opened");
+      document.body.classList.remove("lock");
     };
 
     filterButton.addEventListener("click", handeMenuToggle);
+
+    filterMenu.addEventListener("click", (evt) => {
+      if (evt.target === filterMenu) {
+        handeMenuClose();
+      }
+    });
 
     closeButton.addEventListener("click", handeMenuClose);
 

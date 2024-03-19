@@ -4,6 +4,7 @@
   $block-name: &; // #{$block-name}__element
 
   padding: 16px 0 8px;
+
   &__text {
     @include body-small;
 
