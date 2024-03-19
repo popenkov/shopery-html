@@ -3,6 +3,7 @@
 @import "../../scss/mixins/absolute-positioning";
 
 .radio {
+  $block-name: &; // #{$block-name}__element
   position: relative;
   display: flex;
   gap: 8px;
@@ -70,5 +71,4 @@
   &__label + &__amount {
     margin-left: -4px;
   }
-  $block-name: &; // #{$block-name}__element
 }
