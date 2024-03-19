@@ -14,7 +14,7 @@ ready(function () {
       categoriesMenu.classList.toggle("open");
     };
 
-    openCategoriesBtn.addEventListener("click", handleCategorieMenuToggle);
+    openCategoriesBtn?.addEventListener("click", handleCategorieMenuToggle);
 
     // mobile menu
     const mobileMenu = header.querySelector(".js-mobile-menu");

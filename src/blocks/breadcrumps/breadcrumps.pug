@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (breadcrumps)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin breadcrumps(paths, currentPage, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +breadcrumps('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' breadcrumps--' + modsList[i].trim();
+      }
+    }
+
+
+  .breadcrumps(class=allMods)&attributes(attributes)
+    .breadcrumps__inner.container
+      ul.breadcrumps__list
+        li.breadcrumps__item
+          a.breadcrumps__link(href="/")
+            svg.breadcrumps__home-icon: use(href= path.icon + "icon__home")
+            svg.breadcrumps__chevron: use(href= path.icon + "icon__chevron-down")
+        each item in paths
+          li.breadcrumps__item
+            a.breadcrumps__link(href=item.path)= item.title
+            svg.breadcrumps__chevron: use(href= path.icon + "icon__chevron-down")
+
+        if currentPage
+          li.breadcrumps__item.breadcrumps__item--active
+              span.breadcrumps__link.breadcrumps__link--active= currentPage
+        else

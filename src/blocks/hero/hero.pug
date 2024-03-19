@@ -31,7 +31,7 @@ mixin hero(mods)
                 span.hero__note= slide.note
                 h2.hero__title= slide.title
                 p.hero__text= slide.text
-                +button("link", "", "fill, large")(class="hero__button")
+                +button("link", "", "fill, large", "#")(class="hero__button")
                   span.icon-button__text Shop now
                   svg.icon-button__icon: use(href= path.icon + "icon__arrow")
       .hero__swiper-pagination

@@ -1,4 +1,21 @@
-mixin star-rating(rating)
+mixin star-rating(rating, text, mods)
+  //- Принимает:
+  //-   rating    {number} - значение рейтинга
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +star-rating(5, "5.0")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " star-rating--" + modsList[i].trim();
+      }
+    }
+
   .star-rating
     - var fullStars = Math.floor(rating)
     - var halfStars = Math.round(rating - fullStars)
@@ -13,3 +30,5 @@ mixin star-rating(rating)
       else
         svg.star-rating__star
           use(href=path.icon + 'icon__star')
+    if text
+      span.star-rating__text= text

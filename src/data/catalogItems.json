@@ -1,0 +1,164 @@
+{
+  "items": [
+    {
+      "img": "product-big-potatos.jpg",
+      "title": "Big Potatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-chanise-cabbage.jpg",
+      "title": "Chanise Cabbage",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-ladies-finger.jpg",
+      "title": "Ladies Finger",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": [
+        {
+          "type": "black",
+          "text": "Out of Stock"
+        }
+      ]
+    },
+    {
+      "img": "product-eggplant.jpg",
+      "title": "Eggplant",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-cauliflower.jpg",
+      "title": "Fresh Cauliflower",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-apple.jpg",
+      "title": "Green Apple",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-green-capsicum.jpg",
+      "title": "Green Capsicum",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-green-chilli.jpg",
+      "title": "Green Chili",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-green-cucumber.jpg",
+      "title": "Green Cucumber",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-letucce.jpg",
+      "title": "Green Lettuce",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-green-ladies-finger.jpg",
+      "title": "Ladies Finger",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-red-capsicum.jpg",
+      "title": "Green Capsicum",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-red-chilli.jpg",
+      "title": "Red Chili",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+
+    {
+      "img": "product-tomatos.jpg",
+      "title": "Red Tomatos",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "img": "product-mango.jpg",
+      "title": "Surjapur Mango",
+      "price": "$14.99",
+      "priceOld": "",
+      "rating": 4,
+      "tags": null
+    }
+  ],
+
+  "featuredItems": [
+    {
+      "link": "#",
+      "img": "product-small--red-capsicum.jpg",
+      "title": "Red Capsicum",
+      "price": "$32.00",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "link": "#",
+      "img": "product-small--chanise-cabbage.jpg",
+      "title": "Chanise Cabbage",
+      "price": "$24.00",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": null
+    },
+    {
+      "link": "#",
+      "img": "product-small--green-capsicum.jpg",
+      "title": "Green Capsicum",
+      "price": "$32.00",
+      "priceOld": "$20.99",
+      "rating": 4,
+      "tags": null
+    }
+  ]
+}

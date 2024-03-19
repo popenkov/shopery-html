@@ -1,0 +1,139 @@
+@import "../../scss/breakpoints";
+
+.catalog-page {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-areas: "filter sort" "filter result" "filter pagination";
+  grid-template-columns: 312px 1fr;
+  gap: 26px 24px;
+  padding: 32px 0 82px;
+
+  @media screen and (max-width: $screen-tl) {
+    grid-template-areas: "filter" "sort" "result" "pagination" "banner" "saleItems";
+    grid-template-columns: 1fr;
+  }
+
+  &__filter {
+    @include flex-column;
+
+    grid-area: filter;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  &__filter-accordion {
+    @include flex-column;
+
+    gap: 20px;
+  }
+
+  &__sorting {
+    @include flex-center-sb;
+
+    grid-area: sort;
+    padding-top: 2px;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
+
+  &__items-found {
+    @include flex-center-vertical;
+    @include body-medium;
+
+    gap: 4px;
+    margin-right: 3px;
+  }
+
+  &__items-found-value {
+    color: var(--gray-900);
+    font-weight: 600;
+  }
+
+  &__items-found-text {
+    color: var(--gray-600);
+  }
+
+  &__result {
+    grid-area: result;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__result--desktop {
+    @media screen and (max-width: $screen-tl) {
+      display: none !important;
+    }
+  }
+
+  &__result--mobile {
+    display: none !important;
+
+    @media screen and (max-width: $screen-tl) {
+      display: grid !important;
+    }
+  }
+
+  &__banner {
+    grid-area: banner;
+  }
+
+  &__banner--mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: block;
+    }
+  }
+
+  &__pagination {
+    @include flex-center;
+
+    grid-area: pagination;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  &__product {
+    border-radius: 8px;
+    // stylelint-disable-next-line
+    .product__tags {
+      top: 15px;
+    }
+    // stylelint-disable-next-line
+    .product__buttons {
+      top: 19px;
+      right: 19px;
+    }
+    // stylelint-disable-next-line
+    .product__image {
+      height: 312px;
+    }
+    // stylelint-disable-next-line
+    .product__description {
+      padding: 15px 19px 15px 15px;
+    }
+  }
+
+  &__sale-products {
+    @include flex-column;
+
+    gap: 10px;
+  }
+
+  &__sale-products--mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: flex !important;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
+
+.select {
+  @include flex-center-vertical;
+
+  gap: 3px;
+
+  .nice-select {
+    min-width: 166px;
+    height: 41px;
+    padding: 0 16px;
+    border: 1px solid var(--gray-300);
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--primary);
+      }
+    }
+
+    .current {
+      @include body-small;
+
+      color: var(--gray-700);
+    }
+
+    .nice-select-dropdown {
+      width: 100%;
+      max-height: 600px;
+      margin-top: 6px;
+      overflow: auto;
+
+      .list {
+        max-height: unset;
+        margin: 0;
+        border: 1px solid var(--gray-300);
+
+        .option {
+          display: flex;
+          align-items: center;
+          height: 48px;
+          padding: 0 0 0 15px;
+          font-size: 12px;
+          line-height: 14px;
+          white-space: normal;
+
+          &:hover {
+            color: var(--front-primary-inversed);
+            background-color: var(--primary);
+          }
+
+          &.selected {
+            color: var(--front-primary-inversed) !important;
+            background-color: var(--primary) !important;
+          }
+
+          &.disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    &.open {
+      &::after {
+        transform: translateY(-59%) translateX(-4px) rotate(180deg);
+      }
+    }
+
+    &::after {
+      right: 15px;
+      width: 14px;
+      height: 15px;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.91634 5.45834L6.99967 9.54168L11.083 5.45834' stroke='%234D4D4D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      border: none;
+      transform: translateY(-27%) rotate(0deg);
+    }
+  }
+
+  &__placeholder {
+    @include body-small;
+
+    color: var(--gray-500);
+  }
+  $block-name: &; // #{$block-name}__element
+}

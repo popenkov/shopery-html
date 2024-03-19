@@ -1,0 +1,52 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-xs)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product-xs(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-xs( {
+        "img": "product-xs-mango.jpg",
+        "title": "Surjapur Mango",
+        "price": "$14.99",
+        "priceOld": "",
+        "rating": 4,
+        "tags": null
+      }, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product-xs--" + modsList[i].trim();
+      }
+    }
+
+  .product-xs(class=allMods)&attributes(attributes)
+    a.product-xs__image-link(href="#")
+      img.product-xs__image(src= path.img + data.img, alt="product-xs")
+    .product-xs__description
+      a.product-xs__link(href= data.link)
+        h3.product-xs__title= data.title
+      .product-xs__description-container
+        .product-xs__description-main
+          p.product-xs__price
+            span= data.price
+            if data.priceOld
+              span.product-xs__price--old= data.priceOld
+          .product-xs__rating
+            +star-rating(data.rating)
+        .product-xs__description-hover
+          .product-xs__buttons
+            button.button-round.button-round--white-green
+              svg.button-round__icon: use(href= path.icon + "icon__cart")
+            button.button-round.button-round--white-green
+              svg.button-round__icon: use(href= path.icon + "icon__eye")
+            button.button-round.button-round--like
+              svg.button-round__icon: use(href= path.icon + "icon__heart")
+

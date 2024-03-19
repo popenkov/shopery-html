@@ -4,6 +4,7 @@
 .button {
   $block-name: &; // #{$block-name}__element
 
+  text-decoration: none;
   border: none;
   border-radius: 43px;
   cursor: pointer;
@@ -16,6 +17,16 @@
     @media (hover: hover) {
       &:hover {
         background-color: var(--hard-primary);
+      }
+    }
+  }
+
+  &--ghost {
+    color: var(--primary);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hard-primary);
       }
     }
   }

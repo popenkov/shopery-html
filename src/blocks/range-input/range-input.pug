@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (range-input)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin range-input(min, max, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +range-input("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " range-input--" + modsList[i].trim();
+      }
+    }
+
+  .range-input(class=allMods, data-min= min, data-max= max)&attributes(attributes)
+    span.range-input__slider.js-range-input
+    span.range-input__text Price: <span class="range-input__text-value">50</span>

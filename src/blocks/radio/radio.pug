@@ -1,7 +1,7 @@
 //- Все примеси в этом файле должны начинаться c имени блока (radio)
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
 
-mixin radio(label, mods, name, id)
+mixin radio(label,  name, id, amount,  mods)
 
   //- Принимает:
   //-   label      {string} - Текст лейбла для радио-баттона
@@ -9,7 +9,7 @@ mixin radio(label, mods, name, id)
   //-   name       {string} - атрибут name
   //-   id         {string} - атрибут id
   //- Вызов:
-        +radio("Текст лейбла", "some-mod", "some-name", "some-id")
+        +radio(category.title, category.value, category.value, category.amount, "")
 
   -
     //- список модификаторов
@@ -21,8 +21,10 @@ mixin radio(label, mods, name, id)
       }
     }
 
-  label.radio(class= mods)
-    input.radio__input(id= id, type= "radio", name= name)&attributes(attributes)
+  label.radio(class= mods)&attributes(attributes)
+    input.radio__input(id= id, type= "radio", name= name)
     span.radio__fake-input
     if label
       span.radio__label!= label
+    if amount
+      span.radio__amount= "(" + amount + ")"

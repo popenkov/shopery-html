@@ -3,7 +3,7 @@
 //- в сборку
 
 //- mixin checkbox(type, checkboxName, text, id, value, mods)
-mixin checkbox(label, mods, name, id)
+mixin checkbox(label, name, id, mods)
 
   //- Принимает:
   //-   type    {string} - тип поля
@@ -12,7 +12,7 @@ mixin checkbox(label, mods, name, id)
   //-   options     {string} - список опций select
   //-   mods     {string} - список модификаторов
   //- Вызов
-        +checkbox("Текст лейбла", "some-mod", "some-name", "some-id")
+        +checkbox("Текст лейбла", "some-name", "some-id", "some-mod")
 
   -
     //- список модификаторов
@@ -27,6 +27,7 @@ mixin checkbox(label, mods, name, id)
   label.checkbox(class= allMods)
     input.checkbox__input(id= id, type= "checkbox", name= name)&attributes(attributes)
     span.checkbox__fake-input
-      svg: use(href= path.icon + "check")
+      svg: use(href= path.icon + "icon__check")
     if label
       span.checkbox__label!= label
+    block
