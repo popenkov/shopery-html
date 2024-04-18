@@ -2,7 +2,7 @@
 @import "../../scss/mixins/flexbox.scss";
 @import "../../scss/mixins/box.scss";
 
-.accordeon {
+.accordion {
   $block-name: &; // #{$block-name}__element
 
   @include flex-column;

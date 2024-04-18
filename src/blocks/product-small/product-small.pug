@@ -2,13 +2,20 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin product-small(text, mods)
+mixin product-small(data, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +product-small("Текст", "some-mod")
+        +product-small( {
+        "img": "product-small-mango.jpg",
+        "title": "Surjapur Mango",
+        "price": "$14.99",
+        "priceOld": "",
+        "rating": 4,
+        "tags": null
+      }, "some-mod")
 
   //- список модификаторов
   -
@@ -22,15 +29,18 @@ mixin product-small(text, mods)
 
   .product-small(class=allMods)&attributes(attributes)
     a.product-small__image-link(href="#")
-      img.product-small__image(src= path.img + "image.jpg", alt="product-small")
+      img.product-small__image(src= path.img + data.img, alt="product-small")
     .product-small__description
-      a(href="#")
-        h3.product-small__title Chanise Cabbage
+      a.product-small__link(href= data.link)
+        h3.product-small__title= data.title
       .product-small__description-container
         .product-small__description-main
-          span.product-small__price $14.99
+          p.product-small__price
+            span= data.price
+            if data.priceOld
+              span.product-small__price--old= data.priceOld
           .product-small__rating
-            +star-rating(4)
+            +star-rating(data.rating)
         .product-small__description-hover
           .product-small__buttons
             button.button-round.button-round--white-green

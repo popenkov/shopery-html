@@ -1,0 +1,84 @@
+@import "../../scss/breakpoints";
+
+.pagination {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 12px;
+
+  &__pages {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__icon {
+    @include box(20px);
+
+    transition: color var(--transition);
+  }
+
+  &__page {
+    @include button-reset;
+    @include box(36px);
+    @include body-medium;
+
+    padding: 8px;
+    color: var(--gray-400);
+    border-radius: 50%;
+    cursor: pointer;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
+
+    &:hover {
+      color: var(--front-primary-inversed);
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    &.active {
+      color: var(--front-primary-inversed);
+      background-color: var(--primary);
+    }
+  }
+
+  &__dots {
+    @include body-medium;
+
+    padding: 0 13px 5px;
+    color: var(--gray-400);
+  }
+
+  &__page-prev,
+  &__page-next {
+    @include flex-center;
+
+    padding: 5px 10px;
+    border: 1px solid var(--gray-100);
+    border-radius: 50%;
+    cursor: pointer;
+
+    @media screen and (max-width: $screen-t) {
+      display: none;
+    }
+
+    &:disabled {
+      background-color: var(--gray-50);
+      border-color: var(--gray-50);
+      pointer-events: none;
+
+      #{$block-name}__icon {
+        color: var(--gray-300);
+      }
+    }
+  }
+
+  &__page-prev &__icon {
+    transform: rotate(90deg);
+  }
+
+  &__page-next &__icon {
+    transform: rotate(-90deg);
+  }
+}

@@ -64,17 +64,18 @@ mixin header(mods)
       .container
         .header__content
             .header__navigation-content
-              .header__all-categories
-                button.header__all-categories-button.js-header-all-categories-button
-                  span.burger-button.header__all-categories-burger
-                  span All Categories
-                  svg.header__all-categories-chevron: use(href= path.icon + "icon__chevron-down")
-                ul.header__all-categories-dropdown.js-header-all-categories-content
-                  each category in json.info.header.categories
-                    li
-                      a.header__all-categories-link(href=category.link)
-                        svg.header__all-categories-icon: use(href= path.icon + category.icon)
-                        span=  category.title
+              if !isCatalogPage
+                .header__all-categories
+                  button.header__all-categories-button.js-header-all-categories-button
+                    span.burger-button.header__all-categories-burger
+                    span All Categories
+                    svg.header__all-categories-chevron: use(href= path.icon + "icon__chevron-down")
+                  ul.header__all-categories-dropdown.js-header-all-categories-content
+                    each category in json.info.header.categories
+                      li
+                        a.header__all-categories-link(href=category.link)
+                          svg.header__all-categories-icon: use(href= path.icon + category.icon)
+                          span=  category.title
 
               ul.header__navigation-menu
                 each nav, idx in json.info.header.navigation
@@ -101,12 +102,12 @@ mixin header(mods)
           +search-form(class="js-header-search-form")
 
         .mobile-menu__navigation
-          .accordeon
+          .accordion
             each nav, idx in json.info.header.navigation
-              li.accordeon__item
-                button.accordeon__button.header__navigation-menu-link= nav.title
-                  svg.accordeon__chevron-icon: use(href= path.icon + "icon__chevron-down")
-                ul.accordeon__content
+              li.accordion__item
+                button.accordion__button.header__navigation-menu-link= nav.title
+                  svg.accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
+                ul.accordion__content
                   each navItem in nav.items
                     li.header__navigation-menu-item
                       a.header__navigation-menu-link(href= navItem.link)= navItem.title

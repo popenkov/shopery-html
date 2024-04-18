@@ -2,7 +2,7 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin button(type, text, mods, href)
+mixin button(type, text, mods, link)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -21,7 +21,7 @@ mixin button(type, text, mods, href)
     }
   case type
     when 'link'
-      a.button(class=allMods, href=href)&attributes(attributes)= text
+      a.button(class=allMods, href= link)&attributes(attributes)= text
         block
     default
       button.button(class=allMods)&attributes(attributes)= text

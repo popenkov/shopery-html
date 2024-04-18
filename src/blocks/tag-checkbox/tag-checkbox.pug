@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (tag-checkbox)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin tag-checkbox(text, value, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +tag-checkbox("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " tag-checkbox--" + modsList[i].trim();
+      }
+    }
+
+  label.tag-checkbox(class=allMods)&attributes(attributes)
+    input.tag-checkbox__input(type="checkbox", value= value)
+    span.tag-checkbox__text= text
+      block
+
+
