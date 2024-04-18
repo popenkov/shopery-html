@@ -36,7 +36,7 @@ mixin product(data, mods)
       .product__buttons
         button.button-round.button-round--like.product__image-button
           svg.button-round__icon: use(href= path.icon + "icon__heart-lined")
-        button.button-round.button-round--white-green.product__image-button
+        button.button-round.button-round--white-green.product__image-button(data-hystmodal="#productPreview")
           svg.button-round__icon: use(href= path.icon + "icon__eye")
       img.product__image(src= path.img + data.img, alt="product")
     .product__description

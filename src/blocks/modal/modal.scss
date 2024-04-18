@@ -1,0 +1,14 @@
+@import "../../scss/breakpoints";
+
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &.hystmodal--active:before {
+    opacity: 0.8;
+  }
+
+  .hystmodal__window {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}

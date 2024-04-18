@@ -31,6 +31,7 @@ export function compileJs() {
       babel(babelConfig),
       commonjs(),
     ],
+    // external: ["HystModal"],
   }).then((bundle) => {
     return bundle.write({
       file: `${config.to.js}/bundle.js`,

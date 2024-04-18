@@ -45,7 +45,7 @@ mixin product-xs(data, mods)
           .product-xs__buttons
             button.button-round.button-round--white-green
               svg.button-round__icon: use(href= path.icon + "icon__cart")
-            button.button-round.button-round--white-green
+            button.button-round.button-round--white-green(data-hystmodal="#productPreview")
               svg.button-round__icon: use(href= path.icon + "icon__eye")
             button.button-round.button-round--like
               svg.button-round__icon: use(href= path.icon + "icon__heart")

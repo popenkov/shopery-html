@@ -24,8 +24,8 @@ mixin checkbox(label, name, id, mods)
       }
     }
 
-  label.checkbox(class= allMods)
-    input.checkbox__input(id= id, type= "checkbox", name= name)&attributes(attributes)
+  label.checkbox(class= allMods)&attributes(attributes)
+    input.checkbox__input(id= id, type= "checkbox", name= name)
     span.checkbox__fake-input
       svg: use(href= path.icon + "icon__check")
     if label
