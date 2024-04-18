@@ -11,7 +11,7 @@ ready(function () {
   form.addEventListener("submit", (evt) => {
     evt.preventDefault();
     Cookies.set("show-subscription-modal", true);
-    window.myModal.close();
+    window.myModal.close("#emailSubscription");
   });
 
   const showCheckbox = subscriptionModal.querySelector(".js-subscribe-show-checkbox input");

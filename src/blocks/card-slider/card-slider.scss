@@ -1,0 +1,17 @@
+@import "../../scss/breakpoints";
+
+.card-slider {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 12px;
+
+  &__thumb {
+    width: 80px;
+    height: 90px;
+  }
+
+  &__main {
+    max-width: 556px;
+  }
+}

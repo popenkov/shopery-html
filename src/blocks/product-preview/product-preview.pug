@@ -1,0 +1,87 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-preview)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product-preview(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-preview("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product-preview--" + modsList[i].trim();
+      }
+    }
+    const SLIDER_DATA = {
+      thumb: [{img: "preview-image.jpg"},{img: "preview-image.jpg"},{img: "preview-image.jpg"},{img: "preview-image.jpg"},{img: "preview-image.jpg"}],
+      main: [{img: "preview-image.jpg"},{img: "preview-image.jpg"},{img: "preview-image.jpg"},{img: "preview-image.jpg"},{img: "preview-image.jpg"}],
+    };
+
+
+  #productPreview.product-preview.modal.hystmodal(aria-hidden='true' class=allMods)&attributes(attributes)
+    .hystmodal__wrap
+      .hystmodal__window(role='dialog' aria-modal='true')
+        button.hystmodal__close(data-hystclose='') Close
+        //- todo
+        h1 modal
+        .product-preview__content
+          .product-preview__slider.card-slider
+            .card-slider__thumb.swiper.js-product-slider-thumb
+              .swiper-wrapper
+                each slide in SLIDER_DATA.thumb
+                  .swiper-slide
+                    img.card-slider__thumb-img(src= path.img + slide.img, alt="image")
+              .card-slider__navigation.js-card-slider-navigation
+                  button.card-slider__navigation-btn.card-slider__navigation-btn-prev.js-card-slider-navigation-prev
+                    svg.card-slider__navigation-btn-icon
+                        use(href= path.icon + 'icon__chevron-down')
+                  button.card-slider__navigation-btn.card-slider__navigation-btn-next.js-card-slider-navigation-next
+                    svg.card-slider__navigation-btn-icon
+                        use(href= path.icon + 'icon__chevron-down')
+
+            .card-slider__main.swiper.js-product-slider-main
+              .swiper-wrapper
+                each slide in SLIDER_DATA.main
+                  .swiper-slide
+                    .card-slider__main-slide
+                      img.card-slider__main-img(src= path.img + slide.img, alt="image")
+
+          .product-preview__description
+            .product-preview__header
+              .product-preview__title-wrapper
+                h2.product-preview__title Chinese Cabbage
+                span.tag.tag--green In Stock
+              .product-preview__review-wrapper
+                .product-preview__review
+                  +star-rating(5)
+                  span.product-preview__review-text 4 Review
+                .product-preview__sku
+                  span.product-preview__sku-text SKU:
+                  span.product-preview__sku-value 2,51,594
+              .product-preview__price-wrapper
+                span.product-preview__price--old $48.00
+                span.product-preview__price $17.28
+                span.tag.tag--red 64% Off
+
+
+            .product-preview__main
+              .product-preview__brand
+                span.product-preview__brand-text Brand:
+                img.product-preview__brand-value(src= path.img + "brand-farmary.svg", alt="image")
+              .product-preview__share
+                span.product-preview__share-text Share item:
+                .product-preview__socials-container
+                  each data in json.info.footer.socialLinks
+                    a.button-round.button-round--ghost(href= data.link)
+                      svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
+
+              p.product-preview__about Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar.
+
+            .product-preview__cart

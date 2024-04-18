@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-widget)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-widget(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-widget("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-widget--" + modsList[i].trim();
+      }
+    }
+
+  .cart-widget(class=allMods)&attributes(attributes)
+    .cart-widget__inner
+      block
