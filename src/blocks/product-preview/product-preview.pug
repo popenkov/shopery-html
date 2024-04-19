@@ -62,6 +62,7 @@ mixin product-preview(text, mods)
                 .product-preview__review
                   +star-rating(5)
                   span.product-preview__review-text 4 Review
+                span.product-preview__separator .
                 .product-preview__sku
                   span.product-preview__sku-text SKU:
                   span.product-preview__sku-value 2,51,594
@@ -85,3 +86,4 @@ mixin product-preview(text, mods)
               p.product-preview__about Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar.
 
             .product-preview__cart
+              +cart-widget(data-item-id="1")

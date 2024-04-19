@@ -2,4 +2,64 @@
 
 .cart-widget {
   $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 12px;
+
+  &__amount {
+    @include flex-center-vertical;
+
+    gap: 2px;
+    padding: 8px;
+    border: 1px solid var(--gray-100);
+    border-radius: 170px;
+  }
+
+  &__amount-button {
+    @include button-reset;
+    @include box(20px);
+
+    background-color: var(--gray-50);
+    border-radius: 50%;
+  }
+
+  &__amount-input-wrapper {
+    @include flex-center-vertical;
+  }
+
+  &__amount-input {
+    @include body-medium;
+
+    width: 32px;
+    min-width: 32px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__cart-button {
+    @include flex-center;
+
+    flex-grow: 1;
+    gap: 16px;
+  }
+
+  &__cart-button-text {
+    @include body-medium(600);
+  }
+
+  &__cart-button-icon {
+    @include box(20px);
+  }
+
+  &__favorite-button {
+    background-color: var(--green-gray-100);
+  }
+
+  &__favorite-icon {
+    @include box(20px);
+  }
 }

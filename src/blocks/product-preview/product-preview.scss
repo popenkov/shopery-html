@@ -28,4 +28,81 @@
 
     gap: 8px;
   }
+
+  &__review {
+    @include flex-center-vertical;
+
+    gap: 4px;
+  }
+
+  &__review-text {
+    @include body-small;
+
+    color: var(--gray-600);
+  }
+
+  &__separator {
+    @include body-small(500);
+
+    color: var(--gray-300);
+  }
+
+  &__sku {
+    @include flex-center-vertical;
+
+    gap: 4px;
+  }
+
+  &__sku-text {
+    @include body-small(500);
+
+    color: var(--gray-800);
+  }
+
+  &__sku-value {
+    @include body-small;
+
+    color: var(--gray-600);
+  }
+
+  &__price-wrapper {
+    @include flex-center-vertical;
+
+    gap: 4px;
+  }
+
+  &__price--old {
+    color: var(--gray-300);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration-line: line-through;
+  }
+
+  &__price {
+    @include body-xxl(500);
+
+    color: var(--primary);
+  }
+
+  &__main {
+    @include flex-column;
+
+    gap: 12px;
+  }
+
+  &__brand {
+    @include flex-center-vertical;
+
+    gap: 8px;
+  }
+
+  &__brand-text {
+    @include body-small;
+  }
+
+  &__brand-value {
+  }
 }
