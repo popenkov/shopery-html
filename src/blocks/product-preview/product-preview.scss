@@ -13,6 +13,10 @@
     padding: 40px;
   }
 
+  &__header {
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+
   &__title-wrapper {
     @include flex-center-vertical;
 
@@ -88,13 +92,18 @@
   }
 
   &__main {
-    @include flex-column;
+    display: grid;
+    grid-template-areas: "brand share" "description description";
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 24px;
 
-    gap: 12px;
+    border-bottom: 1px solid rgb(230, 230, 230);
   }
 
   &__brand {
     @include flex-center-vertical;
+
+    grid-area: brand;
 
     gap: 8px;
   }
@@ -104,5 +113,33 @@
   }
 
   &__brand-value {
+    padding: 8px;
+    border: 0.8px solid rgb(230, 230, 230);
+    border-radius: 4px;
+  }
+
+  &__share {
+    grid-area: share;
+  }
+
+  &__share-text {
+    @include body-small;
+  }
+
+  &__socials-container {
+    @include flex-center-vertical;
+    gap: 5px;
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__cart {
+    padding: 18px 0;
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+
+  &__footer {
   }
 }

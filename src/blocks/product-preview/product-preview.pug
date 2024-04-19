@@ -53,7 +53,7 @@ mixin product-preview(text, mods)
                     .card-slider__main-slide
                       img.card-slider__main-img(src= path.img + slide.img, alt="image")
 
-          .product-preview__description
+          .product-preview__about
             .product-preview__header
               .product-preview__title-wrapper
                 h2.product-preview__title Chinese Cabbage
@@ -83,7 +83,9 @@ mixin product-preview(text, mods)
                     a.button-round.button-round--ghost(href= data.link)
                       svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
 
-              p.product-preview__about Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar.
+              p.product-preview__description Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar.
 
             .product-preview__cart
               +cart-widget(data-item-id="1")
+
+            .product-preview__footer
