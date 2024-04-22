@@ -1,0 +1,38 @@
+@import "../../scss/breakpoints";
+
+.cart-widget-item {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 8px;
+  width: 100%;
+
+  &__image {
+    width: 100%;
+    max-width: 120px;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  &__description {
+  }
+
+  &__link {
+  }
+
+  &__title {
+  }
+
+  &__amount {
+  }
+
+  &__separator {
+  }
+
+  &__price-value {
+  }
+
+  &__close-button {
+  }
+}

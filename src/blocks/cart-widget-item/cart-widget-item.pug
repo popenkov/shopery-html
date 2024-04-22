@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-widget-item)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-widget-item(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-widget-item("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-widget-item--" + modsList[i].trim();
+      }
+    }
+
+  .cart-widget-item(class=allMods)&attributes(attributes)
+    img.cart-widget-item__image(src= path.img + data.img, alt="cart-widget-item")
+    .cart-widget-item__description
+      a.cart-widget-item__link(href= data.link)
+        h3.cart-widget-item__title= data.title
+      p.cart-widget-item__amount
+        span.cart-widget-item__amount-value= data.amount
+        span x
+        span.cart-widget-item__price-value= data.price
+
+    button.cart-aside-widget__close-button.close-button.js-close-cart-menu-btn
+      svg.close-button__icon: use(href= path.icon + 'icon__cross')
