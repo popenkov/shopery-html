@@ -7,6 +7,12 @@
 
   gap: 12px;
 
+  @media screen and (max-width: $screen-t) {
+    display: grid;
+    grid-template-areas: "amount fav" "button button";
+    grid-template-columns: 124px auto;
+  }
+
   &__amount {
     @include flex-center-vertical;
 
@@ -14,6 +20,10 @@
     padding: 8px;
     border: 1px solid var(--gray-100);
     border-radius: 170px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: amount;
+    }
   }
 
   &__amount-button-icon {
@@ -63,6 +73,10 @@
 
     flex-grow: 1;
     gap: 16px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: button;
+    }
   }
 
   &__cart-button-text {
@@ -81,6 +95,10 @@
     @include box(52px);
 
     background-color: var(--green-gray-100);
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: fav;
+    }
 
     @media (hover: hover) {
       &:hover {

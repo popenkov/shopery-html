@@ -5,8 +5,16 @@
 
   .hystmodal__window {
     width: 100%;
+    width: calc(100% - 40px);
     max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: visible;
+
+    @media screen and (max-width: $screen-t) {
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   &__close-button {
@@ -17,12 +25,21 @@
     right: 1px;
     padding: 10px;
     outline: none;
+    color: var(--back-primary);
+
+    @media screen and (max-width: $screen-tl) {
+      top: -43px;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      z-index: 2;
+      top: 10px;
+      color: var(--gray-900);
+    }
   }
 
   &__close-icon {
     @include box(25px);
-
-    color: var(--back-primary);
   }
 
   &__content {
@@ -30,6 +47,28 @@
 
     gap: 22px;
     padding: 40px;
+
+    @media screen and (max-width: $screen-d) {
+      flex-direction: column;
+
+      overflow-y: auto;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      max-height: calc(100vh - 80px);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      height: 100vh;
+      max-height: unset;
+      padding: 16px;
+    }
+  }
+
+  &__slider,
+  &_-about {
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 
   &__header {
@@ -144,6 +183,11 @@
     padding: 25px 0 23px;
 
     border-bottom: 1px solid rgb(230, 230, 230);
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "brand" "share" "description";
+    }
   }
 
   &__brand {
@@ -210,9 +254,9 @@
   }
 
   &__categories-container {
-    @include flex-center-vertical;
-
+    display: flex;
     gap: 7px;
+    flex-wrap: wrap;
   }
 
   &__categories-link {
@@ -220,6 +264,8 @@
 
     color: var(--gray-500);
     text-decoration: none;
+    white-space: nowrap;
+
     @media (hover: hover) {
       &:hover {
         color: var(--gray-900);
@@ -229,7 +275,7 @@
   }
 
   &__tags {
-    @include flex-center-vertical;
+    display: flex;
 
     gap: 7px;
   }
@@ -239,9 +285,9 @@
   }
 
   &__tags-container {
-    @include flex-center-vertical;
-
+    display: flex;
     gap: 7px;
+    flex-wrap: wrap;
   }
 
   &__tags-link {
@@ -249,6 +295,8 @@
 
     color: var(--gray-500);
     text-decoration: none;
+    white-space: nowrap;
+
     @media (hover: hover) {
       &:hover {
         color: var(--gray-900);

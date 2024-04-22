@@ -9,6 +9,14 @@
   &__thumb-container {
     position: relative;
     max-height: 556px;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 400px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
   }
 
   &__thumb {
@@ -16,6 +24,14 @@
     max-height: 400px;
     margin: 80px 0;
     overflow-y: hidden;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 240px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
   }
 
   &__thumb-slide {
@@ -37,6 +53,33 @@
 
   &__main {
     max-width: 556px;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 400px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      max-width: unset;
+      max-height: 300px;
+    }
+  }
+
+  &__main-img {
+    object-fit: contain;
+    @media screen and (max-width: $screen-d) {
+      max-height: 400px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+
+  &__navigation {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
   }
 
   &__navigation-btn-prev {
