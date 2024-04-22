@@ -16,7 +16,7 @@ mixin star-rating(rating, text, mods)
       }
     }
 
-  .star-rating
+  .star-rating(class=allMods)&attributes(attributes)
     - var fullStars = Math.floor(rating)
     - var halfStars = Math.round(rating - fullStars)
     - var emptyStars = 5 - fullStars - halfStars

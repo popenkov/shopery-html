@@ -73,7 +73,7 @@ ready(function () {
       },
       thumbs: {
         swiper: galleryThumbs,
-        slideThumbActiveClass: "slide-active",
+        slideThumbActiveClass: "card-slider__thumb-slide--active",
       },
     });
   }

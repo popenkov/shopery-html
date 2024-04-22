@@ -6,14 +6,37 @@
   .hystmodal__window {
     width: 100%;
     max-width: 1320px;
+    overflow: visible;
+  }
+
+  &__close-button {
+    @include button-reset;
+
+    position: absolute;
+    top: -54px;
+    right: 1px;
+    padding: 10px;
+    outline: none;
+  }
+
+  &__close-icon {
+    @include box(25px);
+
+    color: var(--back-primary);
   }
 
   &__content {
-    @include flex-center-vertical;
+    display: flex;
+
+    gap: 22px;
     padding: 40px;
   }
 
   &__header {
+    @include flex-column;
+
+    gap: 11px;
+    padding-bottom: 19px;
     border-bottom: 1px solid rgb(230, 230, 230);
   }
 
@@ -24,19 +47,27 @@
   }
 
   &__title {
-    @include heading-4;
+    @include heading-4(600);
+
+    margin: 0;
   }
 
   &__review-wrapper {
     @include flex-center-vertical;
 
-    gap: 8px;
+    gap: 14px;
   }
 
   &__review {
     @include flex-center-vertical;
 
     gap: 4px;
+  }
+
+  &__rating {
+    svg {
+      @include box(18px);
+    }
   }
 
   &__review-text {
@@ -75,6 +106,10 @@
     gap: 4px;
   }
 
+  &__review-wrapper + &__price-wrapper {
+    margin-top: 10px;
+  }
+
   &__price--old {
     color: var(--gray-300);
     font-size: 20px;
@@ -91,11 +126,22 @@
     color: var(--primary);
   }
 
-  &__main {
+  &__price-tags {
+    @include flex-center-vertical;
+
+    gap: 4px;
+  }
+
+  &__price + &__price-tags {
+    margin-left: 12px;
+  }
+
+  &__info {
     display: grid;
     grid-template-areas: "brand share" "description description";
     grid-template-columns: 1fr 1fr;
-    gap: 26px 24px;
+    gap: 19px 40px;
+    padding: 25px 0 23px;
 
     border-bottom: 1px solid rgb(230, 230, 230);
   }
@@ -113,12 +159,14 @@
   }
 
   &__brand-value {
-    padding: 8px;
+    padding: 10px 8px;
     border: 0.8px solid rgb(230, 230, 230);
     border-radius: 4px;
   }
 
   &__share {
+    @include flex-center-vertical;
+    gap: 9px;
     grid-area: share;
   }
 
@@ -132,7 +180,11 @@
   }
 
   &__description {
+    @include body-small;
+
     grid-area: description;
+    margin: 0;
+    color: var(--gray-500);
   }
 
   &__cart {
@@ -140,6 +192,68 @@
     border-bottom: 1px solid rgb(230, 230, 230);
   }
 
-  &__footer {
+  &__categories {
+    @include flex-column;
+
+    gap: 12px;
+    padding-top: 23px;
+  }
+
+  &__category {
+    @include flex-center-vertical;
+
+    gap: 7px;
+  }
+
+  &__categories-text {
+    @include body-small(500);
+  }
+
+  &__categories-container {
+    @include flex-center-vertical;
+
+    gap: 7px;
+  }
+
+  &__categories-link {
+    @include body-small;
+
+    color: var(--gray-500);
+    text-decoration: none;
+    @media (hover: hover) {
+      &:hover {
+        color: var(--gray-900);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__tags {
+    @include flex-center-vertical;
+
+    gap: 7px;
+  }
+
+  &__tags-text {
+    @include body-small(500);
+  }
+
+  &__tags-container {
+    @include flex-center-vertical;
+
+    gap: 7px;
+  }
+
+  &__tags-link {
+    @include body-small;
+
+    color: var(--gray-500);
+    text-decoration: none;
+    @media (hover: hover) {
+      &:hover {
+        color: var(--gray-900);
+        text-decoration: underline;
+      }
+    }
   }
 }

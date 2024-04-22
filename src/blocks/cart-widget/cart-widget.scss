@@ -16,12 +16,29 @@
     border-radius: 170px;
   }
 
+  &__amount-button-icon {
+    @include box(14px);
+
+    color: var(--gray-900);
+  }
+
   &__amount-button {
-    @include button-reset;
-    @include box(20px);
+    @include button-reset("flex");
+    @include box(34px);
+    @include flex-center;
 
     background-color: var(--gray-50);
     border-radius: 50%;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+
+        #{$block-name}__amount-button-icon {
+          color: var(--front-primary-inversed);
+        }
+      }
+    }
   }
 
   &__amount-input-wrapper {
@@ -31,9 +48,10 @@
   &__amount-input {
     @include body-medium;
 
-    width: 32px;
-    min-width: 32px;
+    width: 36px;
+    min-width: 36px;
     border: none;
+    text-align: center;
 
     &:focus {
       outline: none;
@@ -55,11 +73,20 @@
     @include box(20px);
   }
 
-  &__favorite-button {
-    background-color: var(--green-gray-100);
-  }
-
   &__favorite-icon {
     @include box(20px);
+  }
+
+  &__favorite-button {
+    @include box(52px);
+
+    background-color: var(--green-gray-100);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-primary-inversed);
+        background-color: var(--primary);
+      }
+    }
   }
 }
