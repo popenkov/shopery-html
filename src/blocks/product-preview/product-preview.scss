@@ -3,12 +3,13 @@
 .product-preview {
   $block-name: &; // #{$block-name}__element
 
+  // stylelint-disable-next-line
   .hystmodal__window {
     width: 100%;
     width: calc(100% - 40px);
     max-width: 1320px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     overflow: visible;
 
     @media screen and (max-width: $screen-t) {
@@ -24,16 +25,16 @@
     top: -54px;
     right: 1px;
     padding: 10px;
-    outline: none;
     color: var(--back-primary);
+    outline: none;
 
     @media screen and (max-width: $screen-tl) {
       top: -43px;
     }
 
     @media screen and (max-width: $screen-t) {
-      z-index: 2;
       top: 10px;
+      z-index: 2;
       color: var(--gray-900);
     }
   }
@@ -44,13 +45,11 @@
 
   &__content {
     display: flex;
-
     gap: 22px;
     padding: 40px;
 
     @media screen and (max-width: $screen-d) {
       flex-direction: column;
-
       overflow-y: auto;
     }
 
@@ -76,7 +75,7 @@
 
     gap: 11px;
     padding-bottom: 19px;
-    border-bottom: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230 230 230);
   }
 
   &__title-wrapper {
@@ -151,8 +150,8 @@
 
   &__price--old {
     color: var(--gray-300);
-    font-size: 20px;
     font-weight: 400;
+    font-size: 20px;
     line-height: 150%;
     letter-spacing: 0%;
     text-align: left;
@@ -181,12 +180,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 19px 40px;
     padding: 25px 0 23px;
-
-    border-bottom: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230 230 230);
 
     @media screen and (max-width: $screen-t) {
-      grid-template-columns: 1fr;
       grid-template-areas: "brand" "share" "description";
+      grid-template-columns: 1fr;
     }
   }
 
@@ -194,7 +192,6 @@
     @include flex-center-vertical;
 
     grid-area: brand;
-
     gap: 8px;
   }
 
@@ -204,14 +201,15 @@
 
   &__brand-value {
     padding: 10px 8px;
-    border: 0.8px solid rgb(230, 230, 230);
+    border: 0.8px solid rgb(230 230 230);
     border-radius: 4px;
   }
 
   &__share {
     @include flex-center-vertical;
-    gap: 9px;
+
     grid-area: share;
+    gap: 9px;
   }
 
   &__share-text {
@@ -220,6 +218,7 @@
 
   &__socials-container {
     @include flex-center-vertical;
+
     gap: 5px;
   }
 
@@ -233,7 +232,7 @@
 
   &__cart {
     padding: 18px 0;
-    border-bottom: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230 230 230);
   }
 
   &__categories {
@@ -255,16 +254,16 @@
 
   &__categories-container {
     display: flex;
-    gap: 7px;
     flex-wrap: wrap;
+    gap: 7px;
   }
 
   &__categories-link {
     @include body-small;
 
     color: var(--gray-500);
-    text-decoration: none;
     white-space: nowrap;
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
@@ -276,7 +275,6 @@
 
   &__tags {
     display: flex;
-
     gap: 7px;
   }
 
@@ -286,16 +284,16 @@
 
   &__tags-container {
     display: flex;
-    gap: 7px;
     flex-wrap: wrap;
+    gap: 7px;
   }
 
   &__tags-link {
     @include body-small;
 
     color: var(--gray-500);
-    text-decoration: none;
     white-space: nowrap;
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {

@@ -41,6 +41,7 @@
 
     &--active {
       position: relative;
+
       &::after {
         position: absolute;
         border: 1px solid var(--primary);
@@ -66,6 +67,7 @@
 
   &__main-img {
     object-fit: contain;
+
     @media screen and (max-width: $screen-d) {
       max-height: 400px;
     }
@@ -88,6 +90,7 @@
     left: 50%;
     transform: translateX(-50%) rotate(180deg);
   }
+
   &__navigation-btn-next {
     position: absolute;
     bottom: 0;
@@ -105,8 +108,8 @@
     @include button-reset;
 
     &.swiper-button-disabled #{$block-name}__navigation-btn-icon {
-      cursor: not-allowed;
       color: var(--gray-100);
+      cursor: not-allowed;
     }
   }
 }

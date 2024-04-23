@@ -45,7 +45,7 @@
 
   &--light {
     color: var(--primary);
-    background-color: rgba(86, 172, 89, 0.1);
+    background-color: rgb(86 172 89 / 10%);
 
     @media (hover: hover) {
       &:hover {

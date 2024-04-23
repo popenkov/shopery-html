@@ -3,17 +3,16 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .news {
-  $block-name: &; // #{$block-name}__element
-
   @include flex-column;
 
   padding: 24px 24px 20px;
   background-color: var(--back-primary);
   border-radius: 8px;
-  box-shadow: 0 10px 80px 0 rgb(0 0 0 / 10%);
 
-  @media screen and (max-width: $screen-ti) {
-    box-shadow: none;
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 10px 80px 0 rgb(0 0 0 / 10%);
+    }
   }
 
   &__img-wrapper {
@@ -108,4 +107,5 @@
   &__link-icon {
     @include box(24px);
   }
+  $block-name: &; // #{$block-name}__element
 }

@@ -440,6 +440,7 @@
     display: block;
     padding: 4px 6px;
     color: var(--gray-500);
+    text-decoration: none;
     transition: all var(--transition);
 
     @media (hover: hover) {
@@ -451,6 +452,21 @@
   }
 
   $block-name: &; // #{$block-name}__element
+
+  &__phone {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @media screen and (max-width: $screen-tl) {
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
 }
 
 .mobile-menu {

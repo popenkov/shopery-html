@@ -22,11 +22,11 @@ mixin product-preview(data, mods)
     const product = json.productPreview;
 
 
-  #productPreview.product-preview.modal.hystmodal(aria-hidden='true' class=allMods)&attributes(attributes)
+  .product-preview.modal.hystmodal#productPreview(aria-hidden="true", class=allMods)&attributes(attributes)
     .hystmodal__wrap
-      .hystmodal__window(role='dialog' aria-modal='true')
-        button.product-preview__close-button(data-hystclose='')
-          svg.product-preview__close-icon: use(href= path.icon + 'icon__cross')
+      .hystmodal__window(role="dialog", aria-modal="true")
+        button.product-preview__close-button(data-hystclose="")
+          svg.product-preview__close-icon: use(href= path.icon + "icon__cross")
         .product-preview__content
           .product-preview__slider.card-slider
             .card-slider__thumb-container
@@ -38,10 +38,10 @@ mixin product-preview(data, mods)
               .card-slider__navigation.js-card-slider-navigation
                   button.card-slider__navigation-btn.card-slider__navigation-btn-prev.js-card-slider-navigation-prev
                     svg.card-slider__navigation-btn-icon
-                        use(href= path.icon + 'icon__chevron-down')
+                        use(href= path.icon + "icon__chevron-down")
                   button.card-slider__navigation-btn.card-slider__navigation-btn-next.js-card-slider-navigation-next
                     svg.card-slider__navigation-btn-icon
-                        use(href= path.icon + 'icon__chevron-down')
+                        use(href= path.icon + "icon__chevron-down")
 
             .card-slider__main.swiper.js-product-slider-main
               .swiper-wrapper
@@ -96,10 +96,10 @@ mixin product-preview(data, mods)
                 span.product-preview__categories-text Category:
                 .product-preview__categories-container
                   each category in product.categories
-                    a(href= category.href).product-preview__categories-link= category.title
+                    a.product-preview__categories-link(href= category.href)= category.title
               .product-preview__tags
                 span.product-preview__tags-text Tag:
                 .product-preview__tags-container
                   each categoryTag in product.categoryTags
-                    a(href= categoryTag.href).product-preview__tags-link= categoryTag.title
+                    a.product-preview__tags-link(href= categoryTag.href)= categoryTag.title
 

@@ -8,8 +8,8 @@
 
   padding: 3px 10px 3px 8px;
   color: var(--color-white);
-  border-radius: 4px;
   white-space: nowrap;
+  border-radius: 4px;
 
   &--red {
     background-color: var(--red);
@@ -28,7 +28,7 @@
   }
 
   &--green {
-    background-color: rgba(32, 181, 38, 0.2);
     color: var(--green);
+    background-color: rgb(32 181 38 / 20%);
   }
 }

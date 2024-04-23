@@ -9,6 +9,11 @@
           "href": "index"
         },
         {
+          "title": "Catalog",
+          "description": "Catalog",
+          "href": "/catalog"
+        },
+        {
           "title": "Library",
           "description": "Library",
           "href": "library"

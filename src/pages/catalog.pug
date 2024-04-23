@@ -8,20 +8,20 @@ block variables
   - metaKeywords = "Catalog keywords"
 
 block content
-  h1.visually-hidden shopery catalog
+  h2.visually-hidden shopery catalog
 
   +breadcrumps([{path: '#', title: 'Categories'}], 'Vegetables')
 
   .catalog-page.container
 
-    .catalog-page__filter.aside-filter
+    aside.catalog-page__filter.aside-filter
 
       .aside-filter__filter-button
         +filter-button(class="js-filter-button")
       .js-filter-menu.aside-filter__filter-menu-background
         .catalog-page__filter-accordion.filter-accordion.aside-filter__filter-menu
           .aside-filter__header.d-mobile--flex
-            p.aside-filter__title Filter
+            h2.aside-filter__title Filter
             button.aside-filter__close-button.js-filter-close-button
               svg.aside-filter__close-icon: use(href= path.icon + "icon__close")
 

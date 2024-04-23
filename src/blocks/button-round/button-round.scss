@@ -42,7 +42,6 @@
 
   &--white-green {
     background-color: var(--back-primary);
-    box-shadow: 0 0 8px 0 var(--gray-200);
 
     @media (hover: hover) {
       &:hover {
@@ -59,33 +58,14 @@
   }
 
   &--like {
-    box-shadow: 0 0 8px 0 var(--gray-200);
-
     @media (hover: hover) {
       &:hover {
         background-color: var(--primary);
-        box-shadow: none;
-        box-shadow: 0 0 8px 0 var(--gray-200);
 
         #{$block-name}__icon {
           color: var(--front-primary-inversed);
         }
       }
-    }
-
-    #{$block-name}__icon {
-      // stroke-width: 1.5px;
-      // fill: none;
-      // stroke: var(--gray-900);
-      // fill: transparent;
-    }
-
-    &:active,
-    &.active {
-      // #{$block-name}__icon {
-      //   fill: var(--primary);
-      //   stroke: var(--primary);
-      // }
     }
   }
 

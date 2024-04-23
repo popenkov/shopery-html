@@ -20,11 +20,11 @@ mixin subscription-modal(text, mods)
       }
     }
 
-  .subscription-modal.modal.hystmodal#emailSubscription(aria-hidden='true')
+  .subscription-modal.modal.hystmodal#emailSubscription(aria-hidden="true")
     .hystmodal__wrap
-      .hystmodal__window(role='dialog' aria-modal='true')
-        button.subscription-modal__close(data-hystclose='')
-          svg.subscription-modal__close-icon: use(href= path.icon + 'icon__cross')
+      .hystmodal__window(role="dialog", aria-modal="true")
+        button.subscription-modal__close(data-hystclose="")
+          svg.subscription-modal__close-icon: use(href= path.icon + "icon__cross")
         .subscription-modal__content
           img.subscription-modal__image(src= path.img + "subscription-modal-bg.jpg", alt="subscription")
           .subscription-modal__description

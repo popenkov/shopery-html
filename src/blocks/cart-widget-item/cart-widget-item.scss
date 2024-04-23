@@ -32,8 +32,8 @@
   &__amount {
     @include body-small;
 
-    color: var(--gray-500);
     margin: 0;
+    color: var(--gray-500);
   }
 
   &__separator {
