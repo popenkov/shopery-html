@@ -186,7 +186,9 @@
     gap: 12px;
   }
 
-  &__cart-link {
+  &__cart-button {
+    @include button-reset;
+
     position: relative;
   }
 

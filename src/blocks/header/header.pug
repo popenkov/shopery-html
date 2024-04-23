@@ -53,7 +53,7 @@ mixin header(mods)
             svg.header__favorite-icon: use(href= path.icon + "icon__heart")
         span.header__navbar-separator
         .header__cart
-          a.header__cart-link(href="#")
+          button.header__cart-button.js-header-cart-button
             svg.header__cart-icon: use(href= path.icon + "icon__cart")
             span.header__cart-items-amount 2
           .header__cart-info

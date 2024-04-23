@@ -26,28 +26,80 @@ mixin cart-aside-widget(mods)
         price: 12.00,
         img: "product-green-ladies-finger.jpg",
       },
-         {
+      {
         title: "Green Apple",
         amount: "1 kg",
          link: "#",
         price: 14.00,
         img: "product-green-ladies-finger.jpg",
       },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+
     ];
 
-  .cart-aside-widget.opened(class=allMods)&attributes(attributes)
+  .cart-aside-widget.js-cart-aside-widget(class=allMods)&attributes(attributes)
     .cart-aside-widget__content
       .cart-aside-widget__header
-        button.cart-aside-widget__close-button.close-button.js-close-cart-menu-btn
-            svg.close-button__icon: use(href= path.icon + 'icon__cross')
+        h2.cart-aside-widget__title Shopping Card (2)
+        button.cart-aside-widget__close-button.js-close-cart-widget
+          svg.cart-aside-widget__close-icon: use(href= path.icon + 'icon__cross')
       .cart-aside-widget__items
         each product in CARD_DATA
-          +cart-widget-item(product)
+          +cart-widget-item(product)(class="cart-aside-widget__item")
       .cart-aside-widget__footer
         .cart-aside-widget__total
           span.cart-aside-widget__total-amount 2 Product
           span.cart-aside-widget__total-price $26.00
-        +button("link", "", "fill, large", "#")(class="cart-aside-widget__button")
-          | Shop now
-        +button("link", "", "fill, large", "#")(class="cart-aside-widget__button")
-          | checkout
+        .cart-aside-widget__buttons
+          +button("link", "", "fill, large", "#")(class="cart-aside-widget__button")
+            span Checkout
+          +button("link", "", "light, large", "#")(class="cart-aside-widget__button")
+            span Go To Cart
