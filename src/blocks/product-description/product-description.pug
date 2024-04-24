@@ -1,0 +1,101 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-description)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product-description(data, mods)
+
+  //- Принимает:
+  //-   data    {Obj} - данные товара
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-description("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product-description--" + modsList[i].trim();
+      }
+    }
+    const product = json.productPreview;
+
+
+  .product-description(aria-hidden="true", class=allMods)&attributes(attributes)
+    .product-description__content
+      .product-description__slider.card-slider
+        .card-slider__thumb-container
+          .card-slider__thumb.swiper.js-product-slider-thumb
+            .swiper-wrapper
+              each slide in product.sliderImages.thumb
+                .swiper-slide.card-slider__thumb-slide
+                  img.card-slider__thumb-img(src= path.img + slide.img, alt="image")
+          .card-slider__navigation.js-card-slider-navigation
+              button.card-slider__navigation-btn.card-slider__navigation-btn-prev.js-card-slider-navigation-prev
+                svg.card-slider__navigation-btn-icon
+                    use(href= path.icon + "icon__chevron-down")
+              button.card-slider__navigation-btn.card-slider__navigation-btn-next.js-card-slider-navigation-next
+                svg.card-slider__navigation-btn-icon
+                    use(href= path.icon + "icon__chevron-down")
+
+        .card-slider__main.swiper.js-product-slider-main
+          .swiper-wrapper
+            each slide in product.sliderImages.main
+              .swiper-slide
+                .card-slider__main-slide
+                  img.card-slider__main-img(src= path.img + slide.img, alt="image")
+
+      .product-description__about
+        .product-description__header
+          .product-description__title-wrapper
+            h2.product-description__title= product.title
+            if product.tags
+              .product-description__tags
+                each tag in product.tags
+                  .tag(class= "tag--" +tag.type)= tag.text
+          .product-description__review-wrapper
+            .product-description__review
+              +star-rating(product.rating)(class="product-description__rating")
+              span.product-description__review-text 4 Review
+            span.product-description__separator .
+            .product-description__sku
+              span.product-description__sku-text SKU:
+              span.product-description__sku-value= product.sku
+          .product-description__price-wrapper
+            span.product-description__price--old $48.00
+            span.product-description__price $17.28
+            if product.priceTags
+              .product-description__price-tags
+                each tag in product.priceTags
+                  .tag(class= "tag--" +tag.type)= tag.text
+
+
+        .product-description__info
+          .product-description__brand
+            span.product-description__brand-text Brand:
+            img.product-description__brand-value(src= path.img + product.brandLogo, alt="image")
+          .product-description__share
+            span.product-description__share-text Share item:
+            .product-description__socials-container
+              each data in json.info.footer.socialLinks
+                a.button-round.button-round--ghost(href= data.link)
+                  svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
+
+          p.product-description__description= product.description
+
+        .product-description__cart
+          +cart-widget(data-item-id="1")
+
+        .product-description__categories
+          .product-description__category
+            span.product-description__categories-text Category:
+            .product-description__categories-container
+              each category in product.categories
+                a.product-description__categories-link(href= category.href)= category.title
+          .product-description__tags
+            span.product-description__tags-text Tag:
+            .product-description__tags-container
+              each categoryTag in product.categoryTags
+                a.product-description__tags-link(href= categoryTag.href)= categoryTag.title
+

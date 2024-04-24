@@ -31,6 +31,7 @@ ready(function () {
       },
     });
 
+    // todo
     galleryThumbs.on("progress", function (data) {
       const { isEnd, isBeginning } = data;
       if (isEnd) {

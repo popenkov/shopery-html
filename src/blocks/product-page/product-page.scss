@@ -1,0 +1,157 @@
+@import "../../scss/breakpoints";
+
+.product-page {
+  $block-name: &; // #{$block-name}__element
+
+  &__description-section {
+    padding: 32px 0 10px;
+  }
+
+  &__tabs {
+    .tabs__label {
+      padding: 9px 10px 13px;
+
+      &:not(:last-child) {
+        margin: 0;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    .tabs__labels + .tabs__panes {
+      margin-top: 31px;
+    }
+  }
+
+  &__tabs-labels {
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+
+  &__tabs-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media screen and (max-width: $screen-ti) {
+      flex-direction: column;
+    }
+  }
+
+  &__description {
+    @include flex-column;
+    @include body-small;
+
+    gap: 19px;
+    flex-grow: 1;
+    max-width: 648px;
+
+    color: var(--gray-500);
+  }
+
+  &__paragraph {
+    margin: 0;
+  }
+
+  &__paragraph + &__paragraph {
+    // todo
+    margin-top: 2px;
+  }
+
+  &__list {
+    @include flex-column;
+
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__paragraph + &__list {
+    margin-top: 1px;
+  }
+
+  &__list-item {
+    position: relative;
+    padding-left: 28px;
+    list-style-type: none;
+
+    &::before {
+      @include box(20px);
+
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("/img/svgSprite.svg#icon__list-checkbox.svg");
+    }
+  }
+
+  &__right-aside {
+    @include flex-column;
+
+    gap: 20px;
+    flex-grow: 1;
+    max-width: 536px;
+
+    min-width: 400px;
+
+    @media screen and (max-width: $screen-ti) {
+      width: 100%;
+      max-width: unset;
+      min-width: unset;
+    }
+  }
+
+  &__video {
+    position: relative;
+    max-width: 536px;
+    height: 100%;
+    max-height: 300px;
+
+    @media screen and (max-width: $screen-ti) {
+      max-width: unset;
+      max-height: unset;
+
+      aspect-ratio: 50 / 28;
+    }
+  }
+
+  &__video-preview {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__advantages {
+    @include flex-center-vertical;
+
+    gap: 27px;
+    padding: 24px 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(230, 230, 230);
+  }
+
+  &__related-products {
+    @include flex-column;
+
+    gap: 32px;
+    padding: 80px 0;
+  }
+
+  &__related-products-title {
+    @include heading-5(600);
+    margin: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__related-product {
+    border-color: rgb(230, 230, 230);
+    border-radius: 8px;
+  }
+
+  &__subscription {
+    background-color: rgb(247, 247, 247);
+  }
+}

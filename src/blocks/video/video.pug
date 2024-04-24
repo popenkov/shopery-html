@@ -27,8 +27,11 @@ mixin video(data, mods)
   .video(class=allMods, data-video= data.video)&attributes(attributes)
     .video__preview.with-overlay.js-video-preview(style= `background-image: url("${path.img + data.preview}")`)
       .video__text
-        p.video__subtitle Video
-        h2.video__title= data.title
+        if data.subtitle
+          p.video__subtitle= data.subtitle
+        if data.title
+          h2.video__title= data.title
         button.video__play-button.js-video-play-button
-          svg.video__play-icon: use(href= path.icon + "icon__play-button")
+          svg.video__play-icon: use(href= path.icon + "icon__play")
+          //- svg.video__play-icon: use(href= path.icon + "icon__play-button")
 

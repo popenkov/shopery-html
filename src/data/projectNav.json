@@ -11,12 +11,12 @@
         {
           "title": "Catalog",
           "description": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
-          "title": "Library",
-          "description": "Library",
-          "href": "library"
+          "title": "Product",
+          "description": "Product",
+          "href": "product"
         }
       ]
     }

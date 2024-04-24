@@ -5,16 +5,28 @@
   $block-name: &; // #{$block-name}__element
 
   overflow: hidden;
-  border-radius: 20px;
+
+  border-radius: 6px;
 
   &__preview {
     position: relative;
     width: 100%;
-    min-height: 400px;
-    background-position: center;
-    aspect-ratio: 66 / 37;
+    height: 100%;
 
-    &.with-overlay {
+    background-position: center;
+    background-size: cover;
+  }
+
+  &--large {
+    border-radius: 20px;
+    #{$block-name}__preview {
+      min-height: 400px;
+      aspect-ratio: 66 / 37;
+    }
+  }
+
+  &--with-overlay {
+    #{$block-name}__preview {
       position: relative;
 
       &::before {
@@ -22,6 +34,71 @@
         background-color: rgb(0 46 3 / 60%);
         content: "";
         inset: 0;
+      }
+    }
+  }
+
+  &--primary-button {
+    #{$block-name}__play-icon {
+      width: 20px;
+      height: 24px;
+      color: var(--color-white);
+
+      transition: color var(--transition);
+    }
+
+    #{$block-name}__play-button {
+      @include button-reset("flex");
+      @include flex-center;
+      @include box(82px);
+
+      outline: 1px solid var(--color-white);
+      border-radius: 50%;
+      transition: outline-color var(--transition);
+
+      @media screen and (max-width: $screen-ti) {
+        @include box(70px);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          outline-color: var(--primary);
+
+          #{$block-name}__play-icon {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+
+  &--secondary-button {
+    #{$block-name}__play-icon {
+      width: 14px;
+      height: 18px;
+      color: var(--color-white);
+
+      transition: color var(--transition);
+    }
+
+    #{$block-name}__play-button {
+      @include button-reset("flex");
+      @include flex-center;
+      @include box(50px);
+
+      background-color: var(--primary);
+
+      border-radius: 50%;
+      transition: background-color var(--transition);
+
+      @media screen and (max-width: $screen-ti) {
+        @include box(40px);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--hard-primary);
+        }
       }
     }
   }
@@ -65,31 +142,6 @@
 
     @media screen and (max-width: $screen-tl) {
       @include heading-5;
-    }
-  }
-
-  &__play-icon {
-    @include box(82px);
-
-    transition: color var(--transition);
-
-    @media screen and (max-width: $screen-ti) {
-      @include box(70px);
-    }
-  }
-
-  &__play-button {
-    @include button-reset;
-    @include box(82px);
-
-    stroke-width: 1.5px;
-
-    @media (hover: hover) {
-      &:hover {
-        #{$block-name}__play-icon {
-          color: var(--primary);
-        }
-      }
     }
   }
 
