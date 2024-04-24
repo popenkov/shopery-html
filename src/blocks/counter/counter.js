@@ -15,6 +15,11 @@ ready(function () {
         const now = new Date();
         const timeLeft = targetDate - now;
 
+        if (timeLeft < 0) {
+          counter.innerHTML = "";
+          return;
+        }
+
         const daysValue = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         const hoursValue = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutesValue = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));

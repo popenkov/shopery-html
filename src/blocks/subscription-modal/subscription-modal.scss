@@ -1,0 +1,136 @@
+@import "../../scss/breakpoints";
+
+.subscription-modal {
+  $block-name: &; // #{$block-name}__element
+
+  // stylelint-disable-next-line
+  .hystmodal__window {
+    width: 100%;
+    width: calc(100% - 40px);
+    max-width: 872px;
+    max-height: calc(100vh - 40px);
+    margin: 0 auto;
+    overflow-y: auto;
+  }
+
+  &__close {
+    @include button-reset;
+
+    position: absolute;
+    top: 9px;
+    right: 0;
+    padding: 10px 20px 10px 10px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__close-icon {
+    @include box(25px);
+  }
+
+  &__content {
+    @include flex-center-vertical;
+
+    gap: 40px;
+    padding: 10px;
+    background: rgb(255 255 255);
+    box-shadow: 0 12px 48px 0 rgb(0 0 0 / 12%);
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 354px;
+    max-height: 380px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+
+    @media screen and (max-width: $screen-tl) {
+      max-width: unset;
+      max-height: 500px;
+    }
+  }
+
+  &__description {
+    @include flex-column-center;
+
+    gap: 12px;
+    max-width: 428px;
+
+    @media screen and (max-width: $screen-tl) {
+      max-width: unset;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--gray-900);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include body-medium(600);
+
+    margin: 0;
+    color: var(--gray-400);
+    line-height: 160%;
+    text-align: center;
+
+    b {
+      color: var(--status-warning);
+      font-weight: 600;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 428px;
+
+    input,
+    button {
+      max-height: 50px;
+    }
+
+    button {
+      @include body-small(600);
+    }
+
+    input,
+    input::placeholder {
+      @include body-small;
+    }
+
+    input::placeholder {
+      color: var(--gray-500);
+    }
+  }
+
+  &__subtitle + &__form {
+    margin-top: 10px;
+  }
+
+  &__checkbox {
+    gap: 6px;
+  }
+
+  &__form + &__checkbox {
+    margin-top: 38px;
+  }
+
+  &__checkbox-text {
+    @include body-small;
+
+    color: var(--gray-600);
+  }
+}

@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (subscription-modal)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin subscription-modal(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +subscription-modal("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " subscription-modal--" + modsList[i].trim();
+      }
+    }
+
+  .subscription-modal.modal.hystmodal#emailSubscription(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window(role="dialog", aria-modal="true")
+        button.subscription-modal__close(data-hystclose="")
+          svg.subscription-modal__close-icon: use(href= path.icon + "icon__cross")
+        .subscription-modal__content
+          img.subscription-modal__image(src= path.img + "subscription-modal-bg.jpg", alt="subscription")
+          .subscription-modal__description
+            h2.subscription-modal__title Subcribe to Our Newsletter
+            p.subscription-modal__subtitle Subscribe to our newlletter and Save your <b>20% money</b> with discount code today.
+            +subscription-form(class="subscription-modal__form js-subscription-modal-form")
+            +checkbox("", "rating", "rating-5")(class="subscription-modal__checkbox js-subscribe-show-checkbox")
+              span.subscription-modal__checkbox-text Do not show this window

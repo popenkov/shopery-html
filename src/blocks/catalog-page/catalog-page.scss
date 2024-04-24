@@ -10,8 +10,8 @@
   padding: 32px 0 82px;
 
   @media screen and (max-width: $screen-tl) {
-    grid-template-areas: "filter" "sort" "result" "pagination" "banner" "saleItems";
-    grid-template-columns: 1fr;
+    grid-template-areas: "filter sort" "result result" "pagination pagination" "banner banner" "saleItems saleItems";
+    grid-template-columns: 1fr 1fr;
   }
 
   &__filter {
@@ -37,7 +37,7 @@
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;
       gap: 10px;
-      align-items: flex-start;
+      align-items: flex-end;
     }
   }
 
@@ -133,6 +133,7 @@
 
     @media screen and (max-width: $screen-tl) {
       display: flex !important;
+      grid-area: saleItems;
       gap: 10px;
     }
   }

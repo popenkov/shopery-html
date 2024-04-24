@@ -1,0 +1,105 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-aside-widget)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-aside-widget(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-aside-widget("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-aside-widget--" + modsList[i].trim();
+      }
+    }
+    const CARD_DATA = [
+      {
+        title: "Fresh Indian Orange",
+        amount: "1 kg",
+        link: "#",
+        price: 12.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+      {
+        title: "Green Apple",
+        amount: "1 kg",
+         link: "#",
+        price: 14.00,
+        img: "product-green-ladies-finger.jpg",
+      },
+
+    ];
+
+  .cart-aside-widget.js-cart-aside-widget(class=allMods)&attributes(attributes)
+    .cart-aside-widget__content
+      .cart-aside-widget__header
+        h2.cart-aside-widget__title Shopping Card (2)
+        button.cart-aside-widget__close-button.js-close-cart-widget
+          svg.cart-aside-widget__close-icon: use(href= path.icon + 'icon__cross')
+      .cart-aside-widget__items
+        each product in CARD_DATA
+          +cart-widget-item(product)(class="cart-aside-widget__item")
+      .cart-aside-widget__footer
+        .cart-aside-widget__total
+          span.cart-aside-widget__total-amount 2 Product
+          span.cart-aside-widget__total-price $26.00
+        .cart-aside-widget__buttons
+          +button("link", "", "fill, large", "#")(class="cart-aside-widget__button")
+            span Checkout
+          +button("link", "", "light, large", "#")(class="cart-aside-widget__button")
+            span Go To Cart

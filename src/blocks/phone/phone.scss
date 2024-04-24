@@ -9,15 +9,6 @@
   color: var(--gray-900);
   text-decoration: none;
 
-  @media screen and (max-width: $screen-t) {
-    display: none;
-
-    &--mobile {
-      display: flex;
-      align-items: flex-end;
-    }
-  }
-
   &__icon {
     @include box(28px);
 

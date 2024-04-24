@@ -1,0 +1,147 @@
+@import "../../scss/breakpoints";
+
+.cart-aside-widget {
+  $block-name: &; // #{$block-name}__element
+
+  position: fixed;
+  background-color: var(--modal-bg);
+  opacity: 0;
+  pointer-events: none;
+  inset: 0;
+
+  &__content {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    max-width: 456px;
+    padding: 85px 32px 210px 40px;
+    background-color: var(--modal-bg);
+    opacity: 0;
+
+    @media screen and (max-width: $screen-ti) {
+      padding: 85px 20px 210px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__header {
+    @include flex-center-vertical;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 456px;
+    padding: 47px 40px 16px;
+    background-color: var(--back-primary);
+
+    @media screen and (max-width: $screen-ti) {
+      padding: 47px 20px 16px;
+    }
+  }
+
+  &__title {
+    @include body-xl(500);
+
+    margin: 0;
+
+    @media screen and (max-width: $screen-ti) {
+      @include body-medium(500);
+    }
+  }
+
+  &__close-button {
+    @include button-reset("flex");
+
+    margin-right: 9px;
+    cursor: pointer;
+
+    @media screen and (max-width: $screen-ti) {
+      margin-right: 0;
+    }
+  }
+
+  &__close-icon {
+    @include box(26px);
+  }
+
+  &__items {
+    @include flex-column;
+  }
+
+  &__item {
+    padding: 12px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--gray-100);
+    }
+  }
+
+  &__footer {
+    @include flex-column;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    gap: 23px;
+    width: 100%;
+    max-width: 456px;
+    padding: 10px 40px 39px;
+    background-color: var(--back-primary);
+
+    @media screen and (max-width: $screen-ti) {
+      padding: 10px 20px 39px;
+    }
+  }
+
+  &__total {
+    @include flex-center-vertical;
+
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  &__total-amount {
+    @include body-medium;
+  }
+
+  &__total-price {
+    @include body-medium(600);
+  }
+
+  &__buttons {
+    @include flex-column;
+
+    gap: 12px;
+  }
+
+  &__button {
+    @include flex-center;
+  }
+
+  &.opened {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--cart-widget-z-index);
+    opacity: 1;
+    transition: all var(--transition);
+    pointer-events: auto;
+
+    #{$block-name}__content {
+      display: block;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: var(--back-primary);
+      opacity: 1;
+    }
+  }
+}

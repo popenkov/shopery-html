@@ -1,0 +1,105 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-preview)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin product-preview(data, mods)
+
+  //- Принимает:
+  //-   data    {Obj} - данные товара
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-preview("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " product-preview--" + modsList[i].trim();
+      }
+    }
+    const product = json.productPreview;
+
+
+  .product-preview.modal.hystmodal#productPreview(aria-hidden="true", class=allMods)&attributes(attributes)
+    .hystmodal__wrap
+      .hystmodal__window(role="dialog", aria-modal="true")
+        button.product-preview__close-button(data-hystclose="")
+          svg.product-preview__close-icon: use(href= path.icon + "icon__cross")
+        .product-preview__content
+          .product-preview__slider.card-slider
+            .card-slider__thumb-container
+              .card-slider__thumb.swiper.js-product-slider-thumb
+                .swiper-wrapper
+                  each slide in product.sliderImages.thumb
+                    .swiper-slide.card-slider__thumb-slide
+                      img.card-slider__thumb-img(src= path.img + slide.img, alt="image")
+              .card-slider__navigation.js-card-slider-navigation
+                  button.card-slider__navigation-btn.card-slider__navigation-btn-prev.js-card-slider-navigation-prev
+                    svg.card-slider__navigation-btn-icon
+                        use(href= path.icon + "icon__chevron-down")
+                  button.card-slider__navigation-btn.card-slider__navigation-btn-next.js-card-slider-navigation-next
+                    svg.card-slider__navigation-btn-icon
+                        use(href= path.icon + "icon__chevron-down")
+
+            .card-slider__main.swiper.js-product-slider-main
+              .swiper-wrapper
+                each slide in product.sliderImages.main
+                  .swiper-slide
+                    .card-slider__main-slide
+                      img.card-slider__main-img(src= path.img + slide.img, alt="image")
+
+          .product-preview__about
+            .product-preview__header
+              .product-preview__title-wrapper
+                h2.product-preview__title= product.title
+                if product.tags
+                  .product-preview__tags
+                    each tag in product.tags
+                      .tag(class= "tag--" +tag.type)= tag.text
+              .product-preview__review-wrapper
+                .product-preview__review
+                  +star-rating(product.rating)(class="product-preview__rating")
+                  span.product-preview__review-text 4 Review
+                span.product-preview__separator .
+                .product-preview__sku
+                  span.product-preview__sku-text SKU:
+                  span.product-preview__sku-value= product.sku
+              .product-preview__price-wrapper
+                span.product-preview__price--old $48.00
+                span.product-preview__price $17.28
+                if product.priceTags
+                  .product-preview__price-tags
+                    each tag in product.priceTags
+                      .tag(class= "tag--" +tag.type)= tag.text
+
+
+            .product-preview__info
+              .product-preview__brand
+                span.product-preview__brand-text Brand:
+                img.product-preview__brand-value(src= path.img + product.brandLogo, alt="image")
+              .product-preview__share
+                span.product-preview__share-text Share item:
+                .product-preview__socials-container
+                  each data in json.info.footer.socialLinks
+                    a.button-round.button-round--ghost(href= data.link)
+                      svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
+
+              p.product-preview__description= product.description
+
+            .product-preview__cart
+              +cart-widget(data-item-id="1")
+
+            .product-preview__categories
+              .product-preview__category
+                span.product-preview__categories-text Category:
+                .product-preview__categories-container
+                  each category in product.categories
+                    a.product-preview__categories-link(href= category.href)= category.title
+              .product-preview__tags
+                span.product-preview__tags-text Tag:
+                .product-preview__tags-container
+                  each categoryTag in product.categoryTags
+                    a.product-preview__tags-link(href= categoryTag.href)= categoryTag.title
+

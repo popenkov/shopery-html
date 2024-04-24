@@ -1,0 +1,110 @@
+@import "../../scss/breakpoints";
+
+.cart-widget {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 12px;
+
+  @media screen and (max-width: $screen-t) {
+    display: grid;
+    grid-template-areas: "amount fav" "button button";
+    grid-template-columns: 124px auto;
+  }
+
+  &__amount {
+    @include flex-center-vertical;
+
+    gap: 2px;
+    padding: 8px;
+    border: 1px solid var(--gray-100);
+    border-radius: 170px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: amount;
+    }
+  }
+
+  &__amount-button-icon {
+    @include box(14px);
+
+    color: var(--gray-900);
+  }
+
+  &__amount-button {
+    @include button-reset("flex");
+    @include box(34px);
+    @include flex-center;
+
+    background-color: var(--gray-50);
+    border-radius: 50%;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+
+        #{$block-name}__amount-button-icon {
+          color: var(--front-primary-inversed);
+        }
+      }
+    }
+  }
+
+  &__amount-input-wrapper {
+    @include flex-center-vertical;
+  }
+
+  &__amount-input {
+    @include body-medium;
+
+    width: 36px;
+    min-width: 36px;
+    text-align: center;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__cart-button {
+    @include flex-center;
+
+    flex-grow: 1;
+    gap: 16px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: button;
+    }
+  }
+
+  &__cart-button-text {
+    @include body-medium(600);
+  }
+
+  &__cart-button-icon {
+    @include box(20px);
+  }
+
+  &__favorite-icon {
+    @include box(20px);
+  }
+
+  &__favorite-button {
+    @include box(52px);
+
+    background-color: var(--green-gray-100);
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: fav;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-primary-inversed);
+        background-color: var(--primary);
+      }
+    }
+  }
+}

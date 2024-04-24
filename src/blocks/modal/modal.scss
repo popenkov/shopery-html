@@ -1,0 +1,21 @@
+@import "../../scss/breakpoints";
+
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  // stylelint-disable-next-line
+  &.hystmodal--active::before {
+    opacity: 0.8;
+  }
+
+  // stylelint-disable-next-line
+  .hystmodal__window {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  // stylelint-disable-next-line
+  .hystmodal__close:focus {
+    outline: none;
+  }
+}

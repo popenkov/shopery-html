@@ -24,5 +24,7 @@ mixin logo(mods, isSmall= false)
     case isSmall
       when true
         svg.logo__icon: use(href= path.icon + "logo__mini")
+        h1.visually-hidden shopery
       default
         svg.logo__icon: use(href= path.icon + "logo__default")
+        h1.visually-hidden shopery

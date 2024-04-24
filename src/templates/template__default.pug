@@ -35,8 +35,14 @@ html(class="no-js", lang="ru")
       .page__footer
         +footer
 
+    //- modals
+    +subscription-modal
+    +product-preview(json.productsPreview)
+    +cart-aside-widget
+
     block templates
 
     script(src= path.js + "bundle.js")
+
 
     block scripts

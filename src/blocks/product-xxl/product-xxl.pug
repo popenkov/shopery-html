@@ -32,7 +32,7 @@ mixin product-xxl(text, mods)
         button.button-round.product-xxl__button.product-xxl__button--cart
           span Add to Cart
           svg.button-round__icon: use(href= path.icon + "icon__cart")
-        button.button-round.product-xxl__button
+        button.button-round.product-xxl__button(data-hystmodal="#productPreview")
           svg.button-round__icon: use(href= path.icon + "icon__eye")
 
     .product-xxl__description

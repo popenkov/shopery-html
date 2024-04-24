@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-widget)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-widget(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-widget("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-widget--" + modsList[i].trim();
+      }
+    }
+
+  .cart-widget.js-cart-widget(class=allMods)&attributes(attributes)
+    .cart-widget__amount
+      button.cart-widget__amount-button.js-quantity-minus
+        svg.cart-widget__amount-button-icon: use(href= path.icon + "icon__minus")
+      .cart-widget__amount-input-wrapper
+        input.cart-widget__amount-input.js-quantity-input(type="number", value="5", min="1", readonly)
+      button.cart-widget__amount-button.js-quantity-plus
+        svg.cart-widget__amount-button-icon: use(href= path.icon + "icon__plus")
+
+    +button("link", "", "fill, large", "#")(class="cart-widget__cart-button js-add-to-cart")
+      span.cart-widget__cart-button-text Add to Cart
+      svg.cart-widget__cart-button-icon: use(href= path.icon + "icon__cart")
+
+    button.button-round.cart-widget__favorite-button
+      svg.cart-widget__favorite-icon: use(href= path.icon + "icon__heart-lined")

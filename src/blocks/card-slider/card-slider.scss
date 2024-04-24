@@ -1,0 +1,115 @@
+@import "../../scss/breakpoints";
+
+.card-slider {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 12px;
+
+  &__thumb-container {
+    position: relative;
+    max-height: 556px;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 400px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__thumb {
+    max-width: 80px;
+    max-height: 400px;
+    margin: 80px 0;
+    overflow-y: hidden;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 240px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__thumb-slide {
+    width: 80px;
+    height: 90px;
+    border-radius: 2px;
+
+    &--active {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        border: 1px solid var(--primary);
+        border-radius: 5px;
+        content: "";
+        inset: 0;
+      }
+    }
+  }
+
+  &__main {
+    max-width: 556px;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 400px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      max-width: unset;
+      max-height: 300px;
+    }
+  }
+
+  &__main-img {
+    object-fit: contain;
+
+    @media screen and (max-width: $screen-d) {
+      max-height: 400px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+
+  &__navigation {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__navigation-btn-prev {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+  }
+
+  &__navigation-btn-next {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__navigation-btn-icon {
+    @include box(22px);
+
+    color: var(--gray-400);
+  }
+
+  &__navigation-btn {
+    @include button-reset;
+
+    &.swiper-button-disabled #{$block-name}__navigation-btn-icon {
+      color: var(--gray-100);
+      cursor: not-allowed;
+    }
+  }
+}

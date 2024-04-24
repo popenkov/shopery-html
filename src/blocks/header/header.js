@@ -39,5 +39,29 @@ ready(function () {
         closeMenu();
       }
     });
+
+    // cart widget
+    const cartButton = header.querySelector(".js-header-cart-button");
+    const cartWidget = document.querySelector(".js-cart-aside-widget");
+    const closeWidgetButton = cartWidget.querySelector(".js-close-cart-widget");
+
+    const handleCartWidgetToggle = () => {
+      cartWidget.classList.toggle("opened");
+      toggleBodyLock();
+    };
+
+    const handleCartWidgetClose = () => {
+      cartWidget.classList.remove("opened");
+      toggleBodyLock();
+    };
+
+    cartButton.addEventListener("click", handleCartWidgetToggle);
+    closeWidgetButton.addEventListener("click", handleCartWidgetClose);
+    cartWidget.addEventListener("click", (evt) => {
+      console.log("evt.target ", evt.target);
+      if (evt.target === cartWidget) {
+        handleCartWidgetClose();
+      }
+    });
   }
 });
