@@ -1,0 +1,54 @@
+@import "../../scss/breakpoints";
+
+.review-item {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-column;
+  gap: 13px;
+
+  &__header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__author {
+    display: grid;
+    grid-template-areas: "avatar name" "avatar rating";
+    grid-template-columns: 41px auto;
+    gap: 1px 12px;
+  }
+
+  &__avatar {
+    @include box(40px);
+
+    grid-area: avatar;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__name {
+    @include body-small(500);
+
+    grid-area: name;
+    margin: 0;
+  }
+
+  &__rating {
+    grid-area: rating;
+  }
+
+  &__date {
+    @include body-small;
+
+    margin: 0;
+    color: var(--gray-400);
+  }
+
+  &__main {
+    @include body-small;
+
+    margin: 0;
+    color: var(--gray-500);
+  }
+}

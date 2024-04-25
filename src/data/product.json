@@ -37,5 +37,63 @@
       "rating": 4,
       "tags": null
     }
+  ],
+  "reviews": [
+    {
+      "name": "Kristin Watson",
+      "avatar": "review-avatar--1.jpg",
+      "rating": 5,
+      "text": "Duis at ullamcorper nulla, eu dictum eros.",
+      "date": "2 min ago"
+    },
+    {
+      "name": "Jane Cooper",
+      "avatar": "review-avatar-default.jpg",
+      "rating": 4,
+      "text": "Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to \"bolt\" or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.",
+      "date": "30 Apr, 2021"
+    },
+    {
+      "name": "Jacob Jones",
+      "avatar": "review-avatar--2.jpg",
+      "rating": 5,
+      "text": " Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.",
+      "date": "2 min ago"
+    },
+    {
+      "name": "Ralph Edwards",
+      "avatar": "review-avatar--3.jpg",
+      "rating": 5,
+      "text": "200+ Canton Pak Choi Bok Choy Chinese Cabbage Seeds Heirloom Non-GMO Productive Brassica rapa VAR. chinensis, a.k.a. Canton's Choice, Bok Choi, from USA",
+      "date": "2 min ago"
+    },
+    {
+      "name": "Jane Cooper",
+      "avatar": "review-avatar-default.jpg",
+      "rating": 4,
+      "text": "Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to \"bolt\" or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.",
+      "date": "30 Apr, 2021"
+    },
+    {
+      "name": "Jacob Jones",
+      "avatar": "review-avatar--2.jpg",
+      "rating": 5,
+      "text": " Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.",
+      "date": "2 min ago"
+    },
+    {
+      "name": "Jane Cooper",
+      "avatar": "review-avatar-default.jpg",
+      "rating": 4,
+      "text": "Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to \"bolt\" or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.",
+      "date": "30 Apr, 2021"
+    },
+    {
+      "name": "Jacob Jones",
+      "avatar": "review-avatar--2.jpg",
+      "rating": 5,
+      "text": " Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.",
+      "date": "2 min ago"
+    }
   ]
 }
