@@ -156,6 +156,7 @@
   &__share {
     @include flex-center-vertical;
 
+    justify-content: flex-end;
     grid-area: share;
     gap: 9px;
   }

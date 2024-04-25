@@ -35,7 +35,11 @@ ready(function () {
       e.target.classList.add("tabs__label--active");
       let clickedTab = e.target;
       let clickedTabValue = clickedTab.getAttribute("data-href");
-      document.querySelector(clickedTabValue).classList.add("tabs__pane--active");
+      const currentTabPane = document.querySelector(clickedTabValue);
+      currentTabPane.classList.add("tabs__pane--active");
+
+      // todo управление высотой таба
+      updateTabContentHeight(currentTabPane);
 
       scrollContainerOnTabClick(clickedTab, clickedTabValue);
     }
@@ -43,6 +47,23 @@ ready(function () {
 
   let tabs = document.querySelector(".tabs__labels .tabs__scroll-container");
   let panes = document.querySelector(".tabs__panes");
+
+  const updateTabContentHeight = (currentTabPane) => {
+    const tabContent = currentTabPane.querySelector(".js-tab-content");
+
+    if (!tabContent) {
+      return;
+    }
+    const tabContentHeight = tabContent.clientHeight;
+    panes.style.height = tabContentHeight + "px";
+  };
+
+  const updateTabHeightOnResize = () => {
+    const currentTabPane = panes.querySelector(".tabs__pane--active");
+    updateTabContentHeight(currentTabPane);
+  };
+
+  window.addEventListener("resize", updateTabHeightOnResize);
 
   makeTabs(tabs, panes);
 });

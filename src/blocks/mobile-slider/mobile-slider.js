@@ -47,7 +47,7 @@ ready(function () {
           initSlider();
         }
       } else {
-        slider.forEach((item) => item.destroy());
+        slider?.forEach((item) => item.destroy());
       }
     });
   }
