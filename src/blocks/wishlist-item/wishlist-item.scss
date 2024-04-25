@@ -1,0 +1,52 @@
+@import "../../scss/breakpoints";
+
+.wishlist-item {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: 1fr minmax(194px, 317px) minmax(108px, 187px) 194px;
+
+  gap: 20px;
+  align-items: center;
+
+  &__info {
+    @include flex-center-vertical;
+
+    gap: 20px;
+  }
+
+  &__photo {
+    @include box(100px);
+
+    object-fit: contain;
+  }
+
+  &__title {
+    @include body-medium;
+
+    margin: 0;
+  }
+
+  &__price {
+    @include flex-center-vertical;
+    @include body-medium(500);
+
+    gap: 4px;
+    margin: 0;
+  }
+
+  &__price-new {
+    color: var(--gray-900);
+  }
+
+  &__price-old {
+    color: var(--gray-400);
+    text-decoration-line: line-through;
+  }
+
+  &__actions {
+    @include flex-center-vertical;
+
+    gap: 10px;
+  }
+}

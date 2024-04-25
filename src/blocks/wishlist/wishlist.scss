@@ -1,0 +1,47 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.wishlist {
+  $block-name: &; // #{$block-name}__element
+
+  &__title {
+    @include heading-5(600);
+
+    text-align: center;
+  }
+
+  &__items {
+    border-radius: 8px;
+    border: 1px solid rgb(230, 230, 230);
+  }
+
+  &__title + &__items {
+    margin-top: 32px;
+  }
+
+  &__items-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    grid-template-columns: 1fr minmax(194px, 336px) minmax(108px, 187px) 212px;
+    padding: 12px 24px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+
+  &__column-title {
+    @include body-small(500);
+
+    color: var(--gray-500);
+    letter-spacing: 3%;
+    text-transform: uppercase;
+  }
+
+  &__items-body {
+    padding: 12px 24px;
+  }
+
+  &__items-footer {
+    padding: 16px 24px;
+    border-top: 1px solid rgb(230, 230, 230);
+  }
+}
