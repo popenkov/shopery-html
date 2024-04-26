@@ -4,9 +4,12 @@
 .wishlist {
   $block-name: &; // #{$block-name}__element
 
+  padding: 40px 0 80px;
+
   &__title {
     @include heading-5(600);
 
+    margin: 0;
     text-align: center;
   }
 
@@ -21,11 +24,22 @@
 
   &__items-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
 
     grid-template-columns: 1fr minmax(194px, 336px) minmax(108px, 187px) 212px;
-    padding: 12px 24px;
+    padding: 12px 24px 13px;
     border-bottom: 1px solid rgb(230, 230, 230);
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: 2fr 1fr 1fr 194px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      grid-template-columns: 2fr 1fr 1fr 178px;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      display: none;
+    }
   }
 
   &__column-title {
@@ -37,11 +51,18 @@
   }
 
   &__items-body {
-    padding: 12px 24px;
+    padding: 0 24px;
+  }
+
+  &__item {
+    padding: 11px 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid rgb(230, 230, 230);
+    }
   }
 
   &__items-footer {
-    padding: 16px 24px;
+    padding: 24px;
     border-top: 1px solid rgb(230, 230, 230);
   }
 }

@@ -154,21 +154,8 @@
   }
 
   &__share {
-    @include flex-center-vertical;
-
     justify-content: flex-end;
     grid-area: share;
-    gap: 9px;
-  }
-
-  &__share-text {
-    @include body-small;
-  }
-
-  &__socials-container {
-    @include flex-center-vertical;
-
-    gap: 5px;
   }
 
   &__description {

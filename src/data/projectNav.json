@@ -17,6 +17,11 @@
           "title": "Product",
           "description": "Product",
           "href": "product"
+        },
+        {
+          "title": "Wishlist",
+          "description": "Wishlist",
+          "href": "wishlist"
         }
       ]
     }

@@ -75,12 +75,7 @@ mixin product-description(data, mods)
           .product-description__brand
             span.product-description__brand-text Brand:
             img.product-description__brand-value(src= path.img + product.brandLogo, alt="image")
-          .product-description__share
-            span.product-description__share-text Share item:
-            .product-description__socials-container
-              each data in json.info.footer.socialLinks
-                a.button-round.button-round--ghost(href= data.link)
-                  svg.button-round__icon.footer__socials-icon: use(href= path.icon + data.icon)
+          +share-block("Share item:", json.info.footer.socialLinks)(class="product-description__share")
 
           p.product-description__description= product.description
 

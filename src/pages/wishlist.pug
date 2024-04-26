@@ -23,5 +23,7 @@ block content
         each product in json.wishlist.items
           +wishlist-item(product)(class="wishlist__item")
       .wishlist__items-footer
+        +share-block("Share:",json.info.footer.socialLinks)
+
 
   +subscription(class="wishlist__subscription")
