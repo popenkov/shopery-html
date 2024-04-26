@@ -1,0 +1,78 @@
+@import "../../scss/breakpoints";
+
+.checkout-page {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 40px 0 80px;
+
+  &__title {
+    @include heading-5(600);
+
+    margin: 0;
+    text-align: left;
+
+    @media screen and (max-width: $screen-t) {
+      @include body-xxl(500);
+    }
+  }
+
+  &__form {
+    @include flex-column;
+
+    gap: 32px;
+  }
+
+  &__title + &__form {
+    margin-top: 32px;
+  }
+
+  &__form-main {
+    @include flex-column;
+
+    gap: 16px;
+  }
+
+  &__form-comment {
+    @include flex-column;
+
+    gap: 16px;
+  }
+
+  &__input-container {
+    @include flex-column;
+
+    gap: 8px;
+    .select .nice-select {
+      width: 100%;
+      height: 49px;
+    }
+  }
+
+  &__input-label {
+    @include body-small;
+
+    margin: 0;
+  }
+
+  // &__input-name {
+
+  // }
+
+  // &__input-last-name {}
+
+  // &__input-company-name {}
+
+  // &__input-address-street {
+
+  // }
+
+  // &__input-address-country {
+
+  // }
+
+  &__total {
+  }
+}

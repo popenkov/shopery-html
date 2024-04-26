@@ -5,6 +5,15 @@
 
   display: grid;
 
+  &__two-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &__three-items {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;

@@ -22,7 +22,7 @@ block content
           span.cart-page__column-title Subtotal
         .cart-page__items-body
           each product in json.cart.items
-            +cart-item(product)(class="wishlist__item")
+            +cart-item(product)(class="cart-page__item")
         .cart-page__items-footer
           +button("link", "", "monochrome-light, normal")(class="cart-page__button")
             span.cart-page__button-text Return to shop
@@ -32,4 +32,4 @@ block content
       +coupon-form(class="cart-page__coupon")
       +cart-total(class="cart-page__total")
 
-  +subscription(class="wishlist__subscription")
+  +subscription(class="cart-page__subscription")

@@ -2,10 +2,12 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin select(options, placeholder, mods)
+mixin select(options, placeholder, name, mods)
 
   //- Принимает:
-  //-   text    {string} - текст
+  //-   options    {array} - options array
+  //-   placeholder    {string} - placeholder
+  //-   name    {string} - name
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +select("Текст", "some-mod")

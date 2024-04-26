@@ -2,13 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin field(type, fieldName, hint, mods)
+mixin field(type, fieldName, hint, labelText, mods)
 
   //- Принимает:
   //-   type    {string} - тип поля
   //-   fieldName    {string} - имя поля
   //-   hint     {string} - плэйсхолдер
-  //-   options     {string} - список опций select
+  //-   labelText     {string} - label
   //-   mods     {string} - список модификаторов
   //- Вызов:
     +field("type", "input name", "placeholder", "mods")
@@ -24,6 +24,8 @@ mixin field(type, fieldName, hint, mods)
     }
 
   label.field(class=allMods + ' field--' + type)
+    if labelText
+      span.field__label= labelText
     case type
       when "text"
         input.field__input.field__input--text(type=type, name=fieldName, placeholder=hint)&attributes(attributes)

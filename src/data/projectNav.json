@@ -27,6 +27,11 @@
           "title": "Cart",
           "description": "Cart",
           "href": "cart"
+        },
+        {
+          "title": "Checkout",
+          "description": "Checkout",
+          "href": "checkout"
         }
       ]
     }

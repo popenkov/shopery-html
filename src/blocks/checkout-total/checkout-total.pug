@@ -1,0 +1,46 @@
+//- Все примеси в этом файле должны начинаться c имени блока (checkout-total)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin checkout-total(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +checkout-total("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " checkout-total--" + modsList[i].trim();
+      }
+    }
+
+  .checkout-total(class=allMods)&attributes(attributes)
+    h3.checkout-total__title Cart Total
+    .checkout-total__items
+      each product in json.cart.items
+        +checkout-product(product)(class="cart-page__item")
+    .checkout-total__values
+      .checkout-total__row
+        span.checkout-total__key Subtotal:
+        span.checkout-total__value $84.00
+      .checkout-total__row
+        span.checkout-total__key Shipping:
+        span.checkout-total__value Free
+      .checkout-total__row
+        span.checkout-total__key Total:
+        span.checkout-total__value $84.00
+
+    .checkout-total__payment-methods
+      +radio("Cash on Delivery", "payment-method", "cash")(class="filter-accordion__content-item")
+      +radio("Paypal", "payment-method", "paypal")(class="filter-accordion__content-item")
+      +radio("Amazon Pay", "payment-method", "amazon-pay")(class="filter-accordion__content-item")
+
+
+    +button("button", "", "fill, large", "#")(class="checkout-total__button")
+      span Proceed to checkout
