@@ -1,0 +1,132 @@
+@import "../../scss/breakpoints";
+
+.cart-item {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: 1fr minmax(194px, 317px) minmax(108px, 187px) 194px 22px;
+  grid-template-columns: 6fr 1.6fr 2.8fr 1.7fr 22px;
+
+  gap: 20px;
+  align-items: center;
+
+  @media screen and (max-width: $screen-tl) {
+    grid-template-columns: 27% 14% 126px 14% 22px;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: $screen-t) {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "info info" "price price" "quantity quantity" "subtotal actions";
+  }
+
+  &__info {
+    @include flex-center-vertical;
+
+    gap: 12px;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-area: info;
+    }
+  }
+
+  &__photo {
+    @include box(100px);
+
+    object-fit: contain;
+
+    @media screen and (max-width: $screen-t) {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+    }
+  }
+
+  &__title {
+    @include body-medium;
+
+    margin: 0;
+  }
+
+  &__price {
+    @include flex-center-vertical;
+    @include body-medium(500);
+
+    gap: 4px;
+    margin: 0;
+
+    @media screen and (max-width: $screen-ti) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      flex-direction: row;
+      grid-area: price;
+    }
+  }
+
+  &__price-new {
+    color: var(--gray-900);
+  }
+
+  &__price-old {
+    color: var(--gray-400);
+    text-decoration-line: line-through;
+  }
+
+  &__quantity {
+    width: fit-content;
+
+    @media screen and (max-width: $screen-t) {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      grid-area: quantity;
+    }
+  }
+
+  &__subtotal {
+    display: flex;
+    gap: 10px;
+
+    @media screen and (max-width: $screen-ti) {
+      flex-direction: column;
+    }
+    @media screen and (max-width: $screen-t) {
+      grid-area: subtotal;
+      flex-direction: row;
+    }
+  }
+
+  &__delete-button {
+    @media screen and (max-width: $screen-t) {
+      grid-area: actions;
+    }
+  }
+
+  &__key-mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: block;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+
+  &__key-mobile--amount {
+    display: none;
+    @media screen and (max-width: $screen-t) {
+      display: block;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+}

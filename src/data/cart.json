@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "img": "product-green-capsicum.jpg",
+      "title": "Green Capsicum",
+      "price": "$14.99",
+      "priceOld": null,
+      "amount": 5
+    },
+    {
+      "img": "product-small--red-capsicum.jpg",
+      "title": "Red Capsicum",
+      "price": "$14.99",
+      "priceOld": null,
+      "amount": 5
+    }
+  ]
+}

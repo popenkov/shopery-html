@@ -79,6 +79,28 @@
     }
   }
 
+  &--monochrome-light {
+    color: var(--gray-700);
+    background-color: var(--gray-50);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--gray-200);
+      }
+    }
+  }
+
+  &--monochrome-dark {
+    color: var(--front-primary-inversed);
+    background-color: var(--gray-800);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--gray-600);
+      }
+    }
+  }
+
   &--small {
     @include body-tiny(600);
 

@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (amount-actions)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin amount-actions(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +amount-actions("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " amount-actions--" + modsList[i].trim();
+      }
+    }
+
+  .amount-actions(class=allMods)&attributes(attributes)
+    button.amount-actions__button.js-quantity-minus
+      svg.amount-actions__button-icon: use(href= path.icon + "icon__minus")
+    .amount-actions__input-wrapper
+      input.amount-actions__input.js-quantity-input(type="number", value="5", min="1", readonly)
+    button.amount-actions__button.js-quantity-plus
+      svg.amount-actions__button-icon: use(href= path.icon + "icon__plus")

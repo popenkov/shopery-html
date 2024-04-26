@@ -1,0 +1,55 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins//button-reset.scss";
+
+.amount-actions {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 2px;
+  padding: 8px;
+  border: 1px solid var(--gray-100);
+  border-radius: 170px;
+
+  &__button-icon {
+    @include box(14px);
+
+    color: var(--gray-900);
+  }
+
+  &__button {
+    @include button-reset("flex");
+    @include box(34px);
+    @include flex-center;
+
+    background-color: var(--gray-50);
+    border-radius: 50%;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary);
+
+        #{$block-name}__amount-button-icon {
+          color: var(--front-primary-inversed);
+        }
+      }
+    }
+  }
+
+  &__input-wrapper {
+    @include flex-center-vertical;
+  }
+
+  &__input {
+    @include body-medium;
+
+    width: 36px;
+    min-width: 36px;
+    text-align: center;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

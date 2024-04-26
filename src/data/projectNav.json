@@ -22,6 +22,11 @@
           "title": "Wishlist",
           "description": "Wishlist",
           "href": "wishlist"
+        },
+        {
+          "title": "Cart",
+          "description": "Cart",
+          "href": "cart"
         }
       ]
     }
