@@ -80,23 +80,23 @@
   }
 
   &--monochrome-light {
-    color: var(--gray-700);
-    background-color: var(--gray-50);
+    color: var(--monochrome-700);
+    background-color: var(--monochrome-50);
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--gray-200);
+        background-color: var(--monochrome-200);
       }
     }
   }
 
   &--monochrome-dark {
     color: var(--front-primary-inversed);
-    background-color: var(--gray-800);
+    background-color: var(--monochrome-800);
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--gray-600);
+        background-color: var(--monochrome-600);
       }
     }
   }
@@ -118,5 +118,11 @@
     @include body-medium(600);
 
     padding: 15px 40px;
+  }
+
+  &:disabled {
+    color: var(--monochrome-300);
+    background-color: var(--monochrome-50);
+    pointer-events: none;
   }
 }

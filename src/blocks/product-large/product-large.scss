@@ -69,13 +69,13 @@
     @include box(48px);
 
     background-color: var(--color-white);
-    border: 1px solid var(--gray-50);
+    border: 1px solid var(--monochrome-50);
     box-shadow: none;
 
     @media (hover: hover) {
       &:hover {
         border: none;
-        box-shadow: 0 0 8px 0 var(--gray-200);
+        box-shadow: 0 0 8px 0 var(--monochrome-200);
       }
     }
   }
@@ -103,7 +103,7 @@
     @include body-medium;
 
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
     transition: color var(--transition-long);
   }
 
@@ -142,7 +142,7 @@
       &:hover {
         color: var(--color-white);
         background-color: var(--primary);
-        box-shadow: 0 0 8px 2px var(--gray-200);
+        box-shadow: 0 0 8px 2px var(--monochrome-200);
       }
     }
   }

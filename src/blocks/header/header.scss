@@ -9,8 +9,8 @@
     @include body-tiny;
 
     padding: 11px 0 13px;
-    color: var(--gray-300);
-    background-color: var(--gray-800);
+    color: var(--monochrome-300);
+    background-color: var(--monochrome-800);
   }
 
   &__content {
@@ -126,7 +126,7 @@
       span {
         display: block;
         padding: 0;
-        background-color: var(--gray-900);
+        background-color: var(--monochrome-900);
         border: none;
       }
     }
@@ -169,14 +169,14 @@
     display: block;
     width: 1px;
     height: 24px;
-    background-color: var(--gray-200);
+    background-color: var(--monochrome-200);
   }
 
   &__favorite-icon {
     @include box(33px);
 
     stroke-width: 1.3px;
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     fill: transparent;
   }
 
@@ -196,7 +196,7 @@
     @include box(34px);
 
     stroke-width: 1.3px;
-    color: var(--gray-900);
+    color: var(--monochrome-900);
   }
 
   &__cart-items-amount {
@@ -227,21 +227,21 @@
 
   &__cart-title {
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
     font-size: 11px;
     line-height: 1.1825;
     letter-spacing: 0%;
   }
 
   &__cart-amount {
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     font-weight: 500;
     font-size: 14px;
     line-height: 100%;
   }
 
   &__navigation {
-    background-color: var(--gray-50);
+    background-color: var(--monochrome-50);
   }
 
   &__navigation-content {
@@ -338,7 +338,7 @@
 
     gap: 12px;
     padding: 6px 22px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     text-decoration: none;
     transition: all var(--transition);
 
@@ -395,7 +395,7 @@
 
     gap: 5px;
     padding: 18px 0 17px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     text-transform: capitalize;
     text-decoration: none;
 
@@ -439,7 +439,7 @@
   &__navigation-drop-menu-link {
     display: block;
     padding: 4px 6px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     text-decoration: none;
     transition: all var(--transition);
 

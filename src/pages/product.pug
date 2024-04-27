@@ -34,10 +34,10 @@ block content
                 p.product-page__paragraph Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra.
 
                 ul.product-page__list
-                li.product-page__list-item 100 g of fresh leaves provides.
-                li.product-page__list-item Aliquam ac est at augue volutpat elementum.
-                li.product-page__list-item Quisque nec enim eget sapien molestie.
-                li.product-page__list-item Proin convallis odio volutpat finibus posuere.
+                  li.product-page__list-item 100 g of fresh leaves provides.
+                  li.product-page__list-item Aliquam ac est at augue volutpat elementum.
+                  li.product-page__list-item Quisque nec enim eget sapien molestie.
+                  li.product-page__list-item Proin convallis odio volutpat finibus posuere.
 
                 p.product-page__paragraph Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa.
 
@@ -60,26 +60,27 @@ block content
           .tabs__pane#tab2
             .product-page__tabs-content.js-tab-content
               .product-page__description
-                .product-page__spec
-                  span.product-page__spec-title Weight:
-                  span.product-page__spec-value 03
-                .product-page__spec
-                  span.product-page__spec-title Color:
-                  span.product-page__spec-value green
-                .product-page__spec
-                  span.product-page__spec-title Type:
-                  span.product-page__spec-value Organic
-                .product-page__spec
-                  span.product-page__spec-title Category:
-                  span.product-page__spec-value Vegetables
-                .product-page__spec
-                  span.product-page__spec-title Stock Status:
-                  span.product-page__spec-value Available (5,413)
-                .product-page__spec
-                  span.product-page__spec-title Tags:
-                  span.product-page__spec-value
-                    each categoryTag in json.productPreview.categoryTags
-                      a.product-page__spec-link(href= categoryTag.href)= categoryTag.title
+                .product-page__specs
+                  .product-page__spec
+                    span.product-page__spec-title Weight:
+                    span.product-page__spec-value 03
+                  .product-page__spec
+                    span.product-page__spec-title Color:
+                    span.product-page__spec-value green
+                  .product-page__spec
+                    span.product-page__spec-title Type:
+                    span.product-page__spec-value Organic
+                  .product-page__spec
+                    span.product-page__spec-title Category:
+                    span.product-page__spec-value Vegetables
+                  .product-page__spec
+                    span.product-page__spec-title Stock Status:
+                    span.product-page__spec-value Available (5,413)
+                  .product-page__spec
+                    span.product-page__spec-title Tags:
+                    span.product-page__spec-value
+                      each categoryTag in json.productPreview.categoryTags
+                        a.product-page__spec-link(href= categoryTag.href)= categoryTag.title
 
 
               .product-page__right-aside

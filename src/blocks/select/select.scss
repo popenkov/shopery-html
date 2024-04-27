@@ -10,7 +10,7 @@
     min-width: 166px;
     height: 41px;
     padding: 0 16px;
-    border: 1px solid var(--gray-300);
+    border: 1px solid var(--monochrome-300);
 
     @media (hover: hover) {
       &:hover {
@@ -21,7 +21,7 @@
     .current {
       @include body-small;
 
-      color: var(--gray-700);
+      color: var(--monochrome-700);
     }
 
     .nice-select-dropdown {
@@ -33,7 +33,7 @@
       .list {
         max-height: unset;
         margin: 0;
-        border: 1px solid var(--gray-300);
+        border: 1px solid var(--monochrome-300);
 
         .option {
           display: flex;
@@ -80,7 +80,7 @@
   &__placeholder {
     @include body-small;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
   }
   $block-name: &; // #{$block-name}__element
 }

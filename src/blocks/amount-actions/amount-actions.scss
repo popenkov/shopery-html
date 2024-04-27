@@ -8,13 +8,13 @@
 
   gap: 2px;
   padding: 8px;
-  border: 1px solid var(--gray-100);
+  border: 1px solid var(--monochrome-100);
   border-radius: 170px;
 
   &__button-icon {
     @include box(14px);
 
-    color: var(--gray-900);
+    color: var(--monochrome-900);
   }
 
   &__button {
@@ -22,7 +22,7 @@
     @include box(34px);
     @include flex-center;
 
-    background-color: var(--gray-50);
+    background-color: var(--monochrome-50);
     border-radius: 50%;
 
     @media (hover: hover) {

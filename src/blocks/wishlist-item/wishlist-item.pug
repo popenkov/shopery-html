@@ -33,6 +33,9 @@ mixin wishlist-item(data, mods)
       }
     }
 
+    const isNotAvailable = data.stock.type === "not-available";
+    console.log(isNotAvailable)
+
   .wishlist-item(class=allMods)&attributes(attributes)
     .wishlist-item__info
       img.wishlist-item__photo(src=path.img + data.img , alt="")
@@ -46,7 +49,7 @@ mixin wishlist-item(data, mods)
 
 
     .wishlist-item__actions
-      +button("button", "", "light, normal", "#")(class="wishlist-item__add-to-cart-button")
+      +button("button", "", "fill, normal", "#")(class="wishlist-item__add-to-cart-button", disabled = isNotAvailable ? "" : null)
         span Add to Cart
       button.wishlist-item__delete-button.close-button
         svg.close-button__icon: use(href= path.icon + 'icon__cross')

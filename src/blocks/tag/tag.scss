@@ -11,23 +11,24 @@
   white-space: nowrap;
   border-radius: 4px;
 
-  &--red {
-    background-color: var(--red);
+  &--sale,
+  &--not-available {
+    background-color: var(--red-500);
   }
 
-  &--blue {
+  &--best-sale {
     background-color: var(--blue-500);
   }
 
-  &--orange {
-    background-color: var(--orange);
+  &--new {
+    background-color: var(--orange-500);
   }
 
-  &--black {
-    background-color: var(--gray-900);
+  &--out-of-stock {
+    background-color: var(--monochrome-900);
   }
 
-  &--green {
+  &--in-stock {
     color: var(--green);
     background-color: rgb(32 181 38 / 20%);
   }

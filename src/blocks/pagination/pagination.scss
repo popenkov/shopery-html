@@ -24,7 +24,7 @@
     @include body-medium;
 
     padding: 8px;
-    color: var(--gray-400);
+    color: var(--monochrome-400);
     border-radius: 50%;
     cursor: pointer;
     transition:
@@ -47,7 +47,7 @@
     @include body-medium;
 
     padding: 0 13px 5px;
-    color: var(--gray-400);
+    color: var(--monochrome-400);
   }
 
   &__page-prev,
@@ -55,7 +55,7 @@
     @include flex-center;
 
     padding: 5px 10px;
-    border: 1px solid var(--gray-100);
+    border: 1px solid var(--monochrome-100);
     border-radius: 50%;
     cursor: pointer;
 
@@ -64,12 +64,12 @@
     }
 
     &:disabled {
-      background-color: var(--gray-50);
-      border-color: var(--gray-50);
+      background-color: var(--monochrome-50);
+      border-color: var(--monochrome-50);
       pointer-events: none;
 
       #{$block-name}__icon {
-        color: var(--gray-300);
+        color: var(--monochrome-300);
       }
     }
   }

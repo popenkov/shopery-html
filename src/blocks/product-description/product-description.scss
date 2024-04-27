@@ -59,13 +59,13 @@
   &__review-text {
     @include body-small;
 
-    color: var(--gray-600);
+    color: var(--monochrome-600);
   }
 
   &__separator {
     @include body-small(500);
 
-    color: var(--gray-300);
+    color: var(--monochrome-300);
   }
 
   &__sku {
@@ -77,13 +77,13 @@
   &__sku-text {
     @include body-small(500);
 
-    color: var(--gray-800);
+    color: var(--monochrome-800);
   }
 
   &__sku-value {
     @include body-small;
 
-    color: var(--gray-600);
+    color: var(--monochrome-600);
   }
 
   &__price-wrapper {
@@ -97,7 +97,7 @@
   }
 
   &__price--old {
-    color: var(--gray-300);
+    color: var(--monochrome-300);
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
@@ -163,7 +163,7 @@
 
     grid-area: description;
     margin: 0;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
   }
 
   &__cart {
@@ -197,13 +197,13 @@
   &__categories-link {
     @include body-small;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     white-space: nowrap;
     text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
-        color: var(--gray-900);
+        color: var(--monochrome-900);
         text-decoration: underline;
       }
     }
@@ -227,13 +227,13 @@
   &__tags-link {
     @include body-small;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     white-space: nowrap;
     text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
-        color: var(--gray-900);
+        color: var(--monochrome-900);
         text-decoration: underline;
       }
     }

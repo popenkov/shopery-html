@@ -38,7 +38,7 @@
     @include flex-center-vertical;
 
     gap: 8px;
-    color: var(--gray-400);
+    color: var(--monochrome-400);
     white-space: nowrap;
     text-decoration: none;
 
@@ -51,13 +51,13 @@
   &__home-icon {
     @include box(24px);
 
-    color: var(--gray-400);
+    color: var(--monochrome-400);
   }
 
   &__chevron {
     @include box(12px);
 
-    color: var(--gray-400);
+    color: var(--monochrome-400);
     transform: rotate(-90deg);
   }
 

@@ -6,7 +6,7 @@
       "price": "$14.99",
       "priceOld": "$20.99",
       "stock": {
-        "type": "green",
+        "type": "in-stock",
         "text": "In Stock"
       }
     },
@@ -16,7 +16,7 @@
       "price": "$45.00",
       "priceOld": null,
       "stock": {
-        "type": "green",
+        "type": "in-stock",
         "text": "In Stock"
       }
     },
@@ -26,7 +26,7 @@
       "price": "$14.99",
       "priceOld": "$20.99",
       "stock": {
-        "type": "red",
+        "type": "not-available",
         "text": "Out of Stock"
       }
     }

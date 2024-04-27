@@ -58,12 +58,17 @@ ready(function () {
     panes.style.height = tabContentHeight + "px";
   };
 
-  const updateTabHeightOnResize = () => {
-    const currentTabPane = panes.querySelector(".tabs__pane--active");
+  const updateTabHeight = () => {
+    const currentTabPane = panes?.querySelector(".tabs__pane--active");
+    if (!currentTabPane) {
+      return;
+    }
     updateTabContentHeight(currentTabPane);
   };
 
-  window.addEventListener("resize", updateTabHeightOnResize);
+  updateTabHeight();
+
+  window.addEventListener("resize", updateTabHeight);
 
   makeTabs(tabs, panes);
 });

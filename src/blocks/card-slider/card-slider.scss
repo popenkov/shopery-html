@@ -101,14 +101,14 @@
   &__navigation-btn-icon {
     @include box(22px);
 
-    color: var(--gray-400);
+    color: var(--monochrome-400);
   }
 
   &__navigation-btn {
     @include button-reset;
 
     &.swiper-button-disabled #{$block-name}__navigation-btn-icon {
-      color: var(--gray-100);
+      color: var(--monochrome-100);
       cursor: not-allowed;
     }
   }

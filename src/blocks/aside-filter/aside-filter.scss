@@ -44,7 +44,7 @@
     max-width: 390px;
     padding: 10px 16px;
     background-color: var(--back-primary);
-    border-bottom: 1px solid var(--gray-300);
+    border-bottom: 1px solid var(--monochrome-300);
   }
 
   &__footer {
@@ -58,7 +58,7 @@
     max-width: 390px;
     padding: 10px 16px;
     background-color: var(--back-primary);
-    border-top: 1px solid var(--gray-300);
+    border-top: 1px solid var(--monochrome-300);
   }
 
   &__filter-button {
