@@ -2,13 +2,17 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .button {
-  $block-name: &; // #{$block-name}__element
-
   text-decoration: none;
   border: none;
   border-radius: 43px;
   cursor: pointer;
   transition: background-color var(--transition);
+
+  &:disabled {
+    color: var(--monochrome-300);
+    background-color: var(--monochrome-50);
+    pointer-events: none;
+  }
 
   &--fill {
     color: var(--front-primary-inversed);
@@ -119,10 +123,5 @@
 
     padding: 15px 40px;
   }
-
-  &:disabled {
-    color: var(--monochrome-300);
-    background-color: var(--monochrome-50);
-    pointer-events: none;
-  }
+  $block-name: &; // #{$block-name}__element
 }

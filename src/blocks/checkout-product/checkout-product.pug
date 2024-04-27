@@ -22,7 +22,7 @@ mixin checkout-product(data, mods)
 
   .checkout-product(class=allMods)&attributes(attributes)
     .checkout-product__info
-      img.checkout-product__photo(src=path.img + data.img , alt="")
+      img.checkout-product__photo(src=path.img + data.img, alt="")
       h3.checkout-product__title= data.title
         span.checkout-product__quantity x
         span.checkout-product__quantity= data.amount

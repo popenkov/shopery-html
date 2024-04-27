@@ -5,17 +5,7 @@
   $block-name: &; // #{$block-name}__element
 
   overflow: hidden;
-
   border-radius: 6px;
-
-  &__preview {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    background-position: center;
-    background-size: cover;
-  }
 
   &--large {
     border-radius: 20px;
@@ -43,7 +33,6 @@
       width: 20px;
       height: 24px;
       color: var(--color-white);
-
       transition: color var(--transition);
     }
 
@@ -52,8 +41,8 @@
       @include flex-center;
       @include box(82px);
 
-      outline: 1px solid var(--color-white);
       border-radius: 50%;
+      outline: 1px solid var(--color-white);
       transition: outline-color var(--transition);
 
       @media screen and (max-width: $screen-ti) {
@@ -77,7 +66,6 @@
       width: 14px;
       height: 18px;
       color: var(--color-white);
-
       transition: color var(--transition);
     }
 
@@ -87,7 +75,6 @@
       @include box(50px);
 
       background-color: var(--primary);
-
       border-radius: 50%;
       transition: background-color var(--transition);
 
@@ -101,6 +88,14 @@
         }
       }
     }
+  }
+
+  &__preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
   }
 
   &__text {

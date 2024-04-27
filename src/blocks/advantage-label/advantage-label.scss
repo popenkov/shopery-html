@@ -3,6 +3,7 @@
 
 .advantage-label {
   $block-name: &; // #{$block-name}__element
+
   @include flex-center-vertical;
 
   gap: 12px;
@@ -28,8 +29,8 @@
   &__subtitle {
     margin: 0;
     color: var(--monochrome-500);
-    font-size: 13px;
     font-weight: 400;
+    font-size: 13px;
     line-height: 150%;
     letter-spacing: 0%;
   }

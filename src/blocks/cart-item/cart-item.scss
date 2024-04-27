@@ -6,7 +6,6 @@
   display: grid;
   grid-template-columns: 1fr minmax(194px, 317px) minmax(108px, 187px) 194px 22px;
   grid-template-columns: 6fr 1.6fr 2.8fr 1.7fr 22px;
-
   gap: 20px;
   align-items: center;
 
@@ -16,8 +15,8 @@
   }
 
   @media screen and (max-width: $screen-t) {
-    grid-template-columns: auto 1fr;
     grid-template-areas: "info info" "price price" "quantity quantity" "subtotal actions";
+    grid-template-columns: auto 1fr;
   }
 
   &__info {
@@ -27,8 +26,8 @@
 
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;
-      align-items: flex-start;
       gap: 6px;
+      align-items: flex-start;
     }
 
     @media screen and (max-width: $screen-t) {
@@ -86,9 +85,9 @@
 
     @media screen and (max-width: $screen-t) {
       display: flex;
+      grid-area: quantity;
       gap: 10px;
       align-items: center;
-      grid-area: quantity;
     }
   }
 
@@ -99,9 +98,10 @@
     @media screen and (max-width: $screen-ti) {
       flex-direction: column;
     }
+
     @media screen and (max-width: $screen-t) {
-      grid-area: subtotal;
       flex-direction: row;
+      grid-area: subtotal;
     }
   }
 
@@ -123,6 +123,7 @@
 
   &__key-mobile--amount {
     display: none;
+
     @media screen and (max-width: $screen-t) {
       display: block;
       font-weight: 500;

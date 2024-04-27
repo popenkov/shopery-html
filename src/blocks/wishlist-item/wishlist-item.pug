@@ -34,11 +34,10 @@ mixin wishlist-item(data, mods)
     }
 
     const isNotAvailable = data.stock.type === "not-available";
-    console.log(isNotAvailable)
 
   .wishlist-item(class=allMods)&attributes(attributes)
     .wishlist-item__info
-      img.wishlist-item__photo(src=path.img + data.img , alt="")
+      img.wishlist-item__photo(src=path.img + data.img, alt="")
       h3.wishlist-item__title= data.title
     .wishlist-item__price
       span.wishlist-item__price-new= data.price

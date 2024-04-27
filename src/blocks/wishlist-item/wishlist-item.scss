@@ -5,7 +5,6 @@
 
   display: grid;
   grid-template-columns: 1fr minmax(194px, 317px) minmax(108px, 187px) 194px;
-
   gap: 20px;
   align-items: center;
 
@@ -18,14 +17,14 @@
   }
 
   @media screen and (max-width: $screen-ti) {
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "info price stock" "info price actions";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
   }
 
   @media screen and (max-width: $screen-t) {
-    grid-template-columns: auto 1fr;
     grid-template-areas: "info info" "price stock" "actions actions";
+    grid-template-columns: auto 1fr;
   }
 
   &__info {
@@ -35,8 +34,8 @@
 
     @media screen and (max-width: $screen-tl) {
       flex-direction: column;
-      align-items: flex-start;
       gap: 6px;
+      align-items: flex-start;
     }
 
     @media screen and (max-width: $screen-ti) {
@@ -70,8 +69,8 @@
     margin: 0;
 
     @media screen and (max-width: $screen-ti) {
-      grid-area: price;
       flex-direction: column;
+      grid-area: price;
       align-items: flex-start;
     }
 
@@ -93,8 +92,8 @@
     width: fit-content;
 
     @media screen and (max-width: $screen-ti) {
-      width: auto;
       grid-area: stock;
+      width: auto;
       text-align: center;
     }
 
@@ -123,6 +122,7 @@
   &__add-to-cart-button {
     max-height: 45px;
     white-space: nowrap;
+
     @media screen and (max-width: $screen-ti) {
       flex-grow: 1;
     }

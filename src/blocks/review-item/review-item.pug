@@ -31,7 +31,7 @@ mixin review-item(data, mods)
   .review-item(class=allMods)&attributes(attributes)
     .review-item__header
       .review-item__author
-        img.review-item__avatar(src= path.img + data.avatar , alt="avatar")
+        img.review-item__avatar(src= path.img + data.avatar, alt="avatar")
         span.review-item__name= data.name
         .review-item__rating
           +star-rating(data.rating)

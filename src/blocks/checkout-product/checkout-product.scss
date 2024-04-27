@@ -15,6 +15,7 @@
 
   &__photo {
     @include box(60px);
+
     object-fit: contain;
   }
 

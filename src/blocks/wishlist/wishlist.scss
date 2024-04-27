@@ -14,8 +14,8 @@
   }
 
   &__items {
+    border: 1px solid rgb(230 230 230);
     border-radius: 8px;
-    border: 1px solid rgb(230, 230, 230);
   }
 
   &__title + &__items {
@@ -24,10 +24,9 @@
 
   &__items-header {
     display: grid;
-
     grid-template-columns: 1fr minmax(194px, 336px) minmax(108px, 187px) 212px;
     padding: 12px 24px 13px;
-    border-bottom: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230 230 230);
 
     @media screen and (max-width: $screen-d) {
       grid-template-columns: 2fr 1fr 1fr 194px;
@@ -56,13 +55,14 @@
 
   &__item {
     padding: 11px 0;
+
     &:not(:last-child) {
-      border-bottom: 1px solid rgb(230, 230, 230);
+      border-bottom: 1px solid rgb(230 230 230);
     }
   }
 
   &__items-footer {
     padding: 24px;
-    border-top: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid rgb(230 230 230);
   }
 }

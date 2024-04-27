@@ -4,6 +4,7 @@
   $block-name: &; // #{$block-name}__element
 
   @include flex-column;
+
   gap: 13px;
 
   &__header {
@@ -12,6 +13,7 @@
     align-items: center;
     justify-content: space-between;
   }
+
   &__author {
     display: grid;
     grid-template-areas: "avatar name" "avatar rating";
@@ -23,8 +25,8 @@
     @include box(40px);
 
     grid-area: avatar;
-    border-radius: 50%;
     overflow: hidden;
+    border-radius: 50%;
   }
 
   &__name {
