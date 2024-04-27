@@ -27,7 +27,7 @@
 
     &--text {
       padding: 14px 16px;
-      border: 1px solid rgb(230 230 230);
+      border: 1px solid var(--monochrome-100);
       border-radius: 6px;
       outline: none;
     }
@@ -35,7 +35,7 @@
     &--search {
       position: relative;
       padding: 14px 16px 14px 44px;
-      border: 1px solid rgb(230 230 230);
+      border: 1px solid var(--monochrome-100);
       border-radius: 6px;
       outline: none;
 

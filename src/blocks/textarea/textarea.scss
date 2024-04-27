@@ -1,0 +1,41 @@
+@import ".././../scss/mixins/text-styles.scss";
+@import ".././../scss/mixins/box.scss";
+
+.textarea {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-column;
+
+  gap: 6px;
+  position: relative;
+  width: 100%;
+
+  &__input {
+    @include search-field;
+
+    width: 100%;
+    min-height: 100px;
+    padding: 14px 16px;
+    border: 1px solid var(--monochrome-100);
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+    transition: all var(--transition);
+
+    &::placeholder {
+      color: var(--monochrome-500);
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: var(--primary);
+      outline: none;
+    }
+  }
+
+  &__label {
+    @include body-small;
+
+    margin: 0;
+  }
+}

@@ -33,7 +33,7 @@
   }
 
   &__tabs-labels {
-    border-bottom: 1px solid rgb(230 230 230);
+    border-bottom: 1px solid var(--monochrome-100);
   }
 
   &__tabs-content {
@@ -145,7 +145,7 @@
 
     gap: 27px;
     padding: 24px 20px;
-    border: 1px solid rgb(230 230 230);
+    border: 1px solid var(--monochrome-100);
     border-radius: 6px;
   }
 
@@ -173,7 +173,7 @@
   }
 
   &__related-product {
-    border-color: rgb(230 230 230);
+    border-color: var(--monochrome-100);
     border-radius: 8px;
   }
 
@@ -227,7 +227,7 @@
   &__review {
     &:not(:last-of-type) {
       padding-bottom: 20px;
-      border-bottom: 1px solid rgb(230 230 230);
+      border-bottom: 1px solid var(--monochrome-100);
     }
   }
 
@@ -251,7 +251,7 @@
 
       #{$block-name}__review:nth-child(n + 4):not(:last-of-type) {
         padding-bottom: 20px;
-        border-bottom: 1px solid rgb(230 230 230);
+        border-bottom: 1px solid var(--monochrome-100);
       }
     }
   }

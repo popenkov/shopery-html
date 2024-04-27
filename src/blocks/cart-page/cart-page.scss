@@ -35,7 +35,7 @@
 
   &__items {
     grid-area: items;
-    border: 1px solid rgb(230 230 230);
+    border: 1px solid var(--monochrome-100);
     border-radius: 8px;
   }
 
@@ -47,7 +47,7 @@
     display: grid;
     grid-template-columns: 4.6fr 1.4fr 2.2fr 1.8fr;
     padding: 12px 19px 13px;
-    border-bottom: 1px solid rgb(230 230 230);
+    border-bottom: 1px solid var(--monochrome-100);
 
     @media screen and (max-width: $screen-d) {
       grid-template-columns: 4.5fr 1.5fr 2.2fr 1.8fr;
@@ -74,7 +74,7 @@
     padding: 11px 0;
 
     &:not(:last-child) {
-      border-bottom: 1px solid rgb(230 230 230);
+      border-bottom: 1px solid var(--monochrome-100);
     }
   }
 
@@ -84,7 +84,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    border-top: 1px solid rgb(230 230 230);
+    border-top: 1px solid var(--monochrome-100);
 
     @media screen and (max-width: $screen-t) {
       flex-direction: column;

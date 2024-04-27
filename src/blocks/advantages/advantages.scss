@@ -16,7 +16,7 @@
     overflow: hidden;
     background-color: var(--back-primary);
     border-radius: 8px;
-    outline: 1px solid rgb(230 230 230);
+    outline: 1px solid var(--monochrome-100);
     box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
 
     @media screen and (max-width: $screen-tl) {
@@ -90,7 +90,7 @@
 
     @media screen and (max-width: $screen-t) {
       border: none;
-      border-bottom: 1px solid rgb(230 230 230);
+      border-bottom: 1px solid var(--monochrome-100);
     }
 
     &:first-child {
@@ -105,7 +105,7 @@
     }
 
     &:not(:first-child, :last-child) {
-      border-right: 1px solid rgb(230 230 230);
+      border-right: 1px solid var(--monochrome-100);
 
       @media screen and (max-width: $screen-tl) {
         border-right: none;
@@ -114,13 +114,13 @@
 
     &:nth-child(2) {
       @media screen and (max-width: $screen-tl) {
-        border-bottom: 1px solid rgb(230 230 230);
+        border-bottom: 1px solid var(--monochrome-100);
       }
     }
 
     &:nth-child(3) {
       @media screen and (max-width: $screen-tl) {
-        border-right: 1px solid rgb(230 230 230);
+        border-right: 1px solid var(--monochrome-100);
       }
     }
   }

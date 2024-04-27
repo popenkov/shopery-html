@@ -82,5 +82,10 @@
 
     color: var(--monochrome-500);
   }
+
+  &__placeholder-value {
+    pointer-events: none;
+  }
+
   $block-name: &; // #{$block-name}__element
 }

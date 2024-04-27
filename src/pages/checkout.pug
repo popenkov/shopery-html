@@ -30,10 +30,10 @@ block content
           .checkout-page__form-row.grid.grid__three-items
             .checkout-page__input-container.checkout-page__input-address-country
               .checkout-page__input-label Country / Region
-              +select(json.catalog.sort.filter, "", "address-country")(class="checkout-page__input")
+              +select(json.checkout.countries, "", "address-country", "Select")(class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
             .checkout-page__input-container.checkout-page__input-address-states
               .checkout-page__input-label States
-              +select(json.catalog.sort.filter, "", "address-states")(class="checkout-page__input")
+              +select(json.checkout.states, "", "address-states", "Select")(class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
             .checkout-page__input-container.checkout-page__input-address-zip
               +field("text", "address-zip-code", "Zip Code", "Zip Code", "")(class="checkout-page__input")
 
@@ -46,23 +46,23 @@ block content
           +checkbox("", "another-address", "another-address")(class="checkout-page__checkbox js-checkout-show-address")
             span.checkout-page__checkbox-text Ship to a different address
 
-          .checkout-page__shipping-address
+          .checkout-page__shipping-address.js-checkout-shipping-address
             .checkout-page__form-row
               .checkout-page__input-container.checkout-page__input-address-street
                 +field("text", "shipping-address-street", "Street Address", "Street Address", "")(class="checkout-page__input")
             .checkout-page__form-row.grid.grid__three-items
               .checkout-page__input-container.checkout-page__input-address-country
                 .checkout-page__input-label Country / Region
-                +select(json.catalog.sort.filter, "", "shipping-address-country")
+                +select(json.checkout.countries, "", "shipping-address-country", "Select")(data-placeholder="Select", data-searchable="true")
               .checkout-page__input-container.checkout-page__input-address-states
                 .checkout-page__input-label States
-                +select(json.catalog.sort.filter, "", "shipping-address-states")
+                +select(json.checkout.states, "", "shipping-address-states", "Select")(data-placeholder="Select", data-searchable="true")
               .checkout-page__input-container.checkout-page__input-address-zip
                 +field("text", "shipping-address-zip-code", "Zip Code", "Zip Code", "")(class="checkout-page__input")
         .checkout-page__form-comment
           h3.checkout-page__title Additional Info
           .checkout-page__input-container.checkout-page__input-name
-            textarea.checkout-page__textarea(type="comment", name="comment")
+            +textarea({labelText: "Order Notes (Optional)"})(type="comment", name="comment", placeholder="Notes about your order, e.g. special notes for delivery")
 
     +checkout-total(class="checkout-page__aside")
 
