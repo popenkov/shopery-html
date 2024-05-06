@@ -2,16 +2,15 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin field(type, fieldName, hint, labelText, mods)
+mixin field( hint, labelText, mods, isSearch)
 
   //- Принимает:
-  //-   type    {string} - тип поля
-  //-   fieldName    {string} - имя поля
   //-   hint     {string} - плэйсхолдер
   //-   labelText     {string} - label
+  //-   isSearch     {boolean} - search input
   //-   mods     {string} - список модификаторов
   //- Вызов:
-    +field("type", "input name", "placeholder", "mods")
+    +field("placeholder", "labelText","mods", true )
 
   -
     //- список модификаторов
@@ -26,10 +25,11 @@ mixin field(type, fieldName, hint, labelText, mods)
   label.field(class=allMods + ' field--' + type)
     if labelText
       span.field__label= labelText
-    case type
-      when "text"
-        input.field__input.field__input--text(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
-      when "search"
-        input.field__input.field__input--search(type="text", name=fieldName, placeholder=hint)&attributes(attributes)
-        svg.field__search-icon: use(href= path.icon + "icon__search")
+    if isSearch
+      input.field__input.field__input--search(type="text", name=fieldName, placeholder=hint)&attributes(attributes)
+      svg.field__search-icon: use(href= path.icon + "icon__search")
+    else
+      input.field__input.field__input--text(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
+
+
 

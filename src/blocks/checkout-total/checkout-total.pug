@@ -37,9 +37,12 @@ mixin checkout-total(text, mods)
         span.checkout-total__value $84.00
 
     .checkout-total__payment-methods
-      +radio("Cash on Delivery", "payment-method", "cash")(class="filter-accordion__content-item")
-      +radio("Paypal", "payment-method", "paypal")(class="filter-accordion__content-item")
-      +radio("Amazon Pay", "payment-method", "amazon-pay")(class="filter-accordion__content-item")
+      .filter-accordion__content-item
+        +radio("Cash on Delivery")(name="payment-method", id="cash", checked)
+      .filter-accordion__content-item
+        +radio("Paypal")(name="payment-method", id="paypal")
+      .filter-accordion__content-item
+        +radio("Amazon Pay")(name="payment-method", id="amazon-pay")
 
 
     +button("button", "", "fill, large", "#")(class="checkout-total__button")

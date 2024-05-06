@@ -30,7 +30,7 @@ block content
               svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
             .filter-accordion__content(style="max-height: auto")
               each category in json.catalog.filter.categories
-                +radio(category.title, "filter-category", category.value, category.amount, "")(class="filter-accordion__content-item")
+                +radio(category.value, category.amount, "")(name= category.title, id="filter-category", class="filter-accordion__content-item")
 
           .filter-accordion__item.aside-filter__item
             button.filter-accordion__button.is-open Price
@@ -43,19 +43,19 @@ block content
               svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
             .filter-accordion__content
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-5")
+                +checkbox()(name="rating", id="rating-5")
                   +star-rating(5, "5.0")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-4")
+                +checkbox()(name="rating", id="rating-4")
                   +star-rating(4, "4.0 & up")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-3")
+                +checkbox()(name="rating", id="rating-3")
                   +star-rating(3, "3.0 & up")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-2")
+                +checkbox()(name="rating", id="rating-2")
                   +star-rating(2, "2.0 & up")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-1")
+                +checkbox()(name="rating", id="rating-1")
                   +star-rating(1, "1.0 & up")
 
           .filter-accordion__item.aside-filter__item

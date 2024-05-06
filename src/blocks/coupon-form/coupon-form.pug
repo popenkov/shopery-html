@@ -23,7 +23,7 @@ mixin coupon-form(text, mods)
   .coupon-form(class=allMods)&attributes(attributes)
     h2.coupon-form__title Coupon Code
     .coupon-form__input-container
-      +field("text", "subscription-email", "Enter code", "", "", true)(class="coupon-form__input")
+      +field("Enter code")(type="text", name="subscription-email", class="coupon-form__input")
       +button("button","Apply Coupon", "monochrome-dark, large")(class="coupon-form__button")
 
 

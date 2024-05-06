@@ -8,6 +8,11 @@
   align-items: flex-start;
   padding: 30px 0 80px;
 
+  @media screen and (max-width: $screen-ti) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   &__main {
     flex-grow: 1;
   }
@@ -51,16 +56,17 @@
     @include flex-column;
 
     gap: 8px;
+
     .field {
       @include flex-column;
 
       gap: 8px;
-    }
 
-    .field__label {
-      @include body-small;
+      &__label {
+        @include body-small;
 
-      margin: 0;
+        margin: 0;
+      }
     }
 
     .select {
@@ -113,5 +119,9 @@
   &__aside {
     flex-grow: 1;
     max-width: 424px;
+
+    @media screen and (max-width: $screen-ti) {
+      max-width: unset;
+    }
   }
 }
