@@ -13,7 +13,7 @@ block content
   .checkout-page.container
     .checkout-page__main
       h2.checkout-page__title Billing Information
-      form.checkout-page__form.js-checkout-form
+      form.checkout-page__form.js-checkout-form#checkoutForm
         .checkout-page__form-main
           .checkout-page__form-row.grid.grid__three-items
             .checkout-page__input-container.checkout-page__input-name
@@ -25,21 +25,21 @@ block content
 
           .checkout-page__form-row
             .checkout-page__input-container.checkout-page__input-address-street
-              +field( "Street Address", "Street Address", "")(name="address-street", type="text", class="checkout-page__input")
+              +field( "Street Address", "Street Address", "")(id="addressStreet", name="address-street", type="text", class="checkout-page__input")
 
           .checkout-page__form-row.grid.grid__three-items
             .checkout-page__input-container.checkout-page__input-address-country
               .checkout-page__input-label Country / Region
-              +select(json.checkout.countries, "", "address-country", "Select")(class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
+              +select(json.checkout.countries, "", "address-country", "Select")(id="addressCountry", class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
             .checkout-page__input-container.checkout-page__input-address-states
               .checkout-page__input-label States
-              +select(json.checkout.states, "", "address-states", "Select")(class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
+              +select(json.checkout.states, "", "address-states", "Select")(id="addressState", class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
             .checkout-page__input-container.checkout-page__input-address-zip
-              +field("Zip Code", "Zip Code", "")(name="address-zip-code", type="text", class="checkout-page__input")
+              +field("Zip Code", "Zip Code", "")(id="addressZip", name="address-zip-code", type="text", class="checkout-page__input")
 
           .checkout-page__form-row.grid.grid__two-items
             .checkout-page__input-container.checkout-page__input-email
-              +field("Email Address", "Email", "")(name="email", type="text", class="checkout-page__input")
+              +field("Email Address", "Email", "")(id="email", name="email", type="text", class="checkout-page__input")
             .checkout-page__input-container.checkout-page__input-phone
               +field("Phone number", "Phone", "")(id="phone", name="phone", type="phone", class="checkout-page__input")
 
@@ -49,16 +49,16 @@ block content
           .checkout-page__shipping-address.js-checkout-shipping-address
             .checkout-page__form-row
               .checkout-page__input-container.checkout-page__input-address-street
-                +field("Street Address", "Street Address", "")(name="shipping-address-street", type="text", class="checkout-page__input")
+                +field("Street Address", "Street Address", "")(id="shippingAddressStreet", name="shipping-address-street", type="text", class="checkout-page__input")
             .checkout-page__form-row.grid.grid__three-items
               .checkout-page__input-container.checkout-page__input-address-country
                 .checkout-page__input-label Country / Region
-                +select(json.checkout.countries, "", "shipping-address-country", "Select")(data-placeholder="Select", data-searchable="true")
+                +select(json.checkout.countries, "", "shipping-address-country", "Select")(id="shippingAddressCountry", data-placeholder="Select", data-searchable="true")
               .checkout-page__input-container.checkout-page__input-address-states
                 .checkout-page__input-label States
-                +select(json.checkout.states, "", "shipping-address-states", "Select")(data-placeholder="Select", data-searchable="true")
+                +select(json.checkout.states, "", "shipping-address-states", "Select")(id="shippingAddressStates", data-placeholder="Select", data-searchable="true")
               .checkout-page__input-container.checkout-page__input-address-zip
-                +field("Zip Code", "Zip Code", "")(name="shipping-address-zip-code", type="text", class="checkout-page__input")
+                +field("Zip Code", "Zip Code", "")(id="shippingAddressZipCode", name="shipping-address-zip-code", type="text", class="checkout-page__input")
         .checkout-page__form-comment
           h3.checkout-page__title Additional Info
           .checkout-page__input-container.checkout-page__input-name

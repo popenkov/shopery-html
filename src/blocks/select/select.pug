@@ -23,10 +23,10 @@ mixin select(options, label, name, placeholder, mods)
       }
     }
 
-  .select(class=allMods)&attributes(attributes)
+  .select(class=allMods)
     if label
       span.select__placeholder= label
-    select.select__field.js-nice-select
+    select.select__field.js-nice-select&attributes(attributes)
       if placeholder
         option.select__option.select__placeholder-value= placeholder
       each option in options

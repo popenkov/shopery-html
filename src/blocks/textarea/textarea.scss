@@ -6,8 +6,8 @@
 
   @include flex-column;
 
-  gap: 6px;
   position: relative;
+  gap: 6px;
   width: 100%;
 
   &__input {
@@ -19,8 +19,8 @@
     border: 1px solid var(--monochrome-100);
     border-radius: 6px;
     outline: none;
-    resize: none;
     transition: all var(--transition);
+    resize: none;
 
     &::placeholder {
       color: var(--monochrome-500);

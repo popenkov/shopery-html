@@ -10,6 +10,28 @@
   display: block;
   width: 100%;
 
+  &__icon {
+    @include box(20px);
+
+    position: absolute;
+
+    &--search {
+      top: 12px;
+      left: 15px;
+    }
+    &--warning,
+    &--error,
+    &--success {
+      display: none;
+      right: 15px;
+      top: 15px;
+    }
+  }
+
+  &__input-container {
+    position: relative;
+  }
+
   &__input {
     @include search-field;
 
@@ -43,13 +65,27 @@
         border-color: var(--primary);
       }
     }
+
+    &.just-validate-error-field {
+      border-color: var(--status-danger);
+
+      & ~ #{$block-name}__icon--error {
+        display: block;
+      }
+    }
+
+    &.just-validate-success-field {
+      border-color: var(--primary);
+
+      & ~ #{$block-name}__icon--success {
+        display: block;
+      }
+    }
   }
 
-  &__search-icon {
-    @include box(20px);
+  .just-validate-error-label {
+    @include body-small(500);
 
-    position: absolute;
-    top: 12px;
-    left: 15px;
+    color: var(--status-danger) !important;
   }
 }

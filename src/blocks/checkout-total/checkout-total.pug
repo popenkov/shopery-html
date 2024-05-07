@@ -45,5 +45,5 @@ mixin checkout-total(text, mods)
         +radio("Amazon Pay")(name="payment-method", id="amazon-pay")
 
 
-    +button("button", "", "fill, large", "#")(class="checkout-total__button")
+    +button("button", "", "fill, large", "#")(class="checkout-total__button js-checkout-submit-button", type="submit", form="checkoutForm")
       span Proceed to checkout

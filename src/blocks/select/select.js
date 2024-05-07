@@ -14,6 +14,10 @@ ready(function () {
       };
 
       new NiceSelect(select, selectOptions);
+
+      select.addEventListener("change", (evt) => {
+        console.log("change", evt.target.value);
+      });
     });
   }
 });
