@@ -19,12 +19,27 @@
       top: 12px;
       left: 15px;
     }
+
     &--warning,
     &--error,
     &--success {
       display: none;
       right: 15px;
       top: 15px;
+    }
+  }
+
+  &__password-button {
+    @include button-reset;
+    @include box(20px);
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    padding: 0;
+
+    &:focus-visible {
+      outline: none;
     }
   }
 
@@ -54,6 +69,13 @@
       outline: none;
     }
 
+    &--password {
+      padding: 14px 44px 16px 14px;
+      border: 1px solid var(--monochrome-100);
+      border-radius: 6px;
+      outline: none;
+    }
+
     &--search {
       position: relative;
       padding: 14px 16px 14px 44px;
@@ -66,7 +88,7 @@
       }
     }
 
-    &.just-validate-error-field {
+    &:not(#{$block-name}__input--password).just-validate-error-field {
       border-color: var(--status-danger);
 
       & ~ #{$block-name}__icon--error {
@@ -74,7 +96,7 @@
       }
     }
 
-    &.just-validate-success-field {
+    &:not(#{$block-name}__input--password).just-validate-success-field {
       border-color: var(--primary);
 
       & ~ #{$block-name}__icon--success {

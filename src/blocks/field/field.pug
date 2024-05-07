@@ -2,12 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin field( hint, labelText, mods, isSearch)
+mixin field( hint, labelText, mods, isSearch, isPassword)
 
   //- Принимает:
   //-   hint     {string} - плэйсхолдер
   //-   labelText     {string} - label
   //-   isSearch     {boolean} - search input
+  //-   isPassword     {boolean} - password input
   //-   mods     {string} - список модификаторов
   //- Вызов:
     +field("placeholder", "labelText","mods", true )
@@ -22,12 +23,16 @@ mixin field( hint, labelText, mods, isSearch)
       }
     }
 
-  label.field(class=allMods + ' field--' + type)
+  label.field(class=allMods)
     if labelText
       span.field__label= labelText
     if isSearch
       input.field__input.field__input--search(type="text", name=fieldName, placeholder=hint)&attributes(attributes)
       svg.field__icon.field__icon--search: use(href= path.icon + "icon__search")
+    if isPassword
+      input.field__input.field__input--password(type="password", name=fieldName, placeholder=hint)&attributes(attributes)
+      button.field__password-button.js-show-password-button
+        svg.field__icon.field__icon--password: use(href= path.icon + "icon__eye-open")
     else
       .field__input-container
         input.field__input.field__input--text(type=type, name=fieldName, placeholder=hint)&attributes(attributes)

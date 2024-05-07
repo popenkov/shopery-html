@@ -153,7 +153,8 @@ export const config = {
     "src/scss/utils/visually-hidden.scss",
     "src/blocks/icon-button/icon-button.scss",
     "src/blocks/wishlist/wishlist.scss",
-    "src/blocks/cart-page/cart-page.scss"
+    "src/blocks/cart-page/cart-page.scss",
+    "src/blocks/sign-in/sign-in.scss"
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
