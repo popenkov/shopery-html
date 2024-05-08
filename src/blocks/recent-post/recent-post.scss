@@ -1,0 +1,45 @@
+@import "../../scss/breakpoints";
+
+.recent-post {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 12px;
+
+  &__photo {
+    width: 100%;
+    max-width: 100px;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  &__description {
+    @include flex-column;
+
+    gap: 8px;
+  }
+
+  &__title {
+    @include body-medium(500);
+
+    margin: 0;
+  }
+
+  &__date {
+    @include flex-center-vertical;
+
+    gap: 6px;
+  }
+
+  &__date-icon {
+    @include box(18px);
+
+    color: var(--primary);
+  }
+
+  &__date-value {
+    @include body-small;
+
+    color: var(--monochrome-600);
+  }
+}

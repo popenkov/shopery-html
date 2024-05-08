@@ -22,6 +22,7 @@ mixin field( hint, labelText, mods, isSearch, isPassword)
         allMods = allMods + ' field--' + modsList[i].trim();
       }
     }
+    console.log(hint, labelText, mods, isSearch, isPassword)
 
   label.field(class=allMods)
     if labelText
@@ -29,7 +30,7 @@ mixin field( hint, labelText, mods, isSearch, isPassword)
     if isSearch
       input.field__input.field__input--search(type="text", name=fieldName, placeholder=hint)&attributes(attributes)
       svg.field__icon.field__icon--search: use(href= path.icon + "icon__search")
-    if isPassword
+    else if isPassword
       input.field__input.field__input--password(type="password", name=fieldName, placeholder=hint)&attributes(attributes)
       button.field__password-button.js-show-password-button
         svg.field__icon.field__icon--password: use(href= path.icon + "icon__eye-open")

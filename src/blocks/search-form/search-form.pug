@@ -2,10 +2,9 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin search-form(text, mods)
+mixin search-form( mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +search-form("Текст", "some-mod")
@@ -21,5 +20,5 @@ mixin search-form(text, mods)
     }
 
   form.search-form(class=allMods)&attributes(attributes)
-    +field("search", "", "", true)(type="text", class="search-form__field")
+    +field("search", "", "", true, false)(type="text", class="search-form__field")
     +button("button","Search", "fill, normal")(class="search-form__button")

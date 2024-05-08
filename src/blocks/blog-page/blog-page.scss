@@ -1,0 +1,176 @@
+@import "../../scss/breakpoints";
+
+.blog-page {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-areas: "filter sort" "filter result" "filter pagination";
+  grid-template-columns: calc(33% - 12px) calc(67% - 12px);
+  gap: 26px 24px;
+  padding: 32px 0 82px;
+
+  @media screen and (max-width: $screen-tl) {
+    grid-template-areas: "filter sort" "result result" "pagination pagination" "gallery gallery" "recentPosts recentPosts";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__filter {
+    @include flex-column;
+
+    grid-area: filter;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  &__filter-accordion {
+    @include flex-column;
+
+    gap: 20px;
+  }
+
+  &__sorting {
+    @include flex-center-sb;
+
+    grid-area: sort;
+    padding-top: 2px;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+  }
+
+  &__items-found {
+    @include flex-center-vertical;
+    @include body-medium;
+
+    gap: 4px;
+    margin-right: 3px;
+  }
+
+  &__items-found-value {
+    color: var(--monochrome-900);
+    font-weight: 600;
+  }
+
+  &__items-found-text {
+    color: var(--monochrome-600);
+  }
+
+  &__result {
+    grid-area: result;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__result--desktop {
+    @media screen and (max-width: $screen-tl) {
+      display: none !important;
+    }
+  }
+
+  &__result--mobile {
+    display: none !important;
+
+    @media screen and (max-width: $screen-tl) {
+      display: grid !important;
+    }
+  }
+
+  &__gallery {
+    @include flex-column;
+
+    grid-area: gallery;
+    gap: 20px;
+    width: 100%;
+
+    @media screen and (max-width: $screen-tl) {
+      @include flex-column-center;
+    }
+  }
+
+  &__gallery--desktop {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__gallery--mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: block;
+    }
+  }
+
+  &__gallery-title {
+    @include body-xl(500);
+
+    margin: 0;
+  }
+
+  &__filters + &__gallery {
+    margin-top: -3px;
+  }
+
+  &__gallery-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: repeat(4, 80px);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__pagination {
+    @include flex-center;
+
+    grid-area: pagination;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  &__recent-posts {
+    @include flex-column;
+
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__recent-posts--desktop {
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__recent-posts--mobile {
+    display: none;
+
+    @media screen and (max-width: $screen-tl) {
+      display: flex !important;
+      grid-area: recentPosts;
+      gap: 10px;
+    }
+  }
+
+  &__recent-posts-title {
+    @include body-xl(500);
+
+    margin: 0;
+  }
+
+  &__recent-posts-cards {
+    @include flex-column;
+
+    gap: 24px;
+  }
+}

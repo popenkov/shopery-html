@@ -6,6 +6,14 @@
 .aside-filter {
   $block-name: &; // #{$block-name}__element
 
+  &__search {
+    width: 100%;
+
+    input {
+      height: 49px;
+    }
+  }
+
   &__checkbox {
     padding: 10px 0 11px;
 
@@ -113,12 +121,31 @@
     @include box(25px);
   }
 
+  &__categories-container {
+    @include flex-column;
+
+    gap: 16px;
+  }
+
+  &__title + &__categories-container {
+    margin-top: 20px;
+  }
+
+  &__bb-container {
+    padding-bottom: 27px;
+    border-bottom: 1px solid var(--monochrome-100);
+  }
+
   &__tags-container {
     @include flex-center-vertical;
 
     flex-wrap: wrap;
     gap: 8px;
-    padding-top: 12px !important;
+    padding-top: 12px;
+
+    &--blog {
+      padding-top: 20px;
+    }
   }
 
   &__banner--desktop {

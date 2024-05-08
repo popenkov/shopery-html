@@ -30,4 +30,14 @@
     padding: 14px 24px;
     border-radius: 0 6px 6px 0;
   }
+
+  &--small {
+    #{$block-name}__field {
+      border-radius: 6px;
+    }
+
+    #{$block-name}__button {
+      display: none;
+    }
+  }
 }

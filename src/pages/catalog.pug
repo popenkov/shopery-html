@@ -30,7 +30,8 @@ block content
               svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
             .filter-accordion__content(style="max-height: auto")
               each category in json.catalog.filter.categories
-                +radio(category.value, category.amount, "")(name= category.title, id="filter-category", class="filter-accordion__content-item")
+                .filter-accordion__content-item
+                  +radio( category.title, category.amount, "")(name="filter-category", value=category.value,  id=category.value)
 
           .filter-accordion__item.aside-filter__item
             button.filter-accordion__button.is-open Price
