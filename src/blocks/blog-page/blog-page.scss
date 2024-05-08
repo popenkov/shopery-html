@@ -9,16 +9,27 @@
   gap: 26px 24px;
   padding: 32px 0 82px;
 
+  @media screen and (max-width: $screen-d) {
+    grid-template-columns: 1fr 2fr;
+  }
+
   @media screen and (max-width: $screen-tl) {
     grid-template-areas: "filter sort" "result result" "pagination pagination" "gallery gallery" "recentPosts recentPosts";
     grid-template-columns: 1fr 1fr;
+    gap: 40px 20px;
+  }
+
+  @media screen and (max-width: $screen-t) {
+    grid-template-areas: "filter " "sort " "result " " pagination" " gallery" " recentPosts";
+    grid-template-columns: 1fr;
+    gap: 40px 20px;
   }
 
   &__filter {
     @include flex-column;
 
     grid-area: filter;
-    gap: 24px;
+    gap: 20px;
     align-items: flex-start;
   }
 
@@ -38,6 +49,11 @@
       flex-direction: column;
       gap: 10px;
       align-items: flex-end;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      flex-flow: row wrap;
+      align-items: center;
     }
   }
 
@@ -61,23 +77,27 @@
   &__result {
     grid-area: result;
 
-    @media screen and (max-width: $screen-tl) {
-      flex-direction: column;
-      gap: 10px;
+    @media screen and (max-width: $screen-dl) {
+      gap: 12px;
     }
   }
 
   &__result--desktop {
     @media screen and (max-width: $screen-tl) {
-      display: none !important;
+      display: none;
     }
   }
 
   &__result--mobile {
-    display: none !important;
+    display: none;
 
     @media screen and (max-width: $screen-tl) {
-      display: grid !important;
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 5px));
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -113,21 +133,24 @@
     margin: 0;
   }
 
-  &__filters + &__gallery {
-    margin-top: -3px;
-  }
-
   &__gallery-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 8px;
 
     @media screen and (max-width: $screen-d) {
-      grid-template-columns: repeat(4, 80px);
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    @media screen and (max-width: $screen-t) {
-      grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: $screen-tl) {
+      display: flex;
+      flex-wrap: wrap;
+
+      .instagram-card {
+        width: 100%;
+        min-width: 80px;
+        max-width: 100px;
+      }
     }
   }
 
@@ -172,5 +195,15 @@
     @include flex-column;
 
     gap: 24px;
+
+    @media screen and (max-width: $screen-tl) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-template-columns: 1fr;
+    }
   }
 }

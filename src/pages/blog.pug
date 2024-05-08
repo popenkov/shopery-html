@@ -66,14 +66,12 @@ block content
         span.blog-page__items-found-value 52
         span.blog-page__items-found-text Results Found
 
-
-        //- todo
     .blog-page__result.blog-page__result--desktop.grid.grid__two-items.d-desktop
       each preview in json.blog.posts
         +post-preview(preview)(class="blog-page__preview")
-    .blog-page__result.blog-page__result--mobile.grid.grid__three-items
+    .blog-page__result.blog-page__result--mobile
       each preview in json.blog.posts
-        +product-small(preview)(class="blog-page__preview")
+        +post-preview(preview)(class="blog-page__preview")
 
 
     .blog-page__gallery.blog-page__gallery--mobile
@@ -82,11 +80,11 @@ block content
         each data in json.info.footer.instagram
           +instagram-card(data)
 
-      .blog-page__recent-posts.blog-page__recent-posts--desktop
-        h2.blog-page__recent-posts-title Recently Added
-        .blog-page__recent-posts-cards
-          each data in json.blog.recentPosts
-            +recent-post(data)
+    .blog-page__recent-posts.blog-page__recent-posts--mobile
+      h2.blog-page__recent-posts-title Recently Added
+      .blog-page__recent-posts-cards
+        each data in json.blog.recentPosts
+          +recent-post(data)
 
 
     .blog-page__pagination.pagination.js-pagination

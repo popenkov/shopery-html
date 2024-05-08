@@ -23,6 +23,10 @@
     height: 100%;
     max-height: 324px;
     object-fit: cover;
+
+    @media screen and (max-width: $screen-ti) {
+      max-height: 200px;
+    }
   }
 
   &__date {
@@ -61,6 +65,7 @@
   &__categories {
     @include flex-center-vertical;
 
+    flex-wrap: wrap;
     gap: 16px;
   }
 

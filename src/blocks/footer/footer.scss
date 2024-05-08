@@ -173,6 +173,10 @@
     @media screen and (max-width: $screen-tl) {
       @include flex-column-center;
     }
+
+    .instagram-card {
+      max-width: 80px;
+    }
   }
 
   &__instagram-title {
