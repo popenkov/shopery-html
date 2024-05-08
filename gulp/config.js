@@ -154,6 +154,7 @@ export const config = {
     "src/blocks/icon-button/icon-button.scss",
     "src/blocks/wishlist/wishlist.scss",
     "src/blocks/cart-page/cart-page.scss",
+    "src/blocks/registration/registration.scss",
     "src/blocks/sign-in/sign-in.scss"
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",

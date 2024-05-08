@@ -11,20 +11,23 @@ block content
   +breadcrumps([{path: '#', title: 'Account'}], 'Registration')
 
   .registration.container
-    form.registration__form
+    form.registration__form.js-registration-form
       h2.registration__title Registration
       .registration__input-container.registration__input-email
-        +field("Email")(id="email", name="email", type="text", class="registration__input")
+        +field("Email")(id="register-email", name="email", type="text", class="registration__input")
       .registration__input-container.registration__input-phone
-        +field("Password", '', '', '', true)(id="password", name="password", class="registration__input")
+        +field("Password", '', '', '', true)(id="register-password", name="password", class="registration__input")
+      .registration__input-container.registration__input-phone
+        +field("Confirm Password", '', '', '', true)(id="register-confirm-password", class="registration__input")
       .registration__form-row
-        +checkbox()(name="remember-me", id="remember-me", class="registration__checkbox")
-          span.registration__checkbox-text Remember me
-        a.registration__forgot-pass-link(href="/forgot-password") Forget Password
+        +checkbox()(id="register-accept-terms", class="registration__checkbox js-accept-terms")
+          span.registration__checkbox-text Accept all terms & Conditions
+          span.checkbox__error.registration__checkbox-error#registration-checkbox-error
+
       +button("button", "", "fill, normal", "#")(class="registration__submit-button", type="submit")
         span Login
-      .registration__registration
-        span.registration__registration-text Don’t have account?
-        a.registration__registration-link(href="/registration")  Register
+      .registration__login
+        span.registration__login-text Already have account
+        a.registration__login-link(href="/registration")   Login
 
   +subscription(class="registration__subscription")
