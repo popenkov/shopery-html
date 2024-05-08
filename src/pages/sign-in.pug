@@ -11,12 +11,12 @@ block content
   +breadcrumps([{path: '#', title: 'Account'}], 'Sign in')
 
   .sign-in.container
-    form.sign-in__form
+    form.sign-in__form.js-signin-form
       h2.sign-in__title Sign in
       .sign-in__input-container.sign-in__input-email
-        +field("Email")(id="email", name="email", type="text", class="sign-in__input")
+        +field("Email")(id="signin-email", name="email", type="text", class="sign-in__input")
       .sign-in__input-container.sign-in__input-phone
-        +field("Password", '', '', '', true)(id="password", name="password", class="sign-in__input")
+        +field("Password", '', '', '', true)(id="signin-password", name="password", class="sign-in__input")
       .sign-in__form-row
         +checkbox()(name="remember-me", id="remember-me", class="sign-in__checkbox")
           span.sign-in__checkbox-text Remember me
