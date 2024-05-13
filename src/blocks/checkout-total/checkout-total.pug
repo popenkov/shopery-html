@@ -2,10 +2,9 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin checkout-total(text, mods)
+mixin checkout-total(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +checkout-total("Текст", "some-mod")
@@ -21,10 +20,10 @@ mixin checkout-total(text, mods)
     }
 
   .checkout-total(class=allMods)&attributes(attributes)
-    h3.checkout-total__title Cart Total
+    h3.checkout-total__title Order Summery
     .checkout-total__items
       each product in json.cart.items
-        +checkout-product(product)(class="cart-page__item")
+        +checkout-product(product)(class="checkout-total__item")
     .checkout-total__values
       .checkout-total__row
         span.checkout-total__key Subtotal:
@@ -33,17 +32,19 @@ mixin checkout-total(text, mods)
         span.checkout-total__key Shipping:
         span.checkout-total__value Free
       .checkout-total__row
-        span.checkout-total__key Total:
-        span.checkout-total__value $84.00
+        span.checkout-total__key--total Total:
+        span.checkout-total__value--total $84.00
 
     .checkout-total__payment-methods
-      .filter-accordion__content-item
-        +radio("Cash on Delivery")(name="payment-method", id="cash", checked)
-      .filter-accordion__content-item
-        +radio("Paypal")(name="payment-method", id="paypal")
-      .filter-accordion__content-item
-        +radio("Amazon Pay")(name="payment-method", id="amazon-pay")
+      .checkout-total__payment-title Payment Method
+      .checkout-total__payment-items
+        .checkout-total__payment-item
+          +radio("Cash on Delivery")(name="payment-method", id="cash", checked)
+        .checkout-total__payment-item
+          +radio("Paypal")(name="payment-method", id="paypal")
+        .checkout-total__payment-item
+          +radio("Amazon Pay")(name="payment-method", id="amazon-pay")
 
 
     +button("button", "", "fill, large", "#")(class="checkout-total__button js-checkout-submit-button", type="submit", form="checkoutForm")
-      span Proceed to checkout
+      span Place Order

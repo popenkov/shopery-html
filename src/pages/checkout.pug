@@ -2,7 +2,7 @@ extends ../templates/template__default.pug
 
 block variables
   - isMainPage = false
-  - isCatalogPage = true
+  - hasCategoryButton = true
   - pageTitle = "Shopping cart"
   - metaDescription = "Shopping cart description"
   - metaKeywords = "Shopping cart keywords"
@@ -66,4 +66,4 @@ block content
 
     +checkout-total(class="checkout-page__aside")
 
-  +subscription(class="checkout-page__subscription")
+  +subscription('gray')(class="checkout-page__subscription")

@@ -9,7 +9,6 @@ export const initRegistrationScripts = () => {
 
   const registrationForm = registrationPage.querySelector(".js-registration-form");
   const formInputs = registrationForm.querySelectorAll("input");
-  const acceptTermsCheckbox = registrationForm.querySelector(".js-accept-terms");
 
   const validate = new JustValidate(registrationForm, {
     lockForm: true,

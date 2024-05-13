@@ -30,7 +30,7 @@
     padding: 14px 24px;
     border-radius: 0 6px 6px 0;
   }
-
+  // stylelint-disable-next-line
   &--small {
     #{$block-name}__field {
       border-radius: 6px;

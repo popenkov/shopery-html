@@ -2,7 +2,7 @@ extends ../templates/template__default.pug
 
 block variables
   - isMainPage = false
-  - isCatalogPage = true
+  - hasCategoryButton = true
   - pageTitle = "Catalog"
   - metaDescription = "Catalog description"
   - metaKeywords = "Catalog keywords"
@@ -31,7 +31,7 @@ block content
             .filter-accordion__content(style="max-height: auto")
               each category in json.catalog.filter.categories
                 .filter-accordion__content-item
-                  +radio( category.title, category.amount, "")(name="filter-category", value=category.value,  id=category.value)
+                  +radio( category.title, category.amount, "")(name="filter-category", value= category.value,  id=category.value)
 
           .filter-accordion__item.aside-filter__item
             button.filter-accordion__button.is-open Price

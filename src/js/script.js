@@ -9,8 +9,3 @@ ready(function () {
   initRegistrationScripts();
   initSignInScripts();
 });
-
-// import $ from "jquery"; // Install as dependency before use
-// $(function () {
-//   console.log("jQuery works!");
-// });

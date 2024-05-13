@@ -55,21 +55,25 @@
   --red-500: #ea4b48;
 
   --status-warning: var(--orange-500);
+  --warning-front: var(--orange-500);
+  --warning-back: var(--orange-500);
+
+  --status-success: var(--primary);
+  --success-front: var(--primary);
+  --success-back: var(--primary);
+
   --status-danger: var(--red-500);
+  --danger-front: var(--red-500);
+  --danger-back: var(--red-500);
 
   --front-primary: var(--monochrome-900);
-  --front-primary-inversed: var(--color-white);
+  --front-primary-inversed: var(--monochrome-0);
 
-  --back-primary: var(--color-white);
+  --back-primary: var(--monochrome-0);
 
   --transition: 0.2s ease-in-out;
   --transition-long: 0.5s ease-in-out;
   --modal-bg: rgba(0, 0, 0, 0.8);
-
-  // card
-  --card-border: 1px solid var(--monochrome-100);
-  --card-hover-border: 1px solid var(--primary);
-  --card-hover-shadow: 0 0 12px 0 rgba(32, 181, 38, 0.32);
 
   // z-indexes
   --header-dropdown-z-index: 3;

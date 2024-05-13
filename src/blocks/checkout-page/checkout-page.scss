@@ -1,8 +1,6 @@
 @import "../../scss/breakpoints";
 
 .checkout-page {
-  $block-name: &; // #{$block-name}__element
-
   display: flex;
   gap: 24px;
   align-items: flex-start;
@@ -11,6 +9,10 @@
   @media screen and (max-width: $screen-ti) {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .checkbox {
+    gap: 5px;
   }
 
   &__main {
@@ -37,7 +39,7 @@
   &__form-main {
     @include flex-column;
 
-    gap: 14px;
+    gap: 17px;
     padding-bottom: 32px;
     border-bottom: 1px solid var(--monochrome-100);
   }
@@ -60,12 +62,16 @@
     .field {
       @include flex-column;
 
-      gap: 8px;
+      gap: 7px;
 
       &__label {
         @include body-small;
 
         margin: 0;
+      }
+
+      input {
+        height: 49px;
       }
     }
 
@@ -96,8 +102,8 @@
     gap: 6px;
   }
 
-  &__form-row + &__checkbox {
-    margin-top: 4px;
+  &__form-row + .checkbox {
+    margin-top: 2px;
   }
 
   &__checkbox-text {
@@ -125,4 +131,5 @@
       max-width: unset;
     }
   }
+  $block-name: &; // #{$block-name}__element
 }

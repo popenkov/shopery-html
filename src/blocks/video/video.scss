@@ -32,7 +32,7 @@
     #{$block-name}__play-icon {
       width: 20px;
       height: 24px;
-      color: var(--color-white);
+      color: var(--front-primary-inversed);
       transition: color var(--transition);
     }
 
@@ -42,7 +42,7 @@
       @include box(82px);
 
       border-radius: 50%;
-      outline: 1px solid var(--color-white);
+      outline: 1px solid var(--monochrome-0);
       transition: outline-color var(--transition);
 
       @media screen and (max-width: $screen-ti) {
@@ -65,7 +65,7 @@
     #{$block-name}__play-icon {
       width: 14px;
       height: 18px;
-      color: var(--color-white);
+      color: var(--front-primary-inversed);
       transition: color var(--transition);
     }
 

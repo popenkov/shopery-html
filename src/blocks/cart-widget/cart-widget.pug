@@ -2,10 +2,9 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin cart-widget(text, mods)
+mixin cart-widget(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +cart-widget("Текст", "some-mod")
@@ -21,13 +20,6 @@ mixin cart-widget(text, mods)
     }
 
   .cart-widget.js-cart-widget(class=allMods)&attributes(attributes)
-    //- .cart-widget__amount
-    //-   button.cart-widget__amount-button.js-quantity-minus
-    //-     svg.cart-widget__amount-button-icon: use(href= path.icon + "icon__minus")
-    //-   .cart-widget__amount-input-wrapper
-    //-     input.cart-widget__amount-input.js-quantity-input(type="number", value="5", min="1", readonly)
-    //-   button.cart-widget__amount-button.js-quantity-plus
-    //-     svg.cart-widget__amount-button-icon: use(href= path.icon + "icon__plus")
     +amount-actions(class="cart-widget__amount")
 
     +button("link", "", "fill, large", "#")(class="cart-widget__cart-button js-add-to-cart")

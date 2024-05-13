@@ -22,7 +22,7 @@ mixin post-preview(data, mods)
 
   .post-preview(class=allMods)&attributes(attributes)
     .post-preview__img-wrapper
-      img.post-preview__img(src= path.img + data.img , alt= data.title)
+      img.post-preview__img(src= path.img + data.img, alt= data.title)
       .post-preview__date
         span.post-preview__date-day= data.date.day
         span.post-preview__date-month= data.date.month
@@ -30,11 +30,11 @@ mixin post-preview(data, mods)
       .post-preview__categories
         .post-preview__category
           svg.post-preview__category-icon: use(href= path.icon + "icon__tag")
-          a.post-preview__category-link(href= data.category.link )= data.category.title
+          a.post-preview__category-link(href= data.category.link)= data.category.title
         .post-preview__category
           svg.post-preview__category-icon: use(href= path.icon + "icon__user")
           span.post-preview__category-text By
-          a.post-preview__category-link(href= data.author.link )= data.author.title
+          a.post-preview__category-link(href= data.author.link)= data.author.title
         .post-preview__category
           svg.post-preview__category-icon: use(href= path.icon + "icon__chat-message")
           span.post-preview__category-text= data.comments

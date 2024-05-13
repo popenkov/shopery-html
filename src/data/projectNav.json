@@ -32,6 +32,26 @@
           "title": "Checkout",
           "description": "Checkout",
           "href": "checkout"
+        },
+        {
+          "title": "Blog",
+          "description": "Blog",
+          "href": "blog"
+        },
+        {
+          "title": "Blog post",
+          "description": "Blog post",
+          "href": "post"
+        },
+        {
+          "title": "Sign in",
+          "description": "Sign in",
+          "href": "sign-in"
+        },
+        {
+          "title": "Registration",
+          "description": "Registration",
+          "href": "registration"
         }
       ]
     }

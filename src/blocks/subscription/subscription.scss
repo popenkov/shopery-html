@@ -6,6 +6,11 @@
 
   border-top: 1px solid rgb(180 204 180 / 70%);
 
+  &--gray {
+    background-color: rgb(247 247 247);
+    border-top: none;
+  }
+
   &__container {
     display: grid;
     grid-template-areas: "logo text form";

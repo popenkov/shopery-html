@@ -37,7 +37,7 @@
 
   &--white {
     color: var(--primary);
-    background-color: var(--color-white);
+    background-color: var(--back-primary);
 
     @media (hover: hover) {
       &:hover {
