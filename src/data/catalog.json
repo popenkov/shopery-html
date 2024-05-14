@@ -79,5 +79,13 @@
         "value": "Fruit"
       }
     ]
+  },
+  "banner": {
+    "img": "discount-banner--1.jpg",
+    "title": {
+      "textBold": "79%",
+      "text": "Discount"
+    },
+    "subtitle": " on your first order"
   }
 }

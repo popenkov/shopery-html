@@ -27,7 +27,8 @@ mixin share-block(text, data, mods)
     }
 
   .share-block(class=allMods)&attributes(attributes)
-    span.share-block__text= text
+    if text
+      span.share-block__text= text
     .share-block__container
       each social in data
         a.button-round.button-round--ghost(href= social.link)

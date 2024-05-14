@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (comment-form)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin comment-form(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +comment-form("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " comment-form--" + modsList[i].trim();
+      }
+    }
+
+  .comment-form(class=allMods)&attributes(attributes)
+    h3.comment-form__title Leave a Comment
+    form.comment-form__form
+      .comment-form__form-row.grid.grid__two-items
+        .comment-form__input-container
+          +field("Zakir Hossen", "Full Name",  "")(id="email", name="email", type="text", class="comment-form__input")
+        .comment-form__input-container
+          +field("Email", "Email", "")(id="email", name="email", type="text", class="comment-form__input")
+
+
+      .comment-form__input-container.comment-form__input-name
+        +textarea({labelText: "Write your comment here…"})(type="comment", name="comment", placeholder="Write your comment here…")
+
+      +checkbox()(name="save-name", id="comment-save-name", class="comment-form__checkbox")
+        span.comment-form__checkbox-text Save my name and email in this browser for the next time I comment.

@@ -8,8 +8,6 @@ block variables
   - metaKeywords = "Post keywords"
 
 block content
-  h2.visually-hidden shopery catalog
-
   +breadcrumps([{path: '/blog', title: 'Blog'}], 'Single Blog')
 
   .post-page.container
@@ -60,26 +58,55 @@ block content
           each data in json.blog.recentPosts
             +recent-post(data)
 
-    .post-page__result.post-page__result--desktop.grid.grid__two-items.d-desktop
-      each preview in json.blog.posts
-        +post-preview(preview)(class="post-page__preview")
-    .post-page__result.post-page__result--mobile
-      each preview in json.blog.posts
-        +post-preview(preview)(class="post-page__preview")
+    .post-page__article
+      img.post-page__image(src= path.img + 'post-image--1.jpg', alt="image")
+
+      .post-page__categories
+        .post-page__category
+          svg.post-page__category-icon: use(href= path.icon + "icon__tag")
+          a.post-page__category-link(href="#") Food
+        .post-page__category
+          svg.post-page__category-icon: use(href= path.icon + "icon__user")
+          span.post-page__category-text By
+          a.post-page__category-link(href="#") Admin
+        .post-page__category
+          svg.post-page__category-icon: use(href= path.icon + "icon__chat-message")
+          span.post-page__category-text= 65
+          span.post-page__category-text Comments
+
+      h2.post-page__title Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.
+
+      .post-page__info
+        .post-page__author
+          img.post-page__author-avatar(src= path.img + 'post-avatar--1.jpg', alt="avatar")
+          .post-page__author-info
+            span.post-page__name Cameron Williamson
+            div.post-page__date
+              span 4 April, 2021
+              span •
+              span 6 min read
+        +share-block(null, json.info.footer.socialLinks)(class="post-page__share")
 
 
-    .post-page__gallery.post-page__gallery--mobile
-      h2.post-page__gallery-title Our Gallery
-      .post-page__gallery-cards
-        each data in json.info.footer.instagram
-          +instagram-card(data)
+      .post-page__content
+        h3 Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.
+        p Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.
+        p Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.
 
-    .post-page__recent-posts.post-page__recent-posts--mobile
-      h2.post-page__recent-posts-title Recently Added
-      .post-page__recent-posts-cards
-        each data in json.blog.recentPosts
-          +recent-post(data)
+        .post-page__gallery
+          img(src= path.img + 'post-image--2.jpg', alt="image")
+          img(src= path.img + 'post-image--3.jpg', alt="image")
+        p Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies.
 
+      +bannner-large(class="post-page__banner")
 
+      +comment-form(class="post-page__comment-form")
+
+      .post-page__comments.js-post-comments-container
+        each review in json.post.comments
+          +comment-item(review)(class="post-page__comment")
+
+        +button("button", "", "border, normal", "#")(class="post-page__show-button js-all-post-comments-button")
+          span Load More
 
   +subscription

@@ -4,7 +4,7 @@
   $block-name: &; // #{$block-name}__element
 
   display: grid;
-  grid-template-areas: "result filter";
+  grid-template-areas: "article filter";
   grid-template-columns: calc(67% - 12px) calc(33% - 12px);
   gap: 26px 24px;
   padding: 32px 0 82px;
@@ -14,7 +14,7 @@
   }
 
   @media screen and (max-width: $screen-tl) {
-    grid-template-areas: "filter" "result" "gallery" "recentPosts";
+    grid-template-areas: "filter" "article" "gallery" "recentPosts";
     grid-template-columns: 1fr;
     gap: 40px 20px;
   }
@@ -31,50 +31,6 @@
     @include flex-column;
 
     gap: 20px;
-  }
-
-  &__items-found {
-    @include flex-center-vertical;
-    @include body-medium;
-
-    gap: 4px;
-    margin-right: 3px;
-  }
-
-  &__items-found-value {
-    color: var(--monochrome-900);
-    font-weight: 600;
-  }
-
-  &__items-found-text {
-    color: var(--monochrome-600);
-  }
-
-  &__result {
-    grid-area: result;
-
-    @media screen and (max-width: $screen-dl) {
-      gap: 12px;
-    }
-  }
-
-  &__result--desktop {
-    @media screen and (max-width: $screen-tl) {
-      display: none;
-    }
-  }
-
-  &__result--mobile {
-    display: none;
-
-    @media screen and (max-width: $screen-tl) {
-      display: grid;
-      grid-template-columns: repeat(2, calc(50% - 5px));
-    }
-
-    @media screen and (max-width: $screen-t) {
-      grid-template-columns: 1fr;
-    }
   }
 
   &__gallery {
@@ -173,5 +129,72 @@
     @media screen and (max-width: $screen-ti) {
       grid-template-columns: 1fr;
     }
+  }
+
+  &__article {
+    @include flex-column;
+
+    grid-area: article;
+    gap: 24px;
+  }
+
+  &__categories {
+    @include flex-center-vertical;
+
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__category {
+    @include flex-center-vertical;
+
+    gap: 4px;
+  }
+
+  &__category-icon {
+    @include box(20px);
+
+    color: var(--monochrome-300);
+  }
+
+  &__category-link {
+    @include body-small;
+
+    color: var(--monochrome-700);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &__category-text {
+    @include body-small;
+
+    color: var(--monochrome-500);
+  }
+
+  &__info {
+    @include flex-center-vertical;
+
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  &__author {
+    @include flex-center-vertical;
+
+    gap: 12px;
+  }
+
+  &__content {
+    @include flex-column;
+
+    gap: 16px;
+  }
+
+  &__comments {
+    @include flex-column;
   }
 }

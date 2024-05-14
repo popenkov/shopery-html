@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (bannner-large)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin bannner-large(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +bannner-large("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " bannner-large--" + modsList[i].trim();
+      }
+    }
+
+  .bannner-large(class=allMods)&attributes(attributes)
+    img.bannner-large__img(src= path.img + "banner-large--1.jpg", alt="discount banner")
+
+    .bannner-large__content
+      .bannner-large__text
+        p.bannner-large__subtitle Summer Sales
+        p.bannner-large__title Fresh Fruit
+
+        +button("link", "", "fill, normal", "#")(class="bannner-large__button icon-button")
+          span.icon-button__text Shop Now
+          svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+
+      .bannner-large__discount
+        span.bannner-large__discount-text up to
+        span.bannner-large__discount-value 56%
+        span.bannner-large__discount-text Off

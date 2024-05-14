@@ -7,6 +7,7 @@ block variables
   - metaDescription = "Catalog description"
   - metaKeywords = "Catalog keywords"
 
+
 block content
   h2.visually-hidden shopery catalog
 
@@ -68,17 +69,7 @@ block content
 
           .aside-filter__footer
             +button("button","Apply filter", "fill, large")(class="aside-filter__button js-apply-filter-button")
-
-      .discount-banner.aside-filter__banner.aside-filter__banner--desktop
-        img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
-        .discount-banner__text
-          p.discount-banner__title
-            span.discount-banner__title--bold 79%
-            |  Discount
-          p.discount-banner__subtitle on your first order
-          +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
-            span.icon-button__text Shop Now
-            svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      +discount-banner(json.catalog.banner)(class="aside-filter__banner aside-filter__banner--desktop")
 
       .aside-filter__products.aside-filter__products--desktop
         p.aside-filter__title Sale Products
@@ -97,16 +88,7 @@ block content
     .catalog-page__result.catalog-page__result--mobile.grid.grid__three-items
       each product in json.catalogItems.items
         +product-small(product)(class="catalog-page__product")
-    .discount-banner.catalog-page__banner.catalog-page__banner--mobile
-      img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
-      .discount-banner__text
-        p.discount-banner__title
-          span.discount-banner__title--bold 79%
-          |  Discount
-        p.discount-banner__subtitle on your first order
-        +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
-          span.icon-button__text Shop Now
-          svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+    +discount-banner(json.catalog.banner)(class="catalog-page__banner catalog-page__banner--mobile")
 
     .catalog-page__sale-products.catalog-page__sale-products--mobile
         p.aside-filter__title Sale Products

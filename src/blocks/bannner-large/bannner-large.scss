@@ -1,0 +1,91 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.bannner-large {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 250px;
+  padding: 20px 56px;
+  overflow: hidden;
+  border-radius: 8px;
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+  }
+
+  &__content {
+    @include flex-center-vertical;
+
+    gap: 50px;
+  }
+
+  &__text {
+    @include flex-column;
+
+    gap: 4px;
+  }
+
+  &__subtitle {
+    @include body-small(500);
+
+    margin: 0;
+    color: var(--monochrome-400);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include heading-4(600);
+
+    margin: 0;
+    color: var(--front-primary-inversed);
+  }
+
+  &__button {
+    @include body-small(600);
+
+    gap: 8px;
+    margin-left: 4px;
+    padding: 0;
+  }
+
+  &__title + &__button {
+    margin-top: 12px;
+  }
+
+  &__discount {
+    @include flex-column-center;
+
+    gap: 2px;
+    padding: 10px;
+    background-color: var(--monochrome-900);
+    border-radius: 50%;
+  }
+
+  &__discount-text {
+    color: var(--front-primary-inversed);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 110%;
+    letter-spacing: 3%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__discount-value {
+    color: var(--warning-front);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: 0%;
+  }
+}
