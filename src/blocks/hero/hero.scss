@@ -111,13 +111,13 @@
   }
 
   &__text {
-    @include body-large;
+    @include body-l;
 
     margin: 0;
     color: var(--monochrome-500);
 
     @media screen and (max-width: $screen-tl) {
-      @include body-medium;
+      @include body-m;
     }
   }
 

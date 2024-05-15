@@ -2,13 +2,15 @@
 @import ".././../scss/mixins/box.scss";
 
 .textarea {
-  $block-name: &; // #{$block-name}__element
-
   @include flex-column;
 
   position: relative;
   gap: 6px;
   width: 100%;
+
+  .just-validate-error-field {
+    border-color: var(--status-danger);
+  }
 
   &__input {
     @include search-field;
@@ -34,8 +36,15 @@
   }
 
   &__label {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
   }
+
+  & .just-validate-error-label {
+    @include body-s(500);
+
+    color: var(--status-danger) !important;
+  }
+  $block-name: &; // #{$block-name}__element
 }

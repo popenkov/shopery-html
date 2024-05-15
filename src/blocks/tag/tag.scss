@@ -4,7 +4,7 @@
 .tag {
   $block-name: &; // #{$block-name}__element
 
-  @include body-small;
+  @include body-s;
 
   padding: 3px 10px 3px 8px;
   color: var(--front-primary-inversed);

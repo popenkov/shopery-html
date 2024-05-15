@@ -77,7 +77,7 @@
   }
 
   &__title {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--monochrome-700);
@@ -85,7 +85,7 @@
 
   &__price {
     @include flex-center-vertical;
-    @include body-medium(500);
+    @include body-m(500);
 
     gap: 4px;
     margin: 0;

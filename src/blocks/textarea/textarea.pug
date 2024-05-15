@@ -20,7 +20,7 @@ mixin textarea(data, mods)
       }
     }
 
-  label.textarea(class=allMods)&attributes(attributes)
+  label.textarea(class=allMods)
     if data.labelText
       span.textarea__label= data.labelText
     textarea.textarea__input&attributes(attributes)

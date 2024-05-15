@@ -276,7 +276,7 @@
 
   &__all-categories-button {
     @include flex-center-vertical;
-    @include body-small(500);
+    @include body-s(500);
 
     gap: 10px;
     padding: 18px 24px 17px 26px;
@@ -334,7 +334,7 @@
 
   &__all-categories-link {
     @include flex-center-vertical;
-    @include body-small;
+    @include body-s;
 
     gap: 12px;
     padding: 6px 22px;
@@ -391,7 +391,7 @@
 
   &__navigation-menu-link {
     @include flex-center-vertical;
-    @include body-small(500);
+    @include body-s(500);
 
     gap: 5px;
     padding: 18px 0 17px;

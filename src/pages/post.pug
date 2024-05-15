@@ -80,8 +80,8 @@ block content
         .post-page__author
           img.post-page__author-avatar(src= path.img + 'post-avatar--1.jpg', alt="avatar")
           .post-page__author-info
-            span.post-page__name Cameron Williamson
-            div.post-page__date
+            span.post-page__author-name Cameron Williamson
+            div.post-page__author-date
               span 4 April, 2021
               span •
               span 6 min read
@@ -103,10 +103,26 @@ block content
       +comment-form(class="post-page__comment-form")
 
       .post-page__comments.js-post-comments-container
-        each review in json.post.comments
-          +comment-item(review)(class="post-page__comment")
+        h3.post-page__comments-title Comments
+        .post-page__comments-items
+          each review in json.post.comments
+            +comment-item(review)(class="post-page__comment")
 
-        +button("button", "", "border, normal", "#")(class="post-page__show-button js-all-post-comments-button")
+        +button("button", "", "border, normal", "#")(class="post-page__show-comments-button js-all-post-comments-button")
           span Load More
 
-  +subscription
+      .post-page__gallery.post-page__gallery--mobile
+        h2.post-page__gallery-title Our Gallery
+        .post-page__gallery-cards
+          each data in json.info.footer.instagram
+            +instagram-card(data)
+
+      .post-page__recent-posts.post-page__recent-posts--mobile
+        h2.post-page__recent-posts-title Recently Added
+        .post-page__recent-posts-cards
+          each data in json.blog.recentPosts
+            +recent-post(data)
+
+
+
+  +subscription('gray')

@@ -14,6 +14,10 @@
   overflow: hidden;
   border-radius: 8px;
 
+  @media screen and (max-width: $screen-t) {
+    padding: 16px 26px;
+  }
+
   &__img {
     position: absolute;
     z-index: -1;
@@ -27,16 +31,21 @@
     @include flex-center-vertical;
 
     gap: 50px;
+
+    @media screen and (max-width: $screen-t) {
+      gap: 16px;
+    }
   }
 
   &__text {
     @include flex-column;
 
-    gap: 4px;
+    align-items: flex-start;
+    margin-top: -2px;
   }
 
   &__subtitle {
-    @include body-small(500);
+    @include body-s(500);
 
     margin: 0;
     color: var(--monochrome-400);
@@ -51,22 +60,22 @@
   }
 
   &__button {
-    @include body-small(600);
+    @include flex-center-vertical;
 
     gap: 8px;
-    margin-left: 4px;
-    padding: 0;
+    height: 45px;
+    padding: 14px 27px 14px 32px !important;
   }
 
   &__title + &__button {
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   &__discount {
     @include flex-column-center;
 
     gap: 2px;
-    padding: 10px;
+    padding: 20px;
     background-color: var(--monochrome-900);
     border-radius: 50%;
   }

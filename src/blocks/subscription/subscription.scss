@@ -57,7 +57,7 @@
   }
 
   &__subtitle {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--green-gray-400);

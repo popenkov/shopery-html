@@ -82,7 +82,7 @@
   }
 
   &__category-link {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-700);
     text-decoration: none;
@@ -94,13 +94,13 @@
   }
 
   &__category-text {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-500);
   }
 
   &__title {
-    @include body-large(500);
+    @include body-l(500);
 
     margin: 0;
   }
@@ -110,7 +110,7 @@
   }
 
   &__more-link {
-    @include body-medium(600);
+    @include body-m(600);
     @include flex-center-vertical;
 
     gap: 8px;

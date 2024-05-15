@@ -59,7 +59,7 @@
 
   &__items-found {
     @include flex-center-vertical;
-    @include body-medium;
+    @include body-m;
 
     gap: 4px;
     margin-right: 3px;

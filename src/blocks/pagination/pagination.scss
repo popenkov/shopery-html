@@ -21,7 +21,7 @@
   &__page {
     @include button-reset;
     @include box(36px);
-    @include body-medium;
+    @include body-m;
 
     padding: 8px;
     color: var(--monochrome-400);
@@ -44,7 +44,7 @@
   }
 
   &__dots {
-    @include body-medium;
+    @include body-m;
 
     padding: 0 13px 5px;
     color: var(--monochrome-400);

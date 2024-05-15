@@ -24,14 +24,14 @@
   }
 
   &__title {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--front-primary);
   }
 
   &__amount {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--monochrome-500);

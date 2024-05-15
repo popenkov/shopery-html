@@ -58,14 +58,14 @@
   }
 
   &__label {
-    @include body-small;
+    @include body-s;
 
     cursor: pointer;
     user-select: none;
   }
 
   &__amount {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-500);
   }

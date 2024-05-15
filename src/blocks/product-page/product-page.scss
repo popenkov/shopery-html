@@ -49,7 +49,7 @@
 
   &__description {
     @include flex-column;
-    @include body-small;
+    @include body-s;
 
     flex-grow: 1;
     gap: 19px;
@@ -195,13 +195,13 @@
   }
 
   &__spec-title {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-900);
   }
 
   &__spec-value {
-    @include body-small;
+    @include body-s;
 
     display: flex;
     flex-wrap: wrap;
@@ -210,7 +210,7 @@
   }
 
   &__spec-link {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-500);
     white-space: nowrap;

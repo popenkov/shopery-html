@@ -33,19 +33,19 @@
   }
 
   &__key {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-700);
 
     &--total {
-      @include body-medium;
+      @include body-m;
 
       color: var(--monochrome-700);
     }
   }
 
   &__value {
-    @include body-small(500);
+    @include body-s(500);
 
     &--total {
       font-weight: 600;

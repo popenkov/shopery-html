@@ -64,7 +64,7 @@
   }
 
   &__title {
-    @include body-large(500);
+    @include body-l(500);
 
     margin: 0;
     color: var(--green-gray-900);

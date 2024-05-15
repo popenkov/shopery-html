@@ -20,9 +20,10 @@ mixin comment-item(data, mods)
     }
 
   .comment-item(class=allMods)&attributes(attributes)
-    .comment-item__header
-      .comment-item__author
-        img.comment-item__avatar(src= path.img + data.avatar, alt="avatar")
-        span.comment-item__name= data.name
-      .comment-item__date= data.date
-    p.comment-item__main= data.text
+    img.comment-item__avatar(src= path.img + data.avatar, alt="avatar")
+    .comment-item__content
+      .comment-item__header
+        span.comment-item__author= data.name
+        span.comment-item__separator •
+        span.comment-item__date= data.date
+      p.comment-item__main= data.text

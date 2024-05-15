@@ -39,7 +39,7 @@
       gap: 8px;
 
       &__label {
-        @include body-small;
+        @include body-s;
 
         margin: 0;
       }
@@ -55,7 +55,7 @@
   }
 
   &__checkbox-text {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-600);
     white-space: nowrap;
@@ -98,13 +98,13 @@
   }
 
   &__login-text {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-600);
   }
 
   &__login-link {
-    @include body-small(500);
+    @include body-s(500);
 
     color: var(--monochrome-900);
     text-decoration: none;

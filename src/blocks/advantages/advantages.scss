@@ -56,7 +56,7 @@
   }
 
   &__title {
-    @include body-large(600);
+    @include body-l(600);
 
     margin: 0;
   }
@@ -70,7 +70,7 @@
   }
 
   &__text {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
   }

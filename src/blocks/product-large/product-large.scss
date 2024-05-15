@@ -107,7 +107,7 @@
   }
 
   &__title {
-    @include body-medium;
+    @include body-m;
 
     margin: 0;
     color: var(--monochrome-700);
@@ -116,7 +116,7 @@
 
   &__price {
     @include flex-center-vertical;
-    @include body-large(500);
+    @include body-l(500);
 
     gap: 4px;
     margin: 0;

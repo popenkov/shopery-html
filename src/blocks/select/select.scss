@@ -19,7 +19,7 @@
     }
 
     .current {
-      @include body-small;
+      @include body-s;
 
       color: var(--monochrome-700);
     }
@@ -78,13 +78,13 @@
   }
 
   & + .just-validate-error-label {
-    @include body-small(500);
+    @include body-s(500);
 
     color: var(--status-danger) !important;
   }
 
   &__placeholder {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-500);
   }

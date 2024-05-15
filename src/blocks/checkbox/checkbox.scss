@@ -54,7 +54,7 @@
   }
 
   .just-validate-error-label {
-    @include body-small(500);
+    @include body-s(500);
 
     color: var(--status-danger) !important;
   }

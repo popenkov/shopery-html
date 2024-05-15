@@ -85,7 +85,7 @@
 
   &__button--cart.button-round {
     @include flex-center;
-    @include body-small(600);
+    @include body-s(600);
 
     gap: 12px;
     width: 100% !important;
@@ -105,7 +105,7 @@
   }
 
   &__title {
-    @include body-large;
+    @include body-l;
 
     margin: 0;
     color: var(--monochrome-700);

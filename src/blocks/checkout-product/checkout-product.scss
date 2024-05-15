@@ -21,19 +21,19 @@
   }
 
   &__title {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
   }
 
   &__price {
-    @include body-small(500);
+    @include body-s(500);
 
     margin: 0;
   }
 
   &__quantity {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
   }

@@ -109,13 +109,13 @@
   }
 
   &__review-text {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-600);
   }
 
   &__separator {
-    @include body-small(500);
+    @include body-s(500);
 
     color: var(--monochrome-300);
   }
@@ -127,13 +127,13 @@
   }
 
   &__sku-text {
-    @include body-small(500);
+    @include body-s(500);
 
     color: var(--monochrome-800);
   }
 
   &__sku-value {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-600);
   }
@@ -196,7 +196,7 @@
   }
 
   &__brand-text {
-    @include body-small;
+    @include body-s;
   }
 
   &__brand-value {
@@ -213,7 +213,7 @@
   }
 
   &__share-text {
-    @include body-small;
+    @include body-s;
   }
 
   &__socials-container {
@@ -223,7 +223,7 @@
   }
 
   &__description {
-    @include body-small;
+    @include body-s;
 
     grid-area: description;
     margin: 0;
@@ -249,7 +249,7 @@
   }
 
   &__categories-text {
-    @include body-small(500);
+    @include body-s(500);
   }
 
   &__categories-container {
@@ -259,7 +259,7 @@
   }
 
   &__categories-link {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-500);
     white-space: nowrap;
@@ -279,7 +279,7 @@
   }
 
   &__tags-text {
-    @include body-small(500);
+    @include body-s(500);
   }
 
   &__tags-container {
@@ -289,7 +289,7 @@
   }
 
   &__tags-link {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-500);
     white-space: nowrap;

@@ -59,7 +59,7 @@
   }
 
   &__column-title {
-    @include body-small(500);
+    @include body-s(500);
 
     color: var(--monochrome-500);
     letter-spacing: 3%;
@@ -97,7 +97,7 @@
   }
 
   &__button-text {
-    @include body-small(600);
+    @include body-s(600);
   }
 
   &__coupon {

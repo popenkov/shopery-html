@@ -30,7 +30,7 @@
   }
 
   &__name {
-    @include body-small(500);
+    @include body-s(500);
 
     grid-area: name;
     margin: 0;
@@ -41,14 +41,14 @@
   }
 
   &__date {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--monochrome-400);
   }
 
   &__main {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--monochrome-500);

@@ -112,14 +112,14 @@
   }
 
   &--normal {
-    @include body-small(600);
+    @include body-s(600);
 
     min-height: 45px;
     padding: 14px 32px;
   }
 
   &--large {
-    @include body-medium(600);
+    @include body-m(600);
 
     padding: 15px 40px;
   }

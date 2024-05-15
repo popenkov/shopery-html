@@ -80,7 +80,7 @@
   }
 
   &__subtitle {
-    @include body-medium(600);
+    @include body-m(600);
 
     margin: 0;
     color: var(--monochrome-400);
@@ -103,12 +103,12 @@
     }
 
     button {
-      @include body-small(600);
+      @include body-s(600);
     }
 
     input,
     input::placeholder {
-      @include body-small;
+      @include body-s;
     }
 
     input::placeholder {
@@ -129,7 +129,7 @@
   }
 
   &__checkbox-text {
-    @include body-small;
+    @include body-s;
 
     color: var(--monochrome-600);
   }

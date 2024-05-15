@@ -62,7 +62,7 @@
   }
 
   &__label {
-    @include body-medium(500);
+    @include body-m(500);
 
     position: relative;
     flex-shrink: 0;

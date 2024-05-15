@@ -68,7 +68,7 @@
   }
 
   &__about-text {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--green-gray-500);
@@ -83,7 +83,7 @@
   }
 
   &__about-link {
-    @include body-small(500);
+    @include body-s(500);
 
     display: inline-block;
     padding-bottom: 6px;
@@ -99,7 +99,7 @@
   }
 
   &__about-separator {
-    @include body-small;
+    @include body-s;
 
     padding: 0 16px;
     color: var(--green-gray-500);
@@ -152,7 +152,7 @@
   }
 
   &__navigation-link {
-    @include body-small;
+    @include body-s;
 
     color: var(--green-gray-500);
     transition: all var(--transition);
@@ -227,7 +227,7 @@
   }
 
   &__copyright-text {
-    @include body-small;
+    @include body-s;
 
     margin: 0 0 0 114px;
     color: var(--green-gray-500);
