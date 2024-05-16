@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (team-card)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin team-card(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +team-card("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " team-card--" + modsList[i].trim();
+      }
+    }
+
+  .team-card(class=allMods)&attributes(attributes)
+    .team-card__inner
+      block

@@ -1,0 +1,5 @@
+@import "../../scss/breakpoints";
+
+.team-card {
+  $block-name: &; // #{$block-name}__element
+}

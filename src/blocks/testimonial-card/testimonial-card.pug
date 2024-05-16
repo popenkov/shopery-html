@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (testimonial-card)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin testimonial-card(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +testimonial-card("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " testimonial-card--" + modsList[i].trim();
+      }
+    }
+
+  .testimonial-card(class=allMods)&attributes(attributes)
+    .testimonial-card__inner
+      block

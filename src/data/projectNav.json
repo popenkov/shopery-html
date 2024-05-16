@@ -52,6 +52,11 @@
           "title": "Registration",
           "description": "Registration",
           "href": "registration"
+        },
+        {
+          "title": "About",
+          "description": "About",
+          "href": "about"
         }
       ]
     }

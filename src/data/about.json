@@ -1,0 +1,43 @@
+{
+  "advantages": [
+    {
+      "icon": "icon__leaf",
+      "title": "100% Organic food",
+      "description": "100% healthy & Fresh food."
+    },
+    {
+      "icon": "icon__support",
+      "title": "Great Support 24/7",
+      "description": "Instant access to Contact"
+    },
+    {
+      "icon": "icon__stars",
+      "title": "Customer Feedback",
+      "description": "100% healthy & Fresh food."
+    },
+    {
+      "icon": "icon__shopping-bag",
+      "title": "100% Secure Payment",
+      "description": "We ensure your money is save"
+    },
+    {
+      "icon": "icon__delivery-truck",
+      "title": "Free Shipping",
+      "description": "Free shipping with discount"
+    },
+    {
+      "icon": "icon__package",
+      "title": "100% Organic food",
+      "description": "100% healthy & Fresh food."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "",
+      "photo": "testimonial-image--1.jpg",
+      "name": "",
+      "role": "",
+      "rating": 5
+    }
+  ]
+}
