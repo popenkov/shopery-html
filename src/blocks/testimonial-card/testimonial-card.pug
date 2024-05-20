@@ -2,7 +2,7 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin testimonial-card(mods)
+mixin testimonial-card(data, mods)
 
   //- Принимает:
   //-   mods    {string} - список модификаторов
@@ -20,5 +20,11 @@ mixin testimonial-card(mods)
     }
 
   .testimonial-card(class=allMods)&attributes(attributes)
-    .testimonial-card__inner
-      block
+    svg.testimonial-card__icon: use(href= path.icon + "icon__quote")
+    p.testimonial-card__body= data.text
+    .testimonial-card__footer
+      img.testimonial-card__avatar(src= path.img + data.avatar, alt="avatar")
+      .testimonial-card__author
+        span.testimonial-card__name= data.name
+        span.testimonial-card__role= data.role
+      +star-rating(data.rating)(class="testimonial-card__rating")

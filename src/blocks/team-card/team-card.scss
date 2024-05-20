@@ -1,5 +1,66 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox.scss";
 
 .team-card {
   $block-name: &; // #{$block-name}__element
+
+  @include flex-column;
+
+  overflow: hidden;
+  border-radius: 8px;
+
+  @media (hover: hover) {
+    &:hover {
+      #{$block-name}__photo-container {
+        display: block;
+      }
+      #{$block-name}__contacts-container {
+        opacity: 1;
+      }
+    }
+  }
+  // stylelint-disable-next-line
+  .button-round--ghost &__contacts-icon.button-round__icon {
+    color: var(--front-primary-inversed);
+  }
+
+  &__photo {
+    height: 280px;
+    object-fit: cover;
+  }
+
+  &__photo-container {
+    position: relative;
+  }
+
+  &__contacts-container {
+    @include flex-center;
+
+    position: absolute;
+    inset: 0;
+    gap: 4px;
+    background-color: rgb(0 0 0 / 50%);
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  &__text-content {
+    @include flex-column;
+
+    gap: 4px;
+    padding: 16px 20px 20px;
+  }
+
+  &__name {
+    @include body-l(500);
+
+    margin: 0;
+  }
+
+  &__role {
+    @include body-s;
+
+    margin: 0;
+    color: var(--monochrome-500);
+  }
 }

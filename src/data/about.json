@@ -31,12 +31,242 @@
       "description": "100% healthy & Fresh food."
     }
   ],
+
+  "team": [
+    {
+      "id": "team-1",
+      "photo": "team-img--1.jpg",
+      "name": "Jenny Wilson",
+      "role": "Ceo & Founder",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-2",
+      "photo": "team-img--2.jpg",
+      "name": "Jane Cooper",
+      "role": "Worker",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-3",
+      "photo": "team-img--3.jpg",
+      "name": "Cody Fisher",
+      "role": "Security Guard",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-4",
+      "photo": "team-img--4.jpg",
+      "name": "Robert Fox",
+      "role": "Senior Farmer Manager",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-1",
+      "photo": "team-img--1.jpg",
+      "name": "Jenny Wilson",
+      "role": "Ceo & Founder",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-2",
+      "photo": "team-img--2.jpg",
+      "name": "Jane Cooper",
+      "role": "Worker",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-3",
+      "photo": "team-img--3.jpg",
+      "name": "Cody Fisher",
+      "role": "Security Guard",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "id": "team-4",
+      "photo": "team-img--4.jpg",
+      "name": "Robert Fox",
+      "role": "Senior Farmer Manager",
+      "socialLinks": [
+        {
+          "icon": "icon__facebook",
+          "href": "#"
+        },
+        {
+          "icon": "icon__twitter",
+          "href": "#"
+        },
+        {
+          "icon": "icon__pinterest",
+          "href": "#"
+        },
+        {
+          "icon": "icon__instagram",
+          "href": "#"
+        }
+      ]
+    }
+  ],
   "testimonials": [
     {
-      "text": "",
-      "photo": "testimonial-image--1.jpg",
-      "name": "",
-      "role": "",
+      "text": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+      "avatar": "testimonial-image--1.jpg",
+      "name": "Robert Fox",
+      "role": "Customer",
+      "rating": 5
+    },
+    {
+      "text": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+      "avatar": "testimonial-image--2.jpg",
+      "name": "Dianne Russell",
+      "role": "Customer",
+      "rating": 5
+    },
+    {
+      "text": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+      "avatar": "testimonial-image--3.jpg",
+      "name": "Eleanor Pena",
+      "role": "Customer",
+      "rating": 5
+    },
+    {
+      "text": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+      "avatar": "testimonial-image--1.jpg",
+      "name": "Robert Fox",
+      "role": "Customer",
+      "rating": 5
+    },
+    {
+      "text": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+      "avatar": "testimonial-image--2.jpg",
+      "name": "Dianne Russell",
+      "role": "Customer",
+      "rating": 5
+    },
+    {
+      "text": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+      "avatar": "testimonial-image--3.jpg",
+      "name": "Eleanor Pena",
+      "role": "Customer",
       "rating": 5
     }
   ]

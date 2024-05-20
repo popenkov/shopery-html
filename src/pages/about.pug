@@ -21,17 +21,18 @@ block content
 
     .about-page__section-bg
       .about-page__section-bg-container.container
-        .about-page__text
-          h3.about-page__title 100% Trusted <br/> Organic Food Store
-          p.about-page__paragraph.about-page__paragraph--medium Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi. Nulla eu eros consequat tortor tincidunt feugiat.
-          .about-page__advantages
-            each adv in json.about.advantages
-              .about-page__advantage
-                .about-page__advantage-image
-                  svg.about-page__advantage-image-icon: use(href= path.icon + adv.icon)
-                .about-page__advantage-text
-                  h4.about-page__advantage-title= adv.title
-                  p.about-page__advantage-description= adv.description
+        .about-page__text-bg
+          .about-page__text
+            h3.about-page__title 100% Trusted <br/> Organic Food Store
+            p.about-page__paragraph.about-page__paragraph--medium Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi. Nulla eu eros consequat tortor tincidunt feugiat.
+            .about-page__advantages
+              each adv in json.about.advantages
+                .about-page__advantage
+                  .about-page__advantage-image
+                    svg.about-page__advantage-image-icon: use(href= path.icon + adv.icon)
+                  .about-page__advantage-text
+                    h4.about-page__advantage-title= adv.title
+                    p.about-page__advantage-description= adv.description
 
     .about-page__section.about-page__section--small.container
       .about-page__text
@@ -47,34 +48,40 @@ block content
       img.about-page__image(src=path.img + "about-image--3.jpg", alt="image")
 
 
-    .section--small.about-page__testimonials
-      h2.section__title.container Our Awesome Team
-      p.section__subtitle.container Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.
-      .section__content--medium
-        .grid.grid__three-items.d-desktop.container
-          each review in json.info.reviews
-            +review(review)
-        .mobile-slider.d-mobile.container
-          .swiper.mobile-slider__slider.js-mobile-slider
-            .swiper-wrapper.mobile-slider__wrapper
-              each review in json.info.reviews
-                .swiper-slide.mobile-slider__slide
-                  +review(review)
-            .mobile-slider__pagination.swiper-pagination
+    .about-page__team.container
+      h2.section__title--large Our Awesome Team
+      p.section__subtitle.about-page__subtitle Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.
+      .about-page__slider
+          .slider.swiper.js-slider
+            .swiper-wrapper
+              each member in json.about.team
+                .swiper-slide.slider__slide
+                  +team-card(member)
+          .slider__navigation.js-slider-navigation
+            button.slider__navigation-btn.slider__navigation-btn-prev.js-slider-navigation-prev
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+            button.slider__navigation-btn.slider__navigation-btn-next.js-slider-navigation-next
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+
+    .about-page__testimonials.section.section--gray
+      h2.section__title.section__title--large.about-page__testimonials-title.container Client Testimonail
+      .section__content--large.about-page__slider.container
+          .slider.swiper.js-slider
+            .swiper-wrapper
+              each testimonial in json.about.testimonials
+                .swiper-slide.slider__slide
+                  +testimonial-card(testimonial)(class="about-page__testimonial")
+          .slider__navigation--top.js-slider-navigation
+            button.button--white.slider__navigation-btn.slider__navigation-btn-prev.js-slider-navigation-prev
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+            button.button--white.slider__navigation-btn.slider__navigation-btn-next.js-slider-navigation-next
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
 
 
-    .section--small.about-page__testimonials
-      h2.section__title.container Client Testimonail
-      .section__content--medium
-        .grid.grid__three-items.d-desktop.container
-          each review in json.info.reviews
-            +review(review)
-        .mobile-slider.d-mobile.container
-          .swiper.mobile-slider__slider.js-mobile-slider
-            .swiper-wrapper.mobile-slider__wrapper
-              each review in json.info.reviews
-                .swiper-slide.mobile-slider__slide
-                  +review(review)
-            .mobile-slider__pagination.swiper-pagination
 
+  +logo-links(class="section")
   +subscription("gray")

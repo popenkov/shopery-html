@@ -2,4 +2,69 @@
 
 .testimonial-card {
   $block-name: &; // #{$block-name}__element
+
+  @include flex-column;
+
+  position: relative;
+  gap: 13px;
+  padding: 21px 24px 24px;
+  background-color: var(--back-primary);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 1%);
+
+  &__icon {
+    @include box(32px);
+
+    opacity: 0.3;
+  }
+
+  &__footer {
+    @include flex-center-vertical;
+
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__avatar {
+    @include box(56px);
+
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &__author {
+    @include flex-column;
+  }
+
+  &__name {
+    @include body-m(500);
+
+    margin: 0;
+  }
+
+  &__role {
+    @include body-s(400);
+
+    margin: 0;
+  }
+
+  &__rating {
+    gap: 1px;
+    margin-left: auto;
+
+    svg {
+      @include box(20px);
+    }
+  }
+
+  &__body {
+    @include body-s;
+
+    margin: 0;
+    color: var(--monochrome-700);
+  }
+
+  &__body + &__footer {
+    margin-top: 11px;
+  }
 }

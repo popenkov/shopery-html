@@ -2,6 +2,8 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .section {
+  $block-name: &; // #{$block-name}__element
+
   padding: 100px 0;
 
   @media screen and (max-width: $screen-tl) {
@@ -10,6 +12,10 @@
 
   &--green {
     background-color: var(--green-gray-50);
+  }
+
+  &--gray {
+    background-color: var(--monochrome-50);
   }
 
   &--small {
@@ -32,6 +38,29 @@
 
     @media screen and (max-width: $screen-tl) {
       @include heading-5(600);
+    }
+
+    &--large {
+      @include heading-2(600);
+
+      margin: 0 auto;
+      text-align: center;
+
+      @media screen and (max-width: $screen-tl) {
+        @include heading-5(600);
+      }
+    }
+  }
+
+  &__subtitle {
+    @include body-m;
+
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (max-width: $screen-tl) {
+      @include body-s;
     }
   }
 
@@ -84,5 +113,4 @@
       content: "";
     }
   }
-  $block-name: &; // #{$block-name}__element
 }

@@ -2,6 +2,8 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .button {
+  $block-name: &; // #{$block-name}__element
+
   text-decoration: none;
   border: none;
   border-radius: 43px;
@@ -123,5 +125,4 @@
 
     padding: 15px 40px;
   }
-  $block-name: &; // #{$block-name}__element
 }

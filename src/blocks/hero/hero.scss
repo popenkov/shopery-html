@@ -2,6 +2,7 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .hero {
+  $block-name: &; // #{$block-name}__element
   // stylelint-disable-next-line
   &__swiper-pagination.swiper-pagination-bullets {
     @include flex-center;
@@ -192,6 +193,4 @@
       right: -110px;
     }
   }
-
-  $block-name: &; // #{$block-name}__element
 }

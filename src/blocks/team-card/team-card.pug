@@ -2,7 +2,7 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin team-card(mods)
+mixin team-card(data, mods)
 
   //- Принимает:
   //-   mods    {string} - список модификаторов
@@ -20,5 +20,12 @@ mixin team-card(mods)
     }
 
   .team-card(class=allMods)&attributes(attributes)
-    .team-card__inner
-      block
+    .team-card__photo-container
+      img.team-card__photo(src=path.img + data.photo , alt="photo")
+      .team-card__contacts-container
+        each social in data.socialLinks
+          a.button-round.button-round--ghost(href= social.href)
+            svg.button-round__icon.team-card__contacts-icon: use(href= path.icon + social.icon)
+    .team-card__text-content
+      p.team-card__name= data.name
+      p.team-card__role= data.role

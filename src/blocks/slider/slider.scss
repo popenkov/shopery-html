@@ -1,0 +1,122 @@
+@import "../../scss/breakpoints";
+
+.slider {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+
+  &__slide {
+    width: auto;
+  }
+
+  // &__navigation {
+  //   @media screen and (max-width: $screen-dxl) {
+  //     @include flex-center-vertical;
+
+  //     position: absolute;
+  //     top: -100px;
+  //     right: 0;
+  //     z-index: var(--hero-navigation-z-index);
+  //     gap: 12px;
+  //   }
+
+  //   @media screen and (max-width: $screen-tl) {
+  //     display: none;
+  //   }
+
+  //   &--top {
+  //     @include flex-center-vertical;
+
+  //     position: absolute;
+  //     top: -100px;
+  //     right: 0;
+  //     z-index: var(--hero-navigation-z-index);
+  //     gap: 12px;
+
+  //     @media screen and (max-width: $screen-tl) {
+  //       display: none;
+  //     }
+  //   }
+  // }
+
+  &__navigation-btn {
+    @include button-reset("flex");
+    @include flex-center;
+    @include box(45px);
+
+    background-color: var(--back-primary);
+    border: 1px solid var(--green-gray-100);
+    border-radius: 50%;
+    box-shadow: none !important;
+
+    @media screen and (max-width: $screen-dxl) {
+      position: static;
+      top: auto;
+    }
+
+    &.swiper-button-disabled #{$block-name}__navigation-btn-icon {
+      color: var(--monochrome-100);
+      cursor: not-allowed;
+    }
+  }
+
+  &__navigation-btn-prev {
+    position: absolute;
+    top: 44%;
+    left: -54px;
+    transform: rotate(180deg);
+
+    @media screen and (max-width: $screen-dxl) {
+      right: 0;
+    }
+  }
+
+  &__navigation-btn-next {
+    position: absolute;
+    top: 44%;
+    right: -100px;
+
+    @media screen and (max-width: $screen-dxl) {
+      right: 0;
+      transform: none;
+    }
+  }
+
+  &__navigation-btn-icon {
+    @include box(22px);
+  }
+
+  &__navigation {
+    @media screen and (max-width: $screen-dxl) {
+      @include flex-center-vertical;
+
+      position: absolute;
+      top: -100px;
+      right: 0;
+      z-index: var(--hero-navigation-z-index);
+      gap: 12px;
+    }
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+
+    &--top {
+      @include flex-center-vertical;
+
+      position: absolute;
+      top: -100px;
+      right: 0;
+      z-index: var(--hero-navigation-z-index);
+      gap: 12px;
+
+      @media screen and (max-width: $screen-tl) {
+        display: none;
+      }
+
+      #{$block-name}__navigation-btn {
+        position: static;
+      }
+    }
+  }
+}

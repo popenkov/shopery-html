@@ -1,0 +1,30 @@
+@import "../../scss/breakpoints";
+
+.logo-links {
+  $block-name: &; // #{$block-name}__element
+
+  &__inner {
+    @include flex-center-vertical;
+
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__icon {
+    width: 131px;
+    height: 32px;
+    color: var(--monochrome-300);
+  }
+
+  &__link {
+    @media (hover: hover) {
+      &:hover {
+        #{$block-name}__icon {
+          color: var(--pink-500);
+        }
+      }
+    }
+  }
+}

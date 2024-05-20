@@ -6,11 +6,11 @@
   @include flex-column;
 
   gap: 80px;
-  padding: 80px 0;
+  padding: 80px 0 0;
 
   @media screen and (max-width: $screen-ti) {
     gap: 40px;
-    padding: 40px 0;
+    padding: 40px 0 0;
   }
 
   &__section-bg {
@@ -18,16 +18,50 @@
   }
 
   &__image {
-    width: 100%;
+    width: 55%;
     max-width: 716px;
     max-height: 492px;
     object-fit: cover;
     border-radius: 8px;
+
+    @media screen and (max-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__text-bg {
+    position: relative;
+    max-width: 648px;
+    height: 100%;
+    min-height: 685px;
+    margin-left: auto;
+
+    &::before {
+      position: absolute;
+      left: -150px;
+      display: block;
+      width: 150px;
+      height: 100%;
+      min-height: 685px;
+      background: linear-gradient(to right, rgb(4 119 210 / 0%), rgb(255 255 255 / 60%));
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      z-index: -1px;
+      background-color: rgb(255 255 255 / 60%);
+      backdrop-filter: blur(3px);
+      content: "";
+      inset: 0 -20px 0 0;
+    }
   }
 
   &__text {
     @include flex-column;
 
+    position: relative;
+    z-index: 2;
     gap: 32px;
     align-items: flex-start;
     max-width: 648px;
@@ -189,5 +223,28 @@
 
   &__button {
     @include flex-center-vertical;
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  &__subtitle + &__slider {
+    margin-top: 38px;
+  }
+
+  &__team {
+    @include flex-column;
+
+    gap: 12px;
+  }
+
+  &__testimonials-title.section__title--large {
+    // margin: unset;
+    text-align: left;
+  }
+
+  &__testimonial {
+    max-width: 424px;
   }
 }
