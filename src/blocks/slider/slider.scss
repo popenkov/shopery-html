@@ -63,7 +63,7 @@
   &__navigation-btn-prev {
     position: absolute;
     top: 44%;
-    left: -54px;
+    left: -77px;
     transform: rotate(180deg);
 
     @media screen and (max-width: $screen-dxl) {
@@ -74,7 +74,7 @@
   &__navigation-btn-next {
     position: absolute;
     top: 44%;
-    right: -100px;
+    right: -77px;
 
     @media screen and (max-width: $screen-dxl) {
       right: 0;

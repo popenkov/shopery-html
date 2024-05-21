@@ -7,24 +7,43 @@
     @include flex-center-vertical;
 
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 40px;
     justify-content: space-between;
-    width: 100%;
+    padding: 80px 0;
+
+    @media screen and (max-width: $screen-d) {
+      justify-content: flex-start;
+      padding: 40px 0;
+    }
   }
 
   &__icon {
-    width: 131px;
-    height: 32px;
+    max-height: 32px;
     color: var(--monochrome-300);
   }
 
   &__link {
+    @media screen and (max-width: $screen-d) {
+      flex-grow: 1;
+    }
+
     @media (hover: hover) {
       &:hover {
         #{$block-name}__icon {
           color: var(--pink-500);
         }
       }
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 1px;
+    height: 32px;
+    background-color: var(--monochrome-100);
+
+    @media screen and (max-width: $screen-d) {
+      display: none;
     }
   }
 }

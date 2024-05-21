@@ -21,22 +21,24 @@ mixin logo-links(mods)
 
     const LINKS_DATA = [
       {
-        icon: "logo__steps", href: '#'
+        icon: "logo__steps", href: '#', width: 82
       },  {
-        icon: "logo__mango", href: '#'
+        icon: "logo__mango", href: '#', width: 67
       }, {
-        icon: "logo__food", href: '#'
+        icon: "logo__food", href: '#', width: 60
       }, {
-        icon: "logo__fooduk", href: '#'
+        icon: "logo__fooduk", href: '#', width: 82
       }, {
-        icon: "logo__bookoff", href: '#'
+        icon: "logo__bookoff", href: '#', width: 131
       }, {
-        icon: "logo__gseries", href: '#'
+        icon: "logo__gseries", href: '#', width: 96
       }
     ];
 
   .logo-links(class=allMods)&attributes(attributes)
     .logo-links__inner.container
-      each logo in LINKS_DATA
+      each logo, idx in LINKS_DATA
         a.logo-links__link(href= logo.href)
-          svg.logo-links__icon: use(href= path.icon + logo.icon)
+          svg.logo-links__icon(style=`width: ${logo.width}px`): use(href= path.icon + logo.icon)
+        if idx < LINKS_DATA.length - 1
+          span.logo-links__separator
