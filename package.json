@@ -99,6 +99,7 @@
   },
   "dependencies": {
     "autosize": "^6.0.1",
+    "dotenv": "^16.4.5",
     "hystmodal": "^1.0.1",
     "js-cookie": "^3.0.5",
     "nice-select2": "^2.1.0",

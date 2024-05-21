@@ -2,7 +2,7 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin textarea(data, mods)
+mixin textarea(labelText, mods)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -21,6 +21,6 @@ mixin textarea(data, mods)
     }
 
   label.textarea(class=allMods)
-    if data.labelText
-      span.textarea__label= data.labelText
+    if labelText
+      span.textarea__label= labelText
     textarea.textarea__input&attributes(attributes)
