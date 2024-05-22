@@ -35,7 +35,7 @@
   "rating": 4,
   "tags": [
     {
-      "type": "green",
+      "type": "in-stock",
       "text": "In Stock"
     }
   ],

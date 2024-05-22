@@ -1,0 +1,49 @@
+@import "../../scss/breakpoints";
+
+.logo-links {
+  $block-name: &; // #{$block-name}__element
+
+  &__inner {
+    @include flex-center-vertical;
+
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 80px 0;
+
+    @media screen and (max-width: $df-screen-tl) {
+      justify-content: flex-start;
+      padding: 40px 0;
+    }
+  }
+
+  &__icon {
+    max-height: 32px;
+    color: var(--monochrome-300);
+  }
+
+  &__link {
+    @media screen and (max-width: $df-screen-tl) {
+      flex-grow: 1;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        #{$block-name}__icon {
+          color: var(--pink-500);
+        }
+      }
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 1px;
+    height: 32px;
+    background-color: var(--monochrome-100);
+
+    @media screen and (max-width: $df-screen-tl) {
+      display: none;
+    }
+  }
+}

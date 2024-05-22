@@ -37,7 +37,7 @@
   }
 
   &__text {
-    @include body-medium;
+    @include body-m;
 
     margin: 0;
     color: var(--green-gray-600);
@@ -57,7 +57,7 @@
   }
 
   &__name {
-    @include body-medium(500);
+    @include body-m(500);
 
     margin: 0;
   }
@@ -67,7 +67,7 @@
   }
 
   &__role {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--green-gray-600);

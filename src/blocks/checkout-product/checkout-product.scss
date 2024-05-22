@@ -1,0 +1,42 @@
+@import "../../scss/breakpoints";
+
+.checkout-product {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  &__info {
+    @include flex-center-vertical;
+
+    gap: 12px;
+  }
+
+  &__photo {
+    @include box(60px);
+
+    object-fit: contain;
+  }
+
+  &__title {
+    @include flex-center-vertical;
+    @include body-s;
+
+    gap: 3px;
+    margin: 0;
+  }
+
+  &__price {
+    @include body-s(500);
+
+    margin: 0;
+  }
+
+  &__quantity {
+    @include body-s;
+
+    margin: 0;
+  }
+}

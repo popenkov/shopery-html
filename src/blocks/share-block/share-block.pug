@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (share-block)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin share-block(text, data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   data    {array} - массив с данными соцсетей
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +share-block(
+          [{
+            "icon": "icon__facebook",
+            "href": "#"
+          },],
+           "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " share-block--" + modsList[i].trim();
+      }
+    }
+
+  .share-block(class=allMods)&attributes(attributes)
+    if text
+      span.share-block__text= text
+    .share-block__container
+      each social in data
+        a.button-round.button-round--ghost(href= social.link)
+          svg.button-round__icon.share-block__icon: use(href= path.icon + social.icon)

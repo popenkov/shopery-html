@@ -2,10 +2,11 @@ extends ../templates/template__default.pug
 
 block variables
   - isMainPage = false
-  - isCatalogPage = true
+  - hasCategoryButton = true
   - pageTitle = "Catalog"
   - metaDescription = "Catalog description"
   - metaKeywords = "Catalog keywords"
+
 
 block content
   h2.visually-hidden shopery catalog
@@ -30,7 +31,8 @@ block content
               svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
             .filter-accordion__content(style="max-height: auto")
               each category in json.catalog.filter.categories
-                +radio(category.title, "filter-category", category.value, category.amount, "")(class="filter-accordion__content-item")
+                .filter-accordion__content-item
+                  +radio( category.title, category.amount, "")(name="filter-category", value= category.value, id=category.value)
 
           .filter-accordion__item.aside-filter__item
             button.filter-accordion__button.is-open Price
@@ -43,19 +45,19 @@ block content
               svg.filter-accordion__chevron-icon: use(href= path.icon + "icon__chevron-down")
             .filter-accordion__content
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-5")
+                +checkbox()(name="rating", id="rating-5")
                   +star-rating(5, "5.0")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-4")
+                +checkbox()(name="rating", id="rating-4")
                   +star-rating(4, "4.0 & up")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-3")
+                +checkbox()(name="rating", id="rating-3")
                   +star-rating(3, "3.0 & up")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-2")
+                +checkbox()(name="rating", id="rating-2")
                   +star-rating(2, "2.0 & up")
               .aside-filter__checkbox
-                +checkbox("", "rating", "rating-1")
+                +checkbox()(name="rating", id="rating-1")
                   +star-rating(1, "1.0 & up")
 
           .filter-accordion__item.aside-filter__item
@@ -67,17 +69,7 @@ block content
 
           .aside-filter__footer
             +button("button","Apply filter", "fill, large")(class="aside-filter__button js-apply-filter-button")
-
-      .discount-banner.aside-filter__banner.aside-filter__banner--desktop
-        img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
-        .discount-banner__text
-          p.discount-banner__title
-            span.discount-banner__title--bold 79%
-            |  Discount
-          p.discount-banner__subtitle on your first order
-          +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
-            span.icon-button__text Shop Now
-            svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      +discount-banner(json.catalog.banner)(class="aside-filter__banner aside-filter__banner--desktop")
 
       .aside-filter__products.aside-filter__products--desktop
         p.aside-filter__title Sale Products
@@ -96,16 +88,7 @@ block content
     .catalog-page__result.catalog-page__result--mobile.grid.grid__three-items
       each product in json.catalogItems.items
         +product-small(product)(class="catalog-page__product")
-    .discount-banner.catalog-page__banner.catalog-page__banner--mobile
-      img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
-      .discount-banner__text
-        p.discount-banner__title
-          span.discount-banner__title--bold 79%
-          |  Discount
-        p.discount-banner__subtitle on your first order
-        +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
-          span.icon-button__text Shop Now
-          svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+    +discount-banner(json.catalog.banner)(class="catalog-page__banner catalog-page__banner--mobile")
 
     .catalog-page__sale-products.catalog-page__sale-products--mobile
         p.aside-filter__title Sale Products
@@ -125,3 +108,6 @@ block content
         button.pagination__page 21
       button.pagination__page.pagination__page-next
         svg.pagination__icon: use(href= path.icon + "icon__chevron-down")
+
+
+  +subscription

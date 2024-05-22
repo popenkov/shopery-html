@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "img": "product-apple.jpg",
+      "title": "Green Capsicum",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "stock": {
+        "type": "in-stock",
+        "text": "In Stock"
+      }
+    },
+    {
+      "img": "product-apple.jpg",
+      "title": "Chinese Cabbage",
+      "price": "$45.00",
+      "priceOld": null,
+      "stock": {
+        "type": "in-stock",
+        "text": "In Stock"
+      }
+    },
+    {
+      "img": "product-apple.jpg",
+      "title": "Fresh Sujapuri Mango",
+      "price": "$14.99",
+      "priceOld": "$20.99",
+      "stock": {
+        "type": "not-available",
+        "text": "Out of Stock"
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.bannner-large {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 250px;
+  padding: 20px 56px;
+  overflow: hidden;
+  border-radius: 8px;
+
+  @media screen and (max-width: $df-screen-m) {
+    padding: 16px 26px;
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+  }
+
+  &__content {
+    @include flex-center-vertical;
+
+    gap: 50px;
+
+    @media screen and (max-width: $df-screen-m) {
+      gap: 16px;
+    }
+  }
+
+  &__text {
+    @include flex-column;
+
+    align-items: flex-start;
+    margin-top: -2px;
+  }
+
+  &__subtitle {
+    @include body-s(500);
+
+    margin: 0;
+    color: var(--monochrome-400);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include heading-4(600);
+
+    margin: 0;
+    color: var(--front-primary-inversed);
+  }
+
+  &__button {
+    @include flex-center-vertical;
+
+    gap: 8px;
+    height: 45px;
+    padding: 14px 27px 14px 32px !important;
+  }
+
+  &__title + &__button {
+    margin-top: 16px;
+  }
+
+  &__discount {
+    @include flex-column-center;
+
+    gap: 2px;
+    padding: 20px;
+    background-color: var(--monochrome-900);
+    border-radius: 50%;
+  }
+
+  &__discount-text {
+    color: var(--front-primary-inversed);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 110%;
+    letter-spacing: 3%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__discount-value {
+    color: var(--warning-front);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: 0%;
+  }
+}

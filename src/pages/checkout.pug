@@ -1,0 +1,69 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = true
+  - pageTitle = "Shopping cart"
+  - metaDescription = "Shopping cart description"
+  - metaKeywords = "Shopping cart keywords"
+
+block content
+  +breadcrumps([{path: '#', title: 'Shopping cart'}], 'Checkout')
+
+  .checkout-page.container
+    .checkout-page__main
+      h2.checkout-page__title Billing Information
+      form.checkout-page__form.js-checkout-form#checkoutForm
+        .checkout-page__form-main
+          .checkout-page__form-row.grid.grid__three-items
+            .checkout-page__input-container.checkout-page__input-name
+              +field("Your first name", "First name", "")(id="firstName", name="firstName", type="text", class="checkout-page__input")
+            .checkout-page__input-container.checkout-page__input-last-name
+              +field("Your last name", "Last name", "")(id="lastName", name="lastName", type="text", class="checkout-page__input")
+            .checkout-page__input-container.checkout-page__input-company-name
+              +field("Company name", "Company Name (optional)", "")(name="company-name", type="text", class="checkout-page__input")
+
+          .checkout-page__form-row
+            .checkout-page__input-container.checkout-page__input-address-street
+              +field( "Street Address", "Street Address", "")(id="addressStreet", name="address-street", type="text", class="checkout-page__input")
+
+          .checkout-page__form-row.grid.grid__three-items
+            .checkout-page__input-container.checkout-page__input-address-country
+              .checkout-page__input-label Country / Region
+              +select(json.checkout.countries, "", "address-country", "Select")(id="addressCountry", class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
+            .checkout-page__input-container.checkout-page__input-address-states
+              .checkout-page__input-label States
+              +select(json.checkout.states, "", "address-states", "Select")(id="addressState", class="checkout-page__input")(data-placeholder="Select", data-searchable="true")
+            .checkout-page__input-container.checkout-page__input-address-zip
+              +field("Zip Code", "Zip Code", "")(id="addressZip", name="address-zip-code", type="text", class="checkout-page__input")
+
+          .checkout-page__form-row.grid.grid__two-items
+            .checkout-page__input-container.checkout-page__input-email
+              +field("Email Address", "Email", "")(id="email", name="email", type="text", class="checkout-page__input")
+            .checkout-page__input-container.checkout-page__input-phone
+              +field("Phone number", "Phone", "")(id="phone", name="phone", type="phone", class="checkout-page__input")
+
+          +checkbox()(name="another-address", id="another-address", class="checkout-page__checkbox js-checkout-show-address")
+            span.checkout-page__checkbox-text Ship to a different address
+
+          .checkout-page__shipping-address.js-checkout-shipping-address
+            .checkout-page__form-row
+              .checkout-page__input-container.checkout-page__input-address-street
+                +field("Street Address", "Street Address", "")(id="shippingAddressStreet", name="shipping-address-street", type="text", class="checkout-page__input")
+            .checkout-page__form-row.grid.grid__three-items
+              .checkout-page__input-container.checkout-page__input-address-country
+                .checkout-page__input-label Country / Region
+                +select(json.checkout.countries, "", "shipping-address-country", "Select")(id="shippingAddressCountry", data-placeholder="Select", data-searchable="true")
+              .checkout-page__input-container.checkout-page__input-address-states
+                .checkout-page__input-label States
+                +select(json.checkout.states, "", "shipping-address-states", "Select")(id="shippingAddressStates", data-placeholder="Select", data-searchable="true")
+              .checkout-page__input-container.checkout-page__input-address-zip
+                +field("Zip Code", "Zip Code", "")(id="shippingAddressZipCode", name="shipping-address-zip-code", type="text", class="checkout-page__input")
+        .checkout-page__form-comment
+          h3.checkout-page__title Additional Info
+          .checkout-page__input-container.checkout-page__input-name
+            +textarea({labelText: "Order Notes (Optional)"})(type="comment", name="comment", placeholder="Notes about your order, e.g. special notes for delivery")
+
+    +checkout-total(class="checkout-page__aside")
+
+  +subscription('gray')(class="checkout-page__subscription")

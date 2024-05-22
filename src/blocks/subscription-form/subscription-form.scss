@@ -9,7 +9,7 @@
   grid-area: form;
   height: 52px;
 
-  @media screen and (max-width: $screen-t) {
+  @media screen and (max-width: $df-screen-m) {
     @include flex-column;
 
     position: static;
@@ -19,7 +19,7 @@
   }
 
   &__input {
-    @include body-medium;
+    @include body-m;
 
     height: 52px;
     padding-right: 180px;
@@ -29,7 +29,7 @@
     border: 1px solid var(--green-gray-100);
     border-radius: 46px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       padding-right: 16px;
       padding-left: 16px;
     }
@@ -47,7 +47,7 @@
     height: 52px;
     border-radius: 43px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       position: static;
       width: 100%;
     }

@@ -1,0 +1,128 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Post"
+  - metaDescription = "Post description"
+  - metaKeywords = "Post keywords"
+
+block content
+  +breadcrumps([{path: '/blog', title: 'Blog'}], 'Single Blog')
+
+  .post-page.container
+
+    aside.post-page__filter.aside-filter
+
+      .aside-filter__filter-button
+        +filter-button(class="js-filter-button")
+
+
+      .js-filter-menu.aside-filter__filter-menu-background.post-page__filters
+        .post-page__filter-accordion.filter-accordion.aside-filter__filter-menu
+          .aside-filter__header.d-mobile--flex
+            h2.aside-filter__title Filter
+            button.aside-filter__close-button.js-filter-close-button
+              svg.aside-filter__close-icon: use(href= path.icon + "icon__close")
+          .aside-filter__search.aside-filter__bb-container
+            +search-form('small')(class="js-header-search-form")
+
+          .filter-accordion__item.aside-filter__item
+            h2.aside-filter__title Top Categories
+            .aside-filter__categories-container.aside-filter__bb-container
+              each category in json.catalog.filter.categories
+                +radio( category.title, category.amount, "")(name="filter-category", value= category.value, id=category.value)
+
+
+          .filter-accordion__item.aside-filter__item
+            h2.aside-filter__title Popular Tag
+            .aside-filter__tags-container.aside-filter__tags-container--blog.aside-filter__bb-container
+              each tag in json.catalog.filter.tags
+                +tag-checkbox(tag.text, tag.value)
+
+          .aside-filter__footer
+            +button("button","Apply filter", "fill, large")(class="aside-filter__button js-apply-filter-button")
+
+
+
+
+      .post-page__gallery.post-page__gallery--desktop
+        h2.post-page__gallery-title Our Gallery
+        .post-page__gallery-cards.aside-filter__bb-container
+          each data in json.info.footer.instagram
+            +instagram-card(data)
+
+      .post-page__recent-posts.post-page__recent-posts--desktop
+        h2.post-page__recent-posts-title Recently Added
+        .post-page__recent-posts-cards
+          each data in json.blog.recentPosts
+            +recent-post(data)
+
+    .post-page__article
+      img.post-page__image(src= path.img + 'post-image--1.jpg', alt="image")
+
+      .post-page__categories
+        .post-page__category
+          svg.post-page__category-icon: use(href= path.icon + "icon__tag")
+          a.post-page__category-link(href="#") Food
+        .post-page__category
+          svg.post-page__category-icon: use(href= path.icon + "icon__user")
+          span.post-page__category-text By
+          a.post-page__category-link(href="#") Admin
+        .post-page__category
+          svg.post-page__category-icon: use(href= path.icon + "icon__chat-message")
+          span.post-page__category-text= 65
+          span.post-page__category-text Comments
+
+      h2.post-page__title Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.
+
+      .post-page__info
+        .post-page__author
+          img.post-page__author-avatar(src= path.img + 'post-avatar--1.jpg', alt="avatar")
+          .post-page__author-info
+            span.post-page__author-name Cameron Williamson
+            .post-page__author-date
+              span 4 April, 2021
+              span •
+              span 6 min read
+        +share-block(null, json.info.footer.socialLinks)(class="post-page__share")
+
+
+      .post-page__content
+        h3 Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.
+        p Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.
+        p Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.
+
+        .post-page__gallery
+          img(src= path.img + 'post-image--2.jpg', alt="image")
+          img(src= path.img + 'post-image--3.jpg', alt="image")
+        p Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies.
+
+      +bannner-large(class="post-page__banner")
+
+      +comment-form(class="post-page__comment-form")
+
+      .post-page__comments.js-post-comments-container
+        h3.post-page__comments-title Comments
+        .post-page__comments-items
+          each review in json.post.comments
+            +comment-item(review)(class="post-page__comment")
+
+        +button("button", "", "border, normal", "#")(class="post-page__show-comments-button js-all-post-comments-button")
+          span Load More
+
+      .post-page__gallery.post-page__gallery--mobile
+        h2.post-page__gallery-title Our Gallery
+        .post-page__gallery-cards
+          each data in json.info.footer.instagram
+            +instagram-card(data)
+
+      .post-page__recent-posts.post-page__recent-posts--mobile
+        h2.post-page__recent-posts-title Recently Added
+        .post-page__recent-posts-cards
+          each data in json.blog.recentPosts
+            +recent-post(data)
+
+
+
+  +subscription('gray')

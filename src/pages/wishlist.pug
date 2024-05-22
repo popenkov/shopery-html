@@ -1,0 +1,28 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Wishlist"
+  - metaDescription = "Wishlist description"
+  - metaKeywords = "Wishlist keywords"
+
+block content
+  +breadcrumps([], 'Wishlist')
+
+  .section--page.container
+    h2.section__title--small My Wishlist
+    .section__content
+      .wishlist
+        .wishlist__header
+          span.wishlist__column-title Product
+          span.wishlist__column-title price
+          span.wishlist__column-title Stock Status
+        .wishlist__body
+          each product in json.wishlist.items
+            +wishlist-item(product)(class="wishlist__item")
+        .wishlist__footer
+          +share-block("Share:",json.info.footer.socialLinks)
+
+
+  +subscription("gray")

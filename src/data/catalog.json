@@ -17,7 +17,7 @@
   },
   "filter": {
     "categories": [
-      { "title": "Fresh Fruit (25)", "value": "", "amount": "134" },
+      { "title": "Fresh Fruit", "value": "", "amount": "134" },
       { "title": "Vegetables", "value": "", "amount": "150" },
       { "title": "Cooking", "value": "cooking", "amount": "54" },
       { "title": "Snacks", "value": "snacks", "amount": "47" },
@@ -79,5 +79,13 @@
         "value": "Fruit"
       }
     ]
+  },
+  "banner": {
+    "img": "discount-banner--1.jpg",
+    "title": {
+      "textBold": "79%",
+      "text": "Discount"
+    },
+    "subtitle": " on your first order"
   }
 }

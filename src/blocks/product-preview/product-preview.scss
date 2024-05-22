@@ -12,7 +12,7 @@
     margin-left: auto;
     overflow: visible;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 100%;
       border-radius: 0;
     }
@@ -28,14 +28,14 @@
     color: var(--back-primary);
     outline: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       top: -43px;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       top: 10px;
       z-index: 2;
-      color: var(--gray-900);
+      color: var(--monochrome-900);
     }
   }
 
@@ -48,16 +48,16 @@
     gap: 22px;
     padding: 40px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       flex-direction: column;
       overflow-y: auto;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       max-height: calc(100vh - 80px);
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       height: 100vh;
       max-height: unset;
       padding: 16px;
@@ -75,7 +75,7 @@
 
     gap: 11px;
     padding-bottom: 19px;
-    border-bottom: 1px solid rgb(230 230 230);
+    border-bottom: 1px solid var(--monochrome-100);
   }
 
   &__title-wrapper {
@@ -109,15 +109,15 @@
   }
 
   &__review-text {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-600);
+    color: var(--monochrome-600);
   }
 
   &__separator {
-    @include body-small(500);
+    @include body-s(500);
 
-    color: var(--gray-300);
+    color: var(--monochrome-300);
   }
 
   &__sku {
@@ -127,15 +127,15 @@
   }
 
   &__sku-text {
-    @include body-small(500);
+    @include body-s(500);
 
-    color: var(--gray-800);
+    color: var(--monochrome-800);
   }
 
   &__sku-value {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-600);
+    color: var(--monochrome-600);
   }
 
   &__price-wrapper {
@@ -149,7 +149,7 @@
   }
 
   &__price--old {
-    color: var(--gray-300);
+    color: var(--monochrome-300);
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
@@ -180,9 +180,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 19px 40px;
     padding: 25px 0 23px;
-    border-bottom: 1px solid rgb(230 230 230);
+    border-bottom: 1px solid var(--monochrome-100);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-areas: "brand" "share" "description";
       grid-template-columns: 1fr;
     }
@@ -196,12 +196,12 @@
   }
 
   &__brand-text {
-    @include body-small;
+    @include body-s;
   }
 
   &__brand-value {
     padding: 10px 8px;
-    border: 0.8px solid rgb(230 230 230);
+    border: 0.8px solid var(--monochrome-100);
     border-radius: 4px;
   }
 
@@ -213,7 +213,7 @@
   }
 
   &__share-text {
-    @include body-small;
+    @include body-s;
   }
 
   &__socials-container {
@@ -223,16 +223,16 @@
   }
 
   &__description {
-    @include body-small;
+    @include body-s;
 
     grid-area: description;
     margin: 0;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
   }
 
   &__cart {
     padding: 18px 0;
-    border-bottom: 1px solid rgb(230 230 230);
+    border-bottom: 1px solid var(--monochrome-100);
   }
 
   &__categories {
@@ -249,7 +249,7 @@
   }
 
   &__categories-text {
-    @include body-small(500);
+    @include body-s(500);
   }
 
   &__categories-container {
@@ -259,15 +259,15 @@
   }
 
   &__categories-link {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     white-space: nowrap;
     text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
-        color: var(--gray-900);
+        color: var(--monochrome-900);
         text-decoration: underline;
       }
     }
@@ -279,7 +279,7 @@
   }
 
   &__tags-text {
-    @include body-small(500);
+    @include body-s(500);
   }
 
   &__tags-container {
@@ -289,15 +289,15 @@
   }
 
   &__tags-link {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     white-space: nowrap;
     text-decoration: none;
 
     @media (hover: hover) {
       &:hover {
-        color: var(--gray-900);
+        color: var(--monochrome-900);
         text-decoration: underline;
       }
     }

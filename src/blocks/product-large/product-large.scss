@@ -4,9 +4,16 @@
 .product-large {
   $block-name: &; // #{$block-name}__element
 
+  // stylelint-disable-next-line
+  --card-border: 1px solid var(--monochrome-100);
+  // stylelint-disable-next-line
+  --card-hover-border: 1px solid var(--primary);
+  // stylelint-disable-next-line
+  --card-hover-shadow: 0 0 12px 0 rgb(32 181 38 / 32%);
+
   @include flex-column;
 
-  background-color: var(--color-white);
+  background-color: var(--back-primary);
   border: 1px solid transparent;
   transition: border var(--transition-long);
 
@@ -68,14 +75,14 @@
   &__image-button {
     @include box(48px);
 
-    background-color: var(--color-white);
-    border: 1px solid var(--gray-50);
+    background-color: var(--back-primary);
+    border: 1px solid var(--monochrome-50);
     box-shadow: none;
 
     @media (hover: hover) {
       &:hover {
         border: none;
-        box-shadow: 0 0 8px 0 var(--gray-200);
+        box-shadow: 0 0 8px 0 var(--monochrome-200);
       }
     }
   }
@@ -100,16 +107,16 @@
   }
 
   &__title {
-    @include body-medium;
+    @include body-m;
 
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
     transition: color var(--transition-long);
   }
 
   &__price {
     @include flex-center-vertical;
-    @include body-large(500);
+    @include body-l(500);
 
     gap: 4px;
     margin: 0;
@@ -140,9 +147,9 @@
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-white);
+        color: var(--front-primary-inversed);
         background-color: var(--primary);
-        box-shadow: 0 0 8px 2px var(--gray-200);
+        box-shadow: 0 0 8px 2px var(--monochrome-200);
       }
     }
   }

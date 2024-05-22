@@ -1,0 +1,52 @@
+{
+  "comments": [
+    {
+      "name": "Annette Black",
+      "avatar": "comment-avatar--1.jpg",
+      "text": "In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.",
+      "date": "26 Apr, 2021"
+    },
+    {
+      "name": "Devon Lane",
+      "avatar": "comment-avatar--2.jpg",
+      "text": "Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. Nam hendrerit, velit ut aliquam euismod, nibh tortor rutrum nisi, ac sodales nunc eros porta nisi. Sed scelerisque, est eget aliquam venenatis, est sem tempor eros.",
+      "date": "24 Apr, 2021"
+    },
+    {
+      "name": "Jacob Jones",
+      "avatar": "comment-avatar--3.jpg",
+      "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "date": "20 Apr, 2021"
+    },
+    {
+      "name": "Jane Cooper",
+      "avatar": "comment-avatar--4.jpg",
+      "text": "Pellentesque feugiat, nibh vel vehicula pretium, nibh nibh bibendum elit, a volutpat arcu dui nec orci. Aenean dui odio, ullamcorper quis turpis ac, volutpat imperdiet ex.",
+      "date": "18 Apr, 2021"
+    },
+    {
+      "name": "Darrell Steward",
+      "avatar": "comment-avatar--5.jpg",
+      "text": "Nulla molestie interdum ultricies. ",
+      "date": "7 Apr, 2021"
+    },
+    {
+      "name": "Annette Black",
+      "avatar": "comment-avatar--1.jpg",
+      "text": "In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.",
+      "date": "26 Apr, 2021"
+    },
+    {
+      "name": "Devon Lane",
+      "avatar": "comment-avatar--2.jpg",
+      "text": "Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. Nam hendrerit, velit ut aliquam euismod, nibh tortor rutrum nisi, ac sodales nunc eros porta nisi. Sed scelerisque, est eget aliquam venenatis, est sem tempor eros.",
+      "date": "24 Apr, 2021"
+    },
+    {
+      "name": "Jacob Jones",
+      "avatar": "comment-avatar--3.jpg",
+      "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "date": "20 Apr, 2021"
+    }
+  ]
+}

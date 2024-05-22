@@ -1,0 +1,54 @@
+//- Все примеси в этом файле должны начинаться c имени блока (wishlist-item)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin wishlist-item(data, mods)
+
+  //- Принимает:
+  //-   data    {Object} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +wishlist-item(
+          {
+            "img": "product-apple.jpg",
+            "title": "Green Capsicum",
+            "price": "$14.99",
+            "priceOld": "$20.99",
+            "stock": [
+              {
+                "type": "green",
+                "text": "In Stock"
+              }
+            ]
+          },
+          , "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " wishlist-item--" + modsList[i].trim();
+      }
+    }
+
+    const isNotAvailable = data.stock.type === "not-available";
+
+  .wishlist-item(class=allMods)&attributes(attributes)
+    .wishlist-item__info
+      img.wishlist-item__photo(src=path.img + data.img, alt="")
+      h3.wishlist-item__title= data.title
+    .wishlist-item__price
+      span.wishlist-item__price-new= data.price
+      if data.priceOld
+        span.wishlist-item__price-old= data.priceOld
+
+    .wishlist-item__stock.tag(class= "tag--" + data.stock.type)= data.stock.text
+
+
+    .wishlist-item__actions
+      +button("button", "", "fill, normal", "#")(class="wishlist-item__add-to-cart-button", disabled = isNotAvailable ? "" : null)
+        span Add to Cart
+      button.wishlist-item__delete-button.close-button
+        svg.close-button__icon: use(href= path.icon + 'icon__cross')

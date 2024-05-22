@@ -1,0 +1,47 @@
+@import "../../scss/breakpoints";
+
+.comment-item {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 13px;
+
+  &__avatar {
+    @include box(40px);
+
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &__content {
+    @include flex-column;
+
+    gap: 5px;
+  }
+
+  &__header {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__author {
+    @include body-s(500);
+
+    margin: 0;
+  }
+
+  &__date {
+    @include body-s;
+
+    margin: 0;
+    color: var(--monochrome-400);
+  }
+
+  &__main {
+    @include body-s;
+
+    margin: 0;
+    color: var(--monochrome-500);
+  }
+}

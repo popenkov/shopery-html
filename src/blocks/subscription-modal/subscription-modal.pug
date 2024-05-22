@@ -2,10 +2,9 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin subscription-modal(text, mods)
+mixin subscription-modal(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +subscription-modal("Текст", "some-mod")
@@ -31,5 +30,5 @@ mixin subscription-modal(text, mods)
             h2.subscription-modal__title Subcribe to Our Newsletter
             p.subscription-modal__subtitle Subscribe to our newlletter and Save your <b>20% money</b> with discount code today.
             +subscription-form(class="subscription-modal__form js-subscription-modal-form")
-            +checkbox("", "rating", "rating-5")(class="subscription-modal__checkbox js-subscribe-show-checkbox")
+            +checkbox()(name="rating", id="rating-5", class="subscription-modal__checkbox js-subscribe-show-checkbox")
               span.subscription-modal__checkbox-text Do not show this window

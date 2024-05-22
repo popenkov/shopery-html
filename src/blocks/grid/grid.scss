@@ -5,15 +5,24 @@
 
   display: grid;
 
+  &__two-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media screen and (max-width: $df-screen-m) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &__three-items {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: 1fr !important;
     }
   }
@@ -21,15 +30,15 @@
   &__four-items {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: 1fr !important;
     }
   }
@@ -37,16 +46,20 @@
   &__five-items {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: 1fr !important;
     }
+  }
+
+  &.g-24 {
+    gap: 24px;
   }
 }

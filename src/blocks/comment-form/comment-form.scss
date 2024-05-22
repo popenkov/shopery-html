@@ -1,0 +1,87 @@
+@import "../../scss/breakpoints";
+
+.comment-form {
+  $block-name: &; // #{$block-name}__element
+
+  flex-direction: column;
+  gap: 16px;
+
+  @media screen and (max-width: $df-screen-t) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checkbox {
+    gap: 5px;
+  }
+
+  &__title {
+    @include body-xxl(500);
+
+    margin: 0;
+    text-align: left;
+  }
+
+  &__form {
+    @include flex-column;
+
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  &__title + &__form {
+    margin-top: 16px;
+  }
+
+  &__form-row.grid {
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__input-container {
+    @include flex-column;
+
+    gap: 8px;
+    align-items: flex-start;
+    width: 100%;
+
+    .field {
+      @include flex-column;
+
+      gap: 7px;
+      width: 100%;
+
+      &__label {
+        @include body-s;
+
+        margin: 0;
+      }
+
+      input {
+        height: 49px;
+      }
+    }
+  }
+
+  &__input-label {
+    @include body-s;
+
+    margin: 0;
+  }
+
+  &__checkbox {
+    gap: 6px;
+  }
+
+  &__form-row + .checkbox {
+    margin-top: 2px;
+  }
+
+  &__checkbox-text {
+    @include body-s;
+  }
+
+  &__input-container + &__button {
+    margin-top: 7px;
+  }
+}

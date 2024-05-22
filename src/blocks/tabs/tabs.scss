@@ -7,7 +7,7 @@
   overflow: hidden;
 
   &__labels {
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       position: relative;
       width: 100%;
 
@@ -38,7 +38,7 @@
   }
 
   &__labels-content {
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       position: relative;
       width: 100%;
       height: 100%;
@@ -56,19 +56,19 @@
     gap: 12px;
     outline: none;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       width: max-content;
     }
   }
 
   &__label {
-    @include body-medium(500);
+    @include body-m(500);
 
     position: relative;
     flex-shrink: 0;
     padding: 0;
     padding: 8px 12px 6px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     border-top-width: 0;
     border-right-width: 0;
     border-bottom: 2px solid transparent;
@@ -120,7 +120,7 @@
     transition: opacity var(--transition);
     pointer-events: none;
 
-    // @media screen and (max-width: $screen-ti) {
+    // @media screen and (max-width: $df-screen-t) {
     //   grid-column: 1;
     // }
 

@@ -1,0 +1,45 @@
+//- Все примеси в этом файле должны начинаться c имени блока (post-preview)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin post-preview(data, mods)
+
+  //- Принимает:
+  //-   data    {string} - данные поста
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +post-preview("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " post-preview--" + modsList[i].trim();
+      }
+    }
+
+  .post-preview(class=allMods)&attributes(attributes)
+    .post-preview__img-wrapper
+      img.post-preview__img(src= path.img + data.img, alt= data.title)
+      .post-preview__date
+        span.post-preview__date-day= data.date.day
+        span.post-preview__date-month= data.date.month
+    .post-preview__description
+      .post-preview__categories
+        .post-preview__category
+          svg.post-preview__category-icon: use(href= path.icon + "icon__tag")
+          a.post-preview__category-link(href= data.category.link)= data.category.title
+        .post-preview__category
+          svg.post-preview__category-icon: use(href= path.icon + "icon__user")
+          span.post-preview__category-text By
+          a.post-preview__category-link(href= data.author.link)= data.author.title
+        .post-preview__category
+          svg.post-preview__category-icon: use(href= path.icon + "icon__chat-message")
+          span.post-preview__category-text= data.comments
+          span.post-preview__category-text Comments
+      h2.post-preview__title= data.title
+
+      a.post-preview__more-link(href= data.link) Read More
+        svg.post-preview__more-link-icon: use(href= path.icon + "icon__arrow-right")

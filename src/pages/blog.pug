@@ -1,0 +1,105 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Blog"
+  - metaDescription = "Blog description"
+  - metaKeywords = "Blog keywords"
+
+block content
+  h2.visually-hidden shopery catalog
+
+  +breadcrumps([], 'Blog')
+
+  .blog-page.container
+
+    aside.blog-page__filter.aside-filter
+
+      .aside-filter__filter-button
+        +filter-button(class="js-filter-button")
+
+
+      .js-filter-menu.aside-filter__filter-menu-background.blog-page__filters
+        .blog-page__filter-accordion.filter-accordion.aside-filter__filter-menu
+          .aside-filter__header.d-mobile--flex
+            h2.aside-filter__title Filter
+            button.aside-filter__close-button.js-filter-close-button
+              svg.aside-filter__close-icon: use(href= path.icon + "icon__close")
+          .aside-filter__search.aside-filter__bb-container
+            +search-form('small')(class="js-header-search-form")
+
+          .filter-accordion__item.aside-filter__item
+            h2.aside-filter__title Top Categories
+            .aside-filter__categories-container.aside-filter__bb-container
+              each category in json.catalog.filter.categories
+                +radio( category.title, category.amount, "")(name="filter-category", value=category.value, id=category.value)
+
+
+          .filter-accordion__item.aside-filter__item
+            h2.aside-filter__title Popular Tag
+            .aside-filter__tags-container.aside-filter__tags-container--blog.aside-filter__bb-container
+              each tag in json.catalog.filter.tags
+                +tag-checkbox(tag.text, tag.value)
+
+          .aside-filter__footer
+            +button("button","Apply filter", "fill, large")(class="aside-filter__button js-apply-filter-button")
+
+
+
+
+      .blog-page__gallery.blog-page__gallery--desktop
+        h2.blog-page__gallery-title Our Gallery
+        .blog-page__gallery-cards.aside-filter__bb-container
+          each data in json.info.footer.instagram
+            +instagram-card(data)
+
+      .blog-page__recent-posts.blog-page__recent-posts--desktop
+        h2.blog-page__recent-posts-title Recently Added
+        .blog-page__recent-posts-cards
+          each data in json.blog.recentPosts
+            +recent-post(data)
+
+    .blog-page__sorting
+      +select(json.catalog.sort.filter, "Sort by:")(class="js-catalog-filter")
+      .blog-page__items-found
+        span.blog-page__items-found-value 52
+        span.blog-page__items-found-text Results Found
+
+    .blog-page__result.blog-page__result--desktop.grid.grid__two-items.d-desktop
+      each preview in json.blog.posts
+        +post-preview(preview)(class="blog-page__preview")
+    .blog-page__result.blog-page__result--mobile
+      each preview in json.blog.posts
+        +post-preview(preview)(class="blog-page__preview")
+
+
+    .blog-page__gallery.blog-page__gallery--mobile
+      h2.blog-page__gallery-title Our Gallery
+      .blog-page__gallery-cards
+        each data in json.info.footer.instagram
+          +instagram-card(data)
+
+    .blog-page__recent-posts.blog-page__recent-posts--mobile
+      h2.blog-page__recent-posts-title Recently Added
+      .blog-page__recent-posts-cards
+        each data in json.blog.recentPosts
+          +recent-post(data)
+
+
+    .blog-page__pagination.pagination.js-pagination
+      button.pagination__page.pagination__page-prev(disabled)
+        svg.pagination__icon: use(href= path.icon + "icon__chevron-down")
+      .pagination__pages
+        button.pagination__page.active 1
+        button.pagination__page 2
+        button.pagination__page 3
+        button.pagination__page 4
+        button.pagination__page 5
+        span.pagination__dots ...
+        button.pagination__page 21
+      button.pagination__page.pagination__page-next
+        svg.pagination__icon: use(href= path.icon + "icon__chevron-down")
+
+
+  +subscription

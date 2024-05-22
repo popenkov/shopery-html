@@ -9,7 +9,7 @@
   gap: 26px 24px;
   padding: 32px 0 82px;
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     grid-template-areas: "filter sort" "result result" "pagination pagination" "banner banner" "saleItems saleItems";
     grid-template-columns: 1fr 1fr;
   }
@@ -34,7 +34,7 @@
     grid-area: sort;
     padding-top: 2px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       flex-direction: column;
       gap: 10px;
       align-items: flex-end;
@@ -43,32 +43,32 @@
 
   &__items-found {
     @include flex-center-vertical;
-    @include body-medium;
+    @include body-m;
 
     gap: 4px;
     margin-right: 3px;
   }
 
   &__items-found-value {
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     font-weight: 600;
   }
 
   &__items-found-text {
-    color: var(--gray-600);
+    color: var(--monochrome-600);
   }
 
   &__result {
     grid-area: result;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       flex-direction: column;
       gap: 10px;
     }
   }
 
   &__result--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none !important;
     }
   }
@@ -76,7 +76,7 @@
   &__result--mobile {
     display: none !important;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: grid !important;
     }
   }
@@ -88,7 +88,7 @@
   &__banner--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: block;
     }
   }
@@ -131,7 +131,7 @@
   &__sale-products--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: flex !important;
       grid-area: saleItems;
       gap: 10px;

@@ -24,16 +24,17 @@
   }
 
   &__title {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
+    color: var(--front-primary);
   }
 
   &__amount {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
   }
 
   &__separator {
@@ -41,7 +42,7 @@
   }
 
   &__price-value {
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     font-weight: 600;
   }
 

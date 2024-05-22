@@ -2,10 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin select(options, placeholder, mods)
+mixin select(options, label, name, placeholder, mods)
 
   //- Принимает:
-  //-   text    {string} - текст
+  //-   options    {array} - options array
+  //-   label    {string} - label
+  //-   name    {string} - name
+  //-   placeholder    {string} - placeholder
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +select("Текст", "some-mod")
@@ -20,9 +23,11 @@ mixin select(options, placeholder, mods)
       }
     }
 
-  .select(class=allMods)&attributes(attributes)
-    if placeholder
-      span.select__placeholder= placeholder
-    select.select__field.js-nice-select
+  .select(class=allMods)
+    if label
+      span.select__placeholder= label
+    select.select__field.js-nice-select&attributes(attributes)
+      if placeholder
+        option.select__option.select__placeholder-value= placeholder
       each option in options
         option.select__option(value= option.value)= option.title

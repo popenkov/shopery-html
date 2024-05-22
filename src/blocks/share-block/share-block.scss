@@ -1,0 +1,23 @@
+@import "../../scss/breakpoints";
+
+.share-block {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 9px;
+
+  &__text {
+    @include body-s;
+  }
+
+  &__container {
+    @include flex-center-vertical;
+
+    gap: 5px;
+  }
+
+  &__icon {
+    color: var(--green-gray-300);
+  }
+}

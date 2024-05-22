@@ -1,0 +1,37 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+
+.advantage-label {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center-vertical;
+
+  gap: 12px;
+
+  &__icon {
+    @include box(32px);
+
+    color: #00b307;
+  }
+
+  &__text {
+    @include flex-column;
+
+    gap: 6px;
+  }
+
+  &__title {
+    @include body-s(500);
+
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: var(--monochrome-500);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+}

@@ -2,10 +2,9 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin subscription-form(text, mods)
+mixin subscription-form(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +subscription-form("Текст", "some-mod")
@@ -21,5 +20,5 @@ mixin subscription-form(text, mods)
     }
 
   form.subscription-form(class=allMods)&attributes(attributes)
-    +field("text", "subscription-email", "Your email address", "", "", true)(class="subscription-form__input")
+    +field( "Your email address",)(type="text", name="subscription-email", class="subscription-form__input")
     +button("button","Subscribe", "fill, large")(class="subscription-form__button")

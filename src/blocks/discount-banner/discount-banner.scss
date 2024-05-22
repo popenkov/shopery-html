@@ -33,19 +33,19 @@
     &--bold {
       @include heading-5(600);
 
-      color: var(--orange);
+      color: var(--orange-500);
     }
   }
 
   &__subtitle {
-    @include body-medium;
+    @include body-m;
 
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
   }
 
   &__button {
-    @include body-medium(600);
+    @include body-m(600);
 
     gap: 8px;
     margin-left: 4px;

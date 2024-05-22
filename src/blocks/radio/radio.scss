@@ -9,6 +9,7 @@
   display: flex;
   gap: 8px;
   justify-self: start;
+  width: fit-content;
   transition: var(--transition);
 
   @media (hover: hover) {
@@ -33,7 +34,7 @@
     @include box(20px);
 
     position: relative;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--monochrome-200);
     border-radius: 50%;
     cursor: pointer;
 
@@ -57,16 +58,16 @@
   }
 
   &__label {
-    @include body-small;
+    @include body-s;
 
     cursor: pointer;
     user-select: none;
   }
 
   &__amount {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
   }
 
   &__label + &__amount {

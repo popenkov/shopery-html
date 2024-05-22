@@ -2,6 +2,8 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .select {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-center-vertical;
 
   gap: 3px;
@@ -10,7 +12,7 @@
     min-width: 166px;
     height: 41px;
     padding: 0 16px;
-    border: 1px solid var(--gray-300);
+    border: 1px solid var(--monochrome-300);
 
     @media (hover: hover) {
       &:hover {
@@ -19,9 +21,9 @@
     }
 
     .current {
-      @include body-small;
+      @include body-s;
 
-      color: var(--gray-700);
+      color: var(--monochrome-700);
     }
 
     .nice-select-dropdown {
@@ -33,7 +35,7 @@
       .list {
         max-height: unset;
         margin: 0;
-        border: 1px solid var(--gray-300);
+        border: 1px solid var(--monochrome-300);
 
         .option {
           display: flex;
@@ -78,9 +80,22 @@
   }
 
   &__placeholder {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-500);
+    color: var(--monochrome-500);
   }
-  $block-name: &; // #{$block-name}__element
+
+  &__placeholder-value {
+    pointer-events: none;
+  }
+
+  & + .just-validate-error-label {
+    @include body-s(500);
+
+    color: var(--status-danger) !important;
+  }
+
+  &.just-validate-error-field .nice-select {
+    border: 1px solid var(--status-danger);
+  }
 }

@@ -1,0 +1,53 @@
+@import "../../scss/breakpoints";
+
+.cart-total {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-column;
+
+  gap: 7px;
+  padding: 24px;
+  border: 1px solid var(--monochrome-100);
+  border-radius: 8px;
+
+  &__title {
+    @include body-xl(500);
+
+    margin: 0;
+  }
+
+  &__values {
+    @include flex-column;
+  }
+
+  &__row {
+    @include flex-center-vertical;
+
+    gap: 12px;
+    justify-content: space-between;
+    padding: 12px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--monochrome-100);
+    }
+  }
+
+  &__key {
+    @include body-s;
+
+    color: var(--monochrome-700);
+  }
+
+  &__value {
+    @include body-s(500);
+  }
+
+  &__button {
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  &__values + &__button {
+    margin-top: 14px;
+  }
+}

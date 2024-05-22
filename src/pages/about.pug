@@ -1,0 +1,87 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "About"
+  - metaDescription = "About description"
+  - metaKeywords = "About keywords"
+
+
+
+block content
+  +breadcrumps([], 'About')
+
+  .about-page
+    .about-page__section.container
+      .about-page__text
+        h3.about-page__title 100% Trusted Organic Food Store
+        p.about-page__paragraph.about-page__paragraph--large Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros. Cras quis ultricies elit. Proin ac lectus arcu. Maecenas aliquet vel tellus at accumsan. Donec a eros non massa vulputate ornare. Vivamus ornare commodo ante, at commodo felis congue vitae.
+      img.about-page__image(src=path.img + "about-image--1.jpg", alt="image")
+
+    .about-page__section-bg
+      .about-page__section-bg-container.container
+        .about-page__text-bg
+          .about-page__text
+            h3.about-page__title 100% Trusted <br/> Organic Food Store
+            p.about-page__paragraph.about-page__paragraph--medium Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi. Nulla eu eros consequat tortor tincidunt feugiat.
+            .about-page__advantages
+              each adv in json.about.advantages
+                .about-page__advantage
+                  .about-page__advantage-image
+                    svg.about-page__advantage-image-icon: use(href= path.icon + adv.icon)
+                  .about-page__advantage-text
+                    h4.about-page__advantage-title= adv.title
+                    p.about-page__advantage-description= adv.description
+
+    .about-page__section.about-page__section--small.container
+      .about-page__text
+        h3.about-page__title--small We Delivered, You </br>Enjoy Your Order.
+        p.about-page__paragraph.about-page__paragraph--medium Ut suscipit egestas suscipit. Sed posuere pellentesque nunc, ultrices consectetur velit dapibus eu. Mauris sollicitudin dignissim diam, ac mattis eros accumsan rhoncus. Curabitur auctor bibendum nunc eget elementum.
+        ul.about-page__list
+          li.about-page__list-item Sed in metus pellentesque.
+          li.about-page__list-item Fusce et ex commodo, aliquam nulla efficitur, tempus lorem.
+          li.about-page__list-item Maecenas ut nunc fringilla erat vari us.
+        +button("link", "", "fill, normal", "#")(class="about-page__button")
+          span.icon-button__text Shop Now
+          svg.icon-button__icon: use(href= path.icon + "icon__arrow")
+      img.about-page__image(src=path.img + "about-image--3.jpg", alt="image")
+
+
+    .about-page__team.container
+      h2.section__title--large Our Awesome Team
+      p.section__subtitle.about-page__subtitle Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.
+      .about-page__slider
+          .slider.swiper.js-slider
+            .swiper-wrapper
+              each member in json.about.team
+                .swiper-slide.slider__slide
+                  +team-card(member)
+          .slider__navigation.js-slider-navigation
+            button.slider__navigation-btn.slider__navigation-btn-prev.js-slider-navigation-prev
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+            button.slider__navigation-btn.slider__navigation-btn-next.js-slider-navigation-next
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+
+    .about-page__testimonials.section.section--gray
+      h2.section__title.section__title--large.about-page__testimonials-title.container Client Testimonail
+      .section__content--large.about-page__slider.container
+          .slider.swiper.js-slider
+            .swiper-wrapper
+              each testimonial in json.about.testimonials
+                .swiper-slide.slider__slide
+                  +testimonial-card(testimonial)(class="about-page__testimonial")
+          .slider__navigation--top.js-slider-navigation
+            button.button--white.slider__navigation-btn.slider__navigation-btn-prev.js-slider-navigation-prev
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+            button.button--white.slider__navigation-btn.slider__navigation-btn-next.js-slider-navigation-next
+              svg.slider__navigation-btn-icon
+                  use(href= path.icon + "icon__arrow")
+
+
+
+  +logo-links
+  +subscription("gray")

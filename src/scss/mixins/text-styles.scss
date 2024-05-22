@@ -55,13 +55,13 @@
   line-height: 150%;
 }
 
-@mixin body-large($weight: 400) {
+@mixin body-l($weight: 400) {
   font-weight: $weight;
   font-size: 18px;
   line-height: 150%;
 }
 
-@mixin body-medium($weight: 400) {
+@mixin body-m($weight: 400) {
   font-weight: $weight;
   font-size: 16px;
 
@@ -74,7 +74,7 @@
   }
 }
 
-@mixin body-small($weight: 400) {
+@mixin body-s($weight: 400) {
   font-weight: $weight;
   font-size: 14px;
 

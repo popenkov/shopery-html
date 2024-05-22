@@ -4,6 +4,13 @@
 .product {
   $block-name: &; // #{$block-name}__element
 
+  // stylelint-disable-next-line
+  --card-border: 1px solid var(--monochrome-100);
+  // stylelint-disable-next-line
+  --card-hover-border: 1px solid var(--primary);
+  // stylelint-disable-next-line
+  --card-hover-shadow: 0 0 12px 0 rgb(32 181 38 / 32%);
+
   @include flex-column;
 
   border: var(--card-border);
@@ -74,7 +81,7 @@
     box-shadow: none;
 
     @media (hover: hover) {
-      box-shadow: 0 0 8px 0 var(--gray-200);
+      box-shadow: 0 0 8px 0 var(--monochrome-200);
     }
   }
 
@@ -95,16 +102,16 @@
   }
 
   &__title {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
     transition: color var(--transition-long);
   }
 
   &__price {
     @include flex-center-vertical;
-    @include body-medium(500);
+    @include body-m(500);
 
     gap: 4px;
     margin: 0;
@@ -132,14 +139,14 @@
   }
 
   &__button {
-    background-color: var(--gray-50);
+    background-color: var(--monochrome-50);
     box-shadow: none;
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-white);
+        color: var(--front-primary-inversed);
         background-color: var(--primary);
-        box-shadow: 0 0 8px 2px var(--gray-200);
+        box-shadow: 0 0 8px 2px var(--monochrome-200);
       }
     }
 

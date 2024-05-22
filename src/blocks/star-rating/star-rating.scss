@@ -10,15 +10,15 @@
   &__star {
     @include box(16px);
 
-    color: var(--gray-200);
+    color: var(--monochrome-200);
 
     &--full {
-      color: var(--orange);
+      color: var(--orange-500);
     }
   }
 
   &__text {
-    @include body-small;
+    @include body-s;
 
     margin-left: 3px;
     line-height: 1.429;

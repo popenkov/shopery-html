@@ -1,0 +1,126 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Product"
+  - metaDescription = "Product description"
+  - metaKeywords = "Product keywords"
+
+block content
+  h2.visually-hidden shopery product
+
+  +breadcrumps([{path: '#', title: 'Category'},{path: '#', title: 'Vegatables'}], 'Chinese Cabbage')
+
+  .product-page
+
+    +product-description(class="product-page__description-section container")
+
+
+    .product-page__tabs
+      .tabs.section__content
+        .tabs__labels.product-page__tabs-labels
+          .tabs__labels-content.container
+            .tabs__scroll-container
+              button.tabs__label.product-page__tabs-label.tabs__label--active(data-href="#tab1") Descriptions
+              button.tabs__label.product-page__tabs-label(data-href="#tab2") Additional Information
+              button.tabs__label.product-page__tabs-label(data-href="#tab3") Customer Feedback
+        .tabs__panes.container
+          .tabs__pane.tabs__pane--active#tab1
+            .product-page__tabs-content.js-tab-content
+              .product-page__description
+                p.product-page__paragraph Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.
+
+                p.product-page__paragraph Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra.
+
+                ul.product-page__list
+                  li.product-page__list-item 100 g of fresh leaves provides.
+                  li.product-page__list-item Aliquam ac est at augue volutpat elementum.
+                  li.product-page__list-item Quisque nec enim eget sapien molestie.
+                  li.product-page__list-item Proin convallis odio volutpat finibus posuere.
+
+                p.product-page__paragraph Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa.
+
+              .product-page__right-aside
+                +video({preview: "tab-video-preview--1.jpg",video: "https://www.youtube.com/embed/2eX2TCfiFuY"}, "secondary-button")(class="product-page__video")
+
+                .product-page__advantages
+                  .product-page__advantage.advantage-label
+                    svg.advantage-label__icon: use(href= path.icon + "icon__price-tag")
+                    .advantage-label__text
+                      h3.advantage-label__title 64% Discount
+                      p.advantage-label__subtitle Save your 64% money with us
+
+                  .product-page__advantage.advantage-label
+                    svg.advantage-label__icon: use(href= path.icon + "icon__leaf")
+                    .advantage-label__text
+                      h3.advantage-label__title 100% Organic
+                      p.advantage-label__subtitle 100% Organic Vegetables
+
+          .tabs__pane#tab2
+            .product-page__tabs-content.js-tab-content
+              .product-page__description
+                .product-page__specs
+                  .product-page__spec
+                    span.product-page__spec-title Weight:
+                    span.product-page__spec-value 03
+                  .product-page__spec
+                    span.product-page__spec-title Color:
+                    span.product-page__spec-value green
+                  .product-page__spec
+                    span.product-page__spec-title Type:
+                    span.product-page__spec-value Organic
+                  .product-page__spec
+                    span.product-page__spec-title Category:
+                    span.product-page__spec-value Vegetables
+                  .product-page__spec
+                    span.product-page__spec-title Stock Status:
+                    span.product-page__spec-value Available (5,413)
+                  .product-page__spec
+                    span.product-page__spec-title Tags:
+                    span.product-page__spec-value
+                      each categoryTag in json.productPreview.categoryTags
+                        a.product-page__spec-link(href= categoryTag.href)= categoryTag.title
+
+
+              .product-page__right-aside
+                +video({preview: "tab-video-preview--2.jpg",video: "https://www.youtube.com/embed/2eX2TCfiFuY"}, "secondary-button")(class="product-page__video")
+
+                .product-page__advantages
+                  .product-page__advantage.advantage-label
+                    svg.advantage-label__icon: use(href= path.icon + "icon__price-tag")
+                    .advantage-label__text
+                      h3.advantage-label__title 64% Discount
+                      p.advantage-label__subtitle Save your 64% money with us
+
+                  .product-page__advantage.advantage-label
+                    svg.advantage-label__icon: use(href= path.icon + "icon__leaf")
+                    .advantage-label__text
+                      h3.advantage-label__title 100% Organic
+                      p.advantage-label__subtitle 100% Organic Vegetables
+
+          .tabs__pane#tab3
+            .product-page__tabs-content.js-tab-content
+              .product-page__description.product-page__reviews.js-reviews-container
+                each review in json.product.reviews
+                  +review-item(review)(class="product-page__review")
+
+                +button("button", "", "light, normal", "#")(class="product-page__show-button js-show-all-reviews-button")
+                  span Load More
+
+    .product-page__related-products
+      h2.product-page__related-products-title.container Related Products
+      .section__content--large
+        .grid.grid__four-items.d-desktop.container.g-24
+          each product in json.product.relatedProducts
+            +product(product)(class="product-page__related-product")
+        .mobile-slider.d-mobile.container
+          .swiper.mobile-slider__slider.js-mobile-slider
+            .swiper-wrapper.mobile-slider__wrapper
+              each product in json.product.relatedProducts
+                .swiper-slide.mobile-slider__slide
+                  +product(product)
+            .mobile-slider__pagination.swiper-pagination
+
+
+    +subscription("gray")

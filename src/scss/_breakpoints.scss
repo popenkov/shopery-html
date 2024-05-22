@@ -1,7 +1,17 @@
-$screen-m: 0;
-$screen-t: 576px;
-$screen-ti: 768px;
-$screen-tl: 992px;
-$screen-d: 1280px;
-$screen-dl: 1440px;
-$screen-dxl: 1680px;
+// modal first breakpoints
+
+$mf-screen-m: 0;
+$mf-screen-t: 576px;
+$mf-screen-ti: 768px;
+$mf-screen-tl: 992px;
+$mf-screen-d: 1280px;
+$mf-screen-dl: 1440px;
+$mf-screen-dxl: 1680px;
+
+// desktop first breakpoints
+$df-screen-m: 575px;
+$df-screen-t: 767px;
+$df-screen-ti: 991px;
+$df-screen-tl: 1279px;
+$df-screen-d: 1439px;
+$df-screen-dl: 1679px;

@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (comment-item)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin comment-item(data, mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +comment-item("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " comment-item--" + modsList[i].trim();
+      }
+    }
+
+  .comment-item(class=allMods)&attributes(attributes)
+    img.comment-item__avatar(src= path.img + data.avatar, alt="avatar")
+    .comment-item__content
+      .comment-item__header
+        span.comment-item__author= data.name
+        span.comment-item__separator •
+        span.comment-item__date= data.date
+      p.comment-item__main= data.text

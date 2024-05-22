@@ -6,6 +6,14 @@
 .aside-filter {
   $block-name: &; // #{$block-name}__element
 
+  &__search {
+    width: 100%;
+
+    input {
+      height: 49px;
+    }
+  }
+
   &__checkbox {
     padding: 10px 0 11px;
 
@@ -44,7 +52,7 @@
     max-width: 390px;
     padding: 10px 16px;
     background-color: var(--back-primary);
-    border-bottom: 1px solid var(--gray-300);
+    border-bottom: 1px solid var(--monochrome-300);
   }
 
   &__footer {
@@ -58,19 +66,19 @@
     max-width: 390px;
     padding: 10px 16px;
     background-color: var(--back-primary);
-    border-top: 1px solid var(--gray-300);
+    border-top: 1px solid var(--monochrome-300);
   }
 
   &__filter-button {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: block;
     }
   }
 
   &__filter-menu-background {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       position: fixed;
       background-color: var(--modal-bg);
       opacity: 0;
@@ -113,18 +121,38 @@
     @include box(25px);
   }
 
+  &__categories-container {
+    @include flex-column;
+
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  &__title + &__categories-container {
+    margin-top: 20px;
+  }
+
+  &__bb-container {
+    padding-bottom: 27px;
+    border-bottom: 1px solid var(--monochrome-100);
+  }
+
   &__tags-container {
     @include flex-center-vertical;
 
     flex-wrap: wrap;
     gap: 8px;
-    padding-top: 12px !important;
+    padding-top: 12px;
+
+    &--blog {
+      padding-top: 20px;
+    }
   }
 
   &__banner--desktop {
     display: block;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -145,7 +173,7 @@
   }
 
   &__products--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }

@@ -16,18 +16,18 @@
     overflow: hidden;
     background-color: var(--back-primary);
     border-radius: 8px;
-    outline: 1px solid rgb(230 230 230);
+    outline: 1px solid var(--monochrome-100);
     box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: 1fr;
     }
   }
@@ -36,11 +36,11 @@
     @include box(70px);
     @include flex-center;
 
-    background-color: var(--color-white);
+    background-color: var(--back-primary);
     border: 1px solid var(--green-gray-100);
     border-radius: 50%;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include box(50px);
     }
   }
@@ -50,13 +50,13 @@
 
     color: var(--primary);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include box(30px);
     }
   }
 
   &__title {
-    @include body-large(600);
+    @include body-l(600);
 
     margin: 0;
   }
@@ -64,13 +64,13 @@
   &__icon-wrapper + &__title {
     margin-top: 16px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-top: 10px;
     }
   }
 
   &__text {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
   }
@@ -84,13 +84,13 @@
 
     padding: 40px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       padding: 20px;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       border: none;
-      border-bottom: 1px solid rgb(230 230 230);
+      border-bottom: 1px solid var(--monochrome-100);
     }
 
     &:first-child {
@@ -105,22 +105,22 @@
     }
 
     &:not(:first-child, :last-child) {
-      border-right: 1px solid rgb(230 230 230);
+      border-right: 1px solid var(--monochrome-100);
 
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         border-right: none;
       }
     }
 
     &:nth-child(2) {
-      @media screen and (max-width: $screen-tl) {
-        border-bottom: 1px solid rgb(230 230 230);
+      @media screen and (max-width: $df-screen-ti) {
+        border-bottom: 1px solid var(--monochrome-100);
       }
     }
 
     &:nth-child(3) {
-      @media screen and (max-width: $screen-tl) {
-        border-right: 1px solid rgb(230 230 230);
+      @media screen and (max-width: $df-screen-ti) {
+        border-right: 1px solid var(--monochrome-100);
       }
     }
   }

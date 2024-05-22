@@ -57,7 +57,7 @@
     height: 100%;
     min-height: 173px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 50%;
     }
   }
@@ -79,7 +79,7 @@
   }
 
   &__text {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
   }

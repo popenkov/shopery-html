@@ -3,6 +3,8 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .news {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-column;
 
   padding: 24px 24px 20px;
@@ -46,7 +48,7 @@
   }
 
   &__date-month {
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     font-weight: 500;
     font-size: 12px;
     line-height: 100%;
@@ -59,12 +61,12 @@
 
     gap: 8px;
     padding-top: 24px;
-    background-color: var(--color-white);
+    background-color: var(--back-primary);
     border-radius: 8px;
   }
 
   &__title {
-    @include body-large(500);
+    @include body-l(500);
 
     margin: 0;
     color: var(--green-gray-900);
@@ -107,5 +109,4 @@
   &__link-icon {
     @include box(24px);
   }
-  $block-name: &; // #{$block-name}__element
 }

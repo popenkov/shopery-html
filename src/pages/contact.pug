@@ -1,0 +1,69 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Contact"
+  - metaDescription = "Contact description"
+  - metaKeywords = "Contact keywords"
+  -
+    const CONTACTS_DATA = [
+      {
+        icon: "icon__message-pin",
+        links: [{ text: "2715 Ash Dr. San Jose, South Dakota 83475" }],
+      },
+      {
+        icon: "icon__message-email",
+        links: [
+          { text: "Proxy@gmail.com", href: "mailto:proxy@gmail.com" },
+          { text: "Help.proxy@gmail.com", href: "mailto:help.proxy@gmail.com" },
+        ],
+      },
+      {
+        icon: "icon__message-phone",
+        links: [
+          { text: "(219) 555-0114", href: "tel:2195550114" },
+          { text: "(164) 333-0487", href: "tel:1643330487" },
+        ],
+      },
+    ];
+
+block content
+  +breadcrumps([], 'Contact')
+
+  .contact-page
+    h2.visually-hidden shopery contacts
+    .contact-page__content.container
+      .contact-page__contacts
+        each contact in CONTACTS_DATA
+          .contact-page__contact
+            svg.contact-page__contact-icon: use(href= path.icon + contact.icon)
+            .contact-page__contact-links
+              each link in contact.links
+                if link.href
+                  a.contact-page__contact-link(href= link.href, target="_blank")= link.text
+                else
+                  span.contact-page__contact-text= link.text
+
+      .contact-page__message
+        h3.contact-page__title Just Say Hello!
+        p.contact-page__text Do you fancy saying hi to me or you want to get started with your <br/> project and you need my help? Feel free to contact me.
+        form.contact-page__form.js-contacts-form
+          .contact-page__form-row.grid.grid__two-items
+            .contact-page__input-container
+              +field("Template Cookie")(id="contactFullName", name="email", type="text", class="contact-page__input")
+            .contact-page__input-container
+              +field("zakirsoft@gmail.com")(id="contactEmail", name="email", type="text", class="contact-page__input")
+
+          .contact-page__input-container
+            +field("Theme")(id="contactEmail", name="theme", type="text", class="contact-page__input")
+          .contact-page__input-container
+            +textarea(id="contactMessage", name="message", placeholder="Subjects")
+
+          +button("button", "", "fill, large", "#")(class="contact-page__button", type="submit")
+            span Send Message
+
+    .contact-page__map.js-contact-map
+       #map
+       img.contact-page__map-img(src=path.img + "contacts-map.jpg", alt="map")
+  +subscription("gray")

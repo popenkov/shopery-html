@@ -3,6 +3,12 @@
 
 .product-small {
   $block-name: &; // #{$block-name}__element
+  // stylelint-disable-next-line
+  --card-border: 1px solid var(--monochrome-100);
+  // stylelint-disable-next-line
+  --card-hover-border: 1px solid var(--primary);
+  // stylelint-disable-next-line
+  --card-hover-shadow: 0 0 12px 0 rgb(32 181 38 / 32%);
 
   @include flex-center-vertical;
 
@@ -71,19 +77,19 @@
   }
 
   &__title {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
   }
 
   &__price {
     @include flex-center-vertical;
-    @include body-medium(500);
+    @include body-m(500);
 
     gap: 4px;
     margin: 0;
-    color: var(--gray-900);
+    color: var(--monochrome-900);
 
     &--old {
       color: var(--green-gray-400);

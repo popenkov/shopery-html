@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (review-item)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin review-item(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +review-item(
+          {
+            "name": "Jane Cooper",
+            "avatar": "review-avatar-default.jpg",
+            "rating": 4,
+            "text": "Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to \"bolt\" or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.",
+            "date": "30 Apr, 2021"
+          },
+          , "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " review-item--" + modsList[i].trim();
+      }
+    }
+
+  .review-item(class=allMods)&attributes(attributes)
+    .review-item__header
+      .review-item__author
+        img.review-item__avatar(src= path.img + data.avatar, alt="avatar")
+        span.review-item__name= data.name
+        .review-item__rating
+          +star-rating(data.rating)
+      .review-item__date= data.date
+    p.review-item__main= data.text
+

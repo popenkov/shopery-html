@@ -5,13 +5,13 @@
 
   padding: 100px 0;
 
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     padding: 60px 0;
   }
 
   &__items {
     &--desktop {
-      @media screen and (max-width: $screen-ti) {
+      @media screen and (max-width: $df-screen-t) {
         display: none;
       }
     }
@@ -19,7 +19,7 @@
     &--mobile {
       display: none;
 
-      @media screen and (max-width: $screen-ti) {
+      @media screen and (max-width: $df-screen-t) {
         display: block;
       }
     }

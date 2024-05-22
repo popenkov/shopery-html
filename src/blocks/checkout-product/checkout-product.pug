@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (checkout-product)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin checkout-product(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +checkout-product("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " checkout-product--" + modsList[i].trim();
+      }
+    }
+
+  .checkout-product(class=allMods)&attributes(attributes)
+    .checkout-product__info
+      img.checkout-product__photo(src=path.img + data.img, alt="")
+      h3.checkout-product__title= data.title
+        span.checkout-product__quantity x
+        span.checkout-product__quantity= data.amount
+    span.checkout-product__price= data.price

@@ -5,12 +5,14 @@
 .header {
   $block-name: &; // #{$block-name}__element
 
+  $block-name: &; // #{$block-name}__element
+
   &__top {
     @include body-tiny;
 
     padding: 11px 0 13px;
-    color: var(--gray-300);
-    background-color: var(--gray-800);
+    color: var(--monochrome-300);
+    background-color: var(--monochrome-800);
   }
 
   &__content {
@@ -18,7 +20,7 @@
 
     gap: 35px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       gap: 15px;
     }
   }
@@ -28,7 +30,7 @@
 
     gap: 8px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
 
       &--mobile {
@@ -43,7 +45,7 @@
     min-width: 15px;
     height: 18px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include box(26px);
     }
   }
@@ -53,11 +55,11 @@
 
     gap: 19px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-left: auto;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       width: 100%;
       margin-left: 0;
     }
@@ -68,7 +70,7 @@
     height: 15px;
     background-color: rgb(255 255 255 / 10%);
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       display: none;
     }
   }
@@ -82,7 +84,7 @@
   &__auth {
     position: relative;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       margin-left: auto;
     }
   }
@@ -108,7 +110,7 @@
     gap: 20px;
     padding: 24px 0;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       justify-content: flex-start;
     }
   }
@@ -116,7 +118,7 @@
   &__mobile-burger {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include flex-center;
       @include box(38px);
 
@@ -126,7 +128,7 @@
       span {
         display: block;
         padding: 0;
-        background-color: var(--gray-900);
+        background-color: var(--monochrome-900);
         border: none;
       }
     }
@@ -135,7 +137,7 @@
   &__logo {
     max-width: 183px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       display: none;
     }
   }
@@ -143,7 +145,7 @@
   &__logo-mobile {
     display: none;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       display: block;
     }
   }
@@ -159,7 +161,7 @@
 
     gap: 16px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       gap: 8px;
       margin-left: auto;
     }
@@ -169,14 +171,14 @@
     display: block;
     width: 1px;
     height: 24px;
-    background-color: var(--gray-200);
+    background-color: var(--monochrome-200);
   }
 
   &__favorite-icon {
     @include box(33px);
 
     stroke-width: 1.3px;
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     fill: transparent;
   }
 
@@ -196,7 +198,7 @@
     @include box(34px);
 
     stroke-width: 1.3px;
-    color: var(--gray-900);
+    color: var(--monochrome-900);
   }
 
   &__cart-items-amount {
@@ -220,28 +222,28 @@
 
     gap: 7px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       display: none;
     }
   }
 
   &__cart-title {
     margin: 0;
-    color: var(--gray-700);
+    color: var(--monochrome-700);
     font-size: 11px;
     line-height: 1.1825;
     letter-spacing: 0%;
   }
 
   &__cart-amount {
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     font-weight: 500;
     font-size: 14px;
     line-height: 100%;
   }
 
   &__navigation {
-    background-color: var(--gray-50);
+    background-color: var(--monochrome-50);
   }
 
   &__navigation-content {
@@ -249,11 +251,11 @@
 
     gap: 32px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       gap: 15px;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 100%;
     }
   }
@@ -261,7 +263,7 @@
   &__all-categories {
     position: relative;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 100%;
     }
   }
@@ -276,7 +278,7 @@
 
   &__all-categories-button {
     @include flex-center-vertical;
-    @include body-small(500);
+    @include body-s(500);
 
     gap: 10px;
     padding: 18px 24px 17px 26px;
@@ -286,7 +288,7 @@
     cursor: pointer;
     transition: all var(--transition);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       justify-content: space-between;
       width: 100%;
     }
@@ -321,7 +323,7 @@
     opacity: 0;
     transition: all var(--transition);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 100%;
       max-width: unset;
     }
@@ -334,11 +336,11 @@
 
   &__all-categories-link {
     @include flex-center-vertical;
-    @include body-small;
+    @include body-s;
 
     gap: 12px;
     padding: 6px 22px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     text-decoration: none;
     transition: all var(--transition);
 
@@ -361,7 +363,7 @@
     margin: 0;
     padding: 0;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -391,11 +393,11 @@
 
   &__navigation-menu-link {
     @include flex-center-vertical;
-    @include body-small(500);
+    @include body-s(500);
 
     gap: 5px;
     padding: 18px 0 17px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     text-transform: capitalize;
     text-decoration: none;
 
@@ -439,7 +441,7 @@
   &__navigation-drop-menu-link {
     display: block;
     padding: 4px 6px;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
     text-decoration: none;
     transition: all var(--transition);
 
@@ -451,17 +453,15 @@
     }
   }
 
-  $block-name: &; // #{$block-name}__element
-
   &__phone {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
 
     &--mobile {
       display: none;
 
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         display: flex;
         align-items: flex-end;
       }
@@ -470,9 +470,11 @@
 }
 
 .mobile-menu {
+  $block-name: &; // #{$block-name}__element
+
   display: none;
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     position: fixed;
     z-index: var(--mobile-menu-z-index);
     display: block;
@@ -516,7 +518,6 @@
     gap: 12px;
     justify-content: flex-end;
   }
-  $block-name: &; // #{$block-name}__element
 
   &.open {
     visibility: visible;

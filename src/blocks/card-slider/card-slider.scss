@@ -10,11 +10,11 @@
     position: relative;
     max-height: 556px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       max-height: 400px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -25,11 +25,11 @@
     margin: 80px 0;
     overflow-y: hidden;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       max-height: 240px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -55,11 +55,11 @@
   &__main {
     max-width: 556px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       max-height: 400px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       max-width: unset;
       max-height: 300px;
     }
@@ -68,18 +68,18 @@
   &__main-img {
     object-fit: contain;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       max-height: 400px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       width: 100%;
       max-height: 300px;
     }
   }
 
   &__navigation {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -101,14 +101,14 @@
   &__navigation-btn-icon {
     @include box(22px);
 
-    color: var(--gray-400);
+    color: var(--monochrome-400);
   }
 
   &__navigation-btn {
     @include button-reset;
 
     &.swiper-button-disabled #{$block-name}__navigation-btn-icon {
-      color: var(--gray-100);
+      color: var(--monochrome-100);
       cursor: not-allowed;
     }
   }

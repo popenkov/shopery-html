@@ -1,0 +1,44 @@
+//- Все примеси в этом файле должны начинаться c имени блока (logo-links)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin logo-links(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +logo-links("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " logo-links--" + modsList[i].trim();
+      }
+    }
+
+    const LINKS_DATA = [
+      {
+        icon: "logo__steps", href: '#', width: 82
+      },  {
+        icon: "logo__mango", href: '#', width: 67
+      }, {
+        icon: "logo__food", href: '#', width: 60
+      }, {
+        icon: "logo__fooduk", href: '#', width: 82
+      }, {
+        icon: "logo__bookoff", href: '#', width: 131
+      }, {
+        icon: "logo__gseries", href: '#', width: 96
+      }
+    ];
+
+  .logo-links(class=allMods)&attributes(attributes)
+    .logo-links__inner.container
+      each logo, idx in LINKS_DATA
+        a.logo-links__link(href= logo.href)
+          svg.logo-links__icon(style=`width: ${logo.width}px`): use(href= path.icon + logo.icon)
+        if idx < LINKS_DATA.length - 1
+          span.logo-links__separator

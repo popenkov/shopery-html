@@ -10,6 +10,12 @@
   cursor: pointer;
   transition: background-color var(--transition);
 
+  &:disabled {
+    color: var(--monochrome-300);
+    background-color: var(--monochrome-50);
+    pointer-events: none;
+  }
+
   &--fill {
     color: var(--front-primary-inversed);
     background-color: var(--primary);
@@ -33,7 +39,7 @@
 
   &--white {
     color: var(--primary);
-    background-color: var(--color-white);
+    background-color: var(--back-primary);
 
     @media (hover: hover) {
       &:hover {
@@ -79,6 +85,28 @@
     }
   }
 
+  &--monochrome-light {
+    color: var(--monochrome-700);
+    background-color: var(--monochrome-50);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--monochrome-200);
+      }
+    }
+  }
+
+  &--monochrome-dark {
+    color: var(--front-primary-inversed);
+    background-color: var(--monochrome-800);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--monochrome-600);
+      }
+    }
+  }
+
   &--small {
     @include body-tiny(600);
 
@@ -86,14 +114,14 @@
   }
 
   &--normal {
-    @include body-small(600);
+    @include body-s(600);
 
     min-height: 45px;
     padding: 14px 32px;
   }
 
   &--large {
-    @include body-medium(600);
+    @include body-m(600);
 
     padding: 15px 40px;
   }

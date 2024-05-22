@@ -2,13 +2,12 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin subscription(text, mods)
+mixin subscription(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +subscription("Текст", "some-mod")
+        +subscription("some-mod")
 
   //- список модификаторов
   -

@@ -1,0 +1,97 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/flexbox.scss";
+
+.cart-page {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-areas: "items total" "coupon total";
+  grid-template-columns: 1fr 424px;
+  gap: 24px;
+  align-items: start;
+
+  @media screen and (max-width: $df-screen-tl) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @media screen and (max-width: $df-screen-ti) {
+    grid-template-areas: "items" "coupon" "total";
+    grid-template-columns: 1fr;
+  }
+
+  &__items {
+    grid-area: items;
+    border: 1px solid var(--monochrome-100);
+    border-radius: 8px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 4.6fr 1.4fr 2.2fr 1.8fr;
+    padding: 12px 19px 13px;
+    border-bottom: 1px solid var(--monochrome-100);
+
+    @media screen and (max-width: $df-screen-tl) {
+      grid-template-columns: 4.5fr 1.5fr 2.2fr 1.8fr;
+    }
+
+    @media screen and (max-width: $df-screen-ti) {
+      display: none;
+    }
+  }
+
+  &__column-title {
+    @include body-s(500);
+
+    color: var(--monochrome-500);
+    letter-spacing: 3%;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    padding: 0 20px;
+  }
+
+  &__item {
+    padding: 11px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--monochrome-100);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-top: 1px solid var(--monochrome-100);
+
+    @media screen and (max-width: $df-screen-m) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__button {
+    @include flex-center;
+  }
+
+  &__button-text {
+    @include body-s(600);
+  }
+
+  &__coupon {
+    grid-area: coupon;
+  }
+
+  &__footer + &__coupon {
+    margin-top: 23px;
+  }
+
+  &__total {
+    grid-area: total;
+  }
+}

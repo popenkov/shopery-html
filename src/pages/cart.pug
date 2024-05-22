@@ -1,0 +1,35 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Shopping cart"
+  - metaDescription = "Shopping cart description"
+  - metaKeywords = "Shopping cart keywords"
+
+block content
+  +breadcrumps([], 'Shopping cart')
+
+  .section--page.container
+
+    h2.section__title--small My Shopping Cart
+    .section__content.cart-page
+      .cart-page__items
+        .cart-page__header
+          span.cart-page__column-title Product
+          span.cart-page__column-title price
+          span.cart-page__column-title Quantity
+          span.cart-page__column-title Subtotal
+        .cart-page__body
+          each product in json.cart.items
+            +cart-item(product)(class="cart-page__item")
+        .cart-page__footer
+          +button("link", "", "monochrome-light, normal")(class="cart-page__button")
+            span.cart-page__button-text Return to shop
+          +button("link", "", "monochrome-light, normal")(class="cart-page__button")
+            span.cart-page__button-text Update Cart
+
+      +coupon-form(class="cart-page__coupon")
+      +cart-total(class="cart-page__total")
+
+  +subscription("gray")

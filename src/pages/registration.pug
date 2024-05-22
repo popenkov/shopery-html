@@ -1,0 +1,33 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - hasCategoryButton = false
+  - pageTitle = "Registration"
+  - metaDescription = "Registration description"
+  - metaKeywords = "Registration keywords"
+
+block content
+  +breadcrumps([{path: '#', title: 'Account'}], 'Registration')
+
+  .registration.container
+    form.registration__form.js-registration-form
+      h2.registration__title Registration
+      .registration__input-container.registration__input-email
+        +field("Email")(id="register-email", name="email", type="text", class="registration__input")
+      .registration__input-container.registration__input-phone
+        +field("Password", '', '', '', true)(id="register-password", name="password", class="registration__input")
+      .registration__input-container.registration__input-phone
+        +field("Confirm Password", '', '', '', true)(id="register-confirm-password", class="registration__input")
+      .registration__form-row
+        +checkbox()(id="register-accept-terms", class="registration__checkbox js-accept-terms")
+          span.registration__checkbox-text Accept all terms & Conditions
+          span.checkbox__error.registration__checkbox-error#registration-checkbox-error
+
+      +button("button", "", "fill, normal", "#")(class="registration__submit-button", type="submit")
+        span Login
+      .registration__login
+        span.registration__login-text Already have account
+        a.registration__login-link(href="/registration")   Login
+
+  +subscription("gray")

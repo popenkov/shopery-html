@@ -6,19 +6,19 @@
   padding: 16px 0 8px;
 
   &__text {
-    @include body-small;
+    @include body-s;
 
-    color: var(--gray-700);
+    color: var(--monochrome-700);
   }
 
   &__text-value {
-    color: var(--gray-900);
+    color: var(--monochrome-900);
     font-weight: 500;
   }
 
   &__slider {
     height: 6px;
-    background-color: var(--gray-100);
+    background-color: var(--monochrome-100);
     border-radius: 15px;
   }
 

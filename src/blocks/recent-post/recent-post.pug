@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (recent-post)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin recent-post(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные карточки
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +recent-post("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " recent-post--" + modsList[i].trim();
+      }
+    }
+
+  a.recent-post(href= data.path, class=allMods)&attributes(attributes)
+    img.recent-post__photo(src= path.img + data.img, alt= data.title)
+    .recent-post__description
+      h2.recent-post__title= data.title
+      .recent-post__date
+        svg.recent-post__date-icon: use(href= path.icon + "icon__calendar")
+        span.recent-post__date-value= data.date

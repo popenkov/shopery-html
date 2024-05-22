@@ -2,6 +2,7 @@
 @import "../../scss/mixins/flexbox.scss";
 
 .hero {
+  $block-name: &; // #{$block-name}__element
   // stylelint-disable-next-line
   &__swiper-pagination.swiper-pagination-bullets {
     @include flex-center;
@@ -11,7 +12,7 @@
     display: flex;
     justify-content: center;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       bottom: 60px;
     }
   }
@@ -37,11 +38,11 @@
     position: relative;
     padding: 68px 0 118px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       padding: 20px 0 100px;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       padding-bottom: 116px;
     }
   }
@@ -51,7 +52,7 @@
 
     gap: 19px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       flex-direction: column;
     }
   }
@@ -60,7 +61,7 @@
     width: 58%;
     height: 564px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include flex-center;
 
       width: 100%;
@@ -81,7 +82,7 @@
     align-items: flex-start;
     width: 40%;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       width: 100%;
     }
   }
@@ -101,7 +102,7 @@
     margin: 0;
     color: var(--green-gray-900);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include heading-3(600);
     }
   }
@@ -111,13 +112,13 @@
   }
 
   &__text {
-    @include body-large;
+    @include body-l;
 
     margin: 0;
-    color: var(--gray-500);
+    color: var(--monochrome-500);
 
-    @media screen and (max-width: $screen-tl) {
-      @include body-medium;
+    @media screen and (max-width: $df-screen-ti) {
+      @include body-m;
     }
   }
 
@@ -139,7 +140,7 @@
   }
 
   &__navigation {
-    @media screen and (max-width: $screen-dxl) {
+    @media screen and (max-width: $df-screen-dl) {
       @include flex-center-vertical;
 
       position: absolute;
@@ -149,7 +150,7 @@
       gap: 30px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none !important;
     }
   }
@@ -163,20 +164,20 @@
     box-shadow: none !important;
     transform: translateY(-50%);
 
-    @media screen and (max-width: $screen-dxl) {
+    @media screen and (max-width: $df-screen-dl) {
       position: static;
       top: auto;
       margin-bottom: 75px;
       transform: none;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       margin-bottom: 60px;
     }
 
     @media (hover: hover) {
       &:hover {
-        box-shadow: 0 0 8px 0 var(--gray-200) !important;
+        box-shadow: 0 0 8px 0 var(--monochrome-200) !important;
       }
     }
 
@@ -192,6 +193,4 @@
       right: -110px;
     }
   }
-
-  $block-name: &; // #{$block-name}__element
 }

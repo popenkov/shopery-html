@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (discount-banner)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin discount-banner(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные баннера
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +discount-banner({
+          img: "discount-banner--1.jpg",
+          title: {
+            textBold: "79%",
+            text: "Discount"
+          }
+          subtitle: " on your first order"
+        }, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " discount-banner--" + modsList[i].trim();
+      }
+    }
+
+
+  .discount-banner(class=allMods)&attributes(attributes)
+    img.discount-banner__img(src= path.img + "discount-banner--1.jpg", alt="discount banner")
+    .discount-banner__text
+      p.discount-banner__title
+        b.discount-banner__title--bold 79%
+        |  Discount
+      p.discount-banner__subtitle on your first order
+      +button("link", "", "ghost, normal", "#")(class="discount-banner__button icon-button")
+        span.icon-button__text Shop Now
+        svg.icon-button__icon: use(href= path.icon + "icon__arrow")

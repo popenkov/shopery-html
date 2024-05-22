@@ -1,0 +1,114 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/link-reset";
+@import "../../scss/mixins/flexbox";
+
+.sign-in {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 80px 0;
+
+  .checkbox {
+    gap: 6px;
+  }
+
+  &__form {
+    @include flex-column;
+
+    gap: 12px;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 24px 24px 32px;
+    border: 1px solid var(--monochrome-50);
+    border-radius: 8px;
+    box-shadow: 0 0 56px 0 rgb(0 38 3 / 8%);
+  }
+
+  &__title {
+    @include heading-5(600);
+
+    margin: 0;
+    text-align: center;
+  }
+
+  &__input-container {
+    @include flex-column;
+
+    gap: 8px;
+
+    .field {
+      @include flex-column;
+
+      gap: 8px;
+
+      &__label {
+        @include body-s;
+
+        margin: 0;
+      }
+    }
+  }
+
+  &__title + &__input-container {
+    margin-top: 8px;
+  }
+
+  &__input {
+    max-height: 49px;
+  }
+
+  &__checkbox-text {
+    @include body-s;
+
+    color: var(--monochrome-600);
+  }
+
+  &__forgot-pass-link {
+    @include link-reset;
+    @include body-s;
+
+    color: var(--monochrome-600);
+    text-decoration: none;
+  }
+
+  &__form-row {
+    @include flex-center-vertical;
+
+    gap: 20px;
+    justify-content: space-between;
+
+    @media screen and (max-width: $df-screen-t) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__input-container + &__form-row {
+    margin-top: 3px;
+  }
+
+  &__form-row + &__submit-button {
+    margin-top: 9px;
+  }
+
+  &__registration {
+    margin: 0 auto;
+  }
+
+  &__submit-button + &__registration {
+    margin-top: 12px;
+  }
+
+  &__registration-text {
+    @include body-s;
+
+    color: var(--monochrome-600);
+  }
+
+  &__registration-link {
+    @include link-reset;
+    @include body-s(500);
+
+    color: var(--monochrome-900);
+    text-decoration: none;
+  }
+}

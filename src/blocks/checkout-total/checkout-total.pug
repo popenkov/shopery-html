@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (checkout-total)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin checkout-total(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +checkout-total("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " checkout-total--" + modsList[i].trim();
+      }
+    }
+
+  .checkout-total(class=allMods)&attributes(attributes)
+    h3.checkout-total__title Order Summery
+    .checkout-total__items
+      each product in json.cart.items
+        +checkout-product(product)(class="checkout-total__item")
+    .checkout-total__values
+      .checkout-total__row
+        span.checkout-total__key Subtotal:
+        span.checkout-total__value $84.00
+      .checkout-total__row
+        span.checkout-total__key Shipping:
+        span.checkout-total__value Free
+      .checkout-total__row
+        span.checkout-total__key--total Total:
+        span.checkout-total__value--total $84.00
+
+    .checkout-total__payment-methods
+      .checkout-total__payment-title Payment Method
+      .checkout-total__payment-items
+        .checkout-total__payment-item
+          +radio("Cash on Delivery")(name="payment-method", id="cash", checked)
+        .checkout-total__payment-item
+          +radio("Paypal")(name="payment-method", id="paypal")
+        .checkout-total__payment-item
+          +radio("Amazon Pay")(name="payment-method", id="amazon-pay")
+
+
+    +button("button", "", "fill, large", "#")(class="checkout-total__button js-checkout-submit-button", type="submit", form="checkoutForm")
+      span Place Order

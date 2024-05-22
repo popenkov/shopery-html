@@ -6,6 +6,11 @@
 
   border-top: 1px solid rgb(180 204 180 / 70%);
 
+  &--gray {
+    background-color: rgb(247 247 247);
+    border-top: none;
+  }
+
   &__container {
     display: grid;
     grid-template-areas: "logo text form";
@@ -15,13 +20,13 @@
     justify-content: space-between;
     padding: 50px 0;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template: repeat(2, auto) / 1fr minmax(auto, 535px);
       grid-template-areas: "logo logo" "text form";
       justify-content: start;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template: repeat(3, auto) / 1fr;
       grid-template-areas: "logo" "text" "form";
       justify-content: start;
@@ -39,7 +44,7 @@
     gap: 4px;
     margin: 0 0 0 auto;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       margin-left: unset;
     }
   }
@@ -52,7 +57,7 @@
   }
 
   &__subtitle {
-    @include body-small;
+    @include body-s;
 
     margin: 0;
     color: var(--green-gray-400);

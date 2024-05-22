@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (coupon-form)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin coupon-form(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +coupon-form("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " coupon-form--" + modsList[i].trim();
+      }
+    }
+
+  .coupon-form(class=allMods)&attributes(attributes)
+    h2.coupon-form__title Coupon Code
+    .coupon-form__input-container
+      +field("Enter code")(type="text", name="subscription-email", class="coupon-form__input")
+      +button("button","Apply Coupon", "monochrome-dark, large")(class="coupon-form__button")
+
+

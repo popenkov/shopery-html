@@ -18,7 +18,7 @@
     background-color: var(--modal-bg);
     opacity: 0;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       padding: 85px 20px 210px;
     }
 
@@ -42,7 +42,7 @@
     padding: 47px 40px 16px;
     background-color: var(--back-primary);
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       padding: 47px 20px 16px;
     }
   }
@@ -52,8 +52,8 @@
 
     margin: 0;
 
-    @media screen and (max-width: $screen-ti) {
-      @include body-medium(500);
+    @media screen and (max-width: $df-screen-t) {
+      @include body-m(500);
     }
   }
 
@@ -63,7 +63,7 @@
     margin-right: 9px;
     cursor: pointer;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       margin-right: 0;
     }
   }
@@ -80,7 +80,7 @@
     padding: 12px 0;
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--monochrome-100);
     }
   }
 
@@ -97,7 +97,7 @@
     padding: 10px 40px 39px;
     background-color: var(--back-primary);
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       padding: 10px 20px 39px;
     }
   }
@@ -110,11 +110,11 @@
   }
 
   &__total-amount {
-    @include body-medium;
+    @include body-m;
   }
 
   &__total-price {
-    @include body-medium(600);
+    @include body-m(600);
   }
 
   &__buttons {

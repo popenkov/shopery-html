@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-total)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-total(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-total("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-total--" + modsList[i].trim();
+      }
+    }
+
+  .cart-total(class=allMods)&attributes(attributes)
+    h3.cart-total__title Cart Total
+    .cart-total__values
+      .cart-total__row
+        span.cart-total__key Subtotal:
+        span.cart-total__value $84.00
+      .cart-total__row
+        span.cart-total__key Shipping:
+        span.cart-total__value Free
+      .cart-total__row
+        span.cart-total__key Total:
+        span.cart-total__value $84.00
+
+    +button("button", "", "fill, large", "#")(class="cart-total__button")
+      span Proceed to checkout

@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-item)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-item(data, mods)
+
+  //- Принимает:
+  //-   data    {Object} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-item(
+          {
+            "img": "product-green-capsicum.jpg",
+            "title": "Green Capsicum",
+            "price": "$14.99",
+            "priceOld": null,
+            "amount": 5
+          },
+          , "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-item--" + modsList[i].trim();
+      }
+    }
+
+  .cart-item(class=allMods)&attributes(attributes)
+    .cart-item__info
+      img.cart-item__photo(src=path.img + data.img, alt="")
+      h3.cart-item__title= data.title
+    .cart-item__price
+      span.cart-item__key-mobile Price:
+      span.cart-item__price-new= data.price
+      if data.priceOld
+        span.cart-item__price-old= data.priceOld
+
+    .cart-item__quantity
+      span.cart-item__key-mobile--amount Quantity:
+      +amount-actions
+
+    .cart-item__subtotal
+      span.cart-item__key-mobile Subtotal:
+      span.cart-item__price-new= data.price
+
+    button.cart-item__delete-button.close-button
+      svg.close-button__icon: use(href= path.icon + 'icon__cross')

@@ -6,7 +6,18 @@ ready(function () {
   const selects = document.querySelectorAll(".js-nice-select");
   if (selects?.length) {
     selects.forEach((select) => {
-      new NiceSelect(select);
+      const selectWrapper = select.closest(".select");
+      const { placeholder, searchable } = selectWrapper.dataset;
+      const selectOptions = {
+        searchable: Boolean(searchable),
+        placeholder,
+      };
+
+      new NiceSelect(select, selectOptions);
+
+      select.addEventListener("change", (evt) => {
+        console.log("change", evt.target.value);
+      });
     });
   }
 });
