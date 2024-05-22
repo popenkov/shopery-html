@@ -12,7 +12,7 @@
     margin-left: auto;
     overflow: visible;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 100%;
       border-radius: 0;
     }
@@ -28,11 +28,11 @@
     color: var(--back-primary);
     outline: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       top: -43px;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       top: 10px;
       z-index: 2;
       color: var(--monochrome-900);
@@ -48,16 +48,16 @@
     gap: 22px;
     padding: 40px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       flex-direction: column;
       overflow-y: auto;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       max-height: calc(100vh - 80px);
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       height: 100vh;
       max-height: unset;
       padding: 16px;
@@ -182,7 +182,7 @@
     padding: 25px 0 23px;
     border-bottom: 1px solid var(--monochrome-100);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-areas: "brand" "share" "description";
       grid-template-columns: 1fr;
     }

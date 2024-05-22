@@ -14,7 +14,7 @@ ready(function () {
     window.myModal.close("#emailSubscription");
   });
 
-  const showCheckbox = subscriptionModal.querySelector(".js-subscribe-show-checkbox input");
+  const showCheckbox = subscriptionModal.querySelector(".js-subscribe-show-checkbox");
   showCheckbox.addEventListener("change", (evt) => {
     evt.preventDefault();
     const isChecked = showCheckbox.checked;

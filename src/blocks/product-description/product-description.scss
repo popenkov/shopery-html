@@ -7,7 +7,7 @@
     display: flex;
     gap: 22px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       flex-direction: column;
       overflow-y: auto;
     }
@@ -130,7 +130,7 @@
     padding: 25px 0 23px;
     border-bottom: 1px solid var(--monochrome-100);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-areas: "brand" "share" "description";
       grid-template-columns: 1fr;
     }

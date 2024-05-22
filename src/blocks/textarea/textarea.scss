@@ -2,6 +2,8 @@
 @import ".././../scss/mixins/box.scss";
 
 .textarea {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-column;
 
   position: relative;
@@ -46,5 +48,4 @@
 
     color: var(--status-danger) !important;
   }
-  $block-name: &; // #{$block-name}__element
 }

@@ -10,20 +10,20 @@ block variables
 block content
   +breadcrumps([], 'Shopping cart')
 
-  .cart-page.container
+  .section--page.container
 
-    h2.cart-page__title My Shopping Cart
-    .cart-page__content
+    h2.section__title--small My Shopping Cart
+    .section__content.cart-page
       .cart-page__items
-        .cart-page__items-header
+        .cart-page__header
           span.cart-page__column-title Product
           span.cart-page__column-title price
           span.cart-page__column-title Quantity
           span.cart-page__column-title Subtotal
-        .cart-page__items-body
+        .cart-page__body
           each product in json.cart.items
             +cart-item(product)(class="cart-page__item")
-        .cart-page__items-footer
+        .cart-page__footer
           +button("link", "", "monochrome-light, normal")(class="cart-page__button")
             span.cart-page__button-text Return to shop
           +button("link", "", "monochrome-light, normal")(class="cart-page__button")
@@ -32,4 +32,4 @@ block content
       +coupon-form(class="cart-page__coupon")
       +cart-total(class="cart-page__total")
 
-  +subscription(class="cart-page__subscription")
+  +subscription("gray")

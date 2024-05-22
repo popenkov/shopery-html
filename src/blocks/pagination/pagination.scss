@@ -59,7 +59,7 @@
     border-radius: 50%;
     cursor: pointer;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       display: none;
     }
 

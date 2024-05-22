@@ -14,7 +14,7 @@
 
     stroke-width: 1.3px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include box(26px);
     }
   }

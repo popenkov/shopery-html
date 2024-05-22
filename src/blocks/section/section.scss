@@ -6,8 +6,12 @@
 
   padding: 100px 0;
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     padding: 40px 0;
+  }
+
+  &--page {
+    padding: 40px 0 80px;
   }
 
   &--green {
@@ -25,7 +29,7 @@
   &__pb {
     padding-bottom: 100px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       padding-bottom: 40px;
     }
   }
@@ -36,7 +40,7 @@
     margin: 0 auto;
     text-align: center;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include heading-5(600);
     }
 
@@ -46,8 +50,19 @@
       margin: 0 auto;
       text-align: center;
 
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         @include heading-5(600);
+      }
+    }
+
+    &--small {
+      @include heading-5(600);
+
+      margin: 0;
+      text-align: center;
+
+      @media screen and (max-width: $df-screen-m) {
+        @include body-xxl(500);
       }
     }
   }
@@ -59,7 +74,7 @@
     margin: 0 auto;
     text-align: center;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include body-s;
     }
   }
@@ -71,7 +86,7 @@
   &__title + &__content--medium {
     margin-top: 43px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-top: 30px;
     }
   }
@@ -79,9 +94,13 @@
   &__title + &__content--large {
     margin-top: 50px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-top: 30px;
     }
+  }
+
+  &__title--small + &__content {
+    margin-top: 32px;
   }
 
   &__green-background {

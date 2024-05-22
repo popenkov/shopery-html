@@ -12,14 +12,14 @@
     height: 45px;
     border-radius: 6px 0 0 6px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       padding: 8px;
     }
   }
 
   // stylelint-disable-next-line
   .field__icon--search {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }

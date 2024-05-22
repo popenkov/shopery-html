@@ -1,13 +1,13 @@
 @import "../../scss/breakpoints";
 
 .d-desktop {
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     display: none !important;
   }
 }
 
 .d-desktop-till-tablet {
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     display: none !important;
   }
 }
@@ -15,7 +15,7 @@
 .d-mobile {
   display: none !important;
 
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     display: block !important;
   }
 }
@@ -23,7 +23,7 @@
 .d-mobile--flex {
   display: none !important;
 
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     display: flex !important;
   }
 }
@@ -31,7 +31,7 @@
 .d-tablet {
   display: none !important;
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     display: block !important;
   }
 }
@@ -39,7 +39,7 @@
 .d-tablet--flex {
   display: none !important;
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     display: flex !important;
   }
 }

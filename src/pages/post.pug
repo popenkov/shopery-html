@@ -31,7 +31,7 @@ block content
             h2.aside-filter__title Top Categories
             .aside-filter__categories-container.aside-filter__bb-container
               each category in json.catalog.filter.categories
-                +radio( category.title, category.amount, "")(name="filter-category", value= category.value,  id=category.value)
+                +radio( category.title, category.amount, "")(name="filter-category", value= category.value, id=category.value)
 
 
           .filter-accordion__item.aside-filter__item
@@ -81,7 +81,7 @@ block content
           img.post-page__author-avatar(src= path.img + 'post-avatar--1.jpg', alt="avatar")
           .post-page__author-info
             span.post-page__author-name Cameron Williamson
-            div.post-page__author-date
+            .post-page__author-date
               span 4 April, 2021
               span •
               span 6 min read

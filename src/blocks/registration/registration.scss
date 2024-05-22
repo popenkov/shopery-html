@@ -1,4 +1,6 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/link-reset";
+@import "../../scss/mixins/flexbox";
 
 .registration {
   $block-name: &; // #{$block-name}__element
@@ -67,7 +69,7 @@
     gap: 20px;
     justify-content: space-between;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -104,13 +106,10 @@
   }
 
   &__login-link {
+    @include link-reset;
     @include body-s(500);
 
     color: var(--monochrome-900);
     text-decoration: none;
-  }
-
-  &__subscription {
-    background-color: rgb(247 247 247);
   }
 }

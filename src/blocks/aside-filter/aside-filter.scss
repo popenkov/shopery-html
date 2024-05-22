@@ -72,13 +72,13 @@
   &__filter-button {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: block;
     }
   }
 
   &__filter-menu-background {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       position: fixed;
       background-color: var(--modal-bg);
       opacity: 0;
@@ -152,7 +152,7 @@
   &__banner--desktop {
     display: block;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -173,7 +173,7 @@
   }
 
   &__products--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }

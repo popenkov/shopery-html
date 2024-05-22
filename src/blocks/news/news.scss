@@ -3,6 +3,8 @@
 @import "../../scss/mixins/text-styles.scss";
 
 .news {
+  $block-name: &; // #{$block-name}__element
+
   @include flex-column;
 
   padding: 24px 24px 20px;
@@ -107,5 +109,4 @@
   &__link-icon {
     @include box(24px);
   }
-  $block-name: &; // #{$block-name}__element
 }

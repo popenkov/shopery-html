@@ -8,7 +8,7 @@
   gap: 80px;
   padding: 80px 0 0;
 
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     gap: 40px;
     padding: 40px 0 0;
   }
@@ -19,7 +19,7 @@
     background-position: left bottom;
     background-size: contain;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       background-size: cover;
     }
   }
@@ -31,7 +31,7 @@
     object-fit: cover;
     border-radius: 8px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -77,11 +77,11 @@
     max-width: 648px;
     margin-top: 28px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-top: 0;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       gap: 16px;
     }
   }
@@ -126,7 +126,7 @@
       margin-top: 0;
       margin-bottom: 10px;
 
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         margin-bottom: 0;
       }
     }
@@ -168,7 +168,7 @@
 
     gap: 58px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       flex-direction: column;
       gap: 20px;
       justify-content: flex-start;

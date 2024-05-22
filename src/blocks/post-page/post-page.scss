@@ -9,11 +9,11 @@
   gap: 48px;
   padding: 32px 0 82px;
 
-  @media screen and (max-width: $screen-d) {
+  @media screen and (max-width: $df-screen-tl) {
     grid-template-columns: 2fr 1fr;
   }
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     @include flex-column;
 
     gap: 40px 20px;
@@ -40,13 +40,13 @@
     gap: 20px;
     width: 100%;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include flex-column;
     }
   }
 
   &__gallery--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -54,7 +54,7 @@
   &__gallery--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: flex;
     }
   }
@@ -70,11 +70,11 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: flex;
       flex-wrap: wrap;
 
@@ -94,7 +94,7 @@
   }
 
   &__recent-posts--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -102,7 +102,7 @@
   &__recent-posts--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: flex !important;
       grid-area: recentPosts;
       gap: 10px;
@@ -124,13 +124,13 @@
 
     gap: 24px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       grid-template-columns: 1fr;
     }
   }
@@ -203,7 +203,7 @@
     padding-bottom: 24px;
     border-bottom: 1px solid var(--monochrome-100);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       flex-direction: column;
       align-items: flex-start;
     }

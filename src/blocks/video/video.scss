@@ -45,7 +45,7 @@
       outline: 1px solid var(--monochrome-0);
       transition: outline-color var(--transition);
 
-      @media screen and (max-width: $screen-ti) {
+      @media screen and (max-width: $df-screen-t) {
         @include box(70px);
       }
 
@@ -78,7 +78,7 @@
       border-radius: 50%;
       transition: background-color var(--transition);
 
-      @media screen and (max-width: $screen-ti) {
+      @media screen and (max-width: $df-screen-t) {
         @include box(40px);
       }
 
@@ -111,7 +111,7 @@
     text-align: center;
     transform: translate(-50%, -50%);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       width: 100%;
     }
   }
@@ -135,7 +135,7 @@
     letter-spacing: 0.01em;
     text-align: center;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include heading-5;
     }
   }

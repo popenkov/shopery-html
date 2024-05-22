@@ -10,20 +10,19 @@ block variables
 block content
   +breadcrumps([], 'Wishlist')
 
-  .wishlist.container
+  .section--page.container
+    h2.section__title--small My Wishlist
+    .section__content
+      .wishlist
+        .wishlist__header
+          span.wishlist__column-title Product
+          span.wishlist__column-title price
+          span.wishlist__column-title Stock Status
+        .wishlist__body
+          each product in json.wishlist.items
+            +wishlist-item(product)(class="wishlist__item")
+        .wishlist__footer
+          +share-block("Share:",json.info.footer.socialLinks)
 
-    h2.wishlist__title My Wishlist
 
-    .wishlist__items
-      .wishlist__items-header
-        span.wishlist__column-title Product
-        span.wishlist__column-title price
-        span.wishlist__column-title Stock Status
-      .wishlist__items-body
-        each product in json.wishlist.items
-          +wishlist-item(product)(class="wishlist__item")
-      .wishlist__items-footer
-        +share-block("Share:",json.info.footer.socialLinks)
-
-
-  +subscription(class="wishlist__subscription")
+  +subscription("gray")

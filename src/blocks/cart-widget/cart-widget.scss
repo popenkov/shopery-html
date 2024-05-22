@@ -7,7 +7,7 @@
 
   gap: 12px;
 
-  @media screen and (max-width: $screen-t) {
+  @media screen and (max-width: $df-screen-m) {
     display: grid;
     grid-template-areas: "amount fav" "button button";
     grid-template-columns: 124px auto;
@@ -18,7 +18,7 @@
 
     border-radius: 170px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-area: amount;
     }
   }
@@ -29,7 +29,7 @@
     flex-grow: 1;
     gap: 16px;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-area: button;
     }
   }
@@ -51,7 +51,7 @@
 
     background-color: var(--green-gray-100);
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-area: fav;
     }
 

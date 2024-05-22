@@ -24,7 +24,7 @@
     max-height: 324px;
     object-fit: cover;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       max-height: 200px;
     }
   }

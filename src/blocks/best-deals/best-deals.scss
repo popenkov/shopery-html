@@ -10,18 +10,18 @@
     url("../../img/deals-bg-left.png") no-repeat 10% center,
     url("../../img/deals-bg-right.png") no-repeat 93% bottom;
 
-  @media screen and (max-width: $screen-d) {
+  @media screen and (max-width: $df-screen-tl) {
     background:
       url("../../img/deals-bg-left.png") no-repeat left center,
       url("../../img/deals-bg-right.png") no-repeat right bottom;
     background-size: 40%;
   }
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     background: url("../../img/deals-bg-left.png") no-repeat left center;
   }
 
-  @media screen and (max-width: $screen-t) {
+  @media screen and (max-width: $df-screen-m) {
     background: none;
   }
 
@@ -51,7 +51,7 @@
     margin: 0;
     text-align: center;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include heading-5(600);
     }
   }

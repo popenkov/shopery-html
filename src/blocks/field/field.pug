@@ -37,9 +37,3 @@ mixin field( hint, labelText, mods, isSearch, isPassword)
     else
       .field__input-container
         input.field__input.field__input--text(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
-        svg.field__icon.field__icon--error: use(href= path.icon + "icon__alert")
-        svg.field__icon.field__icon--warning: use(href= path.icon + "icon__warning")
-        svg.field__icon.field__icon--success: use(href= path.icon + "icon__success")
-
-
-

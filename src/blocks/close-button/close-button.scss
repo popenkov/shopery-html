@@ -4,6 +4,7 @@
 
 .close-button {
   $block-name: &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   @include flex-center;
   @include box(22px);
@@ -29,5 +30,4 @@
 
     color: var(--green-gray-600);
   }
-  $block-name: &; // #{$block-name}__element
 }

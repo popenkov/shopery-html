@@ -21,8 +21,10 @@
   }
 
   &__title {
+    @include flex-center-vertical;
     @include body-s;
 
+    gap: 3px;
     margin: 0;
   }
 

@@ -9,12 +9,12 @@
   gap: 20px;
   align-items: center;
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     grid-template-columns: 27% 14% 126px 14% 22px;
     justify-content: space-between;
   }
 
-  @media screen and (max-width: $screen-t) {
+  @media screen and (max-width: $df-screen-m) {
     grid-template-areas: "info info" "price price" "quantity quantity" "subtotal actions";
     grid-template-columns: auto 1fr;
   }
@@ -24,13 +24,13 @@
 
     gap: 12px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       flex-direction: column;
       gap: 6px;
       align-items: flex-start;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-area: info;
     }
   }
@@ -40,7 +40,7 @@
 
     object-fit: contain;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       width: 100%;
       height: auto;
       max-height: 250px;
@@ -60,12 +60,12 @@
     gap: 4px;
     margin: 0;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       flex-direction: column;
       align-items: flex-start;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       flex-direction: row;
       grid-area: price;
     }
@@ -83,7 +83,7 @@
   &__quantity {
     width: fit-content;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       display: flex;
       grid-area: quantity;
       gap: 10px;
@@ -95,18 +95,18 @@
     display: flex;
     gap: 10px;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       flex-direction: column;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       flex-direction: row;
       grid-area: subtotal;
     }
   }
 
   &__delete-button {
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-area: actions;
     }
   }
@@ -114,7 +114,7 @@
   &__key-mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: block;
       font-weight: 500;
       white-space: nowrap;
@@ -124,7 +124,7 @@
   &__key-mobile--amount {
     display: none;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       display: block;
       font-weight: 500;
       white-space: nowrap;

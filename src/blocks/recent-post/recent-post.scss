@@ -1,7 +1,10 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/link-reset";
 
 .recent-post {
   $block-name: &; // #{$block-name}__element
+
+  @include link-reset;
 
   display: flex;
   gap: 12px;

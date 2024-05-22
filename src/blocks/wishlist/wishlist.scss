@@ -1,42 +1,28 @@
 @import "../../scss/breakpoints";
-@import "../../scss/mixins/text-styles";
+@import "../../scss/mixins/text-styles.scss";
+@import "../../scss/mixins/flexbox.scss";
 
 .wishlist {
   $block-name: &; // #{$block-name}__element
 
-  padding: 40px 0 80px;
+  border: 1px solid var(--monochrome-100);
+  border-radius: 8px;
 
-  &__title {
-    @include heading-5(600);
-
-    margin: 0;
-    text-align: center;
-  }
-
-  &__items {
-    border: 1px solid var(--monochrome-100);
-    border-radius: 8px;
-  }
-
-  &__title + &__items {
-    margin-top: 32px;
-  }
-
-  &__items-header {
+  &__header {
     display: grid;
     grid-template-columns: 1fr minmax(194px, 336px) minmax(108px, 187px) 212px;
     padding: 12px 24px 13px;
     border-bottom: 1px solid var(--monochrome-100);
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template-columns: 2fr 1fr 1fr 194px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template-columns: 2fr 1fr 1fr 178px;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       display: none;
     }
   }
@@ -49,7 +35,7 @@
     text-transform: uppercase;
   }
 
-  &__items-body {
+  &__body {
     padding: 0 24px;
   }
 
@@ -61,7 +47,7 @@
     }
   }
 
-  &__items-footer {
+  &__footer {
     padding: 24px;
     border-top: 1px solid var(--monochrome-100);
   }

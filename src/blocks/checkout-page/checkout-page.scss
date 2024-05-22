@@ -1,12 +1,14 @@
 @import "../../scss/breakpoints";
 
 .checkout-page {
+  $block-name: &; // #{$block-name}__element
+
   display: flex;
   gap: 24px;
   align-items: flex-start;
   padding: 30px 0 80px;
 
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     flex-direction: column;
     align-items: stretch;
   }
@@ -46,6 +48,10 @@
 
   &__form-row.grid {
     gap: 16px;
+
+    @media screen and (max-width: $df-screen-ti) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__form-comment {
@@ -127,9 +133,12 @@
     width: 100%;
     max-width: 424px;
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-tl) {
+      max-width: 360px;
+    }
+
+    @media screen and (max-width: $df-screen-t) {
       max-width: unset;
     }
   }
-  $block-name: &; // #{$block-name}__element
 }

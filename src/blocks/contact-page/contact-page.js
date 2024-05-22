@@ -1,5 +1,5 @@
 import ready from "../../js/utils/documentReady.js";
-import { loadScripts } from "../../js/utils/loadScript.js";
+// import { loadScripts } from "../../js/utils/loadScript.js";
 
 ready(function () {
   const contactPage = document.querySelector(".contact-page");

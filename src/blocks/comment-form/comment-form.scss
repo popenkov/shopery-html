@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 16px;
 
-  @media screen and (max-width: $screen-ti) {
+  @media screen and (max-width: $df-screen-t) {
     flex-direction: column;
     align-items: stretch;
   }

@@ -19,15 +19,15 @@
     outline: 1px solid var(--monochrome-100);
     box-shadow: 0 16px 48px 0 rgb(14 107 21 / 8%);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: 1fr;
     }
   }
@@ -40,7 +40,7 @@
     border: 1px solid var(--green-gray-100);
     border-radius: 50%;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include box(50px);
     }
   }
@@ -50,7 +50,7 @@
 
     color: var(--primary);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include box(30px);
     }
   }
@@ -64,7 +64,7 @@
   &__icon-wrapper + &__title {
     margin-top: 16px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-top: 10px;
     }
   }
@@ -84,11 +84,11 @@
 
     padding: 40px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       padding: 20px;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       border: none;
       border-bottom: 1px solid var(--monochrome-100);
     }
@@ -107,19 +107,19 @@
     &:not(:first-child, :last-child) {
       border-right: 1px solid var(--monochrome-100);
 
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         border-right: none;
       }
     }
 
     &:nth-child(2) {
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         border-bottom: 1px solid var(--monochrome-100);
       }
     }
 
     &:nth-child(3) {
-      @media screen and (max-width: $screen-tl) {
+      @media screen and (max-width: $df-screen-ti) {
         border-right: 1px solid var(--monochrome-100);
       }
     }

@@ -9,17 +9,17 @@
   gap: 26px 24px;
   padding: 32px 0 82px;
 
-  @media screen and (max-width: $screen-d) {
+  @media screen and (max-width: $df-screen-tl) {
     grid-template-columns: 1fr 2fr;
   }
 
-  @media screen and (max-width: $screen-tl) {
+  @media screen and (max-width: $df-screen-ti) {
     grid-template-areas: "filter sort" "result result" "pagination pagination" "gallery gallery" "recentPosts recentPosts";
     grid-template-columns: 1fr 1fr;
     gap: 40px 20px;
   }
 
-  @media screen and (max-width: $screen-t) {
+  @media screen and (max-width: $df-screen-m) {
     grid-template-areas: "filter " "sort " "result " " pagination" " gallery" " recentPosts";
     grid-template-columns: 1fr;
     gap: 40px 20px;
@@ -45,13 +45,13 @@
     grid-area: sort;
     padding-top: 2px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       flex-direction: column;
       gap: 10px;
       align-items: flex-end;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       flex-flow: row wrap;
       align-items: center;
     }
@@ -77,13 +77,13 @@
   &__result {
     grid-area: result;
 
-    @media screen and (max-width: $screen-dl) {
+    @media screen and (max-width: $df-screen-d) {
       gap: 12px;
     }
   }
 
   &__result--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -91,12 +91,12 @@
   &__result--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 5px));
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: 1fr;
     }
   }
@@ -108,13 +108,13 @@
     gap: 20px;
     width: 100%;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include flex-column-center;
     }
   }
 
   &__gallery--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -122,7 +122,7 @@
   &__gallery--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: block;
     }
   }
@@ -138,11 +138,11 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: flex;
       flex-wrap: wrap;
 
@@ -170,7 +170,7 @@
   }
 
   &__recent-posts--desktop {
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: none;
     }
   }
@@ -178,7 +178,7 @@
   &__recent-posts--mobile {
     display: none;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: flex !important;
       grid-area: recentPosts;
       gap: 10px;
@@ -196,13 +196,13 @@
 
     gap: 24px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
-    @media screen and (max-width: $screen-ti) {
+    @media screen and (max-width: $df-screen-t) {
       grid-template-columns: 1fr;
     }
   }

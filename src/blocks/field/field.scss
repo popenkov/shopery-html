@@ -19,14 +19,6 @@
       top: 12px;
       left: 15px;
     }
-
-    &--warning,
-    &--error,
-    &--success {
-      display: none;
-      right: 15px;
-      top: 15px;
-    }
   }
 
   &__password-button {
@@ -50,6 +42,7 @@
   &__input {
     @include search-field;
 
+    position: relative;
     width: 100%;
 
     transition: all var(--transition);
@@ -89,19 +82,22 @@
     }
 
     &:not(#{$block-name}__input--password).just-validate-error-field {
+      padding-right: 40px;
       border-color: var(--status-danger);
-
-      & ~ #{$block-name}__icon--error {
-        display: block;
-      }
+      // todo почему некорректная иконка
+      background-image: url("/img/svgSprite.svg#icon__alert.svg");
+      background-size: 20px 20px;
+      background-position: right 15px bottom 15px;
+      transition: none;
     }
 
     &:not(#{$block-name}__input--password).just-validate-success-field {
+      padding-right: 40px;
       border-color: var(--primary);
-
-      & ~ #{$block-name}__icon--success {
-        display: block;
-      }
+      background-image: url("/img/svgSprite.svg#icon__success.svg");
+      background-size: 20px 20px;
+      background-position: right 15px bottom 15px;
+      transition: none;
     }
   }
 

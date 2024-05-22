@@ -20,7 +20,7 @@ mixin recent-post(data, mods)
       }
     }
 
-  .recent-post(class=allMods)&attributes(attributes)
+  a.recent-post(href= data.path, class=allMods)&attributes(attributes)
     img.recent-post__photo(src= path.img + data.img, alt= data.title)
     .recent-post__description
       h2.recent-post__title= data.title

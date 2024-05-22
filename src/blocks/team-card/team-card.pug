@@ -21,7 +21,7 @@ mixin team-card(data, mods)
 
   .team-card(class=allMods)&attributes(attributes)
     .team-card__photo-container
-      img.team-card__photo(src=path.img + data.photo , alt="photo")
+      img.team-card__photo(src=path.img + data.photo, alt="photo")
       .team-card__contacts-container
         each social in data.socialLinks
           a.button-round.button-round--ghost(href= social.href)

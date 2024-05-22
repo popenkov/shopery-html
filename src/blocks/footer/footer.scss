@@ -10,7 +10,7 @@
       url("..//{{img}}//left.svg") no-repeat left bottom,
       url("..//{{img}}//right.svg") no-repeat right bottom;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       background: none;
     }
   }
@@ -25,7 +25,7 @@
     align-items: start;
     padding-top: 100px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template: repeat(2, auto) / repeat(2, 1fr);
       grid-template-areas:
         "about navigation"
@@ -34,7 +34,7 @@
       gap: 60px 40px;
     }
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       grid-template: repeat(2, auto) / repeat(2, 1fr);
       grid-template-areas:
         "about about"
@@ -55,7 +55,7 @@
     grid-area: about;
     gap: 16px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       align-items: center;
     }
   }
@@ -73,7 +73,7 @@
     margin: 0;
     color: var(--green-gray-500);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       text-align: center;
     }
   }
@@ -110,13 +110,13 @@
     grid-area: navigation;
     gap: 78px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include flex-center;
 
       align-items: flex-start;
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       flex-wrap: wrap;
       gap: 50px;
       justify-content: flex-start;
@@ -129,7 +129,7 @@
     gap: 20px;
     list-style: none;
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       align-items: center;
       width: 100%;
       text-align: center;
@@ -170,7 +170,7 @@
     grid-area: instagram;
     gap: 20px;
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       @include flex-column-center;
     }
 
@@ -191,11 +191,11 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 
-    @media screen and (max-width: $screen-d) {
+    @media screen and (max-width: $df-screen-tl) {
       grid-template-columns: repeat(4, 80px);
     }
 
-    @media screen and (max-width: $screen-t) {
+    @media screen and (max-width: $df-screen-m) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -207,7 +207,7 @@
     padding: 24px 0 23px;
     border-top: 1px solid var(--green-gray-800);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       flex-direction: column;
       gap: 30px;
     }
@@ -232,7 +232,7 @@
     margin: 0 0 0 114px;
     color: var(--green-gray-500);
 
-    @media screen and (max-width: $screen-tl) {
+    @media screen and (max-width: $df-screen-ti) {
       margin-left: 0;
       text-align: center;
     }
