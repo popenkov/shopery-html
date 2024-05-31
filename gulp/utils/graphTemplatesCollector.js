@@ -1,3 +1,5 @@
+"use strict";
+
 import { config } from "../config.js";
 
 /**
@@ -12,10 +14,10 @@ export function graphTemplatesCollector(file) {
   if (templateExtendLine) {
     templateFileName = templateExtendLine.toString();
     if (config.graph.templates[templateFileName]) {
-      config.graph.templates[templateFileName].push(file.path);
+      config.graph.templates[templateFileName].add(file.path);
     } else {
-      config.graph.templates[templateFileName] = [];
-      config.graph.templates[templateFileName].push(file.path);
+      config.graph.templates[templateFileName] = new Set();
+      config.graph.templates[templateFileName].add(file.path);
     }
   }
 }

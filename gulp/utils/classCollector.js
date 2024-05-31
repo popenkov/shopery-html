@@ -1,3 +1,5 @@
+"use strict";
+
 import path from "path";
 
 import { config } from "../config.js";
@@ -33,7 +35,7 @@ export function classCollector(file) {
     // remove if there is no physical representation of the block
     if (!fileExist(`${config.from.blocks}/${res[0]}`)) continue;
     // remove the use of the block itself
-    if (file && res[0] === path.parse(`${file.basename}`).name) continue;
+    if (file && res[0] === path.parse(`${file.basename}`).name && file.path.includes("src/blocks/")) continue;
 
     classCollection.add(res[0]);
   }

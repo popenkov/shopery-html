@@ -1,10 +1,10 @@
-import gulp from "gulp";
+"use strict";
+
+import { src, dest } from "gulp";
 import plumber from "gulp-plumber";
 import jsonConcat from "gulp-json-concat";
 
 import { config } from "./config.js";
-
-const { src, dest } = gulp;
 
 export function compileJson(cb) {
   const jsonList = `${config.from.data}/**/*.json`;

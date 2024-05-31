@@ -1,4 +1,7 @@
+"use strict";
+
 import fs from "fs";
+import chalk from "chalk";
 
 import { config } from "./config.js";
 import { fileExist } from "./utils/fileExist.js";
@@ -21,6 +24,7 @@ export function writeSassImportsFile(cb) {
   allBlocksWithScssFiles.forEach(function (blockWithScssFile) {
     let url = `${config.from.blocks}/${blockWithScssFile}/${blockWithScssFile}.scss`;
     if (config.blocksFromHtml.indexOf(blockWithScssFile) === -1) return;
+    if (config.movedStyles.indexOf(blockWithScssFile) !== -1) return;
     if (newScssImportsList.indexOf(url) > -1) return;
     newScssImportsList.push(url);
   });
@@ -32,11 +36,11 @@ export function writeSassImportsFile(cb) {
     let msg = `\n/*!*${config.doNotEditMsg.replace(/\n /gm, "\n * ").replace(/\n\n$/, "\n */\n\n")}`;
     let styleImports = msg;
     newScssImportsList.forEach(function (src) {
-      styleImports += `@import '${src}';\n`;
+      styleImports += `@use "${src}";\n`;
     });
     styleImports += msg;
     fs.writeFileSync(`${config.from.style}/style.scss`, styleImports);
-    console.log("---------- Write new style.scss");
+    console.log("[", chalk.yellow("action"), `] Write new style sheet: style.scss`);
     config.scssImportsList = newScssImportsList;
   }
   cb?.();

@@ -1,3 +1,6 @@
+"use strict";
+
+import path from "path";
 import resolve from "@rollup/plugin-node-resolve";
 import rollupReplace from "@rollup/plugin-replace";
 import babel from "@rollup/plugin-babel";
@@ -8,7 +11,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import { rollup } from "rollup";
 import { config } from "./config.js";
 
-export function compileJs() {
+export function compileJs(cb) {
   const babelConfig = {
     babelHelpers: "runtime",
     presets: ["@babel/preset-env"],
@@ -16,28 +19,33 @@ export function compileJs() {
     exclude: ["**/node_modules/**"],
   };
 
-  return rollup({
-    input: `${config.from.js}/entry.js`,
-    plugins: [
-      multi(),
-      resolve(),
-      rollupReplace({
-        preventAssignment: true,
-        values: {
-          "process.env.NODE_ENV": config.mode,
-        },
-      }),
-      config.mode !== "development" && terser(),
-      babel(babelConfig),
-      commonjs(),
-    ],
-    // external: ["HystModal"],
-  }).then((bundle) => {
-    return bundle.write({
-      file: `${config.to.js}/bundle.js`,
-      format: "esm",
-      name: "bundle",
-      sourcemap: config.mode === "development",
+  for (const script of config.jsScripts) {
+    let fileName = path.basename(script, ".js");
+    if (fileName === "entry") fileName = "bundle";
+    rollup({
+      input: script,
+      plugins: [
+        multi(),
+        resolve(),
+        rollupReplace({
+          preventAssignment: true,
+          values: {
+            "process.env.NODE_ENV": config.mode,
+          },
+        }),
+        config.mode !== "development" && terser(),
+        babel(babelConfig),
+        commonjs(),
+      ],
+    }).then((bundle) => {
+      return bundle.write({
+        file: `${config.to.js}/${fileName}.js`,
+        format: "esm",
+        name: fileName,
+        sourcemap: config.mode === "development",
+      });
     });
-  });
+  }
+
+  cb?.();
 }

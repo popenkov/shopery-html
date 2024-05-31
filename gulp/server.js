@@ -1,7 +1,10 @@
-import gulp from "gulp";
+"use strict";
+
+import gulp, { parallel } from "gulp";
 import browserSync from "browser-sync";
 import path from "path";
 import fs from "fs";
+import chalk from "chalk";
 
 import { config } from "./config.js";
 import { calcGraph } from "./calcGraph.js";
@@ -9,79 +12,131 @@ import { pagesCollector } from "./utils/pagesCollector.js";
 import { writePugMixinsFile } from "./writePugMixinsFile.js";
 import { writeSassImportsFile } from "./writeSassImportsFile.js";
 import { writeJsRequiresFile } from "./writeJsRequiresFile.js";
-import { compilePug, compilePugFast, recompilePug } from "./compilePug.js";
+import { compilePug, compilePugFast } from "./compilePug.js";
 import { compileSass } from "./compileSass.js";
 import { compileJs } from "./compileJs.js";
 import { compileJson } from "./compileJson.js";
 import { copySources, copyBlockImg } from "./copySources.js";
 import { generateSvgSprite } from "./generateSvgSprite.js";
+import { graphLog } from "./utils/graphLog.js";
 
-const { watch, series, parallel } = gulp;
+const { watch, series } = gulp;
 
 export function server() {
   browserSync.init(config.serverOptions);
 
-  // Pages: change, add
+  // Pages: add, change
   watch(
     [`${config.from.pages}/**/*.pug`, `${config.from.library}/library.pug`],
-    { events: ["change", "add"], delay: 100 },
-    series(calcGraph, compilePugFast, writeSassImportsFile, compileSass, reload),
+    { events: ["add", "change"], delay: 100 },
+    series(
+      parallel(calcGraph),
+      parallel(writePugMixinsFile, writeSassImportsFile),
+      parallel(compilePugFast, compileSass),
+      graphLog,
+      reload,
+    ),
   );
 
   // Pages: unlink
   watch([`${config.from.pages}/**/*.pug`], { delay: 100 }).on("unlink", function (filepath) {
-    let filePathInBuildDir = filepath
-      .replace(`${config.from.root}/pages/`, config.to.pages)
-      .replace(".pug", ".html");
+    let filePathInBuildDir = filepath.replace(`${config.from.root}/pages/`, config.to.pages).replace(".pug", ".html");
     fs.unlink(filePathInBuildDir, (err) => {
       if (err) throw err;
-      console.log(`---------- Delete:  ${filePathInBuildDir}`);
+      console.log("[", chalk.yellow("action"), `] Page deleted: ${filePathInBuildDir}`);
     });
     calcGraph();
-    recompilePug();
+    graphLog();
   });
 
-  // Blocks: change
-  const blocksWatcher = watch(
-    [`${config.from.blocks}/**/*.pug`, `${config.from.library}/blocks/**/*.pug`],
-    { delay: 100 },
-  );
-  blocksWatcher.on("change", function (filepath) {
-    const rebuildPages = pagesCollector(filepath);
-    console.log(`---------- Block added/changed: ${path.basename(filepath, ".pug")}`);
-    if (rebuildPages.length) {
-      calcGraph();
-      compilePug(rebuildPages);
+  // Blocks
+  const blocksWatcher = watch([`${config.from.blocks}/**/*.pug`, `${config.from.library}/blocks/**/*.pug`], {
+    delay: 100,
+  });
+
+  // Blocks markup: add
+  blocksWatcher.on("add", function (filepath) {
+    const rebuiltPages = pagesCollector(filepath);
+    console.log("[", chalk.yellow("action"), `] Block created: ${path.basename(filepath, ".pug")}`);
+    calcGraph();
+    if (rebuiltPages.length) {
+      writePugMixinsFile();
+      compilePug(rebuiltPages);
       writeSassImportsFile();
       compileSass();
       browserSync.reload();
     }
+    graphLog();
+    setTimeout(() => console.log(`========== ==================================================`), 250);
   });
 
-  // Blocks: add
-  blocksWatcher.on("add", function (filepath) {
+  // Blocks markup: change
+  blocksWatcher.on("change", function (filepath) {
     const rebuildPages = pagesCollector(filepath);
-    writePugMixinsFile(() => {});
+    calcGraph();
     if (rebuildPages.length) {
-      calcGraph();
+      writePugMixinsFile();
       compilePug(rebuildPages);
       browserSync.reload();
     }
+    console.log("[", chalk.yellow("action"), `] Block changed: ${path.basename(filepath, ".pug")}`);
+    graphLog();
+    setTimeout(() => {
+      console.log(`========== ==================================================`);
+    }, 250);
   });
+
+  // Blocks style
+  const blocksStyleWatcher = watch([`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`], {
+    delay: 100,
+  });
+
+  // Blocks style: add
+  blocksStyleWatcher.on("add", function (filepath) {
+    const rebuiltPages = pagesCollector(filepath);
+    console.log("[", chalk.yellow("action"), `] Block created: ${path.basename(filepath, ".scss")}`);
+    calcGraph();
+    if (rebuiltPages.length) {
+      writeSassImportsFile();
+      compileSass();
+      browserSync.reload();
+    }
+    graphLog();
+    setTimeout(() => console.log(`========== ==================================================`), 250);
+  });
+
+  // Blocks style: change
+  watch(
+    [`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`, `!${config.from.style}/style.scss`],
+    { events: ["change"], delay: 100 },
+    series(writeSassImportsFile, compileSass),
+  );
 
   // Blocks: unlink
   watch(
-    [`${config.from.blocks}/**/*.pug`, `${config.from.library}/blocks/**/*.pug`],
-    { events: ["unlink"], delay: 100 },
-    series(calcGraph, writePugMixinsFile),
-  );
+    [
+      `${config.from.blocks}/**/*.pug`,
+      `${config.from.blocks}/**/*.scss`,
+      `${config.from.library}/blocks/**/*.pug`,
+      `${config.from.library}/blocks/**/*.scss`,
+    ],
+    {
+      delay: 100,
+    },
+  ).on("unlink", function (filepath) {
+    calcGraph();
+    writePugMixinsFile();
+    writeSassImportsFile();
+    compilePug({});
+    compileSass();
+    console.log("[", chalk.yellow("action"), `] Block deleted: ${filepath}`);
+    graphLog();
+    browserSync.reload();
+    console.log(`========== ==================================================`);
+  });
 
-  // Service blocks: change
-  watch(
-    [`${config.from.service}/**/*.pug`],
-    { events: ["change"], delay: 100 },
-    series(recompilePug, reload),
-  );
+  // Service blocks markup: change
+  watch([`${config.from.service}/**/*.pug`], { events: ["change"], delay: 100 }, series(compilePug, reload));
 
   // Templates
   const templatesWatcher = watch(
@@ -97,35 +152,18 @@ export function server() {
   templatesWatcher.on("change", function (filepath) {
     const rebuildPages = pagesCollector(filepath);
     if (rebuildPages.length) {
+      console.log("[", chalk.yellow("action"), `] Template changed: ${path.basename(filepath, ".pug")}`);
       calcGraph();
+      writePugMixinsFile();
       compilePug(rebuildPages);
-      parallel(writeSassImportsFile, writeJsRequiresFile);
-      parallel(compileSass, compileJs);
       browserSync.reload();
+      graphLog();
     }
   });
 
-  // Blocks style: change
-  watch(
-    [`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`],
-    { events: ["change"], delay: 100 },
-    series(compileSass),
-  );
-
-  // Blocks style: add
-  watch(
-    [`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`],
-    { events: ["add"], delay: 100 },
-    series(writeSassImportsFile, compileSass),
-  );
-
   // Global styles: all
   watch(
-    [
-      `${config.from.style}/**/*.scss`,
-      `${config.from.library}/scss/**/*.scss`,
-      `!${config.from.style}/style.scss`,
-    ],
+    [`${config.from.style}/**/*.scss`, `${config.from.library}/scss/**/*.scss`, `!${config.from.style}/style.scss`],
     { events: ["all"], delay: 100 },
     series(compileSass),
   );
@@ -135,7 +173,7 @@ export function server() {
     [
       `${config.from.js}/**/*.js`,
       `!${config.from.js}/entry.js`,
-      `!${config.from.js}/head-script.js`,
+      `!${config.from.js}/inline/*.js`,
       `${config.from.blocks}/**/*.js`,
     ],
     {
@@ -147,12 +185,12 @@ export function server() {
 
   // Included scripts: all
   watch(
-    [`${config.from.js}/head-script.js`],
+    [`${config.from.js}/inline/*.js`],
     {
       events: ["all"],
       delay: 100,
     },
-    series(calcGraph, recompilePug, reload),
+    series(calcGraph, compilePug, reload),
   );
 
   // Copy sources: all
@@ -176,24 +214,19 @@ export function server() {
 
   // SVG sprites: all
   watch(
-    [
-      `${config.from.symbols}/*.svg`,
-      `${config.from.symbols}/svgAsBg.xml`,
-      `${config.from.blocks}/**/symbols/**/*.svg`,
-    ],
+    [`${config.from.symbols}/*.svg`, `${config.from.symbols}/svgAsBg.xml`, `${config.from.blocks}/**/symbols/**/*.svg`],
     { events: ["all"], delay: 100 },
     series(generateSvgSprite, reload),
   );
 
   // JSON: all
-  watch(
-    [`${config.from.data}/**/*.json`],
-    { events: ["all"], delay: 100 },
-    series(compileJson, recompilePug, reload),
-  );
+  watch([`${config.from.data}/**/*.json`], { events: ["all"], delay: 100 }, series(compileJson, compilePug, reload));
+
+  console.log(`========== ==================================================`);
 }
 
 function reload(done) {
   browserSync.reload();
-  done();
+  console.log(`========== ==================================================`);
+  done?.();
 }

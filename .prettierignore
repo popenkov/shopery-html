@@ -17,7 +17,6 @@ node_modules/
 .vscode/
 .publish/
 .DS_Store
-*.log
 *.sublime-*
 *.rar
 *.zip
@@ -37,10 +36,6 @@ package-lock.json
 readme.md
 .prettierignore
 LICENSE
-.travis.yml
-
-.eslintignore
-.eslintrc
 .stylelintignore
 .stylelintrc
 

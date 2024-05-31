@@ -1,5 +1,8 @@
+"use strict";
+
 import path from "path";
 import fs from "fs";
+import chalk from "chalk";
 
 import { fileURLToPath } from "url";
 import { getDirectories } from "./utils/getDirectories.js";
@@ -22,28 +25,27 @@ export function writeJsRequiresFile(cb) {
   allBlocksWithJsFiles.forEach(function (blockName) {
     let src = `../blocks/${blockName}/${blockName}.js`;
     const prefix = config.mode === "development" ? "dev" : "";
-    const devJS = fs.existsSync(
-      `${__dirname}/${config.from.blocks}/${blockName}/${prefix}.${blockName}.js`,
-    );
+    const devJS = fs.existsSync(`${__dirname}/${config.from.blocks}/${blockName}/${prefix}.${blockName}.js`);
 
     if (devJS === true && config.mode === "development") {
       src = `../blocks/${blockName}/${prefix}.${blockName}.js`;
     }
 
     if (config.blocksFromHtml.indexOf(blockName) === -1) return;
+    if (config.movedScripts.indexOf(blockName) !== -1) return;
     if (jsRequiresList.indexOf(src) > -1) return;
     jsRequiresList.push(src);
   });
   config.addJsAfter.forEach(function (src) {
     jsRequiresList.push(src);
   });
-  let msg = `\n/*!*${config.doNotEditMsg.replace(/\n /gm, "\n * ").replace(/\n\n$/, "\n */\n\n")}`;
-  let jsRequires = msg + "/* global require */\n\n";
+  let msg = `\n/*!*${config.doNotEditMsg.replace(/\n /gm, "\n * ").replace(/\n\n$/, "\n */\n")}`;
+  let jsRequires = msg + "\n";
   jsRequiresList.forEach(function (src) {
-    jsRequires += `require('${src}');\n`;
+    jsRequires += `require("${src}");\n`;
   });
   jsRequires += msg;
   fs.writeFileSync(`${config.from.js}/entry.js`, jsRequires);
-  console.log("---------- Write new entry.js");
+  console.log("[", chalk.yellow("action"), `] Write new entry point: entry.js`);
   cb();
 }

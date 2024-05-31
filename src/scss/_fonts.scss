@@ -1,6 +1,4 @@
 @import "mixins/font-face";
-
-@include font-face("Inter", "Inter-Regular");
 @include font-face("Poppins", "Poppins-Bold", 700);
 @include font-face("Poppins", "Poppins-Light", 300);
 @include font-face("Poppins", "Poppins-Medium", 500);

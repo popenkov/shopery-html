@@ -1,7 +1,10 @@
+"use strict";
+
 import gulp from "gulp";
 import plumber from "gulp-plumber";
 import notify from "gulp-notify";
 import through2 from "through2";
+import chalk from "chalk";
 
 import { config } from "./config.js";
 import { classCollector } from "./utils/classCollector.js";
@@ -11,6 +14,12 @@ import { graphTemplatesCollector } from "./utils/graphTemplatesCollector.js";
 const { src, lastRun } = gulp;
 
 export function calcGraph() {
+  config.graph = {
+    templates: {},
+    blocks: {},
+  };
+  if (config.logging) console.log("[", chalk.bgYellow("prGrph"), "]", config.graph);
+
   const pagesList = [
     `${config.from.pages}/**/*.pug`,
     `${config.from.blocks}/**/*.pug`,
@@ -18,12 +27,12 @@ export function calcGraph() {
     `!${config.from.templates}/mixins.pug`,
   ];
 
-  return src(pagesList, { since: lastRun(calcGraph) })
+  return src(pagesList) // , { since: lastRun(calcGraph) }
     .pipe(
       plumber({
         errorHandler: notify.onError(function (err) {
           return {
-            title: "Сборка графа",
+            title: "Graph calculating",
             message: err.message,
           };
         }),

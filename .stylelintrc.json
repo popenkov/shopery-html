@@ -1,15 +1,13 @@
 {
-  "todo": "пробросить переменные в правила",
-  "customSyntax": "postcss-scss",
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-rational-order"
+    "stylelint-config-rational-order",
+    "stylelint-config-standard-scss"
   ],
   "plugins": [
-    "stylelint-order",
+    "stylelint-config-rational-order/plugin",
     "stylelint-scss",
     "stylelint-selector-bem-pattern",
-    "stylelint-config-rational-order/plugin"
+    "stylelint-order"
   ],
   "rules": {
     "at-rule-no-unknown": [true, {
@@ -27,9 +25,44 @@
         "/^while/"
       ]
     }],
+    "comment-word-disallowed-list": [
+      ["/((Х|х)+уй|(Х|х)уе|(Х|х)уё|(Б|б)ляд|(М|м)уда|(П|п)идо|(П|п)еди|(П|п)еде|(^|)+(Б|б)ля)/"],
+      {
+        "message": "Комментарий оскорбительный при себе оставь"
+      }
+    ],
     "function-no-unknown": null,
     "import-notation": "string",
     "media-query-no-invalid": null,
+    "order/order": [
+      "dollar-variables",
+      "custom-properties",
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w+$"
+      },
+      {
+        "type": "rule",
+        "selector": "^&--[-a-z0-9]+"
+      },
+      {
+        "type": "rule",
+        "selector": "^\\.[-_a-zA-Z0-9]+"
+      },
+      {
+        "type": "rule",
+        "selector": "^&__[-a-z0-9]+"
+      }
+    ],
     "plugin/selector-bem-pattern": [
       {
         "implicitComponents": true,
@@ -60,37 +93,8 @@
       }
     ],
     "property-no-vendor-prefix": null,
-     "order/order": [
-      "dollar-variables",
-      "custom-properties",
-      {
-        "type": "at-rule",
-        "name": "include"
-      },
-      "declarations",
-      {
-        "type": "at-rule",
-        "name": "media"
-      },
-      {
-        "type": "rule",
-        "selector": "^&:\\w+$"
-      },
-      {
-        "type": "rule",
-        "selector": "^&--[-a-z0-9]+"
-      },
-      {
-        "type": "rule",
-        "selector": "^\\.[-_a-zA-Z0-9]+"
-      },
-      {
-        "type": "rule",
-        "selector": "^&__[-a-z0-9]+"
-      }
-    ],
-    "comment-word-disallowed-list": [ [/((Х|х)+уй|(Х|х)уе|(Х|х)уё|(Б|б)ляд|(М|м)уда|(П|п)идо|(П|п)еди|(П|п)еде|(^|\s)+(Б|б)ля)/], {
-      "message": "Комментарий оскорбительный при себе оставь"
-    }]
+    "scss/comment-no-empty": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/double-slash-comment-whitespace-inside": null
   }
 }

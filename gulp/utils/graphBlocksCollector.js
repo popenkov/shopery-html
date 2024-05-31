@@ -1,4 +1,7 @@
+"use strict";
+
 import { config } from "../config.js";
+import chalk from "chalk";
 
 config.blocksFromHtml = [...config.alwaysAddBlocks];
 
@@ -15,10 +18,10 @@ export function graphBlocksCollector(classes, file) {
 
     // add a node and connection to the graph
     if (config.graph.blocks[item]) {
-      config.graph.blocks[item].push(file.path);
+      config.graph.blocks[item].add(file.path);
     } else {
-      config.graph.blocks[item] = [];
-      config.graph.blocks[item].push(file.path);
+      config.graph.blocks[item] = new Set();
+      config.graph.blocks[item].add(file.path);
     }
 
     // is the block already exist?
@@ -29,9 +32,9 @@ export function graphBlocksCollector(classes, file) {
 
   if (config.logging) {
     console.log(
-      `---------- Used HTML blocks on ${file.relative} (${blocksList.length}): ${blocksList.join(
-        ", ",
-      )}`,
+      "[ ",
+      chalk.yellow("info"),
+      ` ] Used HTML blocks on ${file.relative} (${blocksList.length}): ${blocksList.join(", ")}`,
     );
   }
 }
